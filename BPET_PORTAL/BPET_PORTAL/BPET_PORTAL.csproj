@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DEDFF2D2-8003-44F1-9A04-567A86150A82}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BPET_PORTAL</RootNamespace>
+    <AssemblyName>BPET Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://95.0.50.22:1381/bpet_portal_update/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <InstallUrl>http://95.0.50.22:1380/bpet_portal_update/</InstallUrl>
+    <ProductName>BPET PORTAL</ProductName>
+    <PublisherName>BPET_Bilgi_İslem</PublisherName>
+    <SuiteName>PORTAL</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bpet_logo %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9C4C6C3F485F845475FAA8F8D421D0C886DCECCC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>BPET_PORTAL_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Cryptolens.Licensing, Version=4.0.43.2, Culture=neutral, PublicKeyToken=30182975912ff1ef, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cryptolens.Licensing.4.0.43\lib\net471\Cryptolens.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.0.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.1\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.53.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.53\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SmsApiNode">
+      <HintPath>..\..\..\Sms Eposta Günlük\SmsApi\Net.4.0\SmsApiNode.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\adminform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\adminform.Designer.cs">
+      <DependentUpon>adminform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\EditUserPermissionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\EditUserPermissionsForm.Designer.cs">
+      <DependentUpon>EditUserPermissionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anasayfalar\secimekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="anasayfalar\secimekrani.Designer.cs">
+      <DependentUpon>secimekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\arsivmainpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\arsivmainpage.Designer.cs">
+      <DependentUpon>arsivmainpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\DosyaBul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\DosyaBul.Designer.cs">
+      <DependentUpon>DosyaBul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\DosyaEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\DosyaEkle.Designer.cs">
+      <DependentUpon>DosyaEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\dosyaislemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\dosyaislemleri.Designer.cs">
+      <DependentUpon>dosyaislemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\EditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\EditForm.Designer.cs">
+      <DependentUpon>EditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\DosyaTeslimEt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\DosyaTeslimEt.Designer.cs">
+      <DependentUpon>DosyaTeslimEt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\geciciyetkiver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\geciciyetkiver.Designer.cs">
+      <DependentUpon>geciciyetkiver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\KisiAtaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\KisiAtaForm.Designer.cs">
+      <DependentUpon>KisiAtaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\KullaniciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\KullaniciEkle.Designer.cs">
+      <DependentUpon>KullaniciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\pdftaleplerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\pdftaleplerim.Designer.cs">
+      <DependentUpon>pdftaleplerim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bayitakip\bayitakipmainpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bayitakip\bayitakipmainpage.Designer.cs">
+      <DependentUpon>bayitakipmainpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="borsauygulamasi\borsaanasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="borsauygulamasi\borsaanasayfa.Designer.cs">
+      <DependentUpon>borsaanasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="borsauygulamasi\DuzenlemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="borsauygulamasi\DuzenlemeForm.Designer.cs">
+      <DependentUpon>DuzenlemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="butce_sistemi\bayi_sistemi\bayianaekran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="butce_sistemi\bayi_sistemi\bayianaekran.Designer.cs">
+      <DependentUpon>bayianaekran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="butce_sistemi\butceanaekran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="butce_sistemi\butceanaekran.Designer.cs">
+      <DependentUpon>butceanaekran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\ikmainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\ikmainform.Designer.cs">
+      <DependentUpon>ikmainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikanasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikanasayfa.Designer.cs">
+      <DependentUpon>lojistikanasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\aracislemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\aracislemleri.Designer.cs">
+      <DependentUpon>aracislemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\lojistikgirisfoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\lojistikgirisfoto.Designer.cs">
+      <DependentUpon>lojistikgirisfoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muhasebe\muhasebeanasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muhasebe\muhasebeanasayfa.Designer.cs">
+      <DependentUpon>muhasebeanasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muhasebe\mutabakat\mutabakat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muhasebe\mutabakat\mutabakat.Designer.cs">
+      <DependentUpon>mutabakat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muhasebe\mutabakat\mutabakatislemleri\mutabakateditform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muhasebe\mutabakat\mutabakatislemleri\mutabakateditform.Designer.cs">
+      <DependentUpon>mutabakateditform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muhasebe\mutabakat\mutabakatislemleri\mutabakatislemkayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muhasebe\mutabakat\mutabakatislemleri\mutabakatislemkayit.Designer.cs">
+      <DependentUpon>mutabakatislemkayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uyari_ekrani\Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uyari_ekrani\Form_Alert.Designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anasayfalar\gif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="anasayfalar\gif.Designer.cs">
+      <DependentUpon>gif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anasayfalar\loginpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="anasayfalar\loginpage.Designer.cs">
+      <DependentUpon>loginpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anasayfalar\mainpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="anasayfalar\mainpage.Designer.cs">
+      <DependentUpon>mainpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="raporekrani\raporekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="raporekrani\raporekrani.Designer.cs">
+      <DependentUpon>raporekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="sms_otomasyonu\LicenseKeyInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sms_otomasyonu\LicenseKeyInputForm.Designer.cs">
+      <DependentUpon>LicenseKeyInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sms_otomasyonu\sms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sms_otomasyonu\sms.Designer.cs">
+      <DependentUpon>sms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="victorreklam\victorreklamform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="victorreklam\victorreklamform.Designer.cs">
+      <DependentUpon>victorreklamform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yardim_masasi\AdminPaneliForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yardim_masasi\AdminPaneliForm.Designer.cs">
+      <DependentUpon>AdminPaneliForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yardim_masasi\AnaEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yardim_masasi\AnaEkran.Designer.cs">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yardim_masasi\BilgiIslemAciklamaFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yardim_masasi\BilgiIslemAciklamaFormu.Designer.cs">
+      <DependentUpon>BilgiIslemAciklamaFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yardim_masasi\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yardim_masasi\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yardim_masasi\Taleplerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yardim_masasi\Taleplerim.Designer.cs">
+      <DependentUpon>Taleplerim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yardim_masasi\RaporEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yardim_masasi\RaporEkrani.Designer.cs">
+      <DependentUpon>RaporEkrani.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="admin\adminform.resx">
+      <DependentUpon>adminform.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\EditUserPermissionsForm.resx">
+      <DependentUpon>EditUserPermissionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anasayfalar\secimekrani.resx">
+      <DependentUpon>secimekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\arsivmainpage.resx">
+      <DependentUpon>arsivmainpage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\DosyaBul.resx">
+      <DependentUpon>DosyaBul.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\DosyaEkle.resx">
+      <DependentUpon>DosyaEkle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\dosyaislemleri.resx">
+      <DependentUpon>dosyaislemleri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\EditForm.resx">
+      <DependentUpon>EditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\DosyaTeslimEt.resx">
+      <DependentUpon>DosyaTeslimEt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\geciciyetkiver.resx">
+      <DependentUpon>geciciyetkiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\KisiAtaForm.resx">
+      <DependentUpon>KisiAtaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\KullaniciEkle.resx">
+      <DependentUpon>KullaniciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\pdftaleplerim.resx">
+      <DependentUpon>pdftaleplerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bayitakip\bayitakipmainpage.resx">
+      <DependentUpon>bayitakipmainpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="borsauygulamasi\borsaanasayfa.resx">
+      <DependentUpon>borsaanasayfa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="borsauygulamasi\DuzenlemeForm.resx">
+      <DependentUpon>DuzenlemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="butce_sistemi\bayi_sistemi\bayianaekran.resx">
+      <DependentUpon>bayianaekran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="butce_sistemi\butceanaekran.resx">
+      <DependentUpon>butceanaekran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\ikmainform.resx">
+      <DependentUpon>ikmainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikanasayfa.resx">
+      <DependentUpon>lojistikanasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\aracislemleri.resx">
+      <DependentUpon>aracislemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\lojistikgirisfoto.resx">
+      <DependentUpon>lojistikgirisfoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muhasebe\muhasebeanasayfa.resx">
+      <DependentUpon>muhasebeanasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muhasebe\mutabakat\mutabakat.resx">
+      <DependentUpon>mutabakat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muhasebe\mutabakat\mutabakatislemleri\mutabakateditform.resx">
+      <DependentUpon>mutabakateditform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muhasebe\mutabakat\mutabakatislemleri\mutabakatislemkayit.resx">
+      <DependentUpon>mutabakatislemkayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uyari_ekrani\Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anasayfalar\gif.resx">
+      <DependentUpon>gif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anasayfalar\loginpage.resx">
+      <DependentUpon>loginpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anasayfalar\mainpage.resx">
+      <DependentUpon>mainpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="raporekrani\raporekrani.resx">
+      <DependentUpon>raporekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sms_otomasyonu\LicenseKeyInputForm.resx">
+      <DependentUpon>LicenseKeyInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sms_otomasyonu\sms.resx">
+      <DependentUpon>sms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="victorreklam\victorreklamform.resx">
+      <DependentUpon>victorreklamform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yardim_masasi\AdminPaneliForm.resx">
+      <DependentUpon>AdminPaneliForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yardim_masasi\AnaEkran.resx">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yardim_masasi\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yardim_masasi\Taleplerim.resx">
+      <DependentUpon>Taleplerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="BPET_PORTAL_TemporaryKey.pfx" />
+    <None Include="muhasebe\mutabakat\sablon.pdf" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arial.ttf" />
+    <None Include="Resources\My project %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My project %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bpet_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bpet_logo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-live-folder-80 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bencv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1635170429075.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-folder-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-client-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-profile-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-return-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bpet_logo %281%29.ico" />
+    <Content Include="icons8-portal-70.ico" />
+    <None Include="Resources\icons8-save-96.png" />
+    <None Include="Resources\icons8-update-96.png" />
+    <None Include="Resources\icons8-home-481.png" />
+    <None Include="Resources\lojistikgiriş.png" />
+    <None Include="Resources\icons8-home-48.png" />
+    <None Include="Resources\eba99cd9-74eb-4e5e-8e62-680b87162e131.jpg" />
+    <None Include="Resources\icons8-car-16.png" />
+    <None Include="Resources\lutfenbekleyin.png" />
+    <None Include="Resources\dosyasecyukle.png" />
+    <None Include="Resources\gözat.png" />
+    <None Include="Resources\talebigonder.png" />
+    <None Include="Resources\yardimtaleplerim.png" />
+    <None Include="Resources\anamenu.png" />
+    <None Include="Resources\tamamlanmistaleplerim.png" />
+    <None Include="Resources\aktiftaleplerim.png" />
+    <None Include="Resources\portalageridon.png" />
+    <None Include="Resources\sidemenu.png" />
+    <None Include="Resources\şifremiunuttum.png" />
+    <None Include="Resources\kayıtol.png" />
+    <None Include="Resources\ŞİFREMİSIFIRLA.png" />
+    <None Include="Resources\DOĞRULA.png" />
+    <None Include="Resources\KAYITOL.png" />
+    <None Include="Resources\bpetyardımamsasaı1.png" />
+    <None Include="Resources\bpetyardımamsasaı.png" />
+    <None Include="Resources\girişyap.png" />
+    <None Include="Resources\girişyao.png" />
+    <None Include="Resources\küçültme.png" />
+    <None Include="Resources\simgedurumuna.png" />
+    <None Include="Resources\çıkış2.png" />
+    <None Include="Resources\çıkış.png" />
+    <None Include="Resources\BPET DOST KAPINIZ!1.gif" />
+    <None Include="Resources\BPET DOST KAPINIZ!.gif" />
+    <None Include="Resources\mix_03s %28audio-joiner.com%29.wav" />
+    <None Include="Resources\icons8-search-96.png" />
+    <None Include="Resources\eba99cd9-74eb-4e5e-8e62-680b87162e13.jpg" />
+    <None Include="Resources\icons8-export-excel-96.png" />
+    <None Include="Resources\icons8-history-100.png" />
+    <None Include="Resources\icons8-bribery-96.png" />
+    <None Include="Resources\debut.JPG" />
+    <None Include="Resources\icons8-restore-window-96.png" />
+    <None Include="Resources\icons8-menu-1201.png" />
+    <None Include="Resources\icons8-menu-120.png" />
+    <None Include="Resources\alarm_join.wav" />
+    <None Include="Resources\Hareketsizlik tespit.wav" />
+    <None Include="Resources\alarm.wav" />
+    <None Include="Resources\IMG_1848.jpg" />
+    <None Include="Resources\icons8-pdf-mail-96.png" />
+    <None Include="Resources\icons8-pdf-96.png" />
+    <None Include="Resources\icons8-access-denied-96.png" />
+    <None Include="Resources\icons8-authorization-961.png" />
+    <None Include="Resources\icons8-authorization-96.png" />
+    <None Include="Resources\icons8-upload-to-ftp-961.png" />
+    <None Include="Resources\sablon.pdf" />
+    <None Include="Resources\sablon2 %281%29.pdf" />
+    <None Include="Resources\sablon2 %282%29 %281%29.pdf" />
+    <None Include="Resources\sablon2 %282%29.pdf" />
+    <None Include="Resources\sablonn.pdf" />
+    <None Include="Resources\sablonson.pdf" />
+    <None Include="Resources\victor reklam.jpg" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\icons8_cancel_25px.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\icons8-delete-file-64.png" />
+    <None Include="Resources\icons8-upload-to-ftp-96.png" />
+    <None Include="Resources\icons8-saved-80.png" />
+    <None Include="Resources\icons8-delete-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="musterihizmetleri\" />
+    <Folder Include="Sounds\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
