@@ -197,7 +197,7 @@
             this.linkLabel3.Size = new System.Drawing.Size(160, 28);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.3.4.3 -Cloud";
+            this.linkLabel3.Text = "V2.3.4.4 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox
@@ -208,7 +208,7 @@
             this.beniHatirlaCheckBox.ForeColor = System.Drawing.Color.Transparent;
             this.beniHatirlaCheckBox.Location = new System.Drawing.Point(37, 279);
             this.beniHatirlaCheckBox.Name = "beniHatirlaCheckBox";
-            this.beniHatirlaCheckBox.Size = new System.Drawing.Size(84, 15);
+            this.beniHatirlaCheckBox.Size = new System.Drawing.Size(90, 17);
             this.beniHatirlaCheckBox.TabIndex = 3;
             this.beniHatirlaCheckBox.Text = "Beni Hatırla";
             this.beniHatirlaCheckBox.UseSelectable = true;
@@ -295,7 +295,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkBlue;
             this.label7.Location = new System.Drawing.Point(52, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(207, 42);
+            this.label7.Size = new System.Drawing.Size(256, 51);
             this.label7.TabIndex = 6;
             this.label7.Text = "GİRİŞ YAP";
             // 
