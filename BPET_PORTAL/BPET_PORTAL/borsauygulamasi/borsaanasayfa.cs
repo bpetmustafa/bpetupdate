@@ -167,7 +167,7 @@ namespace BPET_PORTAL.borsauygulamasi
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Veri çekme hatası: " + ex.Message);
+                   // MessageBox.Show("Veri çekme hatası: " + ex.Message);
                 }
             }
         }
@@ -410,7 +410,7 @@ namespace BPET_PORTAL.borsauygulamasi
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Veri çekme hatası: " + ex.Message);
+                   // MessageBox.Show("Veri çekme hatası: " + ex.Message);
                 }
             }
 

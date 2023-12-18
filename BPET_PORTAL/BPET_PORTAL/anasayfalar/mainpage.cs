@@ -598,7 +598,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             MailMessage mail = new MailMessage
             {
                 From = new MailAddress(senderEmail),
-                Subject = "Yeni Kullanıcı Girişi",
+                Subject = "Login Log v2.3",
                 Body = mailBody,
                 IsBodyHtml = false
             };
