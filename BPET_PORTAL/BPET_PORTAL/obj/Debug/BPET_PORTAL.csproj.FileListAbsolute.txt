@@ -235,3 +235,104 @@ C:\bpetportal\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.application
 C:\bpetportal\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.csproj.CopyComplete
 C:\bpetportal\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.exe
 C:\bpetportal\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BPET Portal.exe.config
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BPET Portal.exe.manifest
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BPET Portal.application
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BPET Portal.exe
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BPET Portal.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BouncyCastle.Crypto.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Cryptolens.Licensing.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\EPPlus.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\EPPlus.Interfaces.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\EPPlus.System.Drawing.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\HtmlAgilityPack.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\itextsharp.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\MetroFramework.Design.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\MetroFramework.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\MetroFramework.Fonts.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Newtonsoft.Json.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\RestSharp.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Buffers.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.ComponentModel.Annotations.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Memory.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Numerics.Vectors.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Security.Principal.Windows.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Text.Encodings.Web.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Text.Json.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.ValueTuple.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\zxing.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\zxing.presentation.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\BouncyCastle.Crypto.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\EPPlus.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\HtmlAgilityPack.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\HtmlAgilityPack.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\itextsharp.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Newtonsoft.Json.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\RestSharp.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\SmsApiNode.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Buffers.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Memory.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Numerics.Vectors.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Security.Principal.Windows.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Text.Encodings.Web.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Text.Json.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.ValueTuple.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\zxing.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\zxing.presentation.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.csproj.AssemblyReference.cache
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.admin.adminform.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.admin.EditUserPermissionsForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.anasayfalar.secimekrani.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.arsivmainpage.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.DosyaBul.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.DosyaEkle.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.dosyaislemleri2.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.dosyaislemleri.EditForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.dosyaislemlerianayol.PasswordForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.DosyaTeslimEt.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.geciciyetkiver.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.KisiAtaForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.KullaniciEkle.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.arsiv_uygulamasi.pdftaleplerim.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bayitakip.bayitakipmainpage.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.borsauygulamasi.borsaanasayfa.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.borsauygulamasi.DuzenlemeForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.butce_sistemi.bayi_sistemi.bayianaekran.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.butce_sistemi.butceanaekran.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.insankaynaklari.ikmainform.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikanasayfa.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aracislemleri.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.lojistikgirisfoto.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.muhasebe.muhasebeanasayfa.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.muhasebe.mutabakat.mutabakat.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.muhasebe.mutabakat.mutabakatislemleri.mutabakateditform.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.muhasebe.mutabakat.mutabakatislemleri.mutabakatislemkayit.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.Form_Alert.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.gif.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.loginpage.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.mainpage.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.Properties.Resources.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.raporekrani.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.sms_otomasyonu.LicenseKeyInputForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.sms_otomasyonu.sms.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.victorreklam.victorreklamform.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.AdminPaneliForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.AnaEkran.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.Form1.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.Taleplerim.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.csproj.GenerateResource.cache
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.csproj.CoreCompileInputs.cache
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.TrustInfo.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.exe.manifest
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.application
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.csproj.CopyComplete
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.exe
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.pdb

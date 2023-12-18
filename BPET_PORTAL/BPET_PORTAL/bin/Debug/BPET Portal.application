@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="http://95.0.50.22:1380/bpet_portal_update/BPET%20Portal.application" />
+    <deploymentProvider codebase="https://raw.githubusercontent.com/bpetmustafa/bpetupdate/main/published/BPET%20Portal.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
@@ -21,7 +21,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FDbqLU8I7P2wgjlxOCwDwvEzygtZAcyE2oHI/bf5h2U=</dsig:DigestValue>
+        <dsig:DigestValue>SsU5mIMaTQiKOtIU/8LXKJVH+RuIeZphz8kuJhIjat4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

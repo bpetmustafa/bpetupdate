@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>ftp://95.0.50.22:1381/bpet_portal_update/|ftp://95.0.50.22/bpet_portal_update/|ftp://192.168.0.202/bpet_portal_update/|ftp://192.168.0.202/bpet_portal/|ftp://95.0.50.22:1381/bpet_portal/</PublishUrlHistory>
-    <InstallUrlHistory>http://95.0.50.22:1380/bpet_portal_update/|https://drive.google.com/uc%3fexport=download&amp;id=1XHpzgkEFdWBtMXDPl52EEljgBZ5DC2lJ/|http://95.0.50.22:1380/bpet_portal/|http://192.168.0.202/bpet_portal/</InstallUrlHistory>
+    <PublishUrlHistory>E:\bpetupdate\published\|ftp://95.0.50.22:1381/bpet_portal_update/|ftp://95.0.50.22/bpet_portal_update/|ftp://192.168.0.202/bpet_portal_update/|ftp://192.168.0.202/bpet_portal/</PublishUrlHistory>
+    <InstallUrlHistory>https://raw.githubusercontent.com/bpetmustafa/bpetupdate/main/published/|http://95.0.50.22:1380/bpet_portal_update/|https://drive.google.com/uc%3fexport=download&amp;id=1XHpzgkEFdWBtMXDPl52EEljgBZ5DC2lJ/|http://95.0.50.22:1380/bpet_portal/|http://192.168.0.202/bpet_portal/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
