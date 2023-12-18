@@ -184,18 +184,18 @@
             // 
             // linkLabel3
             // 
-            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Lime;
             this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel3.BackColor = System.Drawing.Color.Black;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.linkLabel3.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel3.LinkColor = System.Drawing.Color.Lime;
             this.linkLabel3.Location = new System.Drawing.Point(224, 558);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(118, 29);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.2.5 -Cloud";
+            this.linkLabel3.Text = "V2.2.6 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox
