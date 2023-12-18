@@ -175,7 +175,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.RosyBrown;
-            this.button2.Location = new System.Drawing.Point(36, 490);
+            this.button2.Location = new System.Drawing.Point(36, 472);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(242, 55);
             this.button2.TabIndex = 7;
@@ -190,12 +190,14 @@
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.linkLabel3.LinkColor = System.Drawing.Color.Lime;
-            this.linkLabel3.Location = new System.Drawing.Point(224, 558);
+            this.linkLabel3.Location = new System.Drawing.Point(179, 559);
+            this.linkLabel3.MaximumSize = new System.Drawing.Size(160, 28);
+            this.linkLabel3.MinimumSize = new System.Drawing.Size(160, 28);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(118, 29);
+            this.linkLabel3.Size = new System.Drawing.Size(160, 28);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.2.6 -Cloud";
+            this.linkLabel3.Text = "V2.3.1 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox
