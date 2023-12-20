@@ -10,6 +10,7 @@ using HtmlAgilityPack;
 using Microsoft.Office.Interop.Excel;
 using DataTable = System.Data.DataTable;
 using Application = Microsoft.Office.Interop.Excel.Application;
+using System.Drawing;
 
 namespace BPET_PORTAL.borsauygulamasi
 {
@@ -30,8 +31,10 @@ namespace BPET_PORTAL.borsauygulamasi
             InitializeDataGridView();
             LoadUserPortfolio();
             //LoadHisseVerileriForPortfoy(); // Otomatik olarak portföydeki hisselerin verilerini çek
-                                           // ToplaVeOrtalamaMaliyetGoster();
+
+            // ToplaVeOrtalamaMaliyetGoster();
         }
+
 
         private void InitializeDataGridView()
         {
@@ -49,18 +52,6 @@ namespace BPET_PORTAL.borsauygulamasi
             userPortfolioTable.Columns.Add("Adet", typeof(int));
             userPortfolioTable.Columns.Add("Maliyet", typeof(decimal));
             dataGridViewUserPortfolio.DataSource = userPortfolioTable;
-
-            // KarZararMiktari sütunu
-            DataGridViewTextBoxColumn karZararMiktariColumn = new DataGridViewTextBoxColumn();
-            karZararMiktariColumn.HeaderText = "Kar/Zarar Miktarı";
-            karZararMiktariColumn.Name = "KarZararMiktari";
-            dataGridViewOrtalamaMaliyet.Columns.Add(karZararMiktariColumn);
-
-            // KarZararYuzdesi sütunu
-            DataGridViewTextBoxColumn karZararYuzdesiColumn = new DataGridViewTextBoxColumn();
-            karZararYuzdesiColumn.HeaderText = "Kar/Zarar Yüzdesi";
-            karZararYuzdesiColumn.Name = "KarZararYuzdesi";
-            dataGridViewOrtalamaMaliyet.Columns.Add(karZararYuzdesiColumn);
 
             // Sağ tık menüyü oluşturun ve öğeleri ekleyin
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
@@ -162,12 +153,12 @@ namespace BPET_PORTAL.borsauygulamasi
                     }
                     else
                     {
-                       // MessageBox.Show("Geçersiz hisse kodu. Lütfen doğru bir hisse kodu girin.");
+                        // MessageBox.Show("Geçersiz hisse kodu. Lütfen doğru bir hisse kodu girin.");
                     }
                 }
                 catch (Exception ex)
                 {
-                   // MessageBox.Show("Veri çekme hatası: " + ex.Message);
+                    // MessageBox.Show("Veri çekme hatası: " + ex.Message);
                 }
             }
         }
@@ -410,21 +401,21 @@ namespace BPET_PORTAL.borsauygulamasi
                 }
                 catch (Exception ex)
                 {
-                   // MessageBox.Show("Veri çekme hatası: " + ex.Message);
+                    // MessageBox.Show("Veri çekme hatası: " + ex.Message);
                 }
             }
 
             return hisseDegeri;
         }
 
-        private async void ToplaVeOrtalamaMaliyetGoster()
+        private async Task ToplaVeOrtalamaMaliyetGoster()
         {
             // Kullanıcının hisse verilerini veritabanından çekin
             DataTable userPortfolioTable = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string selectQuery = "SELECT HisseAdi, SUM(Adet) AS ToplamAdet, AVG(Maliyet) AS OrtalamaMaliyet " +
+                string selectQuery = "SELECT HisseAdi, SUM(Adet) AS ToplamAdet, ROUND(AVG(Maliyet), 2) AS OrtalamaMaliyet " +
                                      "FROM HisseTablosu " +
                                      "WHERE KullaniciEposta = @KullaniciEposta " +
                                      "GROUP BY HisseAdi";
@@ -450,32 +441,50 @@ namespace BPET_PORTAL.borsauygulamasi
 
             // Sonuçları dataGridViewOrtalamaMaliyet DataGridView'ine bağlayın
             dataGridViewOrtalamaMaliyet.DataSource = userPortfolioTable;
+            dataGridViewOrtalamaMaliyet.Columns["OrtalamaMaliyet"].DefaultCellStyle.Format = "N2";
+
 
             // Her bir hisse için güncel hisse değerini hesapla ve göster
             foreach (DataGridViewRow row in dataGridViewOrtalamaMaliyet.Rows)
             {
                 string hisseAdi = row.Cells["HisseAdi"].Value.ToString();
-                decimal ortalamaMaliyet = Math.Round(Convert.ToDecimal(row.Cells["OrtalamaMaliyet"].Value));
+                decimal ortalamaMaliyet = Math.Round(Convert.ToDecimal(row.Cells["OrtalamaMaliyet"].Value), 2); // Round to 2 decimal places
                 decimal adet = Convert.ToDecimal(row.Cells["ToplamAdet"].Value);
 
                 decimal guncelHisseDegeri = await GetGuncelHisseDegeriAsync(hisseAdi) / 100; // Değerin 100'e bölünmesi
 
+                decimal maliyettutarı = ortalamaMaliyet * adet;
+                decimal caritutar = guncelHisseDegeri * adet;
                 //this.Alert(hisseAdi + " "+ guncelHisseDegeri.ToString(), Form_Alert.enmType.Info);
                 // Kar veya zarar miktarını ve yüzdesini hesapla
                 decimal karZararMiktari = (guncelHisseDegeri - ortalamaMaliyet) * adet;
                 decimal karZararYuzdesi = ((guncelHisseDegeri / ortalamaMaliyet) * 100) - 100;
 
                 // Kar veya zarar miktarı ve yüzdesini DataGridView'e ekleyin
-                DataGridViewCell miktarCell = row.Cells[0];
-                DataGridViewCell yuzdeCell = row.Cells[1];
-                miktarCell.Value = Math.Round(karZararMiktari, 1);
-                yuzdeCell.Value = Math.Round(karZararYuzdesi, 1);
+                //DataGridViewCell miktarCell = row.Cells[0];
+                
+                row.Cells["KarZararMiktari"].Value = Math.Round(karZararMiktari, 1);
+                row.Cells["KarZararYuzdesi"].Value = Math.Round(karZararYuzdesi, 1);
+                row.Cells["MaliyetTutarı"].Value = Math.Round(maliyettutarı, 1);
+                row.Cells["GuncelHisseDegeri"].Value = Math.Round(guncelHisseDegeri, 2);
+                row.Cells["CariTutar"].Value = Math.Round(caritutar, 1);
+                if (karZararYuzdesi <= 0)
+                {
+                    row.DefaultCellStyle.ForeColor = Color.Red;
+                }
+                else
+                {
+                    // "-" değilse, varsayılan renk kullanılabilir
+                    row.DefaultCellStyle.ForeColor = Color.LimeGreen;
+                }
+
                 ToplamKarZararHesaplaAsync();
             }
+
         }
 
 
-       
+
 
 
         // Toplam portföy değerini hesaplamak için
@@ -502,7 +511,6 @@ namespace BPET_PORTAL.borsauygulamasi
 
 
             ResetAndStartTimer();
-
         }
         private void ResetAndStartTimer()
         {
@@ -576,7 +584,91 @@ namespace BPET_PORTAL.borsauygulamasi
             decimal toplamPortfoyDegeri = ToplamPortfoyDegeriHesapla();
             toplamPortfoyLabel.Text = toplamPortfoyDegeri.ToString("C2");
 
+
+        }
+        private void DataGridViewToExcel(DataGridView dataGridView, string filePath)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            if (xlApp == null)
+            {
+                MessageBox.Show("Excel yüklü değil.");
+                return;
+            }
+
+            xlApp.Visible = false;
+            Workbook xlWorkbook = xlApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+            Worksheet xlWorksheet = (Worksheet)xlWorkbook.Sheets[1];
+
+            // Başlık renk ve kalınlık ayarları
+            Range headerRange = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, 8]];
+            headerRange.Font.Bold = true;
+            headerRange.Interior.Color = XlRgbColor.rgbSkyBlue;
+
+            // Sütun başlıklarını ve verileri belirlediğiniz sırayla ekle
+            xlWorksheet.Cells[1, 1] = "Hisse Adı";
+            xlWorksheet.Cells[1, 2] = "Toplam Adet";
+            xlWorksheet.Cells[1, 3] = "Ortalama Maliyet";
+            xlWorksheet.Cells[1, 4] = "Güncel Fiyat";
+            xlWorksheet.Cells[1, 5] = "Maliyet Tutarı";
+            xlWorksheet.Cells[1, 6] = "Cari Tutarı";
+            xlWorksheet.Cells[1, 7] = "Kar Zarar Miktarı";
+            xlWorksheet.Cells[1, 8] = "Kar Zarar Yüzdesi";
+
+            decimal toplamMaliyetTutari = 0;
+            decimal toplamCariTutar = 0;
+            decimal toplamKarZararMiktari = 0;
+            decimal genelkarzarar = 0;
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                xlWorksheet.Cells[i + 2, 1] = dataGridView.Rows[i].Cells["HisseAdi"].Value;
+                xlWorksheet.Cells[i + 2, 2] = dataGridView.Rows[i].Cells["ToplamAdet"].Value;
+                xlWorksheet.Cells[i + 2, 3] = dataGridView.Rows[i].Cells["OrtalamaMaliyet"].Value;
+                xlWorksheet.Cells[i + 2, 4] = dataGridView.Rows[i].Cells["GuncelHisseDegeri"].Value;
+                xlWorksheet.Cells[i + 2, 5] = dataGridView.Rows[i].Cells["MaliyetTutarı"].Value;
+                xlWorksheet.Cells[i + 2, 6] = dataGridView.Rows[i].Cells["CariTutar"].Value;
+                xlWorksheet.Cells[i + 2, 7] = dataGridView.Rows[i].Cells["KarZararMiktari"].Value;
+                xlWorksheet.Cells[i + 2, 8] = dataGridView.Rows[i].Cells["KarZararYuzdesi"].Value;
+
+                // Toplamları hesapla
+                toplamMaliyetTutari += Convert.ToDecimal(dataGridView.Rows[i].Cells["MaliyetTutarı"].Value);
+                toplamCariTutar += Convert.ToDecimal(dataGridView.Rows[i].Cells["CariTutar"].Value);
+                toplamKarZararMiktari += Convert.ToDecimal(dataGridView.Rows[i].Cells["KarZararMiktari"].Value);
+                
+            }
+
+            // Toplam Satırı ekle
+            xlWorksheet.Cells[dataGridView.Rows.Count + 2, 1] = "Toplam";
+            xlWorksheet.Cells[dataGridView.Rows.Count + 2, 5] = toplamMaliyetTutari;
+            xlWorksheet.Cells[dataGridView.Rows.Count + 2, 6] = toplamCariTutar;
+            xlWorksheet.Cells[dataGridView.Rows.Count + 2, 7] = toplamKarZararMiktari;
+            xlWorksheet.Cells[dataGridView.Rows.Count + 2, 8] = Math.Round(((toplamKarZararMiktari * 100) / toplamMaliyetTutari),2);
+
+            // Toplam satırını renklendir
+            Range totalRange = xlWorksheet.Range[xlWorksheet.Cells[dataGridView.Rows.Count + 2, 1], xlWorksheet.Cells[dataGridView.Rows.Count + 2, 8]];
+            totalRange.Interior.Color = XlRgbColor.rgbLightGray;
+
+            // Toplam satırını kalın yap
+            totalRange.Font.Bold = true;
+
+            // Toplam satırına çerçeve ekle
+            totalRange.Borders.LineStyle = XlLineStyle.xlContinuous;
+
+            // Sütun genişliklerini otomatik ayarla
+            xlWorksheet.Columns.AutoFit();
+
            
+            // Excel dosyasını kaydet
+            xlWorkbook.SaveAs(filePath);
+            xlWorkbook.Close();
+
+            DialogResult openFile = MessageBox.Show("Excel dosyası kaydedildi. Dosyayı şimdi açmak ister misiniz?", "Dosya Aç", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (openFile == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(filePath);
+            }
+
+            xlApp.Quit();
         }
 
         private void excelaktar_Click(object sender, EventArgs e)
@@ -599,66 +691,10 @@ namespace BPET_PORTAL.borsauygulamasi
             sfd.FileName = DateTime.Now.ToString("dd.MM.yyyy") + " Portföy.xlsx"; // Dosya adını tarih ile ayarla
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                // DataGridViewToExcel metodunu kullanarak Excel'e aktar ve kaydet
+                DataGridViewToExcel(dataGridViewOrtalamaMaliyet, sfd.FileName);
 
-                if (xlApp == null)
-                {
-                    MessageBox.Show("Excel yüklü değil.");
-                    return;
-                }
-
-                xlApp.Visible = false;
-                Workbook xlWorkbook = xlApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
-                Worksheet xlWorksheet = (Worksheet)xlWorkbook.Sheets[1];
-
-                // Sütun başlıklarını ekle ve biçimlendir
-                Range headerRange = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, dataGridViewOrtalamaMaliyet.Columns.Count]];
-                headerRange.Font.Bold = true;
-                headerRange.Interior.Color = XlRgbColor.rgbSkyBlue;
-
-                for (int i = 1; i <= dataGridViewOrtalamaMaliyet.Columns.Count; i++)
-                {
-                    xlWorksheet.Cells[1, i] = dataGridViewOrtalamaMaliyet.Columns[i - 1].HeaderText;
-                }
-
-                // Verileri ekle
-                for (int i = 0; i < dataGridViewOrtalamaMaliyet.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dataGridViewOrtalamaMaliyet.Columns.Count; j++)
-                    {
-                        object value = dataGridViewOrtalamaMaliyet.Rows[i].Cells[j].Value;
-                        if (value != null && value is double || value is int || value is decimal) // Sayısal değerleri kontrol et
-                        {
-                            xlWorksheet.Cells[i + 2, j + 1].Value2 = value; // Sayısal olarak atama yap
-                        }
-                        else
-                        {
-                            xlWorksheet.Cells[i + 2, j + 1].Value2 = value?.ToString() ?? ""; // Diğer tüm verileri string olarak atama yap
-                        }
-                    }
-                }
-
-                // Sütun genişliklerini otomatik ayarla
-                xlWorksheet.Columns.AutoFit();
-
-                // Excel oluşturulma tarihini ekle
-                xlWorksheet.Cells[dataGridViewOrtalamaMaliyet.Rows.Count + 3, 1] = "Oluşturulma Tarihi: " + DateTime.Now.ToString();
-
-                // Excel dosyasını kaydet
-                xlWorkbook.SaveAs(sfd.FileName);
-                xlWorkbook.Close();
-
-                // Kullanıcıya dosyayı açıp açmayacağını sor
-                DialogResult openFile = MessageBox.Show("Excel dosyası kaydedildi. Dosyayı şimdi açmak ister misiniz?", "Dosya Aç", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (openFile == DialogResult.Yes)
-                {
-                    System.Diagnostics.Process.Start(sfd.FileName);
-                }
-
-                xlApp.Quit();
             }
         }
-
-
     }
 }

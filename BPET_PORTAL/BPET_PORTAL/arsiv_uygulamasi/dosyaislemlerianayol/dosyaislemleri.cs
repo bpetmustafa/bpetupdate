@@ -299,10 +299,15 @@ namespace BPET_PORTAL.arsiv_uygulamasi
 
                     // Barkod Oluştur seçeneği
                     ToolStripMenuItem createBarcodeMenuItem = new ToolStripMenuItem("Barkod Oluştur");
+                    createBarcodeMenuItem.ShortcutKeys = Keys.Control | Keys.K; // Ctrl + K
+                    createBarcodeMenuItem.ShowShortcutKeys = true; // Bu satır, kısayolu görünür yapar
                     createBarcodeMenuItem.Click += (s, args) =>
                     {
                         barkodolustur();
+                        // Eğer seçili hücre varsa
+                       
                     };
+
 
                     // Düzenle seçeneği
                     ToolStripMenuItem editMenuItem = new ToolStripMenuItem("Düzenle");
@@ -923,6 +928,15 @@ namespace BPET_PORTAL.arsiv_uygulamasi
         private void dosyaislemleri2_KeyDown(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void dataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Ctrl + K tuş kombinasyonunu kontrol et
+            if (e.Control && e.KeyCode == Keys.K)
+            {
+                
+            }
         }
     }
 }

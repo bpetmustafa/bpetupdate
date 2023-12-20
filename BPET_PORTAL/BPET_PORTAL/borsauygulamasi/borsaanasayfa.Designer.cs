@@ -57,6 +57,14 @@
             this.labelTimer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.excelaktar = new System.Windows.Forms.Button();
+            this.HisseAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToplamAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrtalamaMaliyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GuncelHisseDegeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaliyetTutarı = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariTutar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KarZararMiktari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KarZararYuzdesi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserPortfolio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrtalamaMaliyet)).BeginInit();
@@ -75,7 +83,7 @@
             this.dosyaekle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dosyaekle.ForeColor = System.Drawing.Color.Black;
             this.dosyaekle.Location = new System.Drawing.Point(13, 103);
-            this.dosyaekle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dosyaekle.Margin = new System.Windows.Forms.Padding(4);
             this.dosyaekle.MaximumSize = new System.Drawing.Size(199, 37);
             this.dosyaekle.MinimumSize = new System.Drawing.Size(148, 37);
             this.dosyaekle.Name = "dosyaekle";
@@ -101,15 +109,16 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 158);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.MinimumSize = new System.Drawing.Size(483, 388);
+            this.dataGridView1.Enabled = false;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 525);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MinimumSize = new System.Drawing.Size(729, 128);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(483, 388);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(729, 143);
             this.dataGridView1.TabIndex = 60;
             // 
             // textBoxHisseKodu
@@ -117,7 +126,7 @@
             this.textBoxHisseKodu.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxHisseKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.textBoxHisseKodu.Location = new System.Drawing.Point(11, 62);
-            this.textBoxHisseKodu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseKodu.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxHisseKodu.MaximumSize = new System.Drawing.Size(404, 34);
             this.textBoxHisseKodu.MinimumSize = new System.Drawing.Size(180, 34);
             this.textBoxHisseKodu.Name = "textBoxHisseKodu";
@@ -129,7 +138,7 @@
             this.textBoxHisseAdet.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxHisseAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.textBoxHisseAdet.Location = new System.Drawing.Point(197, 62);
-            this.textBoxHisseAdet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseAdet.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxHisseAdet.MaximumSize = new System.Drawing.Size(404, 34);
             this.textBoxHisseAdet.MinimumSize = new System.Drawing.Size(104, 34);
             this.textBoxHisseAdet.Name = "textBoxHisseAdet";
@@ -163,7 +172,7 @@
             this.textBoxHisseMaliyet.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxHisseMaliyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.textBoxHisseMaliyet.Location = new System.Drawing.Point(309, 62);
-            this.textBoxHisseMaliyet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseMaliyet.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxHisseMaliyet.MaximumSize = new System.Drawing.Size(404, 34);
             this.textBoxHisseMaliyet.MinimumSize = new System.Drawing.Size(104, 34);
             this.textBoxHisseMaliyet.Name = "textBoxHisseMaliyet";
@@ -202,7 +211,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(440, 58);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.MaximumSize = new System.Drawing.Size(199, 37);
             this.button1.MinimumSize = new System.Drawing.Size(125, 37);
             this.button1.Name = "button1";
@@ -228,43 +237,54 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewUserPortfolio.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewUserPortfolio.Location = new System.Drawing.Point(997, 158);
-            this.dataGridViewUserPortfolio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridViewUserPortfolio.MinimumSize = new System.Drawing.Size(483, 388);
+            this.dataGridViewUserPortfolio.Location = new System.Drawing.Point(774, 525);
+            this.dataGridViewUserPortfolio.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewUserPortfolio.MinimumSize = new System.Drawing.Size(706, 128);
             this.dataGridViewUserPortfolio.MultiSelect = false;
             this.dataGridViewUserPortfolio.Name = "dataGridViewUserPortfolio";
             this.dataGridViewUserPortfolio.ReadOnly = true;
             this.dataGridViewUserPortfolio.RowHeadersWidth = 51;
             this.dataGridViewUserPortfolio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUserPortfolio.Size = new System.Drawing.Size(483, 388);
+            this.dataGridViewUserPortfolio.Size = new System.Drawing.Size(706, 143);
             this.dataGridViewUserPortfolio.TabIndex = 73;
             // 
             // dataGridViewOrtalamaMaliyet
             // 
             this.dataGridViewOrtalamaMaliyet.AllowUserToAddRows = false;
             this.dataGridViewOrtalamaMaliyet.AllowUserToDeleteRows = false;
-            this.dataGridViewOrtalamaMaliyet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewOrtalamaMaliyet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOrtalamaMaliyet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewOrtalamaMaliyet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewOrtalamaMaliyet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrtalamaMaliyet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.HisseAdi,
+            this.ToplamAdet,
+            this.OrtalamaMaliyet,
+            this.GuncelHisseDegeri,
+            this.MaliyetTutarı,
+            this.CariTutar,
+            this.KarZararMiktari,
+            this.KarZararYuzdesi});
+            this.dataGridViewOrtalamaMaliyet.Cursor = System.Windows.Forms.Cursors.No;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewOrtalamaMaliyet.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewOrtalamaMaliyet.Location = new System.Drawing.Point(507, 158);
-            this.dataGridViewOrtalamaMaliyet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridViewOrtalamaMaliyet.MinimumSize = new System.Drawing.Size(483, 388);
+            this.dataGridViewOrtalamaMaliyet.Enabled = false;
+            this.dataGridViewOrtalamaMaliyet.Location = new System.Drawing.Point(11, 157);
+            this.dataGridViewOrtalamaMaliyet.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewOrtalamaMaliyet.MinimumSize = new System.Drawing.Size(1445, 234);
             this.dataGridViewOrtalamaMaliyet.MultiSelect = false;
             this.dataGridViewOrtalamaMaliyet.Name = "dataGridViewOrtalamaMaliyet";
             this.dataGridViewOrtalamaMaliyet.ReadOnly = true;
             this.dataGridViewOrtalamaMaliyet.RowHeadersWidth = 51;
-            this.dataGridViewOrtalamaMaliyet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewOrtalamaMaliyet.Size = new System.Drawing.Size(483, 388);
+            this.dataGridViewOrtalamaMaliyet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewOrtalamaMaliyet.Size = new System.Drawing.Size(1469, 328);
             this.dataGridViewOrtalamaMaliyet.TabIndex = 75;
             // 
             // label4
@@ -273,7 +293,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(203, 134);
+            this.label4.Location = new System.Drawing.Point(290, 502);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 19);
@@ -300,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(1184, 134);
+            this.label6.Location = new System.Drawing.Point(1102, 502);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 19);
@@ -313,8 +333,8 @@
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
             this.Panel2.Controls.Add(this.toplamKarZararLabel);
             this.Panel2.Controls.Add(this.label7);
-            this.Panel2.Location = new System.Drawing.Point(925, 11);
-            this.Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Panel2.Location = new System.Drawing.Point(949, 11);
+            this.Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.Panel2.MaximumSize = new System.Drawing.Size(245, 97);
             this.Panel2.MinimumSize = new System.Drawing.Size(245, 97);
             this.Panel2.Name = "Panel2";
@@ -351,8 +371,8 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
             this.panel1.Controls.Add(this.toplamPortfoyLabel);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(1221, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(1245, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MaximumSize = new System.Drawing.Size(235, 97);
             this.panel1.MinimumSize = new System.Drawing.Size(235, 97);
             this.panel1.Name = "panel1";
@@ -394,7 +414,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Chartreuse;
             this.button2.Location = new System.Drawing.Point(659, 94);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.MaximumSize = new System.Drawing.Size(199, 37);
             this.button2.MinimumSize = new System.Drawing.Size(169, 37);
             this.button2.Name = "button2";
@@ -442,11 +462,70 @@
             this.excelaktar.UseVisualStyleBackColor = false;
             this.excelaktar.Click += new System.EventHandler(this.excelaktar_Click);
             // 
+            // HisseAdi
+            // 
+            this.HisseAdi.DataPropertyName = "HisseAdi";
+            this.HisseAdi.HeaderText = "HisseAdi";
+            this.HisseAdi.MinimumWidth = 6;
+            this.HisseAdi.Name = "HisseAdi";
+            this.HisseAdi.ReadOnly = true;
+            // 
+            // ToplamAdet
+            // 
+            this.ToplamAdet.DataPropertyName = "ToplamAdet";
+            this.ToplamAdet.HeaderText = "ToplamAdet";
+            this.ToplamAdet.MinimumWidth = 6;
+            this.ToplamAdet.Name = "ToplamAdet";
+            this.ToplamAdet.ReadOnly = true;
+            // 
+            // OrtalamaMaliyet
+            // 
+            this.OrtalamaMaliyet.DataPropertyName = "OrtalamaMaliyet";
+            this.OrtalamaMaliyet.HeaderText = "OrtalamaMaliyet";
+            this.OrtalamaMaliyet.MinimumWidth = 6;
+            this.OrtalamaMaliyet.Name = "OrtalamaMaliyet";
+            this.OrtalamaMaliyet.ReadOnly = true;
+            // 
+            // GuncelHisseDegeri
+            // 
+            this.GuncelHisseDegeri.HeaderText = "GuncelHisseDegeri";
+            this.GuncelHisseDegeri.MinimumWidth = 6;
+            this.GuncelHisseDegeri.Name = "GuncelHisseDegeri";
+            this.GuncelHisseDegeri.ReadOnly = true;
+            // 
+            // MaliyetTutarı
+            // 
+            this.MaliyetTutarı.HeaderText = "MaliyetTutarı";
+            this.MaliyetTutarı.MinimumWidth = 6;
+            this.MaliyetTutarı.Name = "MaliyetTutarı";
+            this.MaliyetTutarı.ReadOnly = true;
+            // 
+            // CariTutar
+            // 
+            this.CariTutar.HeaderText = "Cari Tutar";
+            this.CariTutar.MinimumWidth = 6;
+            this.CariTutar.Name = "CariTutar";
+            this.CariTutar.ReadOnly = true;
+            // 
+            // KarZararMiktari
+            // 
+            this.KarZararMiktari.HeaderText = "KarZararMiktari";
+            this.KarZararMiktari.MinimumWidth = 6;
+            this.KarZararMiktari.Name = "KarZararMiktari";
+            this.KarZararMiktari.ReadOnly = true;
+            // 
+            // KarZararYuzdesi
+            // 
+            this.KarZararYuzdesi.HeaderText = "KarZararYuzdesi";
+            this.KarZararYuzdesi.MinimumWidth = 6;
+            this.KarZararYuzdesi.Name = "KarZararYuzdesi";
+            this.KarZararYuzdesi.ReadOnly = true;
+            // 
             // borsaanasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1492, 558);
+            this.ClientSize = new System.Drawing.Size(1516, 692);
             this.Controls.Add(this.excelaktar);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.button2);
@@ -511,5 +590,13 @@
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button excelaktar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HisseAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToplamAdet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrtalamaMaliyet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GuncelHisseDegeri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaliyetTutarı;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CariTutar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KarZararMiktari;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KarZararYuzdesi;
     }
 }
