@@ -509,7 +509,7 @@
             // 
             // KarZararMiktari
             // 
-            this.KarZararMiktari.HeaderText = "KarZararMiktari";
+            this.KarZararMiktari.HeaderText = "Kar Zarar Tutarı";
             this.KarZararMiktari.MinimumWidth = 6;
             this.KarZararMiktari.Name = "KarZararMiktari";
             this.KarZararMiktari.ReadOnly = true;

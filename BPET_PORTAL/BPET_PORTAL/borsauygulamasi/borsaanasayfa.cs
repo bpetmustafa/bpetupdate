@@ -464,7 +464,7 @@ namespace BPET_PORTAL.borsauygulamasi
                 //DataGridViewCell miktarCell = row.Cells[0];
                 
                 row.Cells["KarZararMiktari"].Value = Math.Round(karZararMiktari, 1);
-                row.Cells["KarZararYuzdesi"].Value = Math.Round(karZararYuzdesi, 1);
+                row.Cells["KarZararYuzdesi"].Value = "% " + Math.Round(karZararYuzdesi, 1);
                 row.Cells["MaliyetTutarı"].Value = Math.Round(maliyettutarı, 1);
                 row.Cells["GuncelHisseDegeri"].Value = Math.Round(guncelHisseDegeri, 2);
                 row.Cells["CariTutar"].Value = Math.Round(caritutar, 1);
