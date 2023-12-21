@@ -18,6 +18,7 @@ namespace BPET_PORTAL
     public partial class loginpage : Form
     {
         private const string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
+
         SqlConnection connection = new SqlConnection(connectionString);
         BackgroundWorker mailWorker = new BackgroundWorker();
 

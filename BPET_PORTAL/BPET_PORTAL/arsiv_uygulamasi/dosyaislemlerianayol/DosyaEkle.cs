@@ -219,6 +219,19 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                     command.ExecuteNonQuery();
                 }
 
+                if (int.TryParse(siraNoTextBox.Text, out int siraNo))
+                {
+                    if (siraNo == 12)
+                    {
+
+                    }
+                    else
+                    {
+                        siraNo++; // Sayıyı bir arttır
+                        siraNoTextBox.Text = siraNo.ToString(); // Arttırılmış değeri TextBox'a yaz
+                    } 
+                }
+
                 this.Alert("DOSYA KAYIT EDİLDİ!", Form_Alert.enmType.Success);
                 
             }
@@ -448,6 +461,105 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             for (int i = 0; i < checkedListBox2.Items.Count; i++)
             {
                 checkedListBox2.SetItemChecked(i, false);
+            }
+        }
+        private void HandleSiraNoKey(bool increase)
+        {
+            if (!string.IsNullOrWhiteSpace(siraNoTextBox.Text) && int.TryParse(siraNoTextBox.Text, out int siraNo))
+            {
+                siraNo += increase ? 1 : -1;
+
+                // Sıra numarasını 1 ile 99 arasında tut
+                siraNo = Math.Max(1, Math.Min(99, siraNo));
+
+                siraNoTextBox.Text = siraNo.ToString();
+            }
+            else
+            {
+                this.Alert("Sıra no boş olamaz!", Form_Alert.enmType.Warning);
+            }
+        }
+
+        private void HandleDolapNoKey(bool increase)
+        {
+            if (!string.IsNullOrWhiteSpace(dolapTextBox.Text) && int.TryParse(dolapTextBox.Text, out int dolapNo))
+            {
+                dolapNo += increase ? 1 : -1;
+
+                // Sıra numarasını 1 ile 99 arasında tut
+                dolapNo = Math.Max(1, Math.Min(99, dolapNo));
+
+                dolapTextBox.Text = dolapNo.ToString();
+            }
+            else
+            {
+                this.Alert("Dolap no boş olamaz!", Form_Alert.enmType.Warning);
+            }
+        }
+
+        private void HandleRafTextBoxKey(bool increase, bool decrease)
+        {
+            if (!string.IsNullOrWhiteSpace(rafTextBox.Text) && char.IsLetter(rafTextBox.Text.ToUpper()[0]))
+            {
+                char harf = rafTextBox.Text.ToUpper()[0];
+
+                if (increase)
+                {
+                    harf = (char)((harf == 'Z') ? 'A' : harf + 1);
+                }
+                else if (decrease)
+                {
+                    harf = (char)((harf == 'A') ? 'Z' : harf - 1);
+                }
+
+                rafTextBox.Text = harf.ToString();
+            }
+            else
+            {
+                this.Alert("Raf ismi boş olamaz!", Form_Alert.enmType.Warning);
+            }
+        }
+
+        private void DosyaEkle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                HandleSiraNoKey(true);
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                HandleSiraNoKey(false);
+            }
+            else if (e.KeyCode == Keys.F7)
+            {
+                HandleDolapNoKey(false);
+            }
+            else if (e.KeyCode == Keys.F8)
+            {
+                HandleDolapNoKey(true);
+            }
+            else if (e.KeyCode == Keys.F1 || e.KeyCode == Keys.F2)
+            {
+                HandleRafTextBoxKey(e.KeyCode == Keys.F2, e.KeyCode == Keys.F1);
+            }
+            else if (e.KeyCode == Keys.F5)
+            {
+                kayit_islemleri_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.F6)
+            {
+                // RafTextBox'ın harfini bir arttır
+                HandleRafTextBoxKey(true, false);
+
+                // SiraNoTextBox'ı 1 yap
+                siraNoTextBox.Text = "1";
+            }
+            else if (e.KeyCode == Keys.F9)
+            {
+                HandleDolapNoKey(true);
+                rafTextBox.Text = "A";
+                // SiraNoTextBox'ı 1 yap
+                siraNoTextBox.Text = "1";
             }
         }
     }

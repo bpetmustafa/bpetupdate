@@ -46,7 +46,7 @@ namespace BPET_PORTAL
             switch (this.action)
             {
                 case enmAction.wait:
-                    timer1.Interval = 5000;
+                    timer1.Interval = 1500;
                     action = enmAction.close;
                     break;
                 case Form_Alert.enmAction.start:

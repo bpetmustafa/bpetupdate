@@ -109,8 +109,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 525);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 540);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MinimumSize = new System.Drawing.Size(729, 128);
             this.dataGridView1.MultiSelect = false;
@@ -118,7 +117,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(729, 143);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 128);
             this.dataGridView1.TabIndex = 60;
             // 
             // textBoxHisseKodu
@@ -237,7 +236,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewUserPortfolio.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewUserPortfolio.Location = new System.Drawing.Point(774, 525);
+            this.dataGridViewUserPortfolio.Location = new System.Drawing.Point(774, 540);
             this.dataGridViewUserPortfolio.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewUserPortfolio.MinimumSize = new System.Drawing.Size(706, 128);
             this.dataGridViewUserPortfolio.MultiSelect = false;
@@ -245,13 +244,15 @@
             this.dataGridViewUserPortfolio.ReadOnly = true;
             this.dataGridViewUserPortfolio.RowHeadersWidth = 51;
             this.dataGridViewUserPortfolio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUserPortfolio.Size = new System.Drawing.Size(706, 143);
+            this.dataGridViewUserPortfolio.Size = new System.Drawing.Size(706, 128);
             this.dataGridViewUserPortfolio.TabIndex = 73;
             // 
             // dataGridViewOrtalamaMaliyet
             // 
             this.dataGridViewOrtalamaMaliyet.AllowUserToAddRows = false;
             this.dataGridViewOrtalamaMaliyet.AllowUserToDeleteRows = false;
+            this.dataGridViewOrtalamaMaliyet.AllowUserToResizeColumns = false;
+            this.dataGridViewOrtalamaMaliyet.AllowUserToResizeRows = false;
             this.dataGridViewOrtalamaMaliyet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOrtalamaMaliyet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -275,7 +276,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewOrtalamaMaliyet.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewOrtalamaMaliyet.Enabled = false;
             this.dataGridViewOrtalamaMaliyet.Location = new System.Drawing.Point(11, 157);
             this.dataGridViewOrtalamaMaliyet.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewOrtalamaMaliyet.MinimumSize = new System.Drawing.Size(1445, 234);
@@ -284,7 +284,7 @@
             this.dataGridViewOrtalamaMaliyet.ReadOnly = true;
             this.dataGridViewOrtalamaMaliyet.RowHeadersWidth = 51;
             this.dataGridViewOrtalamaMaliyet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewOrtalamaMaliyet.Size = new System.Drawing.Size(1469, 328);
+            this.dataGridViewOrtalamaMaliyet.Size = new System.Drawing.Size(1469, 356);
             this.dataGridViewOrtalamaMaliyet.TabIndex = 75;
             // 
             // label4
@@ -293,7 +293,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(290, 502);
+            this.label4.Location = new System.Drawing.Point(290, 517);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 19);
@@ -320,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(1102, 502);
+            this.label6.Location = new System.Drawing.Point(1106, 517);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 19);
@@ -469,6 +469,8 @@
             this.HisseAdi.MinimumWidth = 6;
             this.HisseAdi.Name = "HisseAdi";
             this.HisseAdi.ReadOnly = true;
+            this.HisseAdi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.HisseAdi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ToplamAdet
             // 
@@ -477,6 +479,8 @@
             this.ToplamAdet.MinimumWidth = 6;
             this.ToplamAdet.Name = "ToplamAdet";
             this.ToplamAdet.ReadOnly = true;
+            this.ToplamAdet.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ToplamAdet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // OrtalamaMaliyet
             // 
@@ -485,6 +489,8 @@
             this.OrtalamaMaliyet.MinimumWidth = 6;
             this.OrtalamaMaliyet.Name = "OrtalamaMaliyet";
             this.OrtalamaMaliyet.ReadOnly = true;
+            this.OrtalamaMaliyet.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrtalamaMaliyet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // GuncelHisseDegeri
             // 

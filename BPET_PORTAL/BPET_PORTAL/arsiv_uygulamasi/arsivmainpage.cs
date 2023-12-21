@@ -14,6 +14,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
     public partial class arsivmainpage : Form
     {
         private mainpage mainForm;
+        private bool sifredegistirmeyetkisi;
         private const string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
 
         public arsivmainpage(string eposta, mainpage mainForm)
@@ -23,7 +24,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             this.mainForm = mainForm; // mainForm örneğini burada başlatın
 
         }
-        private void kullaniciyetkileri()
+        protected void kullaniciyetkileri()
         {
             string kullaniciYetkileri = GetKullaniciYetkileri(epostalabel.Text);
 
@@ -46,8 +47,14 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             geciciyetkibtn.Visible = CheckUserPermission("e_arsiv", kullaniciYetkileri);
             geciciyetkiverlabel.Visible = CheckUserPermission("e_arsiv", kullaniciYetkileri);
             geciciyetkibtn.Enabled = CheckUserPermission("e_arsiv", kullaniciYetkileri);
-            
 
+            arsivsifre.Visible = CheckUserPermission("sifre_arsiv", kullaniciYetkileri);
+            sifredegistirmeyetkisi = CheckUserPermission("sifredegis_arsiv", kullaniciYetkileri);
+            if (arsivsifre.Visible == true)
+            {
+                label1.Visible = false;
+                label2.Visible = false;
+            }
         }
         private bool CheckUserPermission(string requiredPermission, string kullaniciYetkileri)
         {
@@ -148,7 +155,40 @@ namespace BPET_PORTAL.arsiv_uygulamasi
         private void arsivmainpage_Load(object sender, EventArgs e)
         {
             kullaniciyetkileri();
-            
+            ArsivSifreGetir();
+        }
+        private void ArsivSifreGetir()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT sifre FROM ArsivSifre WHERE durumu = 1";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            // Eğer şifre bulunduysa label'a yazdır
+                            arsivsifre.Text = "ARŞİV KAPILARININ ŞİFRESİ: ";
+                            arsivsifre.Text += result.ToString();
+                        }
+                        else
+                        {
+                            // Şifre bulunamadıysa gerekli işlemleri yapabilirsiniz
+                            arsivsifre.Text = "Şifre Bulunamadı";
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Alert("Şifre alınamadı: " + ex.Message, Form_Alert.enmType.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -162,5 +202,46 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             mainForm.livechat.Visible = true;
             mainForm.txtMessage.Text = "Merhabalar, arşivlerin şifresini öğrenmek istiyorum.";
         }
+
+
+       
+        private void Kaydet(string yeniSifre)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Veritabanına güncel şifreyi kaydet
+                    string query = "UPDATE ArsivSifre SET sifre = @Sifre WHERE durumu = 1";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Sifre", yeniSifre);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Alert("Şifre kaydedilemedi: " + ex.Message, Form_Alert.enmType.Error);
+            }
+        }
+
+        private void arsivsifre_DoubleClick(object sender, EventArgs e)
+        {
+            if (sifredegistirmeyetkisi == true)
+            {
+                string yeniSifre = Microsoft.VisualBasic.Interaction.InputBox("Yeni Şifre", "Yeni şifrenizi giriniz:", "");
+                // Eğer kullanıcı bir şifre girdiyse
+                if (!string.IsNullOrEmpty(yeniSifre))
+                {
+                    Kaydet(yeniSifre);
+                    ArsivSifreGetir();
+                }
+            }
+        }   
     }
 }

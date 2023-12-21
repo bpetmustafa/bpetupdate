@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUserPermissionsForm));
             this.save = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.epostalabel = new System.Windows.Forms.Label();
             this.a_checkbox = new System.Windows.Forms.CheckBox();
             this.b_checkbox = new System.Windows.Forms.CheckBox();
@@ -40,6 +40,7 @@
             this.g_checkbox = new System.Windows.Forms.CheckBox();
             this.h_checkbox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lo_checkbox = new System.Windows.Forms.CheckBox();
             this.ik_checkbox = new System.Windows.Forms.CheckBox();
             this.m_checkbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +68,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.a_muhasebe_checkbox = new System.Windows.Forms.CheckBox();
-            this.lo_checkbox = new System.Windows.Forms.CheckBox();
+            this.sifre_arsiv_checkbox = new System.Windows.Forms.CheckBox();
+            this.sifredegis_arsiv_checkbox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -79,33 +81,18 @@
             this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.save.Location = new System.Drawing.Point(399, 318);
-            this.save.MaximumSize = new System.Drawing.Size(105, 25);
-            this.save.MinimumSize = new System.Drawing.Size(105, 25);
+            this.save.BackColor = System.Drawing.Color.Black;
+            this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.save.ForeColor = System.Drawing.Color.Lime;
+            this.save.Location = new System.Drawing.Point(530, 529);
+            this.save.MaximumSize = new System.Drawing.Size(123, 40);
+            this.save.MinimumSize = new System.Drawing.Size(123, 40);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(105, 25);
+            this.save.Size = new System.Drawing.Size(123, 40);
             this.save.TabIndex = 1;
             this.save.Text = "Kaydet";
-            this.save.UseVisualStyleBackColor = true;
+            this.save.UseVisualStyleBackColor = false;
             this.save.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(960, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // epostalabel
             // 
@@ -163,7 +150,7 @@
             // e_checkbox
             // 
             this.e_checkbox.AutoSize = true;
-            this.e_checkbox.Location = new System.Drawing.Point(177, 31);
+            this.e_checkbox.Location = new System.Drawing.Point(3, 135);
             this.e_checkbox.Name = "e_checkbox";
             this.e_checkbox.Size = new System.Drawing.Size(108, 20);
             this.e_checkbox.TabIndex = 25;
@@ -173,7 +160,7 @@
             // f_checkbox
             // 
             this.f_checkbox.AutoSize = true;
-            this.f_checkbox.Location = new System.Drawing.Point(176, 57);
+            this.f_checkbox.Location = new System.Drawing.Point(2, 161);
             this.f_checkbox.Name = "f_checkbox";
             this.f_checkbox.Size = new System.Drawing.Size(155, 20);
             this.f_checkbox.TabIndex = 26;
@@ -185,7 +172,7 @@
             this.g_checkbox.AutoSize = true;
             this.g_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.g_checkbox.ForeColor = System.Drawing.Color.Red;
-            this.g_checkbox.Location = new System.Drawing.Point(177, 83);
+            this.g_checkbox.Location = new System.Drawing.Point(3, 187);
             this.g_checkbox.Name = "g_checkbox";
             this.g_checkbox.Size = new System.Drawing.Size(100, 20);
             this.g_checkbox.TabIndex = 27;
@@ -197,7 +184,7 @@
             this.h_checkbox.AutoSize = true;
             this.h_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.h_checkbox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.h_checkbox.Location = new System.Drawing.Point(177, 109);
+            this.h_checkbox.Location = new System.Drawing.Point(3, 213);
             this.h_checkbox.Name = "h_checkbox";
             this.h_checkbox.Size = new System.Drawing.Size(145, 20);
             this.h_checkbox.TabIndex = 28;
@@ -219,17 +206,29 @@
             this.panel1.Controls.Add(this.g_checkbox);
             this.panel1.Controls.Add(this.d_checkbox);
             this.panel1.Controls.Add(this.c_checkbox);
-            this.panel1.Location = new System.Drawing.Point(12, 26);
+            this.panel1.Location = new System.Drawing.Point(14, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 200);
+            this.panel1.Size = new System.Drawing.Size(203, 484);
             this.panel1.TabIndex = 29;
+            // 
+            // lo_checkbox
+            // 
+            this.lo_checkbox.AutoSize = true;
+            this.lo_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lo_checkbox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lo_checkbox.Location = new System.Drawing.Point(3, 292);
+            this.lo_checkbox.Name = "lo_checkbox";
+            this.lo_checkbox.Size = new System.Drawing.Size(92, 20);
+            this.lo_checkbox.TabIndex = 33;
+            this.lo_checkbox.Text = "Lojistik (lo)";
+            this.lo_checkbox.UseVisualStyleBackColor = true;
             // 
             // ik_checkbox
             // 
             this.ik_checkbox.AutoSize = true;
             this.ik_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ik_checkbox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.ik_checkbox.Location = new System.Drawing.Point(3, 159);
+            this.ik_checkbox.Location = new System.Drawing.Point(3, 266);
             this.ik_checkbox.Name = "ik_checkbox";
             this.ik_checkbox.Size = new System.Drawing.Size(148, 20);
             this.ik_checkbox.TabIndex = 32;
@@ -241,7 +240,7 @@
             this.m_checkbox.AutoSize = true;
             this.m_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.m_checkbox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.m_checkbox.Location = new System.Drawing.Point(3, 133);
+            this.m_checkbox.Location = new System.Drawing.Point(3, 240);
             this.m_checkbox.Name = "m_checkbox";
             this.m_checkbox.Size = new System.Drawing.Size(178, 20);
             this.m_checkbox.TabIndex = 31;
@@ -264,6 +263,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.sifredegis_arsiv_checkbox);
+            this.panel2.Controls.Add(this.sifre_arsiv_checkbox);
             this.panel2.Controls.Add(this.s_kategori_checkbox);
             this.panel2.Controls.Add(this.pdfadmin_arsiv_checkbox);
             this.panel2.Controls.Add(this.aa_arsiv_checkbox);
@@ -280,15 +281,15 @@
             this.panel2.Controls.Add(this.a_arsiv_checkbox);
             this.panel2.Controls.Add(this.d_arsiv_checkbox);
             this.panel2.Controls.Add(this.c_arsiv_checkbox);
-            this.panel2.Location = new System.Drawing.Point(352, 26);
+            this.panel2.Location = new System.Drawing.Point(223, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(369, 286);
+            this.panel2.Size = new System.Drawing.Size(386, 484);
             this.panel2.TabIndex = 31;
             // 
             // s_kategori_checkbox
             // 
             this.s_kategori_checkbox.AutoSize = true;
-            this.s_kategori_checkbox.Location = new System.Drawing.Point(145, 170);
+            this.s_kategori_checkbox.Location = new System.Drawing.Point(150, 279);
             this.s_kategori_checkbox.Name = "s_kategori_checkbox";
             this.s_kategori_checkbox.Size = new System.Drawing.Size(145, 20);
             this.s_kategori_checkbox.TabIndex = 40;
@@ -300,17 +301,17 @@
             this.pdfadmin_arsiv_checkbox.AutoSize = true;
             this.pdfadmin_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.pdfadmin_arsiv_checkbox.ForeColor = System.Drawing.Color.Crimson;
-            this.pdfadmin_arsiv_checkbox.Location = new System.Drawing.Point(158, 83);
+            this.pdfadmin_arsiv_checkbox.Location = new System.Drawing.Point(3, 159);
             this.pdfadmin_arsiv_checkbox.Name = "pdfadmin_arsiv_checkbox";
-            this.pdfadmin_arsiv_checkbox.Size = new System.Drawing.Size(190, 20);
+            this.pdfadmin_arsiv_checkbox.Size = new System.Drawing.Size(236, 20);
             this.pdfadmin_arsiv_checkbox.TabIndex = 39;
-            this.pdfadmin_arsiv_checkbox.Text = "PDF ADMİN Button (aa)";
+            this.pdfadmin_arsiv_checkbox.Text = "PDF ADMİN Button (pdfadmin)";
             this.pdfadmin_arsiv_checkbox.UseVisualStyleBackColor = true;
             // 
             // aa_arsiv_checkbox
             // 
             this.aa_arsiv_checkbox.AutoSize = true;
-            this.aa_arsiv_checkbox.Location = new System.Drawing.Point(158, 57);
+            this.aa_arsiv_checkbox.Location = new System.Drawing.Point(194, 17);
             this.aa_arsiv_checkbox.Name = "aa_arsiv_checkbox";
             this.aa_arsiv_checkbox.Size = new System.Drawing.Size(152, 20);
             this.aa_arsiv_checkbox.TabIndex = 38;
@@ -322,10 +323,11 @@
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(0, 248);
-            this.button3.MinimumSize = new System.Drawing.Size(105, 25);
+            this.button3.Location = new System.Drawing.Point(5, 357);
+            this.button3.MaximumSize = new System.Drawing.Size(170, 25);
+            this.button3.MinimumSize = new System.Drawing.Size(170, 25);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 25);
+            this.button3.Size = new System.Drawing.Size(170, 25);
             this.button3.TabIndex = 37;
             this.button3.Text = "Kullanıcıyı Arşiv\'e Ekle";
             this.button3.UseVisualStyleBackColor = true;
@@ -334,7 +336,7 @@
             // i_kategori_checkbox
             // 
             this.i_kategori_checkbox.AutoSize = true;
-            this.i_kategori_checkbox.Location = new System.Drawing.Point(6, 222);
+            this.i_kategori_checkbox.Location = new System.Drawing.Point(11, 331);
             this.i_kategori_checkbox.Name = "i_kategori_checkbox";
             this.i_kategori_checkbox.Size = new System.Drawing.Size(54, 20);
             this.i_kategori_checkbox.TabIndex = 36;
@@ -344,7 +346,7 @@
             // f_kategori_checkbox
             // 
             this.f_kategori_checkbox.AutoSize = true;
-            this.f_kategori_checkbox.Location = new System.Drawing.Point(6, 196);
+            this.f_kategori_checkbox.Location = new System.Drawing.Point(11, 305);
             this.f_kategori_checkbox.Name = "f_kategori_checkbox";
             this.f_kategori_checkbox.Size = new System.Drawing.Size(97, 20);
             this.f_kategori_checkbox.TabIndex = 35;
@@ -354,7 +356,7 @@
             // m_kategori_checkbox
             // 
             this.m_kategori_checkbox.AutoSize = true;
-            this.m_kategori_checkbox.Location = new System.Drawing.Point(8, 170);
+            this.m_kategori_checkbox.Location = new System.Drawing.Point(13, 279);
             this.m_kategori_checkbox.Name = "m_kategori_checkbox";
             this.m_kategori_checkbox.Size = new System.Drawing.Size(127, 20);
             this.m_kategori_checkbox.TabIndex = 34;
@@ -366,10 +368,11 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(178, 248);
-            this.button2.MinimumSize = new System.Drawing.Size(105, 25);
+            this.button2.Location = new System.Drawing.Point(183, 357);
+            this.button2.MaximumSize = new System.Drawing.Size(170, 25);
+            this.button2.MinimumSize = new System.Drawing.Size(170, 25);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 25);
+            this.button2.Size = new System.Drawing.Size(170, 25);
             this.button2.TabIndex = 33;
             this.button2.Text = "Kategori Güncelle";
             this.button2.UseVisualStyleBackColor = true;
@@ -381,7 +384,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(4, 148);
+            this.label5.Location = new System.Drawing.Point(9, 257);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 19);
@@ -391,7 +394,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-2, 132);
+            this.label4.Location = new System.Drawing.Point(3, 241);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(387, 16);
             this.label4.TabIndex = 32;
@@ -403,7 +406,7 @@
             this.e_arsiv_checkbox.AutoSize = true;
             this.e_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.e_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
-            this.e_arsiv_checkbox.Location = new System.Drawing.Point(129, 26);
+            this.e_arsiv_checkbox.Location = new System.Drawing.Point(5, 133);
             this.e_arsiv_checkbox.Name = "e_arsiv_checkbox";
             this.e_arsiv_checkbox.Size = new System.Drawing.Size(237, 20);
             this.e_arsiv_checkbox.TabIndex = 31;
@@ -481,7 +484,7 @@
             this.panel3.Controls.Add(this.b_victor_checkbox);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.a_victor_checkbox);
-            this.panel3.Location = new System.Drawing.Point(743, 26);
+            this.panel3.Location = new System.Drawing.Point(798, 42);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(180, 138);
             this.panel3.TabIndex = 32;
@@ -516,7 +519,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.a_muhasebe_checkbox);
-            this.panel4.Location = new System.Drawing.Point(743, 174);
+            this.panel4.Location = new System.Drawing.Point(612, 42);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(180, 138);
             this.panel4.TabIndex = 33;
@@ -544,33 +547,45 @@
             this.a_muhasebe_checkbox.Text = "Mutabakat Sistemi";
             this.a_muhasebe_checkbox.UseVisualStyleBackColor = true;
             // 
-            // lo_checkbox
+            // sifre_arsiv_checkbox
             // 
-            this.lo_checkbox.AutoSize = true;
-            this.lo_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lo_checkbox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lo_checkbox.Location = new System.Drawing.Point(177, 132);
-            this.lo_checkbox.Name = "lo_checkbox";
-            this.lo_checkbox.Size = new System.Drawing.Size(92, 20);
-            this.lo_checkbox.TabIndex = 33;
-            this.lo_checkbox.Text = "Lojistik (lo)";
-            this.lo_checkbox.UseVisualStyleBackColor = true;
+            this.sifre_arsiv_checkbox.AutoSize = true;
+            this.sifre_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifre_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
+            this.sifre_arsiv_checkbox.Location = new System.Drawing.Point(194, 43);
+            this.sifre_arsiv_checkbox.Name = "sifre_arsiv_checkbox";
+            this.sifre_arsiv_checkbox.Size = new System.Drawing.Size(140, 20);
+            this.sifre_arsiv_checkbox.TabIndex = 41;
+            this.sifre_arsiv_checkbox.Text = "Kapı Şifre (sifre)";
+            this.sifre_arsiv_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // sifredegis_arsiv_checkbox
+            // 
+            this.sifredegis_arsiv_checkbox.AutoSize = true;
+            this.sifredegis_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifredegis_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
+            this.sifredegis_arsiv_checkbox.Location = new System.Drawing.Point(194, 69);
+            this.sifredegis_arsiv_checkbox.Name = "sifredegis_arsiv_checkbox";
+            this.sifredegis_arsiv_checkbox.Size = new System.Drawing.Size(189, 20);
+            this.sifredegis_arsiv_checkbox.TabIndex = 42;
+            this.sifredegis_arsiv_checkbox.Text = "Şifre Değiş (sifredegis)";
+            this.sifredegis_arsiv_checkbox.UseVisualStyleBackColor = true;
             // 
             // EditUserPermissionsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1001, 477);
+            this.ClientSize = new System.Drawing.Size(1005, 583);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.epostalabel);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.save);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditUserPermissionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditUserPermissionsForm";
+            this.Text = "User Edit Permissions Screen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -586,7 +601,6 @@
 
         #endregion
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label epostalabel;
         private System.Windows.Forms.CheckBox a_checkbox;
         private System.Windows.Forms.CheckBox b_checkbox;
@@ -625,5 +639,7 @@
         private System.Windows.Forms.CheckBox s_kategori_checkbox;
         private System.Windows.Forms.CheckBox ik_checkbox;
         private System.Windows.Forms.CheckBox lo_checkbox;
+        private System.Windows.Forms.CheckBox sifre_arsiv_checkbox;
+        private System.Windows.Forms.CheckBox sifredegis_arsiv_checkbox;
     }
 }
