@@ -79,7 +79,7 @@
             this.dosyateslimetlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dosyateslimetlabel.AutoSize = true;
             this.dosyateslimetlabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dosyateslimetlabel.Location = new System.Drawing.Point(596, 505);
+            this.dosyateslimetlabel.Location = new System.Drawing.Point(597, 505);
             this.dosyateslimetlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dosyateslimetlabel.Name = "dosyateslimetlabel";
             this.dosyateslimetlabel.Size = new System.Drawing.Size(221, 32);
@@ -91,7 +91,7 @@
             this.Dosyaislemlerilabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Dosyaislemlerilabel.AutoSize = true;
             this.Dosyaislemlerilabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Dosyaislemlerilabel.Location = new System.Drawing.Point(344, 505);
+            this.Dosyaislemlerilabel.Location = new System.Drawing.Point(345, 505);
             this.Dosyaislemlerilabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Dosyaislemlerilabel.Name = "Dosyaislemlerilabel";
             this.Dosyaislemlerilabel.Size = new System.Drawing.Size(212, 32);
@@ -103,7 +103,7 @@
             this.dosyabullabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dosyabullabel.AutoSize = true;
             this.dosyabullabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dosyabullabel.Location = new System.Drawing.Point(143, 505);
+            this.dosyabullabel.Location = new System.Drawing.Point(144, 505);
             this.dosyabullabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dosyabullabel.Name = "dosyabullabel";
             this.dosyabullabel.Size = new System.Drawing.Size(144, 32);
@@ -115,7 +115,7 @@
             this.kullanıcıeklelabeladmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.kullanıcıeklelabeladmin.AutoSize = true;
             this.kullanıcıeklelabeladmin.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.kullanıcıeklelabeladmin.Location = new System.Drawing.Point(876, 505);
+            this.kullanıcıeklelabeladmin.Location = new System.Drawing.Point(877, 505);
             this.kullanıcıeklelabeladmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kullanıcıeklelabeladmin.Name = "kullanıcıeklelabeladmin";
             this.kullanıcıeklelabeladmin.Size = new System.Drawing.Size(186, 32);
@@ -127,7 +127,7 @@
             this.geciciyetkiverlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.geciciyetkiverlabel.AutoSize = true;
             this.geciciyetkiverlabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.geciciyetkiverlabel.Location = new System.Drawing.Point(1094, 506);
+            this.geciciyetkiverlabel.Location = new System.Drawing.Point(1095, 506);
             this.geciciyetkiverlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.geciciyetkiverlabel.Name = "geciciyetkiverlabel";
             this.geciciyetkiverlabel.Size = new System.Drawing.Size(215, 32);
@@ -143,7 +143,7 @@
             this.geciciyetkibtn.Enabled = false;
             this.geciciyetkibtn.FlatAppearance.BorderSize = 0;
             this.geciciyetkibtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.geciciyetkibtn.Location = new System.Drawing.Point(1146, 432);
+            this.geciciyetkibtn.Location = new System.Drawing.Point(1147, 432);
             this.geciciyetkibtn.Margin = new System.Windows.Forms.Padding(4);
             this.geciciyetkibtn.MaximumSize = new System.Drawing.Size(80, 70);
             this.geciciyetkibtn.MinimumSize = new System.Drawing.Size(80, 70);
@@ -158,7 +158,7 @@
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(218, 76);
+            this.pictureBox3.Location = new System.Drawing.Point(219, 76);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(951, 215);
@@ -174,7 +174,7 @@
             this.adminbtn.Enabled = false;
             this.adminbtn.FlatAppearance.BorderSize = 0;
             this.adminbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminbtn.Location = new System.Drawing.Point(928, 431);
+            this.adminbtn.Location = new System.Drawing.Point(929, 431);
             this.adminbtn.Margin = new System.Windows.Forms.Padding(4);
             this.adminbtn.MaximumSize = new System.Drawing.Size(80, 70);
             this.adminbtn.MinimumSize = new System.Drawing.Size(80, 70);
@@ -193,7 +193,7 @@
             this.teslimet.Enabled = false;
             this.teslimet.FlatAppearance.BorderSize = 0;
             this.teslimet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teslimet.Location = new System.Drawing.Point(654, 431);
+            this.teslimet.Location = new System.Drawing.Point(655, 431);
             this.teslimet.Margin = new System.Windows.Forms.Padding(4);
             this.teslimet.MaximumSize = new System.Drawing.Size(80, 70);
             this.teslimet.MinimumSize = new System.Drawing.Size(80, 70);
@@ -212,7 +212,7 @@
             this.dosya_ekle.Enabled = false;
             this.dosya_ekle.FlatAppearance.BorderSize = 0;
             this.dosya_ekle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_ekle.Location = new System.Drawing.Point(400, 425);
+            this.dosya_ekle.Location = new System.Drawing.Point(401, 425);
             this.dosya_ekle.Margin = new System.Windows.Forms.Padding(4);
             this.dosya_ekle.MaximumSize = new System.Drawing.Size(80, 70);
             this.dosya_ekle.MinimumSize = new System.Drawing.Size(80, 70);
@@ -231,7 +231,7 @@
             this.dosya_bul.Enabled = false;
             this.dosya_bul.FlatAppearance.BorderSize = 0;
             this.dosya_bul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_bul.Location = new System.Drawing.Point(165, 432);
+            this.dosya_bul.Location = new System.Drawing.Point(166, 432);
             this.dosya_bul.Margin = new System.Windows.Forms.Padding(4);
             this.dosya_bul.MaximumSize = new System.Drawing.Size(80, 70);
             this.dosya_bul.MinimumSize = new System.Drawing.Size(80, 70);
@@ -248,7 +248,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(158, 295);
+            this.label1.Location = new System.Drawing.Point(159, 295);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1085, 38);
@@ -263,7 +263,7 @@
             this.label2.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(520, 349);
+            this.label2.Location = new System.Drawing.Point(521, 349);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(439, 26);
@@ -279,12 +279,12 @@
             this.arsivsifre.Font = new System.Drawing.Font("Arial Black", 19.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.arsivsifre.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.arsivsifre.Location = new System.Drawing.Point(380, 571);
+            this.arsivsifre.Location = new System.Drawing.Point(381, 571);
             this.arsivsifre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.arsivsifre.Name = "arsivsifre";
-            this.arsivsifre.Size = new System.Drawing.Size(568, 46);
+            this.arsivsifre.Size = new System.Drawing.Size(552, 46);
             this.arsivsifre.TabIndex = 31;
-            this.arsivsifre.Text = "Arşiv Kapılarının Şifresi: 3454 ";
+            this.arsivsifre.Text = "Arşiv Kapılarının Şifresi: **** ";
             this.arsivsifre.Visible = false;
             this.arsivsifre.DoubleClick += new System.EventHandler(this.arsivsifre_DoubleClick);
             // 
@@ -292,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 717);
+            this.ClientSize = new System.Drawing.Size(1388, 717);
             this.Controls.Add(this.arsivsifre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

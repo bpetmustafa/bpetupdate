@@ -114,6 +114,7 @@ namespace destek_otomasyonu
             if (string.IsNullOrWhiteSpace(talepTuru) || string.IsNullOrWhiteSpace(aciklama))
             {
                 MessageBox.Show("Lütfen tüm alanları doldurun.");
+                sendbutton.BackgroundImage = Resources.talebigonder;
                 return;
             }
 

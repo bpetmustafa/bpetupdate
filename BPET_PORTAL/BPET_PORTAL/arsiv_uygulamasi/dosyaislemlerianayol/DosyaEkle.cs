@@ -221,7 +221,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
 
                 if (int.TryParse(siraNoTextBox.Text, out int siraNo))
                 {
-                    if (siraNo == 12)
+                    if (siraNo == 20)
                     {
 
                     }
@@ -328,9 +328,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
         }
         private void EditFile(string dosyaID)
         {
-            // Düzenleme formunu açmak için burada kod ekleyebilirsiniz
-            // DosyaID'ye göre düzenleme işlemi yapabilirsiniz
-            // Örnek: Düzenleme formunu açabilir veya veriyi düzenleyebilirsiniz
+            
             EditForm editForm = new EditForm(dosyaID, connection);
             editForm.ShowDialog();
         }

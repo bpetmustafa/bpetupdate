@@ -309,7 +309,6 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.butce_sistemi.bayi_s
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.butce_sistemi.butceanaekran.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.insankaynaklari.ikmainform.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikanasayfa.resources
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aracislemleri.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.lojistikgirisfoto.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.muhasebe.muhasebeanasayfa.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.muhasebe.mutabakat.mutabakat.resources
@@ -336,3 +335,7 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.application
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.csproj.CopyComplete
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.exe
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri.yakitgiderleri.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri.YeniAracEkleForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aractakip.YeniAracKullaniciAtamaForm.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aractarihtakip.resources

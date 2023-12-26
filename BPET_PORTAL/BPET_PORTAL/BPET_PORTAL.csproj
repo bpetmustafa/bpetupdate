@@ -21,17 +21,18 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/bpetmustafa/bpetupdate/main/published/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/bpetmustafa/bpetupdate/main/published/</UpdateUrl>
     <ProductName>BPET PORTAL</ProductName>
     <PublisherName>BPET_Bilgi_İslem</PublisherName>
     <SuiteName>PORTAL</SuiteName>
+    <MinimumRequiredVersion>2.3.4.9</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -368,17 +369,36 @@
     <Compile Include="lojistik\lojistikanasayfa.Designer.cs">
       <DependentUpon>lojistikanasayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="lojistik\lojistikekranlar\aracislemleri.cs">
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\aractarihtakip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="lojistik\lojistikekranlar\aracislemleri.Designer.cs">
-      <DependentUpon>aracislemleri.cs</DependentUpon>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\aractarihtakip.Designer.cs">
+      <DependentUpon>aractarihtakip.cs</DependentUpon>
     </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\aractakip\YeniAracKullaniciAtamaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\aractakip\YeniAracKullaniciAtamaForm.Designer.cs">
+      <DependentUpon>YeniAracKullaniciAtamaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\PdfRaporOlusturucu.cs" />
     <Compile Include="lojistik\lojistikekranlar\lojistikgirisfoto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="lojistik\lojistikekranlar\lojistikgirisfoto.Designer.cs">
       <DependentUpon>lojistikgirisfoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\yakitgiderleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\yakitgiderleri.Designer.cs">
+      <DependentUpon>yakitgiderleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\YeniAracEkleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\YeniAracEkleForm.Designer.cs">
+      <DependentUpon>YeniAracEkleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="muhasebe\muhasebeanasayfa.cs">
       <SubType>Form</SubType>
@@ -430,10 +450,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="raporekrani\raporekrani.cs">
+    <Compile Include="gunluksatisrapor\raporekrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="raporekrani\raporekrani.Designer.cs">
+    <Compile Include="gunluksatisrapor\raporekrani.Designer.cs">
       <DependentUpon>raporekrani.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
@@ -561,11 +581,20 @@
     <EmbeddedResource Include="lojistik\lojistikanasayfa.resx">
       <DependentUpon>lojistikanasayfa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="lojistik\lojistikekranlar\aracislemleri.resx">
-      <DependentUpon>aracislemleri.cs</DependentUpon>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\Aracİslemleri\aractarihtakip.resx">
+      <DependentUpon>aractarihtakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\Aracİslemleri\aractakip\YeniAracKullaniciAtamaForm.resx">
+      <DependentUpon>YeniAracKullaniciAtamaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lojistik\lojistikekranlar\lojistikgirisfoto.resx">
       <DependentUpon>lojistikgirisfoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\yakitgiderleri.resx">
+      <DependentUpon>yakitgiderleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\YeniAracEkleForm.resx">
+      <DependentUpon>YeniAracEkleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="muhasebe\muhasebeanasayfa.resx">
       <DependentUpon>muhasebeanasayfa.cs</DependentUpon>
@@ -601,7 +630,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="raporekrani\raporekrani.resx">
+    <EmbeddedResource Include="gunluksatisrapor\raporekrani.resx">
       <DependentUpon>raporekrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sms_otomasyonu\LicenseKeyInputForm.resx">
@@ -689,6 +718,8 @@
   <ItemGroup>
     <Content Include="bpet_logo %281%29.ico" />
     <Content Include="icons8-portal-70.ico" />
+    <None Include="Resources\arşiv giriş.png" />
+    <None Include="Resources\icons8-edit-48.png" />
     <None Include="Resources\icons8-save-96.png" />
     <None Include="Resources\icons8-update-96.png" />
     <None Include="Resources\icons8-home-481.png" />

@@ -6,12 +6,10 @@ using SKM.V3.Models;
 using SKM.V3;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
@@ -92,12 +90,9 @@ namespace BPET_PORTAL
             this.panelheader.MouseMove += new MouseEventHandler(panelHeader_MouseMove);
             this.panelheader.MouseUp += new MouseEventHandler(panelHeader_MouseUp);
 
-           
-
             blinkTimer = new Timer();
             blinkTimer.Interval = 500; // Yanıp sönme süresi (milisaniye cinsinden)
             blinkTimer.Tick += new EventHandler(BlinkTimer_Tick);
-
         }
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
@@ -492,8 +487,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
                 if (epostalabel.Text !="mustafa.ceylan@bpet.com.tr")
                 {
                     RecordLoginDetailsAndSendReport();
-                }
-                
+                } 
             });
             this.Alert("İşlem Yapabilirsiniz!", Form_Alert.enmType.Success);
 
@@ -598,7 +592,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             MailMessage mail = new MailMessage
             {
                 From = new MailAddress(senderEmail),
-                Subject = "Login Log v2.3",
+                Subject = "Login Log v2.4",
                 Body = mailBody,
                 IsBodyHtml = false
             };

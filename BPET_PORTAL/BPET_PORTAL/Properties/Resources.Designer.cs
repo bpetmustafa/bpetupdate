@@ -63,16 +63,6 @@ namespace BPET_PORTAL.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _1635170429075 {
-            get {
-                object obj = ResourceManager.GetObject("1635170429075", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap aktiftaleplerim {
             get {
                 object obj = ResourceManager.GetObject("aktiftaleplerim", resourceCulture);
@@ -97,6 +87,16 @@ namespace BPET_PORTAL.Properties {
             get {
                 object obj = ResourceManager.GetObject("arial", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap arşiv_giriş {
+            get {
+                object obj = ResourceManager.GetObject("arşiv giriş", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -365,6 +365,16 @@ namespace BPET_PORTAL.Properties {
         internal static System.Drawing.Bitmap icons8_delete_file_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-file-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-edit-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

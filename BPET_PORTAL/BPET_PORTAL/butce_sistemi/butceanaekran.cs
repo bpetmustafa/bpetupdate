@@ -26,5 +26,7 @@ namespace BPET_PORTAL.butce_sistemi
         {
             mainForm.loadform(new bayianaekran(epostalabel.Text, mainForm));
         }
+
+       
     }
 }

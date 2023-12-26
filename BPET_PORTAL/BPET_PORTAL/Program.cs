@@ -18,7 +18,7 @@ namespace BPET_PORTAL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginpage());
-           //Application.Run(new borsaanasayfa("yucel.koc@bpet.com.tr"));
+           //Application.Run(new borsaanasayfa("")); //test 
         }
     }
 }

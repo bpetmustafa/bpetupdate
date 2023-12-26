@@ -1,5 +1,7 @@
 ﻿using BPET_PORTAL.arsiv_uygulamasi;
 using BPET_PORTAL.lojistik.lojistikekranlar;
+using BPET_PORTAL.lojistik.lojistikekranlar.aractakip;
+using BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +17,7 @@ namespace BPET_PORTAL.lojistik
     public partial class lojistikanasayfa : Form
     {
         private mainpage mainForm;
-        private const string connectionString = "Server=95.0.50.22,1382;Database=lojistik;User ID=sa;Password=Mustafa1;";
+        public const string connectionString = "Server=95.0.50.22,1382;Database=lojistik;User ID=sa;Password=Mustafa1;";
         private Form activeForm = null; // Yüklenen formu takip etmek için değişken
 
         public lojistikanasayfa(string eposta, mainpage mainForm)
@@ -49,13 +51,28 @@ namespace BPET_PORTAL.lojistik
 
         private void aRAÇBİLGİGİRDÜZENLEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lojistikloadform(new aracislemleri(this));
+            lojistikloadform(new aractarihtakip (this));
 
         }
         public void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
+        }
+
+        private void aRAÇLARIGÖRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lojistikloadform(new yakitgiderleri(this));
+        }
+
+        private void kİŞİVEARAÇLARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lojistikloadform(new YeniAracKullaniciAtamaForm());
+        }
+
+        private void nAKLİYEGELİRLERİToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

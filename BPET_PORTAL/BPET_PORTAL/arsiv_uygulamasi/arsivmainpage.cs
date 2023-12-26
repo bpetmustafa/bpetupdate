@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,6 +57,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                 label1.Visible = false;
                 label2.Visible = false;
             }
+            
         }
         private bool CheckUserPermission(string requiredPermission, string kullaniciYetkileri)
         {
