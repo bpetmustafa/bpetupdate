@@ -28,11 +28,11 @@
     <ProductName>BPET PORTAL</ProductName>
     <PublisherName>BPET_Bilgi_İslem</PublisherName>
     <SuiteName>PORTAL</SuiteName>
-    <MinimumRequiredVersion>2.3.4.15</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.3.4.16</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -340,6 +340,24 @@
     <Compile Include="bayitakip\bayitakipmainpage.Designer.cs">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="bilgi_islem\bilgiislemanasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bilgi_islem\bilgiislemanasayfa.Designer.cs">
+      <DependentUpon>bilgiislemanasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bilgi_islem\talep_giris\TalepDuzenleEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bilgi_islem\talep_giris\TalepDuzenleEkran.Designer.cs">
+      <DependentUpon>TalepDuzenleEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bilgi_islem\talep_giris\TalepGirisAnaEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bilgi_islem\talep_giris\TalepGirisAnaEkran.Designer.cs">
+      <DependentUpon>TalepGirisAnaEkran.cs</DependentUpon>
+    </Compile>
     <Compile Include="borsauygulamasi\borsaanasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -592,6 +610,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bayitakip\bayitakipmainpage.resx">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bilgi_islem\bilgiislemanasayfa.resx">
+      <DependentUpon>bilgiislemanasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bilgi_islem\talep_giris\TalepDuzenleEkran.resx">
+      <DependentUpon>TalepDuzenleEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bilgi_islem\talep_giris\TalepGirisAnaEkran.resx">
+      <DependentUpon>TalepGirisAnaEkran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="borsauygulamasi\borsaanasayfa.resx">
       <DependentUpon>borsaanasayfa.cs</DependentUpon>

@@ -734,6 +734,14 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
                 y += btnlojistik.Height + buttonSpacing;
             }
 
+            btnbilgiislem.Visible = CheckUserPermission("bi", kullaniciYetkileri);
+            btnbilgiislem.Location = new Point(x, y);
+
+            if (btnbilgiislem.Visible)
+            {
+                y += btnbilgiislem.Height + buttonSpacing;
+            }
+
             // Düğmeleri etkinleştirme
             btnrapor.Enabled = btnrapor.Visible;
             btnarsiv.Enabled = btnarsiv.Visible;
@@ -746,6 +754,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             btnmuhasebe.Enabled = btnmuhasebe.Visible;
             btninsankaynaklari.Enabled = btninsankaynaklari.Visible;
             btnlojistik.Enabled = btnlojistik.Visible;
+            btnbilgiislem.Enabled = btnbilgiislem.Visible;
         }
 
         private void yetkikontrol_Tick(object sender, EventArgs e)
@@ -947,6 +956,12 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
         private void mainpage_Shown(object sender, EventArgs e)
         {
             testping();
+        }
+
+        private void btnbilgiislem_Click(object sender, EventArgs e)
+        {
+            loadform(new bilgi_islem.bilgiislemanasayfa(epostalabel.Text, this));
+
         }
     }
 

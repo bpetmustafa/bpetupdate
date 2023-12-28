@@ -23,7 +23,7 @@
                 epostalabel.Text = eposta;
 
                 // CheckBox dizilerini oluşturun ve CheckBox kontrollerini bu dizilere ekleyin
-                yetkiCheckBoxes = new CheckBox[] { a_checkbox, b_checkbox, c_checkbox, d_checkbox, e_checkbox, f_checkbox, g_checkbox, h_checkbox, m_checkbox, ik_checkbox, lo_checkbox };
+                yetkiCheckBoxes = new CheckBox[] { a_checkbox, b_checkbox, c_checkbox, d_checkbox, e_checkbox, f_checkbox, g_checkbox, h_checkbox, m_checkbox, ik_checkbox, lo_checkbox, bi_checkbox };
                 arsivYetkiCheckBoxes = new CheckBox[] { a_arsiv_checkbox, b_arsiv_checkbox, c_arsiv_checkbox, d_arsiv_checkbox, e_arsiv_checkbox, aa_arsiv_checkbox, 
                     pdfadmin_arsiv_checkbox, sifre_arsiv_checkbox, sifredegis_arsiv_checkbox };
                 arsivKategoriCheckBoxes = new CheckBox[] { m_kategori_checkbox, f_kategori_checkbox, i_kategori_checkbox, s_kategori_checkbox }; // Yeni yetki dizisi
