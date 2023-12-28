@@ -19,9 +19,6 @@ using System.Net.Sockets;
 using System.Media;
 using BPET_PORTAL.arsiv_uygulamasi;
 using BPET_PORTAL.borsauygulamasi;
-using LiveCharts.Wpf;
-using Brushes = System.Windows.Media.Brushes;
-using System.Windows;
 using Point = System.Drawing.Point;
 using MessageBox = System.Windows.Forms.MessageBox;
 using Size = System.Drawing.Size;
@@ -63,7 +60,6 @@ namespace BPET_PORTAL
         private Color originalColor;
         private Color blinkColor = Color.Red; // Yanıp sönen rengi belirle
 
-        private DateTime lastUserMessageTime = DateTime.MinValue;
        
         public mainpage(string eposta)
         {
@@ -383,7 +379,6 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
         }
         public void loadform(object form)
         {
-            SetButtonAndFormProperties(activeForm, System.Drawing.SystemColors.ControlDarkDark, FontStyle.Regular, 10);
 
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.RemoveAt(0);
@@ -396,32 +391,8 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             this.mainpanel.Tag = f;
             f.Show();
 
-            SetButtonAndFormProperties(f, Color.Black, FontStyle.Bold, 12);
         }
 
-        private void SetButtonAndFormProperties(Form form, Color backColor, FontStyle fontStyle, int fontSize)
-        {
-            if (form is gunluksatisraporekrani)
-            {
-                btnrapor.BackColor = backColor;
-                btnrapor.Font = new Font(btnrapor.Font.FontFamily, fontSize, fontStyle);
-            }
-            else if (form is arsivmainpage)
-            {
-                btnarsiv.BackColor = backColor;
-                btnarsiv.Font = new Font(btnarsiv.Font.FontFamily, fontSize, fontStyle);
-            }
-            else if (form is victorreklamform)
-            {
-                btnozelrapor.BackColor = backColor;
-                btnozelrapor.Font = new Font(btnozelrapor.Font.FontFamily, fontSize, fontStyle);
-            }
-            else if (form is borsaanasayfa)
-            {
-                btnborsa.BackColor = backColor;
-                btnborsa.Font = new Font(btnborsa.Font.FontFamily, fontSize, fontStyle);
-            }
-        }
         private string ReadLicenseKeyFromDatabase()
         {
             string licenseKey = null;

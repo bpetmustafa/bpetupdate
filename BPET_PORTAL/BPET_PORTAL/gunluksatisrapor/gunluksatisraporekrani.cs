@@ -11,11 +11,6 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using LiveCharts;
-using LiveCharts.Wpf;
-using Axis = LiveCharts.Wpf.Axis;
-using System.Windows.Media;
-using System.Windows;
 using MessageBox = System.Windows.Forms.MessageBox;
 using Color = System.Drawing.Color;
 
@@ -24,12 +19,7 @@ namespace BPET_PORTAL
     public partial class gunluksatisraporekrani : Form
     {
         private const string connectionString = "Server=95.0.50.22,1382;Database=rapor;User ID=sa;Password=Mustafa1;";
-        SqlConnection connection = new SqlConnection(connectionString);
         private bool dosyaDegisti = false; // Dosyanın değişip değişmediğini izlemek için bir bayrak
-        private const string kullaniciAdi = "musatafa.ceylan"; // Replace with your FTP username
-        private const string sifre = "Defne2023"; // Replace with your FTP password
-
-
         public gunluksatisraporekrani()
         {
             InitializeComponent();
@@ -224,13 +214,8 @@ namespace BPET_PORTAL
             }
 
             // Grafiği doldurmadan önce temizle
-            cartesianChartYakitMiktarlari.Series.Clear();
-            cartesianChartYakitMiktarlari.AxisX.Clear();
-            cartesianChartYakitMiktarlari.AxisY.Clear();
-            cartesianChartYakitMiktarlari.LegendLocation = LegendLocation.None;
-            cartesianChartYakitMiktarlari.Zoom = ZoomingOptions.None;
-            cartesianChartYakitMiktarlari.Pan = PanningOptions.None;
-            
+            chart1.Series.Clear();
+
             if (verilerEksik || hataVar)
             {
                 motorindigerlabel.Text = "HATA";
@@ -240,6 +225,8 @@ namespace BPET_PORTAL
                 lpgdokme.Text = "HATA";
                 toplamlabel.Text = "HATA";
                 this.Alert("Veriler eksik veya hatalı. Lütfen geçerli verileri girin.", Form_Alert.enmType.Warning);
+
+
             }
             else
             {
@@ -257,59 +244,52 @@ namespace BPET_PORTAL
 
                 decimal toplamLT = motorinLT + motorinDigerLT + benzinLT;
                 toplamlabel.Text = toplamLT.ToString("N0") + " LT";
-                siyahtoplamlabel.Text = siyahtoplamlabel2.ToString("N0") + " KG";
-
+                siyahtoplamlabel.Text = siyahtoplamlabel2.ToString("N0") + " LT";
                 // Seriyi oluşturun ve verileri bağlayın
-                LiveCharts.SeriesCollection yakitSeriesCollection = new LiveCharts.SeriesCollection
-                {
-                    new LineSeries
-                    {
-                        Title = "Yakıt Miktarları",
-                        Values = new ChartValues<double> {Convert.ToDouble(motorinLT), Convert.ToDouble(motorinDigerLT), Convert.ToDouble(benzinLT), Convert.ToDouble(veriler[3]), Convert.ToDouble(veriler[4])},
-                        FontSize = 16, // Yazı boyutunu ayarla
-                        Foreground = new SolidColorBrush(Colors.White), // Yazı rengini beyaz yap
-                        FontWeight = FontWeights.Bold // Yazı kalınlığını ayarla
-                    }
-                };
+                Series yakitSeries = new Series("Yakıt Miktarları");
+                yakitSeries.Points.DataBindY(new int[] { Convert.ToInt32(veriler[0]), Convert.ToInt32(veriler[1]), Convert.ToInt32(veriler[2]), Convert.ToInt32(veriler[3]), Convert.ToInt32(veriler[4]) });
+                yakitSeries.ChartType = SeriesChartType.Column;
 
                 // Grafiğe seriyi ekleyin
-                cartesianChartYakitMiktarlari.Series = yakitSeriesCollection;
+                chart1.Series.Add(yakitSeries);
 
                 // Grafik stilini özelleştirin
-               // cartesianChartYakitMiktarlari.BackColor = System.Drawing.Color.Transparent;
+                chart1.BackColor = Color.Transparent;
+                chart1.ChartAreas[0].BackColor = Color.White;
+                chart1.Series["Yakıt Miktarları"].Color = Color.DarkOrange;
+                chart1.Series["Yakıt Miktarları"].BorderColor = Color.Black;
+                chart1.Series["Yakıt Miktarları"].BorderWidth = 2;
+                chart1.Series["Yakıt Miktarları"].IsValueShownAsLabel = true;
 
                 // Eksen etiketlerini ayarlayın
-                cartesianChartYakitMiktarlari.AxisX.Add(new Axis
-                {
-                    Title = "Yakıt Türü",
-                    Labels = new[] { "Motorin", "Motorin Diğer", "Benzin", "LPG", "LPG Dökme" },
-                    Separator = new Separator { Step = 1 },
-                    LabelsRotation = 15,
-                    FontSize = 16, // Yazı boyutunu ayarla
-                    Foreground = new SolidColorBrush(Colors.White), // Yazı rengini beyaz yap
-                    FontWeight = FontWeights.Bold // Yazı kalınlığını ayarla
-                });
+                chart1.ChartAreas[0].AxisX.Title = "Yakıt Türü";
+                chart1.ChartAreas[0].AxisY.Title = "Miktar (LT/KG)";
+                chart1.ChartAreas[0].AxisX.TitleFont = new Font("Arial", 12, System.Drawing.FontStyle.Bold);
+                chart1.ChartAreas[0].AxisY.TitleFont = new Font("Arial", 12, System.Drawing.FontStyle.Bold);
+                chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 10);
+                chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Arial", 10);
 
-                cartesianChartYakitMiktarlari.AxisY.Add(new Axis
+                // X ekseni etiketlerini ayarlayın
+                string[] yakitTurleri = { "Motorin", "Motorin Diğer", "Benzin", "LPG", "LPG Dökme" };
+                for (int i = 0; i < yakitTurleri.Length; i++)
                 {
-                    Title = "Miktar (LT/KG)",
-                    LabelFormatter = value => value.ToString("N0"),
-                    FontSize = 16, // Yazı boyutunu ayarla
-                    Foreground = new SolidColorBrush(Colors.White), // Yazı rengini beyaz yap
-                    FontWeight = FontWeights.Bold // Yazı kalınlığını ayarla
-                });
+                    chart1.ChartAreas[0].AxisX.CustomLabels.Add(i + 1.0, i + 2.0, yakitTurleri[i]);
+                }
+
+                // Izgara çizgilerini kaldırın
+                chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
 
                 // Veri etiketlerini N0 formatında ayarlayın
-                foreach (var series in cartesianChartYakitMiktarlari.Series)
+                foreach (var dataPoint in chart1.Series["Yakıt Miktarları"].Points)
                 {
-                   // foreach (var values in series.Values)
-                   // {
-                   //     values.Label = Convert.ToDouble(values.Y).ToString("N0");
-                   // }
+                    dataPoint.Label = dataPoint.YValues[0].ToString("N0");
                 }
             }
         }
-            private void metroDateTime1_ValueChanged(object sender, EventArgs e)
+        private void metroDateTime1_ValueChanged(object sender, EventArgs e)
         {
             if (karsilastir.Checked == true)
             {

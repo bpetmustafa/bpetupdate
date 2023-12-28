@@ -340,15 +340,6 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekr
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aractarihtakip.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri.nakliyegelirleri.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri.RaporEkrani.resources
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.dll
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.WinForms.dll
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.Wpf.dll
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.pdb
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.xml
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.WinForms.pdb
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.WinForms.xml
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.Wpf.pdb
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.Wpf.xml
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.gunluksatisraporekrani.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml

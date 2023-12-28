@@ -30,8 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.cartesianChartYakitMiktarlari = new LiveCharts.WinForms.CartesianChart();
             this.anlikvericek = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.siyahtoplamlabel = new System.Windows.Forms.Label();
@@ -97,6 +99,7 @@
             this.dateTimePicker2 = new MetroFramework.Controls.MetroDateTime();
             this.dateTimePicker1 = new MetroFramework.Controls.MetroDateTime();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Panel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.sonucyüzdegroup.SuspendLayout();
@@ -122,6 +125,7 @@
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -129,7 +133,7 @@
             this.Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel1.Controls.Add(this.cartesianChartYakitMiktarlari);
+            this.Panel1.Controls.Add(this.chart1);
             this.Panel1.Controls.Add(this.anlikvericek);
             this.Panel1.Controls.Add(this.panel14);
             this.Panel1.Controls.Add(this.sonucyüzdegroup);
@@ -147,19 +151,8 @@
             this.Panel1.Location = new System.Drawing.Point(3, 3);
             this.Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(1224, 761);
+            this.Panel1.Size = new System.Drawing.Size(1407, 751);
             this.Panel1.TabIndex = 1;
-            // 
-            // cartesianChartYakitMiktarlari
-            // 
-            this.cartesianChartYakitMiktarlari.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cartesianChartYakitMiktarlari.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cartesianChartYakitMiktarlari.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cartesianChartYakitMiktarlari.Location = new System.Drawing.Point(690, 336);
-            this.cartesianChartYakitMiktarlari.Name = "cartesianChartYakitMiktarlari";
-            this.cartesianChartYakitMiktarlari.Size = new System.Drawing.Size(497, 416);
-            this.cartesianChartYakitMiktarlari.TabIndex = 17;
             // 
             // anlikvericek
             // 
@@ -167,7 +160,7 @@
             this.anlikvericek.BackColor = System.Drawing.Color.DarkOrange;
             this.anlikvericek.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.anlikvericek.ForeColor = System.Drawing.Color.White;
-            this.anlikvericek.Location = new System.Drawing.Point(1044, 10);
+            this.anlikvericek.Location = new System.Drawing.Point(1227, 10);
             this.anlikvericek.Name = "anlikvericek";
             this.anlikvericek.Size = new System.Drawing.Size(173, 39);
             this.anlikvericek.TabIndex = 16;
@@ -207,7 +200,7 @@
             this.label7.Location = new System.Drawing.Point(0, 6);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 15);
+            this.label7.Size = new System.Drawing.Size(164, 21);
             this.label7.TabIndex = 2;
             this.label7.Text = "SİYAH ÜRÜN TOPLAM";
             // 
@@ -226,7 +219,7 @@
             this.sonucyüzdegroup.ForeColor = System.Drawing.Color.Cornsilk;
             this.sonucyüzdegroup.Location = new System.Drawing.Point(9, 251);
             this.sonucyüzdegroup.Name = "sonucyüzdegroup";
-            this.sonucyüzdegroup.Size = new System.Drawing.Size(1174, 79);
+            this.sonucyüzdegroup.Size = new System.Drawing.Size(1357, 79);
             this.sonucyüzdegroup.TabIndex = 13;
             this.sonucyüzdegroup.TabStop = false;
             this.sonucyüzdegroup.Text = "YÜZDESEL FARK";
@@ -283,7 +276,7 @@
             this.lpgdokmefarkpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lpgdokmefarkpanel.BackColor = System.Drawing.Color.Red;
             this.lpgdokmefarkpanel.Controls.Add(this.lpgdokmefark);
-            this.lpgdokmefarkpanel.Location = new System.Drawing.Point(989, 22);
+            this.lpgdokmefarkpanel.Location = new System.Drawing.Point(1172, 22);
             this.lpgdokmefarkpanel.Margin = new System.Windows.Forms.Padding(4);
             this.lpgdokmefarkpanel.MaximumSize = new System.Drawing.Size(185, 97);
             this.lpgdokmefarkpanel.Name = "lpgdokmefarkpanel";
@@ -330,7 +323,7 @@
             this.lpgperakendefarkpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lpgperakendefarkpanel.BackColor = System.Drawing.Color.Red;
             this.lpgperakendefarkpanel.Controls.Add(this.lpgperakendefark);
-            this.lpgperakendefarkpanel.Location = new System.Drawing.Point(796, 22);
+            this.lpgperakendefarkpanel.Location = new System.Drawing.Point(979, 22);
             this.lpgperakendefarkpanel.Margin = new System.Windows.Forms.Padding(4);
             this.lpgperakendefarkpanel.MaximumSize = new System.Drawing.Size(185, 97);
             this.lpgperakendefarkpanel.Name = "lpgperakendefarkpanel";
@@ -395,9 +388,9 @@
             this.metroDateTime1.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.metroDateTime1.MaximumSize = new System.Drawing.Size(200, 30);
             this.metroDateTime1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(107, 29);
+            this.metroDateTime1.Size = new System.Drawing.Size(107, 30);
             this.metroDateTime1.TabIndex = 7;
             this.metroDateTime1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged_1);
             // 
@@ -410,9 +403,9 @@
             this.metroDateTime2.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.metroDateTime2.MaximumSize = new System.Drawing.Size(200, 30);
             this.metroDateTime2.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(98, 29);
+            this.metroDateTime2.Size = new System.Drawing.Size(98, 30);
             this.metroDateTime2.TabIndex = 8;
             this.metroDateTime2.ValueChanged += new System.EventHandler(this.metroDateTime2_ValueChanged);
             // 
@@ -423,7 +416,7 @@
             this.aralikhesapla2.Location = new System.Drawing.Point(119, 25);
             this.aralikhesapla2.MaximumSize = new System.Drawing.Size(178, 30);
             this.aralikhesapla2.Name = "aralikhesapla2";
-            this.aralikhesapla2.Size = new System.Drawing.Size(119, 19);
+            this.aralikhesapla2.Size = new System.Drawing.Size(138, 22);
             this.aralikhesapla2.TabIndex = 9;
             this.aralikhesapla2.Text = "Aralık Hesapla";
             this.aralikhesapla2.UseVisualStyleBackColor = true;
@@ -436,7 +429,7 @@
             this.karsilastir2yuzde.Location = new System.Drawing.Point(396, 25);
             this.karsilastir2yuzde.MaximumSize = new System.Drawing.Size(178, 30);
             this.karsilastir2yuzde.Name = "karsilastir2yuzde";
-            this.karsilastir2yuzde.Size = new System.Drawing.Size(91, 19);
+            this.karsilastir2yuzde.Size = new System.Drawing.Size(106, 22);
             this.karsilastir2yuzde.TabIndex = 13;
             this.karsilastir2yuzde.Text = "Karşılaştır";
             this.karsilastir2yuzde.UseVisualStyleBackColor = true;
@@ -457,7 +450,7 @@
             this.karislastirgroup.ForeColor = System.Drawing.Color.White;
             this.karislastirgroup.Location = new System.Drawing.Point(9, 151);
             this.karislastirgroup.Name = "karislastirgroup";
-            this.karislastirgroup.Size = new System.Drawing.Size(1174, 100);
+            this.karislastirgroup.Size = new System.Drawing.Size(1357, 100);
             this.karislastirgroup.TabIndex = 12;
             this.karislastirgroup.TabStop = false;
             this.karislastirgroup.Text = "KARŞILAŞTIR";
@@ -495,7 +488,7 @@
             this.label6.Location = new System.Drawing.Point(4, 11);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 15);
+            this.label6.Size = new System.Drawing.Size(166, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "BEYAZ ÜRÜN TOPLAM";
             // 
@@ -531,7 +524,7 @@
             this.label18.Location = new System.Drawing.Point(4, 11);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 15);
+            this.label18.Size = new System.Drawing.Size(135, 21);
             this.label18.TabIndex = 1;
             this.label18.Text = "MOTORİN (Diğer)";
             // 
@@ -541,7 +534,7 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(177)))), ((int)(((byte)(159)))));
             this.panel9.Controls.Add(this.lpgdokme2);
             this.panel9.Controls.Add(this.label11);
-            this.panel9.Location = new System.Drawing.Point(989, 22);
+            this.panel9.Location = new System.Drawing.Point(1172, 22);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.MaximumSize = new System.Drawing.Size(185, 97);
             this.panel9.Name = "panel9";
@@ -568,7 +561,7 @@
             this.label11.Location = new System.Drawing.Point(4, 11);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 15);
+            this.label11.Size = new System.Drawing.Size(96, 21);
             this.label11.TabIndex = 2;
             this.label11.Text = "LPG DÖKME";
             // 
@@ -604,7 +597,7 @@
             this.label20.Location = new System.Drawing.Point(3, 11);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 15);
+            this.label20.Size = new System.Drawing.Size(83, 21);
             this.label20.TabIndex = 0;
             this.label20.Text = "MOTORİN";
             // 
@@ -614,7 +607,7 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(177)))), ((int)(((byte)(159)))));
             this.panel10.Controls.Add(this.lpgperakende2);
             this.panel10.Controls.Add(this.label14);
-            this.panel10.Location = new System.Drawing.Point(796, 22);
+            this.panel10.Location = new System.Drawing.Point(979, 22);
             this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.MaximumSize = new System.Drawing.Size(185, 97);
             this.panel10.Name = "panel10";
@@ -676,7 +669,7 @@
             this.label16.Location = new System.Drawing.Point(4, 11);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(47, 15);
+            this.label16.Size = new System.Drawing.Size(63, 21);
             this.label16.TabIndex = 2;
             this.label16.Text = "BENZİN";
             // 
@@ -686,7 +679,7 @@
             this.anlıkvericekprogressspin.BackColor = System.Drawing.SystemColors.Control;
             this.anlıkvericekprogressspin.Cursor = System.Windows.Forms.Cursors.Default;
             this.anlıkvericekprogressspin.CustomBackground = true;
-            this.anlıkvericekprogressspin.Location = new System.Drawing.Point(998, 10);
+            this.anlıkvericekprogressspin.Location = new System.Drawing.Point(1181, 10);
             this.anlıkvericekprogressspin.Maximum = 100;
             this.anlıkvericekprogressspin.Name = "anlıkvericekprogressspin";
             this.anlıkvericekprogressspin.Size = new System.Drawing.Size(39, 38);
@@ -729,7 +722,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(475, 416);
+            this.dataGridView1.Size = new System.Drawing.Size(537, 406);
             this.dataGridView1.TabIndex = 10;
             // 
             // panel7
@@ -764,7 +757,7 @@
             this.label5.Location = new System.Drawing.Point(1, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 15);
+            this.label5.Size = new System.Drawing.Size(166, 21);
             this.label5.TabIndex = 2;
             this.label5.Text = "BEYAZ ÜRÜN TOPLAM";
             // 
@@ -774,7 +767,7 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(177)))), ((int)(((byte)(159)))));
             this.panel6.Controls.Add(this.lpgdokme);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(998, 76);
+            this.panel6.Location = new System.Drawing.Point(1181, 76);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.MaximumSize = new System.Drawing.Size(185, 97);
             this.panel6.Name = "panel6";
@@ -801,7 +794,7 @@
             this.label12.Location = new System.Drawing.Point(4, 11);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 15);
+            this.label12.Size = new System.Drawing.Size(96, 21);
             this.label12.TabIndex = 2;
             this.label12.Text = "LPG DÖKME";
             // 
@@ -811,7 +804,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(177)))), ((int)(((byte)(159)))));
             this.panel5.Controls.Add(this.lpgperakende);
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(805, 76);
+            this.panel5.Location = new System.Drawing.Point(988, 76);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.MaximumSize = new System.Drawing.Size(185, 97);
             this.panel5.Name = "panel5";
@@ -873,7 +866,7 @@
             this.Label3.Location = new System.Drawing.Point(2, 11);
             this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(47, 15);
+            this.Label3.Size = new System.Drawing.Size(63, 21);
             this.Label3.TabIndex = 2;
             this.Label3.Text = "BENZİN";
             // 
@@ -909,7 +902,7 @@
             this.Label2.Location = new System.Drawing.Point(4, 11);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(101, 15);
+            this.Label2.Size = new System.Drawing.Size(135, 21);
             this.Label2.TabIndex = 1;
             this.Label2.Text = "MOTORİN (Diğer)";
             // 
@@ -945,7 +938,7 @@
             this.Label1.Location = new System.Drawing.Point(3, 11);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(61, 15);
+            this.Label1.Size = new System.Drawing.Size(83, 21);
             this.Label1.TabIndex = 0;
             this.Label1.Text = "MOTORİN";
             // 
@@ -956,7 +949,7 @@
             this.karsilastir.Location = new System.Drawing.Point(119, 25);
             this.karsilastir.MaximumSize = new System.Drawing.Size(178, 30);
             this.karsilastir.Name = "karsilastir";
-            this.karsilastir.Size = new System.Drawing.Size(119, 19);
+            this.karsilastir.Size = new System.Drawing.Size(138, 22);
             this.karsilastir.TabIndex = 9;
             this.karsilastir.Text = "Aralık Hesapla";
             this.karsilastir.UseVisualStyleBackColor = true;
@@ -971,9 +964,9 @@
             this.dateTimePicker2.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.MaximumSize = new System.Drawing.Size(200, 30);
             this.dateTimePicker2.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(97, 29);
+            this.dateTimePicker2.Size = new System.Drawing.Size(97, 30);
             this.dateTimePicker2.TabIndex = 8;
             // 
             // dateTimePicker1
@@ -985,9 +978,9 @@
             this.dateTimePicker1.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MaximumSize = new System.Drawing.Size(200, 30);
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(107, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(107, 30);
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged);
             // 
@@ -1004,17 +997,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Veri Çek";
             // 
+            // chart1
+            // 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart1.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.None;
+            this.chart1.BorderlineWidth = 0;
+            this.chart1.BorderSkin.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chart1.IsSoftShadows = false;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(608, 332);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(758, 416);
+            this.chart1.TabIndex = 17;
+            this.chart1.Text = "Yakıt Grafik";
+            // 
             // gunluksatisraporekrani
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1240, 767);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1423, 767);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1240, 767);
             this.Name = "gunluksatisraporekrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "raporekrani";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.raporekrani_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
@@ -1055,6 +1074,7 @@
             this.Panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1127,6 +1147,6 @@
         internal System.Windows.Forms.Label siyahtoplamlabel;
         internal System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button anlikvericek;
-        private LiveCharts.WinForms.CartesianChart cartesianChartYakitMiktarlari;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

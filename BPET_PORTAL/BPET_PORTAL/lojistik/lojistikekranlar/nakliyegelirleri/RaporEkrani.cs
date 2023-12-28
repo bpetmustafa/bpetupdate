@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using LiveCharts;
-using LiveCharts.WinForms;
+using System.Windows.Forms.DataVisualization.Charting; // Chart kontrolü için gerekli using direktifi
 
 namespace BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri
 {
@@ -19,13 +18,19 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri
             dataGridViewDriverReport.DataSource = data;
 
             // Chart'a verileri ekle
-            cartesianChartDriverReport.Series.Clear();
-            cartesianChartDriverReport.Series.Add(new LiveCharts.Wpf.ColumnSeries
+            chartDriverReport.Series.Clear();
+
+            Series series = new Series("Toplam Fatura Toplamı");
+
+            foreach (DataRow row in data.Rows)
             {
-                Title = "Toplam Fatura Toplamı",
-                Values = new ChartValues<double>(data.AsEnumerable().Select(row => Convert.ToDouble(row["ToplamFaturaToplam"]))),
-                DataLabels = true
-            });
+                string xValue = row["BelirliBirSutun"].ToString(); // x ekseni değeri, gerekli bir sütun adını belirtin
+                double yValue = Convert.ToDouble(row["ToplamFaturaToplam"]); // y ekseni değeri, ToplamFaturaToplam sütununu kullanabilirsiniz
+
+                series.Points.AddXY(xValue, yValue);
+            }
+
+            chartDriverReport.Series.Add(series);
         }
 
         public void SetCariKoduReportData(DataTable data)
@@ -34,13 +39,19 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri
             dataGridViewCariKoduReport.DataSource = data;
 
             // Chart'a verileri ekle
-            cartesianChartCariKoduReport.Series.Clear();
-            cartesianChartCariKoduReport.Series.Add(new LiveCharts.Wpf.ColumnSeries
+            chartCariKoduReport.Series.Clear();
+
+            Series series = new Series("Toplam Fatura Toplamı");
+
+            foreach (DataRow row in data.Rows)
             {
-                Title = "Toplam Fatura Toplamı",
-                Values = new ChartValues<double>(data.AsEnumerable().Select(row => Convert.ToDouble(row["ToplamFaturaToplam"]))),
-                DataLabels = true,
-            });
+                string xValue = row["BelirliBirSutun"].ToString(); // x ekseni değeri, gerekli bir sütun adını belirtin
+                double yValue = Convert.ToDouble(row["ToplamFaturaToplam"]); // y ekseni değeri, ToplamFaturaToplam sütununu kullanabilirsiniz
+
+                series.Points.AddXY(xValue, yValue);
+            }
+
+            chartCariKoduReport.Series.Add(series);
         }
     }
 }

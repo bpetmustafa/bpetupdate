@@ -30,12 +30,20 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewDriverReport = new System.Windows.Forms.DataGridView();
             this.dataGridViewCariKoduReport = new System.Windows.Forms.DataGridView();
-            this.cartesianChartDriverReport = new LiveCharts.WinForms.CartesianChart();
-            this.cartesianChartCariKoduReport = new LiveCharts.WinForms.CartesianChart();
+            this.chartDriverReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCariKoduReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDriverReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCariKoduReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDriverReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCariKoduReport)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewDriverReport
@@ -53,15 +61,16 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewDriverReport.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewDriverReport.Location = new System.Drawing.Point(12, 12);
-            this.dataGridViewDriverReport.MaximumSize = new System.Drawing.Size(679, 133);
+            this.dataGridViewDriverReport.Location = new System.Drawing.Point(16, 15);
+            this.dataGridViewDriverReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewDriverReport.MaximumSize = new System.Drawing.Size(905, 164);
             this.dataGridViewDriverReport.MultiSelect = false;
             this.dataGridViewDriverReport.Name = "dataGridViewDriverReport";
             this.dataGridViewDriverReport.ReadOnly = true;
             this.dataGridViewDriverReport.RowHeadersVisible = false;
             this.dataGridViewDriverReport.RowHeadersWidth = 51;
             this.dataGridViewDriverReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDriverReport.Size = new System.Drawing.Size(645, 129);
+            this.dataGridViewDriverReport.Size = new System.Drawing.Size(860, 159);
             this.dataGridViewDriverReport.TabIndex = 125;
             // 
             // dataGridViewCariKoduReport
@@ -79,47 +88,67 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCariKoduReport.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCariKoduReport.Location = new System.Drawing.Point(676, 12);
-            this.dataGridViewCariKoduReport.MaximumSize = new System.Drawing.Size(744, 133);
+            this.dataGridViewCariKoduReport.Location = new System.Drawing.Point(901, 15);
+            this.dataGridViewCariKoduReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewCariKoduReport.MaximumSize = new System.Drawing.Size(992, 164);
             this.dataGridViewCariKoduReport.MultiSelect = false;
             this.dataGridViewCariKoduReport.Name = "dataGridViewCariKoduReport";
             this.dataGridViewCariKoduReport.ReadOnly = true;
             this.dataGridViewCariKoduReport.RowHeadersVisible = false;
             this.dataGridViewCariKoduReport.RowHeadersWidth = 51;
             this.dataGridViewCariKoduReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCariKoduReport.Size = new System.Drawing.Size(744, 129);
+            this.dataGridViewCariKoduReport.Size = new System.Drawing.Size(992, 159);
             this.dataGridViewCariKoduReport.TabIndex = 126;
             // 
-            // cartesianChartDriverReport
+            // chartDriverReport
             // 
-            this.cartesianChartDriverReport.Location = new System.Drawing.Point(12, 147);
-            this.cartesianChartDriverReport.Name = "cartesianChartDriverReport";
-            this.cartesianChartDriverReport.Size = new System.Drawing.Size(645, 490);
-            this.cartesianChartDriverReport.TabIndex = 129;
-            this.cartesianChartDriverReport.Text = "cartesianChartDriverReport";
+            chartArea1.Name = "ChartArea1";
+            this.chartDriverReport.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDriverReport.Legends.Add(legend1);
+            this.chartDriverReport.Location = new System.Drawing.Point(16, 210);
+            this.chartDriverReport.Name = "chartDriverReport";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartDriverReport.Series.Add(series1);
+            this.chartDriverReport.Size = new System.Drawing.Size(860, 569);
+            this.chartDriverReport.TabIndex = 127;
+            this.chartDriverReport.Text = "chart1";
             // 
-            // cartesianChartCariKoduReport
+            // chartCariKoduReport
             // 
-            this.cartesianChartCariKoduReport.Location = new System.Drawing.Point(676, 147);
-            this.cartesianChartCariKoduReport.Name = "cartesianChartCariKoduReport";
-            this.cartesianChartCariKoduReport.Size = new System.Drawing.Size(744, 490);
-            this.cartesianChartCariKoduReport.TabIndex = 130;
-            this.cartesianChartCariKoduReport.Text = "cartesianChart1";
+            chartArea2.Name = "ChartArea1";
+            this.chartCariKoduReport.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartCariKoduReport.Legends.Add(legend2);
+            this.chartCariKoduReport.Location = new System.Drawing.Point(901, 210);
+            this.chartCariKoduReport.Name = "chartCariKoduReport";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartCariKoduReport.Series.Add(series2);
+            this.chartCariKoduReport.Size = new System.Drawing.Size(992, 569);
+            this.chartCariKoduReport.TabIndex = 128;
+            this.chartCariKoduReport.Text = "chart2";
             // 
             // RaporEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 653);
-            this.Controls.Add(this.cartesianChartCariKoduReport);
-            this.Controls.Add(this.cartesianChartDriverReport);
+            this.ClientSize = new System.Drawing.Size(1925, 804);
+            this.Controls.Add(this.chartCariKoduReport);
+            this.Controls.Add(this.chartDriverReport);
             this.Controls.Add(this.dataGridViewCariKoduReport);
             this.Controls.Add(this.dataGridViewDriverReport);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RaporEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaporEkrani";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDriverReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCariKoduReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDriverReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCariKoduReport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,7 +157,7 @@
 
         private System.Windows.Forms.DataGridView dataGridViewDriverReport;
         private System.Windows.Forms.DataGridView dataGridViewCariKoduReport;
-        private LiveCharts.WinForms.CartesianChart cartesianChartDriverReport;
-        private LiveCharts.WinForms.CartesianChart cartesianChartCariKoduReport;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartDriverReport;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCariKoduReport;
     }
 }

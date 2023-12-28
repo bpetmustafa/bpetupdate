@@ -37,7 +37,6 @@
             this.txtMessage = new MetroFramework.Controls.MetroTextBox();
             this.txtChatLog = new System.Windows.Forms.RichTextBox();
             this.panelside = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnlojistik = new System.Windows.Forms.Button();
             this.btninsankaynaklari = new System.Windows.Forms.Button();
             this.btnmuhasebe = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@
             this.btnrapor = new System.Windows.Forms.Button();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.bpetlogo = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
             this.boyutlandırma = new System.Windows.Forms.Button();
             this.Togglemenubutton = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             this.mainpanel.Location = new System.Drawing.Point(206, 37);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1019, 643);
+            this.mainpanel.Size = new System.Drawing.Size(1091, 708);
             this.mainpanel.TabIndex = 5;
             // 
             // livechat
@@ -85,7 +85,7 @@
             this.livechat.Controls.Add(this.gondertusu);
             this.livechat.Controls.Add(this.txtMessage);
             this.livechat.Controls.Add(this.txtChatLog);
-            this.livechat.Location = new System.Drawing.Point(780, 221);
+            this.livechat.Location = new System.Drawing.Point(852, 286);
             this.livechat.Name = "livechat";
             this.livechat.Size = new System.Drawing.Size(454, 421);
             this.livechat.TabIndex = 0;
@@ -121,7 +121,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 17);
+            this.label1.Size = new System.Drawing.Size(379, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "BPET PORTAL CANLI DESTEĞE HOŞGELDİNİZ!";
             // 
@@ -214,24 +214,8 @@
             this.panelside.Location = new System.Drawing.Point(0, 33);
             this.panelside.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(200, 658);
+            this.panelside.Size = new System.Drawing.Size(200, 723);
             this.panelside.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(895, 8);
-            this.label2.MaximumSize = new System.Drawing.Size(215, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 18);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Sunucu Yanıt Süresi 51 (ms)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnlojistik
             // 
@@ -312,7 +296,7 @@
             this.btnexit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnexit.Image = ((System.Drawing.Image)(resources.GetObject("btnexit.Image")));
             this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexit.Location = new System.Drawing.Point(-1, 630);
+            this.btnexit.Location = new System.Drawing.Point(-1, 695);
             this.btnexit.Name = "btnexit";
             this.btnexit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnexit.Size = new System.Drawing.Size(203, 28);
@@ -501,7 +485,7 @@
             this.btnrapor.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnrapor.Size = new System.Drawing.Size(189, 32);
             this.btnrapor.TabIndex = 19;
-            this.btnrapor.Text = " Rapor Uygulaması";
+            this.btnrapor.Text = " Satış Raporu";
             this.btnrapor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnrapor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnrapor.UseVisualStyleBackColor = false;
@@ -513,9 +497,9 @@
             this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel.AutoSize = true;
             this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabel.Location = new System.Drawing.Point(15, 631);
+            this.linkLabel.Location = new System.Drawing.Point(15, 696);
             this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(125, 13);
+            this.linkLabel.Size = new System.Drawing.Size(140, 15);
             this.linkLabel.TabIndex = 13;
             this.linkLabel.TabStop = true;
             this.linkLabel.Text = "Made By @BpetIT v1.8.1";
@@ -536,6 +520,21 @@
             this.bpetlogo.TabStop = false;
             this.bpetlogo.Click += new System.EventHandler(this.bpetlogo_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.Lime;
+            this.label2.Location = new System.Drawing.Point(916, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(252, 22);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Sunucu Yanıt Süresi 51 (ms)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // panelheader
             // 
             this.panelheader.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -549,7 +548,7 @@
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1237, 33);
+            this.panelheader.Size = new System.Drawing.Size(1309, 33);
             this.panelheader.TabIndex = 4;
             this.panelheader.DoubleClick += new System.EventHandler(this.panelheader_DoubleClick);
             // 
@@ -564,7 +563,7 @@
             this.boyutlandırma.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.boyutlandırma.ForeColor = System.Drawing.Color.White;
             this.boyutlandırma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boyutlandırma.Location = new System.Drawing.Point(1148, 3);
+            this.boyutlandırma.Location = new System.Drawing.Point(1220, 3);
             this.boyutlandırma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boyutlandırma.Name = "boyutlandırma";
             this.boyutlandırma.Size = new System.Drawing.Size(40, 30);
@@ -594,7 +593,7 @@
             this.epostalabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.epostalabel.Location = new System.Drawing.Point(565, 8);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(119, 15);
+            this.epostalabel.Size = new System.Drawing.Size(144, 18);
             this.epostalabel.TabIndex = 6;
             this.epostalabel.Text = "E POSTA ADRESİNİZ!";
             this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -610,7 +609,7 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1102, 3);
+            this.button5.Location = new System.Drawing.Point(1174, 3);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(40, 30);
@@ -630,7 +629,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1194, 3);
+            this.button1.Location = new System.Drawing.Point(1266, 3);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 30);
@@ -646,7 +645,7 @@
             this.livechatbtn.Cursor = System.Windows.Forms.Cursors.Default;
             this.livechatbtn.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.livechatbtn.ForeColor = System.Drawing.Color.Navy;
-            this.livechatbtn.Location = new System.Drawing.Point(1044, 648);
+            this.livechatbtn.Location = new System.Drawing.Point(1116, 713);
             this.livechatbtn.Name = "livechatbtn";
             this.livechatbtn.Size = new System.Drawing.Size(193, 43);
             this.livechatbtn.TabIndex = 1;
@@ -656,9 +655,10 @@
             // 
             // mainpage
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1237, 691);
+            this.ClientSize = new System.Drawing.Size(1309, 756);
             this.ControlBox = false;
             this.Controls.Add(this.livechat);
             this.Controls.Add(this.livechatbtn);
