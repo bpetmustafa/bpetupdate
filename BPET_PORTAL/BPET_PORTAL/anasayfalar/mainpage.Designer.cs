@@ -528,7 +528,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(916, 4);
+            this.label2.Location = new System.Drawing.Point(916, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(252, 22);
             this.label2.TabIndex = 33;

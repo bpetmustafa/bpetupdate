@@ -31,21 +31,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.epostalabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.aramabtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtArama = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.datagridViewMutabakat = new System.Windows.Forms.DataGridView();
-            this.dosya_bul = new System.Windows.Forms.Button();
             this.yeniekle = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.excelaktar = new System.Windows.Forms.Button();
             this.checkBoxPdfOlusturuldu = new System.Windows.Forms.CheckBox();
-            this.txtArama = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.aramabtn = new System.Windows.Forms.Button();
+            this.datagridViewMutabakat = new System.Windows.Forms.DataGridView();
+            this.dosya_bul = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridViewMutabakat)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1321, 121);
             this.panel1.TabIndex = 39;
+            // 
+            // aramabtn
+            // 
+            this.aramabtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aramabtn.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_search_96;
+            this.aramabtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.aramabtn.Location = new System.Drawing.Point(790, 7);
+            this.aramabtn.MaximumSize = new System.Drawing.Size(48, 48);
+            this.aramabtn.MinimumSize = new System.Drawing.Size(48, 48);
+            this.aramabtn.Name = "aramabtn";
+            this.aramabtn.Size = new System.Drawing.Size(48, 48);
+            this.aramabtn.TabIndex = 77;
+            this.aramabtn.UseVisualStyleBackColor = true;
+            this.aramabtn.Click += new System.EventHandler(this.aramabtn_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(612, 5);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 19);
+            this.label6.TabIndex = 76;
+            this.label6.Text = "ARAMA YAP";
+            // 
+            // txtArama
+            // 
+            this.txtArama.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtArama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtArama.Location = new System.Drawing.Point(551, 27);
+            this.txtArama.MaximumSize = new System.Drawing.Size(233, 28);
+            this.txtArama.MinimumSize = new System.Drawing.Size(233, 28);
+            this.txtArama.Name = "txtArama";
+            this.txtArama.Size = new System.Drawing.Size(233, 28);
+            this.txtArama.TabIndex = 75;
             // 
             // label4
             // 
@@ -144,66 +184,6 @@
             this.label5.TabIndex = 70;
             this.label5.Text = "PDF OLUŞTUR";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(551, 81);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.MaximumSize = new System.Drawing.Size(287, 27);
-            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(287, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(287, 27);
-            this.dateTimePicker1.TabIndex = 61;
-            // 
-            // datagridViewMutabakat
-            // 
-            this.datagridViewMutabakat.AllowUserToAddRows = false;
-            this.datagridViewMutabakat.AllowUserToDeleteRows = false;
-            this.datagridViewMutabakat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.datagridViewMutabakat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datagridViewMutabakat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.datagridViewMutabakat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridViewMutabakat.DefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridViewMutabakat.Location = new System.Drawing.Point(12, 330);
-            this.datagridViewMutabakat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.datagridViewMutabakat.MultiSelect = false;
-            this.datagridViewMutabakat.Name = "datagridViewMutabakat";
-            this.datagridViewMutabakat.ReadOnly = true;
-            this.datagridViewMutabakat.RowHeadersWidth = 51;
-            this.datagridViewMutabakat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridViewMutabakat.Size = new System.Drawing.Size(1324, 236);
-            this.datagridViewMutabakat.TabIndex = 60;
-            this.datagridViewMutabakat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.datagridViewMutabakat_MouseClick);
-            // 
-            // dosya_bul
-            // 
-            this.dosya_bul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dosya_bul.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_return_48;
-            this.dosya_bul.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.dosya_bul.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dosya_bul.FlatAppearance.BorderSize = 0;
-            this.dosya_bul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_bul.Location = new System.Drawing.Point(1308, 2);
-            this.dosya_bul.Margin = new System.Windows.Forms.Padding(4);
-            this.dosya_bul.MaximumSize = new System.Drawing.Size(51, 50);
-            this.dosya_bul.Name = "dosya_bul";
-            this.dosya_bul.Size = new System.Drawing.Size(45, 42);
-            this.dosya_bul.TabIndex = 33;
-            this.dosya_bul.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.dosya_bul.UseVisualStyleBackColor = true;
-            this.dosya_bul.Click += new System.EventHandler(this.dosya_bul_Click);
-            // 
             // yeniekle
             // 
             this.yeniekle.AutoSize = true;
@@ -218,6 +198,19 @@
             this.yeniekle.TabIndex = 62;
             this.yeniekle.UseVisualStyleBackColor = true;
             this.yeniekle.Click += new System.EventHandler(this.yeniekle_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(551, 81);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.MaximumSize = new System.Drawing.Size(287, 27);
+            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(287, 27);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(287, 27);
+            this.dateTimePicker1.TabIndex = 61;
             // 
             // button1
             // 
@@ -269,50 +262,57 @@
             this.checkBoxPdfOlusturuldu.UseVisualStyleBackColor = true;
             this.checkBoxPdfOlusturuldu.CheckedChanged += new System.EventHandler(this.checkBoxPdfOlusturuldu_CheckedChanged);
             // 
-            // txtArama
+            // datagridViewMutabakat
             // 
-            this.txtArama.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.datagridViewMutabakat.AllowUserToAddRows = false;
+            this.datagridViewMutabakat.AllowUserToDeleteRows = false;
+            this.datagridViewMutabakat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtArama.Location = new System.Drawing.Point(551, 27);
-            this.txtArama.MaximumSize = new System.Drawing.Size(233, 28);
-            this.txtArama.MinimumSize = new System.Drawing.Size(233, 28);
-            this.txtArama.Name = "txtArama";
-            this.txtArama.Size = new System.Drawing.Size(233, 28);
-            this.txtArama.TabIndex = 75;
+            this.datagridViewMutabakat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagridViewMutabakat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.datagridViewMutabakat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridViewMutabakat.DefaultCellStyle = dataGridViewCellStyle1;
+            this.datagridViewMutabakat.Location = new System.Drawing.Point(12, 330);
+            this.datagridViewMutabakat.Margin = new System.Windows.Forms.Padding(4);
+            this.datagridViewMutabakat.MultiSelect = false;
+            this.datagridViewMutabakat.Name = "datagridViewMutabakat";
+            this.datagridViewMutabakat.ReadOnly = true;
+            this.datagridViewMutabakat.RowHeadersWidth = 51;
+            this.datagridViewMutabakat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridViewMutabakat.Size = new System.Drawing.Size(1324, 236);
+            this.datagridViewMutabakat.TabIndex = 60;
+            this.datagridViewMutabakat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.datagridViewMutabakat_MouseClick);
             // 
-            // label6
+            // dosya_bul
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(612, 5);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 19);
-            this.label6.TabIndex = 76;
-            this.label6.Text = "ARAMA YAP";
-            // 
-            // aramabtn
-            // 
-            this.aramabtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aramabtn.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_search_96;
-            this.aramabtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.aramabtn.Location = new System.Drawing.Point(790, 7);
-            this.aramabtn.MaximumSize = new System.Drawing.Size(48, 48);
-            this.aramabtn.MinimumSize = new System.Drawing.Size(48, 48);
-            this.aramabtn.Name = "aramabtn";
-            this.aramabtn.Size = new System.Drawing.Size(48, 48);
-            this.aramabtn.TabIndex = 77;
-            this.aramabtn.UseVisualStyleBackColor = true;
-            this.aramabtn.Click += new System.EventHandler(this.aramabtn_Click);
+            this.dosya_bul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dosya_bul.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_return_48;
+            this.dosya_bul.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dosya_bul.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dosya_bul.FlatAppearance.BorderSize = 0;
+            this.dosya_bul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dosya_bul.Location = new System.Drawing.Point(1308, 2);
+            this.dosya_bul.Margin = new System.Windows.Forms.Padding(4);
+            this.dosya_bul.MaximumSize = new System.Drawing.Size(51, 50);
+            this.dosya_bul.Name = "dosya_bul";
+            this.dosya_bul.Size = new System.Drawing.Size(45, 42);
+            this.dosya_bul.TabIndex = 33;
+            this.dosya_bul.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.dosya_bul.UseVisualStyleBackColor = true;
+            this.dosya_bul.Click += new System.EventHandler(this.dosya_bul_Click);
             // 
             // mutabakat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1352, 581);
             this.Controls.Add(this.datagridViewMutabakat);
             this.Controls.Add(this.dosya_bul);

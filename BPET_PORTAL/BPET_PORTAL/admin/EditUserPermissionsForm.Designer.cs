@@ -45,6 +45,8 @@
             this.m_checkbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sifredegis_arsiv_checkbox = new System.Windows.Forms.CheckBox();
+            this.sifre_arsiv_checkbox = new System.Windows.Forms.CheckBox();
             this.s_kategori_checkbox = new System.Windows.Forms.CheckBox();
             this.pdfadmin_arsiv_checkbox = new System.Windows.Forms.CheckBox();
             this.aa_arsiv_checkbox = new System.Windows.Forms.CheckBox();
@@ -68,8 +70,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.a_muhasebe_checkbox = new System.Windows.Forms.CheckBox();
-            this.sifre_arsiv_checkbox = new System.Windows.Forms.CheckBox();
-            this.sifredegis_arsiv_checkbox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -285,6 +285,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(386, 484);
             this.panel2.TabIndex = 31;
+            // 
+            // sifredegis_arsiv_checkbox
+            // 
+            this.sifredegis_arsiv_checkbox.AutoSize = true;
+            this.sifredegis_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifredegis_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
+            this.sifredegis_arsiv_checkbox.Location = new System.Drawing.Point(194, 69);
+            this.sifredegis_arsiv_checkbox.Name = "sifredegis_arsiv_checkbox";
+            this.sifredegis_arsiv_checkbox.Size = new System.Drawing.Size(189, 20);
+            this.sifredegis_arsiv_checkbox.TabIndex = 42;
+            this.sifredegis_arsiv_checkbox.Text = "Şifre Değiş (sifredegis)";
+            this.sifredegis_arsiv_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // sifre_arsiv_checkbox
+            // 
+            this.sifre_arsiv_checkbox.AutoSize = true;
+            this.sifre_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifre_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
+            this.sifre_arsiv_checkbox.Location = new System.Drawing.Point(194, 43);
+            this.sifre_arsiv_checkbox.Name = "sifre_arsiv_checkbox";
+            this.sifre_arsiv_checkbox.Size = new System.Drawing.Size(140, 20);
+            this.sifre_arsiv_checkbox.TabIndex = 41;
+            this.sifre_arsiv_checkbox.Text = "Kapı Şifre (sifre)";
+            this.sifre_arsiv_checkbox.UseVisualStyleBackColor = true;
             // 
             // s_kategori_checkbox
             // 
@@ -547,33 +571,10 @@
             this.a_muhasebe_checkbox.Text = "Mutabakat Sistemi";
             this.a_muhasebe_checkbox.UseVisualStyleBackColor = true;
             // 
-            // sifre_arsiv_checkbox
-            // 
-            this.sifre_arsiv_checkbox.AutoSize = true;
-            this.sifre_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sifre_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
-            this.sifre_arsiv_checkbox.Location = new System.Drawing.Point(194, 43);
-            this.sifre_arsiv_checkbox.Name = "sifre_arsiv_checkbox";
-            this.sifre_arsiv_checkbox.Size = new System.Drawing.Size(140, 20);
-            this.sifre_arsiv_checkbox.TabIndex = 41;
-            this.sifre_arsiv_checkbox.Text = "Kapı Şifre (sifre)";
-            this.sifre_arsiv_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // sifredegis_arsiv_checkbox
-            // 
-            this.sifredegis_arsiv_checkbox.AutoSize = true;
-            this.sifredegis_arsiv_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sifredegis_arsiv_checkbox.ForeColor = System.Drawing.Color.DarkBlue;
-            this.sifredegis_arsiv_checkbox.Location = new System.Drawing.Point(194, 69);
-            this.sifredegis_arsiv_checkbox.Name = "sifredegis_arsiv_checkbox";
-            this.sifredegis_arsiv_checkbox.Size = new System.Drawing.Size(189, 20);
-            this.sifredegis_arsiv_checkbox.TabIndex = 42;
-            this.sifredegis_arsiv_checkbox.Text = "Şifre Değiş (sifredegis)";
-            this.sifredegis_arsiv_checkbox.UseVisualStyleBackColor = true;
-            // 
             // EditUserPermissionsForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1005, 583);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

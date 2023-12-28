@@ -53,7 +53,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(599, 175);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 38);
             this.button1.TabIndex = 79;
@@ -112,7 +112,7 @@
             this.textBoxHisseAdi.Enabled = false;
             this.textBoxHisseAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.textBoxHisseAdi.Location = new System.Drawing.Point(75, 180);
-            this.textBoxHisseAdi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseAdi.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxHisseAdi.MaximumSize = new System.Drawing.Size(404, 34);
             this.textBoxHisseAdi.MinimumSize = new System.Drawing.Size(180, 34);
             this.textBoxHisseAdi.Name = "textBoxHisseAdi";
@@ -166,7 +166,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Red;
             this.button2.Location = new System.Drawing.Point(717, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 37);
             this.button2.TabIndex = 82;
@@ -176,8 +176,8 @@
             // 
             // DuzenlemeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.numericUpDownMaliyet);

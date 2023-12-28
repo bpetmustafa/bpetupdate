@@ -68,10 +68,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(275, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(367, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 66;
             this.label5.Text = "Cari Kod";
             // 
@@ -79,10 +78,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(148, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(197, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 65;
             this.label4.Text = "Cari Ünvan";
             // 
@@ -94,11 +92,11 @@
             this.cmbCariUnvan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbCariUnvan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCariUnvan.FormattingEnabled = true;
-            this.cmbCariUnvan.Location = new System.Drawing.Point(124, 24);
-            this.cmbCariUnvan.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbCariUnvan.MaximumSize = new System.Drawing.Size(116, 0);
+            this.cmbCariUnvan.Location = new System.Drawing.Point(165, 30);
+            this.cmbCariUnvan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCariUnvan.MaximumSize = new System.Drawing.Size(153, 0);
             this.cmbCariUnvan.Name = "cmbCariUnvan";
-            this.cmbCariUnvan.Size = new System.Drawing.Size(116, 27);
+            this.cmbCariUnvan.Size = new System.Drawing.Size(153, 31);
             this.cmbCariUnvan.TabIndex = 62;
             // 
             // cmbCariKod
@@ -109,11 +107,11 @@
             this.cmbCariKod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbCariKod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCariKod.FormattingEnabled = true;
-            this.cmbCariKod.Location = new System.Drawing.Point(244, 23);
-            this.cmbCariKod.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbCariKod.MaximumSize = new System.Drawing.Size(116, 0);
+            this.cmbCariKod.Location = new System.Drawing.Point(325, 28);
+            this.cmbCariKod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCariKod.MaximumSize = new System.Drawing.Size(153, 0);
             this.cmbCariKod.Name = "cmbCariKod";
-            this.cmbCariKod.Size = new System.Drawing.Size(116, 27);
+            this.cmbCariKod.Size = new System.Drawing.Size(153, 31);
             this.cmbCariKod.TabIndex = 63;
             // 
             // label7
@@ -123,10 +121,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(139, 49);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(185, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.Size = new System.Drawing.Size(66, 19);
             this.label7.TabIndex = 50;
             this.label7.Text = "Tarih Bitiş";
             // 
@@ -137,10 +134,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(19, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(25, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.Size = new System.Drawing.Size(97, 19);
             this.label8.TabIndex = 48;
             this.label8.Text = "Tarih Başlangıç";
             // 
@@ -153,10 +149,10 @@
             // 
             // 
             this.txtPlaka.CustomButton.Image = null;
-            this.txtPlaka.CustomButton.Location = new System.Drawing.Point(97, 2);
-            this.txtPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPlaka.CustomButton.Location = new System.Drawing.Point(131, 2);
+            this.txtPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPlaka.CustomButton.Name = "";
-            this.txtPlaka.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtPlaka.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtPlaka.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPlaka.CustomButton.TabIndex = 1;
             this.txtPlaka.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -164,9 +160,9 @@
             this.txtPlaka.CustomButton.Visible = false;
             this.txtPlaka.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtPlaka.Lines = new string[0];
-            this.txtPlaka.Location = new System.Drawing.Point(4, 24);
-            this.txtPlaka.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPlaka.MaximumSize = new System.Drawing.Size(119, 24);
+            this.txtPlaka.Location = new System.Drawing.Point(5, 30);
+            this.txtPlaka.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPlaka.MaximumSize = new System.Drawing.Size(159, 30);
             this.txtPlaka.MaxLength = 32767;
             this.txtPlaka.Name = "txtPlaka";
             this.txtPlaka.PasswordChar = '\0';
@@ -176,7 +172,7 @@
             this.txtPlaka.SelectionLength = 0;
             this.txtPlaka.SelectionStart = 0;
             this.txtPlaka.ShortcutsEnabled = true;
-            this.txtPlaka.Size = new System.Drawing.Size(119, 24);
+            this.txtPlaka.Size = new System.Drawing.Size(159, 30);
             this.txtPlaka.TabIndex = 44;
             this.txtPlaka.UseSelectable = true;
             this.txtPlaka.WaterMark = "PLAKA ARAMA";
@@ -187,10 +183,10 @@
             // 
             this.labelToplamNakliyeBedeli.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelToplamNakliyeBedeli.ForeColor = System.Drawing.Color.White;
-            this.labelToplamNakliyeBedeli.Location = new System.Drawing.Point(4, 26);
-            this.labelToplamNakliyeBedeli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelToplamNakliyeBedeli.Location = new System.Drawing.Point(5, 32);
+            this.labelToplamNakliyeBedeli.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelToplamNakliyeBedeli.Name = "labelToplamNakliyeBedeli";
-            this.labelToplamNakliyeBedeli.Size = new System.Drawing.Size(177, 36);
+            this.labelToplamNakliyeBedeli.Size = new System.Drawing.Size(236, 44);
             this.labelToplamNakliyeBedeli.TabIndex = 5;
             this.labelToplamNakliyeBedeli.Text = "3.555.555";
             this.labelToplamNakliyeBedeli.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,12 +211,12 @@
             this.groupBox4.Controls.Add(this.txtPlaka);
             this.groupBox4.Controls.Add(this.resetle);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(144, 7);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.MinimumSize = new System.Drawing.Size(401, 94);
+            this.groupBox4.Location = new System.Drawing.Point(192, 9);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.MinimumSize = new System.Drawing.Size(535, 116);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(728, 106);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(971, 130);
             this.groupBox4.TabIndex = 128;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama Yap";
@@ -235,9 +231,10 @@
             this.btnRaporOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRaporOlustur.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRaporOlustur.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRaporOlustur.Location = new System.Drawing.Point(513, 55);
+            this.btnRaporOlustur.Location = new System.Drawing.Point(684, 68);
+            this.btnRaporOlustur.Margin = new System.Windows.Forms.Padding(4);
             this.btnRaporOlustur.Name = "btnRaporOlustur";
-            this.btnRaporOlustur.Size = new System.Drawing.Size(127, 23);
+            this.btnRaporOlustur.Size = new System.Drawing.Size(169, 32);
             this.btnRaporOlustur.TabIndex = 40;
             this.btnRaporOlustur.Text = "Rapor Oluştur";
             this.btnRaporOlustur.UseVisualStyleBackColor = false;
@@ -247,10 +244,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(547, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(729, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 72;
             this.label2.Text = "Şöför Adı";
             // 
@@ -262,10 +258,10 @@
             this.cmbSoforAdi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbSoforAdi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbSoforAdi.FormattingEnabled = true;
-            this.cmbSoforAdi.Location = new System.Drawing.Point(502, 23);
-            this.cmbSoforAdi.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSoforAdi.Location = new System.Drawing.Point(669, 28);
+            this.cmbSoforAdi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSoforAdi.Name = "cmbSoforAdi";
-            this.cmbSoforAdi.Size = new System.Drawing.Size(153, 27);
+            this.cmbSoforAdi.Size = new System.Drawing.Size(203, 31);
             this.cmbSoforAdi.TabIndex = 71;
             // 
             // txtFaturaNo
@@ -277,10 +273,10 @@
             // 
             // 
             this.txtFaturaNo.CustomButton.Image = null;
-            this.txtFaturaNo.CustomButton.Location = new System.Drawing.Point(97, 2);
-            this.txtFaturaNo.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFaturaNo.CustomButton.Location = new System.Drawing.Point(131, 2);
+            this.txtFaturaNo.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFaturaNo.CustomButton.Name = "";
-            this.txtFaturaNo.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtFaturaNo.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtFaturaNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtFaturaNo.CustomButton.TabIndex = 1;
             this.txtFaturaNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -288,9 +284,9 @@
             this.txtFaturaNo.CustomButton.Visible = false;
             this.txtFaturaNo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtFaturaNo.Lines = new string[0];
-            this.txtFaturaNo.Location = new System.Drawing.Point(369, 24);
-            this.txtFaturaNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFaturaNo.MaximumSize = new System.Drawing.Size(119, 24);
+            this.txtFaturaNo.Location = new System.Drawing.Point(492, 30);
+            this.txtFaturaNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFaturaNo.MaximumSize = new System.Drawing.Size(159, 30);
             this.txtFaturaNo.MaxLength = 32767;
             this.txtFaturaNo.Name = "txtFaturaNo";
             this.txtFaturaNo.PasswordChar = '\0';
@@ -300,7 +296,7 @@
             this.txtFaturaNo.SelectionLength = 0;
             this.txtFaturaNo.SelectionStart = 0;
             this.txtFaturaNo.ShortcutsEnabled = true;
-            this.txtFaturaNo.Size = new System.Drawing.Size(119, 24);
+            this.txtFaturaNo.Size = new System.Drawing.Size(159, 30);
             this.txtFaturaNo.TabIndex = 70;
             this.txtFaturaNo.UseSelectable = true;
             this.txtFaturaNo.WaterMark = "FATURA NO";
@@ -316,10 +312,10 @@
             // 
             // 
             this.txtBelgeNo.CustomButton.Image = null;
-            this.txtBelgeNo.CustomButton.Location = new System.Drawing.Point(97, 2);
-            this.txtBelgeNo.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBelgeNo.CustomButton.Location = new System.Drawing.Point(131, 2);
+            this.txtBelgeNo.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBelgeNo.CustomButton.Name = "";
-            this.txtBelgeNo.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtBelgeNo.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtBelgeNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBelgeNo.CustomButton.TabIndex = 1;
             this.txtBelgeNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -327,9 +323,9 @@
             this.txtBelgeNo.CustomButton.Visible = false;
             this.txtBelgeNo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtBelgeNo.Lines = new string[0];
-            this.txtBelgeNo.Location = new System.Drawing.Point(244, 68);
-            this.txtBelgeNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBelgeNo.MaximumSize = new System.Drawing.Size(119, 24);
+            this.txtBelgeNo.Location = new System.Drawing.Point(325, 84);
+            this.txtBelgeNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBelgeNo.MaximumSize = new System.Drawing.Size(159, 30);
             this.txtBelgeNo.MaxLength = 32767;
             this.txtBelgeNo.Name = "txtBelgeNo";
             this.txtBelgeNo.PasswordChar = '\0';
@@ -339,7 +335,7 @@
             this.txtBelgeNo.SelectionLength = 0;
             this.txtBelgeNo.SelectionStart = 0;
             this.txtBelgeNo.ShortcutsEnabled = true;
-            this.txtBelgeNo.Size = new System.Drawing.Size(119, 24);
+            this.txtBelgeNo.Size = new System.Drawing.Size(159, 30);
             this.txtBelgeNo.TabIndex = 69;
             this.txtBelgeNo.UseSelectable = true;
             this.txtBelgeNo.WaterMark = "BELGE NO";
@@ -351,13 +347,14 @@
             this.dateTimePickerEnd.CustomFormat = "\"yyyy-MM-dd\"";
             this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(122, 65);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(163, 80);
+            this.dateTimePickerEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerEnd.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerEnd.MaximumSize = new System.Drawing.Size(200, 30);
+            this.dateTimePickerEnd.MaximumSize = new System.Drawing.Size(265, 30);
             this.dateTimePickerEnd.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerEnd.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimePickerEnd.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(116, 29);
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(153, 30);
             this.dateTimePickerEnd.TabIndex = 68;
             // 
             // dateTimePickerStart
@@ -365,13 +362,14 @@
             this.dateTimePickerStart.CustomFormat = "\"yyyy-MM-dd\"";
             this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerStart.Location = new System.Drawing.Point(9, 65);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(12, 80);
+            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerStart.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerStart.MaximumSize = new System.Drawing.Size(200, 30);
+            this.dateTimePickerStart.MaximumSize = new System.Drawing.Size(265, 30);
             this.dateTimePickerStart.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerStart.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimePickerStart.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(107, 29);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(141, 30);
             this.dateTimePickerStart.TabIndex = 67;
             // 
             // btnFiltrele
@@ -386,10 +384,11 @@
             this.btnFiltrele.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFiltrele.FlatAppearance.BorderSize = 0;
             this.btnFiltrele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrele.Location = new System.Drawing.Point(377, 64);
-            this.btnFiltrele.MaximumSize = new System.Drawing.Size(31, 37);
+            this.btnFiltrele.Location = new System.Drawing.Point(503, 79);
+            this.btnFiltrele.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFiltrele.MaximumSize = new System.Drawing.Size(41, 46);
             this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(31, 37);
+            this.btnFiltrele.Size = new System.Drawing.Size(41, 46);
             this.btnFiltrele.TabIndex = 46;
             this.btnFiltrele.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFiltrele.UseVisualStyleBackColor = false;
@@ -407,10 +406,11 @@
             this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetle.FlatAppearance.BorderSize = 0;
             this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetle.Location = new System.Drawing.Point(414, 64);
-            this.resetle.MaximumSize = new System.Drawing.Size(31, 37);
+            this.resetle.Location = new System.Drawing.Point(552, 79);
+            this.resetle.Margin = new System.Windows.Forms.Padding(4);
+            this.resetle.MaximumSize = new System.Drawing.Size(41, 46);
             this.resetle.Name = "resetle";
-            this.resetle.Size = new System.Drawing.Size(31, 37);
+            this.resetle.Size = new System.Drawing.Size(41, 46);
             this.resetle.TabIndex = 33;
             this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.resetle.UseVisualStyleBackColor = false;
@@ -421,10 +421,10 @@
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.Color.White;
-            this.Label1.Location = new System.Drawing.Point(23, 11);
-            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label1.Location = new System.Drawing.Point(31, 14);
+            this.Label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(142, 15);
+            this.Label1.Size = new System.Drawing.Size(187, 21);
             this.Label1.TabIndex = 0;
             this.Label1.Text = "TOPLAM NAKLİYE BEDELİ";
             // 
@@ -434,19 +434,20 @@
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
             this.Panel2.Controls.Add(this.labelToplamNakliyeBedeli);
             this.Panel2.Controls.Add(this.Label1);
-            this.Panel2.Location = new System.Drawing.Point(1044, 17);
-            this.Panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.Panel2.MaximumSize = new System.Drawing.Size(185, 97);
+            this.Panel2.Location = new System.Drawing.Point(1190, 21);
+            this.Panel2.Margin = new System.Windows.Forms.Padding(5);
+            this.Panel2.MaximumSize = new System.Drawing.Size(247, 119);
             this.Panel2.Name = "Panel2";
-            this.Panel2.Size = new System.Drawing.Size(185, 68);
+            this.Panel2.Size = new System.Drawing.Size(247, 84);
             this.Panel2.TabIndex = 125;
             // 
             // sagtikmenutablo
             // 
+            this.sagtikmenutablo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.sagtikmenutablo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.seçiliVeriyiDüzenleToolStripMenuItem});
             this.sagtikmenutablo.Name = "metroContextMenu1";
-            this.sagtikmenutablo.Size = new System.Drawing.Size(252, 58);
+            this.sagtikmenutablo.Size = new System.Drawing.Size(297, 58);
             // 
             // seçiliVeriyiDüzenleToolStripMenuItem
             // 
@@ -455,7 +456,7 @@
             this.seçiliVeriyiDüzenleToolStripMenuItem.Name = "seçiliVeriyiDüzenleToolStripMenuItem";
             this.seçiliVeriyiDüzenleToolStripMenuItem.RightToLeftAutoMirrorImage = true;
             this.seçiliVeriyiDüzenleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Size = new System.Drawing.Size(251, 54);
+            this.seçiliVeriyiDüzenleToolStripMenuItem.Size = new System.Drawing.Size(296, 54);
             this.seçiliVeriyiDüzenleToolStripMenuItem.Text = "Seçili Veriyi Düzenle";
             // 
             // dataGridView
@@ -476,14 +477,15 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.Location = new System.Drawing.Point(8, 178);
+            this.dataGridView.Location = new System.Drawing.Point(11, 219);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1221, 388);
+            this.dataGridView.Size = new System.Drawing.Size(1426, 478);
             this.dataGridView.TabIndex = 124;
             // 
             // exceldenyukle
@@ -496,9 +498,10 @@
             this.exceldenyukle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exceldenyukle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.exceldenyukle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.exceldenyukle.Location = new System.Drawing.Point(5, 21);
+            this.exceldenyukle.Location = new System.Drawing.Point(7, 26);
+            this.exceldenyukle.Margin = new System.Windows.Forms.Padding(4);
             this.exceldenyukle.Name = "exceldenyukle";
-            this.exceldenyukle.Size = new System.Drawing.Size(127, 23);
+            this.exceldenyukle.Size = new System.Drawing.Size(200, 32);
             this.exceldenyukle.TabIndex = 39;
             this.exceldenyukle.Text = "EXCELDEN AKTAR";
             this.exceldenyukle.UseVisualStyleBackColor = false;
@@ -508,12 +511,12 @@
             // 
             this.groupBox2.Controls.Add(this.exceldenyukle);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(2, 7);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.MinimumSize = new System.Drawing.Size(96, 86);
+            this.groupBox2.Location = new System.Drawing.Point(3, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(128, 106);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(142, 106);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(189, 130);
             this.groupBox2.TabIndex = 123;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
@@ -522,12 +525,12 @@
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.progressBar.BackColor = System.Drawing.Color.DarkGray;
-            this.progressBar.Location = new System.Drawing.Point(513, 253);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(2);
+            this.progressBar.Location = new System.Drawing.Point(583, 311);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar.Maximum = 100;
-            this.progressBar.MaximumSize = new System.Drawing.Size(203, 223);
+            this.progressBar.MaximumSize = new System.Drawing.Size(271, 274);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(203, 223);
+            this.progressBar.Size = new System.Drawing.Size(271, 274);
             this.progressBar.Speed = 2F;
             this.progressBar.Style = MetroFramework.MetroColorStyle.Orange;
             this.progressBar.TabIndex = 64;
@@ -538,16 +541,17 @@
             // 
             // nakliyegelirleri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1241, 578);
+            this.ClientSize = new System.Drawing.Size(1453, 711);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "nakliyegelirleri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NAKLİYE ANA SAYFA";

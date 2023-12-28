@@ -82,11 +82,12 @@
             this.dosyaekle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dosyaekle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dosyaekle.ForeColor = System.Drawing.Color.Black;
-            this.dosyaekle.Location = new System.Drawing.Point(10, 84);
-            this.dosyaekle.MaximumSize = new System.Drawing.Size(149, 30);
-            this.dosyaekle.MinimumSize = new System.Drawing.Size(111, 30);
+            this.dosyaekle.Location = new System.Drawing.Point(13, 103);
+            this.dosyaekle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dosyaekle.MaximumSize = new System.Drawing.Size(199, 37);
+            this.dosyaekle.MinimumSize = new System.Drawing.Size(148, 37);
             this.dosyaekle.Name = "dosyaekle";
-            this.dosyaekle.Size = new System.Drawing.Size(136, 30);
+            this.dosyaekle.Size = new System.Drawing.Size(181, 37);
             this.dosyaekle.TabIndex = 40;
             this.dosyaekle.Text = "Veri Getir";
             this.dosyaekle.UseVisualStyleBackColor = false;
@@ -108,45 +109,49 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 439);
-            this.dataGridView1.MinimumSize = new System.Drawing.Size(547, 104);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 540);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.MinimumSize = new System.Drawing.Size(729, 128);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(547, 104);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 128);
             this.dataGridView1.TabIndex = 60;
             // 
             // textBoxHisseKodu
             // 
             this.textBoxHisseKodu.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxHisseKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxHisseKodu.Location = new System.Drawing.Point(8, 50);
-            this.textBoxHisseKodu.MaximumSize = new System.Drawing.Size(304, 34);
-            this.textBoxHisseKodu.MinimumSize = new System.Drawing.Size(136, 34);
+            this.textBoxHisseKodu.Location = new System.Drawing.Point(11, 62);
+            this.textBoxHisseKodu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseKodu.MaximumSize = new System.Drawing.Size(404, 34);
+            this.textBoxHisseKodu.MinimumSize = new System.Drawing.Size(180, 34);
             this.textBoxHisseKodu.Name = "textBoxHisseKodu";
-            this.textBoxHisseKodu.Size = new System.Drawing.Size(136, 29);
+            this.textBoxHisseKodu.Size = new System.Drawing.Size(180, 34);
             this.textBoxHisseKodu.TabIndex = 61;
             // 
             // textBoxHisseAdet
             // 
             this.textBoxHisseAdet.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxHisseAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxHisseAdet.Location = new System.Drawing.Point(148, 50);
-            this.textBoxHisseAdet.MaximumSize = new System.Drawing.Size(304, 34);
-            this.textBoxHisseAdet.MinimumSize = new System.Drawing.Size(79, 34);
+            this.textBoxHisseAdet.Location = new System.Drawing.Point(197, 62);
+            this.textBoxHisseAdet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseAdet.MaximumSize = new System.Drawing.Size(404, 34);
+            this.textBoxHisseAdet.MinimumSize = new System.Drawing.Size(104, 34);
             this.textBoxHisseAdet.Name = "textBoxHisseAdet";
-            this.textBoxHisseAdet.Size = new System.Drawing.Size(79, 29);
+            this.textBoxHisseAdet.Size = new System.Drawing.Size(104, 34);
             this.textBoxHisseAdet.TabIndex = 65;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(37, 31);
+            this.label2.Location = new System.Drawing.Point(49, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 67;
             this.label2.Text = "Hisse İsmi";
             // 
@@ -154,9 +159,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(169, 31);
+            this.label1.Location = new System.Drawing.Point(225, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 16);
+            this.label1.Size = new System.Drawing.Size(45, 19);
             this.label1.TabIndex = 68;
             this.label1.Text = "Adet";
             // 
@@ -164,20 +170,22 @@
             // 
             this.textBoxHisseMaliyet.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxHisseMaliyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxHisseMaliyet.Location = new System.Drawing.Point(232, 50);
-            this.textBoxHisseMaliyet.MaximumSize = new System.Drawing.Size(304, 34);
-            this.textBoxHisseMaliyet.MinimumSize = new System.Drawing.Size(79, 34);
+            this.textBoxHisseMaliyet.Location = new System.Drawing.Point(309, 62);
+            this.textBoxHisseMaliyet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHisseMaliyet.MaximumSize = new System.Drawing.Size(404, 34);
+            this.textBoxHisseMaliyet.MinimumSize = new System.Drawing.Size(104, 34);
             this.textBoxHisseMaliyet.Name = "textBoxHisseMaliyet";
-            this.textBoxHisseMaliyet.Size = new System.Drawing.Size(79, 29);
+            this.textBoxHisseMaliyet.Size = new System.Drawing.Size(104, 34);
             this.textBoxHisseMaliyet.TabIndex = 69;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(258, 31);
+            this.label3.Location = new System.Drawing.Point(344, 38);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.Size = new System.Drawing.Size(47, 19);
             this.label3.TabIndex = 70;
             this.label3.Text = "Fiyat";
             // 
@@ -185,10 +193,9 @@
             // 
             this.epostalabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.epostalabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.epostalabel.Location = new System.Drawing.Point(2, 0);
-            this.epostalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.epostalabel.Location = new System.Drawing.Point(3, 0);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(143, 19);
+            this.epostalabel.Size = new System.Drawing.Size(190, 23);
             this.epostalabel.TabIndex = 71;
             this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -202,11 +209,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(330, 47);
-            this.button1.MaximumSize = new System.Drawing.Size(149, 30);
-            this.button1.MinimumSize = new System.Drawing.Size(94, 30);
+            this.button1.Location = new System.Drawing.Point(440, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.MaximumSize = new System.Drawing.Size(199, 37);
+            this.button1.MinimumSize = new System.Drawing.Size(125, 37);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 30);
+            this.button1.Size = new System.Drawing.Size(157, 37);
             this.button1.TabIndex = 72;
             this.button1.Text = "Hisse Ekle";
             this.button1.UseVisualStyleBackColor = false;
@@ -228,14 +236,15 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewUserPortfolio.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewUserPortfolio.Location = new System.Drawing.Point(580, 439);
-            this.dataGridViewUserPortfolio.MinimumSize = new System.Drawing.Size(530, 104);
+            this.dataGridViewUserPortfolio.Location = new System.Drawing.Point(773, 540);
+            this.dataGridViewUserPortfolio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewUserPortfolio.MinimumSize = new System.Drawing.Size(707, 128);
             this.dataGridViewUserPortfolio.MultiSelect = false;
             this.dataGridViewUserPortfolio.Name = "dataGridViewUserPortfolio";
             this.dataGridViewUserPortfolio.ReadOnly = true;
             this.dataGridViewUserPortfolio.RowHeadersWidth = 51;
             this.dataGridViewUserPortfolio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUserPortfolio.Size = new System.Drawing.Size(530, 104);
+            this.dataGridViewUserPortfolio.Size = new System.Drawing.Size(707, 128);
             this.dataGridViewUserPortfolio.TabIndex = 73;
             // 
             // dataGridViewOrtalamaMaliyet
@@ -268,14 +277,15 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewOrtalamaMaliyet.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewOrtalamaMaliyet.Location = new System.Drawing.Point(8, 128);
-            this.dataGridViewOrtalamaMaliyet.MinimumSize = new System.Drawing.Size(1084, 190);
+            this.dataGridViewOrtalamaMaliyet.Location = new System.Drawing.Point(11, 158);
+            this.dataGridViewOrtalamaMaliyet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewOrtalamaMaliyet.MinimumSize = new System.Drawing.Size(1445, 234);
             this.dataGridViewOrtalamaMaliyet.MultiSelect = false;
             this.dataGridViewOrtalamaMaliyet.Name = "dataGridViewOrtalamaMaliyet";
             this.dataGridViewOrtalamaMaliyet.ReadOnly = true;
             this.dataGridViewOrtalamaMaliyet.RowHeadersWidth = 51;
             this.dataGridViewOrtalamaMaliyet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewOrtalamaMaliyet.Size = new System.Drawing.Size(1102, 289);
+            this.dataGridViewOrtalamaMaliyet.Size = new System.Drawing.Size(1469, 356);
             this.dataGridViewOrtalamaMaliyet.TabIndex = 75;
             // 
             // HisseAdi
@@ -349,9 +359,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(218, 420);
+            this.label4.Location = new System.Drawing.Point(291, 517);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 16);
+            this.label4.Size = new System.Drawing.Size(101, 19);
             this.label4.TabIndex = 76;
             this.label4.Text = "ANLIK VERİ";
             // 
@@ -362,9 +373,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(494, 110);
+            this.label5.Location = new System.Drawing.Point(659, 135);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 16);
+            this.label5.Size = new System.Drawing.Size(199, 19);
             this.label5.TabIndex = 77;
             this.label5.Text = "KAR/ZARAR ORTALAMA";
             // 
@@ -374,9 +386,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(830, 420);
+            this.label6.Location = new System.Drawing.Point(1107, 517);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 16);
+            this.label6.Size = new System.Drawing.Size(88, 19);
             this.label6.TabIndex = 78;
             this.label6.Text = "PORTFÖY";
             // 
@@ -386,20 +399,22 @@
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
             this.Panel2.Controls.Add(this.toplamKarZararLabel);
             this.Panel2.Controls.Add(this.label7);
-            this.Panel2.Location = new System.Drawing.Point(712, 9);
-            this.Panel2.MaximumSize = new System.Drawing.Size(184, 79);
-            this.Panel2.MinimumSize = new System.Drawing.Size(184, 79);
+            this.Panel2.Location = new System.Drawing.Point(949, 11);
+            this.Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Panel2.MaximumSize = new System.Drawing.Size(245, 97);
+            this.Panel2.MinimumSize = new System.Drawing.Size(245, 97);
             this.Panel2.Name = "Panel2";
-            this.Panel2.Size = new System.Drawing.Size(184, 79);
+            this.Panel2.Size = new System.Drawing.Size(245, 97);
             this.Panel2.TabIndex = 79;
             // 
             // toplamKarZararLabel
             // 
             this.toplamKarZararLabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toplamKarZararLabel.ForeColor = System.Drawing.Color.White;
-            this.toplamKarZararLabel.Location = new System.Drawing.Point(3, 29);
+            this.toplamKarZararLabel.Location = new System.Drawing.Point(4, 36);
+            this.toplamKarZararLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.toplamKarZararLabel.Name = "toplamKarZararLabel";
-            this.toplamKarZararLabel.Size = new System.Drawing.Size(178, 42);
+            this.toplamKarZararLabel.Size = new System.Drawing.Size(237, 52);
             this.toplamKarZararLabel.TabIndex = 5;
             this.toplamKarZararLabel.Text = "-----";
             this.toplamKarZararLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -409,9 +424,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(2, 9);
+            this.label7.Location = new System.Drawing.Point(3, 11);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 15);
+            this.label7.Size = new System.Drawing.Size(156, 21);
             this.label7.TabIndex = 0;
             this.label7.Text = "TOPLAM KAR ZARAR";
             // 
@@ -421,20 +437,22 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
             this.panel1.Controls.Add(this.toplamPortfoyLabel);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(934, 9);
-            this.panel1.MaximumSize = new System.Drawing.Size(176, 79);
-            this.panel1.MinimumSize = new System.Drawing.Size(176, 79);
+            this.panel1.Location = new System.Drawing.Point(1245, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.MaximumSize = new System.Drawing.Size(235, 97);
+            this.panel1.MinimumSize = new System.Drawing.Size(235, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 79);
+            this.panel1.Size = new System.Drawing.Size(235, 97);
             this.panel1.TabIndex = 80;
             // 
             // toplamPortfoyLabel
             // 
             this.toplamPortfoyLabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toplamPortfoyLabel.ForeColor = System.Drawing.Color.White;
-            this.toplamPortfoyLabel.Location = new System.Drawing.Point(3, 26);
+            this.toplamPortfoyLabel.Location = new System.Drawing.Point(4, 32);
+            this.toplamPortfoyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.toplamPortfoyLabel.Name = "toplamPortfoyLabel";
-            this.toplamPortfoyLabel.Size = new System.Drawing.Size(165, 42);
+            this.toplamPortfoyLabel.Size = new System.Drawing.Size(220, 52);
             this.toplamPortfoyLabel.TabIndex = 5;
             this.toplamPortfoyLabel.Text = "-----";
             this.toplamPortfoyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -444,9 +462,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(5, 9);
+            this.label9.Location = new System.Drawing.Point(7, 11);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 15);
+            this.label9.Size = new System.Drawing.Size(142, 21);
             this.label9.TabIndex = 0;
             this.label9.Text = "TOPLAM PORTFÖY";
             // 
@@ -460,11 +479,12 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.button2.Location = new System.Drawing.Point(494, 76);
-            this.button2.MaximumSize = new System.Drawing.Size(149, 30);
-            this.button2.MinimumSize = new System.Drawing.Size(127, 30);
+            this.button2.Location = new System.Drawing.Point(659, 94);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.MaximumSize = new System.Drawing.Size(199, 37);
+            this.button2.MinimumSize = new System.Drawing.Size(169, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 30);
+            this.button2.Size = new System.Drawing.Size(199, 37);
             this.button2.TabIndex = 81;
             this.button2.Text = "Verileri Güncelle";
             this.button2.UseVisualStyleBackColor = false;
@@ -475,9 +495,10 @@
             this.labelTimer.AutoSize = true;
             this.labelTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelTimer.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.labelTimer.Location = new System.Drawing.Point(463, 61);
+            this.labelTimer.Location = new System.Drawing.Point(617, 75);
+            this.labelTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(95, 13);
+            this.labelTimer.Size = new System.Drawing.Size(125, 17);
             this.labelTimer.TabIndex = 82;
             this.labelTimer.Text = "Oto Update Kalan:";
             // 
@@ -496,11 +517,12 @@
             this.excelaktar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.excelaktar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.excelaktar.ForeColor = System.Drawing.Color.Chartreuse;
-            this.excelaktar.Location = new System.Drawing.Point(494, 9);
-            this.excelaktar.MaximumSize = new System.Drawing.Size(149, 30);
-            this.excelaktar.MinimumSize = new System.Drawing.Size(127, 30);
+            this.excelaktar.Location = new System.Drawing.Point(659, 11);
+            this.excelaktar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.excelaktar.MaximumSize = new System.Drawing.Size(199, 37);
+            this.excelaktar.MinimumSize = new System.Drawing.Size(169, 37);
             this.excelaktar.Name = "excelaktar";
-            this.excelaktar.Size = new System.Drawing.Size(149, 30);
+            this.excelaktar.Size = new System.Drawing.Size(199, 37);
             this.excelaktar.TabIndex = 83;
             this.excelaktar.Text = "EXCEL\'E AKTAR";
             this.excelaktar.UseVisualStyleBackColor = false;
@@ -508,9 +530,9 @@
             // 
             // borsaanasayfa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 562);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1516, 692);
             this.Controls.Add(this.excelaktar);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.button2);
@@ -532,7 +554,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dosyaekle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "borsaanasayfa";
             this.Text = "borsaanasayfa";
             this.Load += new System.EventHandler(this.borsaanasayfa_Load);

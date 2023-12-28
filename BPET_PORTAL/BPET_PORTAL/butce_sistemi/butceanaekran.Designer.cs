@@ -38,9 +38,10 @@
             // 
             this.epostalabel.AutoSize = true;
             this.epostalabel.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.epostalabel.Location = new System.Drawing.Point(10, 7);
+            this.epostalabel.Location = new System.Drawing.Point(13, 9);
+            this.epostalabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(27, 14);
+            this.epostalabel.Size = new System.Drawing.Size(27, 16);
             this.epostalabel.TabIndex = 18;
             this.epostalabel.Text = "-----";
             // 
@@ -51,9 +52,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dosyabullabel.AutoSize = true;
             this.dosyabullabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dosyabullabel.Location = new System.Drawing.Point(56, 261);
+            this.dosyabullabel.Location = new System.Drawing.Point(75, 321);
+            this.dosyabullabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dosyabullabel.Name = "dosyabullabel";
-            this.dosyabullabel.Size = new System.Drawing.Size(137, 24);
+            this.dosyabullabel.Size = new System.Drawing.Size(174, 32);
             this.dosyabullabel.TabIndex = 26;
             this.dosyabullabel.Text = "Bayi Sistemi";
             // 
@@ -67,11 +69,12 @@
             this.dosya_bul.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dosya_bul.FlatAppearance.BorderSize = 0;
             this.dosya_bul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_bul.Location = new System.Drawing.Point(85, 201);
-            this.dosya_bul.MaximumSize = new System.Drawing.Size(60, 57);
-            this.dosya_bul.MinimumSize = new System.Drawing.Size(60, 57);
+            this.dosya_bul.Location = new System.Drawing.Point(113, 247);
+            this.dosya_bul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dosya_bul.MaximumSize = new System.Drawing.Size(80, 70);
+            this.dosya_bul.MinimumSize = new System.Drawing.Size(80, 70);
             this.dosya_bul.Name = "dosya_bul";
-            this.dosya_bul.Size = new System.Drawing.Size(60, 57);
+            this.dosya_bul.Size = new System.Drawing.Size(80, 70);
             this.dosya_bul.TabIndex = 25;
             this.dosya_bul.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.dosya_bul.UseVisualStyleBackColor = true;
@@ -84,7 +87,8 @@
             this.metroLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(366, 185);
+            this.metroLabel1.Location = new System.Drawing.Point(488, 228);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(291, 50);
             this.metroLabel1.TabIndex = 27;
@@ -93,15 +97,15 @@
             // 
             // butceanaekran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 520);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1400, 640);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.dosyabullabel);
             this.Controls.Add(this.dosya_bul);
             this.Controls.Add(this.epostalabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "butceanaekran";
             this.Text = "butceanaekran";
             this.ResumeLayout(false);

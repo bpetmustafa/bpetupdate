@@ -128,8 +128,7 @@ namespace BPET_PORTAL
                         // MessageBox.Show($"SQL Server Response Time: {responseTime.TotalMilliseconds} ms", "Test Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // SolidGauge1'e cevap süresini ayarla
-                        label2.Text = "Sunucu Yanıt Süresi " + (int)responseTime.TotalMilliseconds + "ms";                        
-
+                        label2.Text = "Sunucu Yanıt Süresi " + (int)responseTime.TotalMilliseconds + "ms";
                     }
                 }
             }

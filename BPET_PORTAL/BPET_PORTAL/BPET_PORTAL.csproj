@@ -28,11 +28,11 @@
     <ProductName>BPET PORTAL</ProductName>
     <PublisherName>BPET_Bilgi_İslem</PublisherName>
     <SuiteName>PORTAL</SuiteName>
-    <MinimumRequiredVersion>2.3.4.14</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.3.4.15</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -691,8 +691,14 @@
     <EmbeddedResource Include="yardim_masasi\AnaEkran.resx">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="yardim_masasi\BilgiIslemAciklamaFormu.resx">
+      <DependentUpon>BilgiIslemAciklamaFormu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="yardim_masasi\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yardim_masasi\RaporEkrani.resx">
+      <DependentUpon>RaporEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="yardim_masasi\Taleplerim.resx">
       <DependentUpon>Taleplerim.cs</DependentUpon>

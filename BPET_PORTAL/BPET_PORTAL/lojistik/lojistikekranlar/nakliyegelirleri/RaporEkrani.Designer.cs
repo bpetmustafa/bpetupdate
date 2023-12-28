@@ -50,7 +50,7 @@
             // 
             this.dataGridViewDriverReport.AllowUserToAddRows = false;
             this.dataGridViewDriverReport.AllowUserToDeleteRows = false;
-            this.dataGridViewDriverReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridViewDriverReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridViewDriverReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDriverReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -61,8 +61,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewDriverReport.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewDriverReport.Location = new System.Drawing.Point(16, 15);
-            this.dataGridViewDriverReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewDriverReport.Location = new System.Drawing.Point(12, 13);
+            this.dataGridViewDriverReport.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDriverReport.MaximumSize = new System.Drawing.Size(905, 164);
             this.dataGridViewDriverReport.MultiSelect = false;
             this.dataGridViewDriverReport.Name = "dataGridViewDriverReport";
@@ -70,14 +70,14 @@
             this.dataGridViewDriverReport.RowHeadersVisible = false;
             this.dataGridViewDriverReport.RowHeadersWidth = 51;
             this.dataGridViewDriverReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDriverReport.Size = new System.Drawing.Size(860, 159);
+            this.dataGridViewDriverReport.Size = new System.Drawing.Size(478, 77);
             this.dataGridViewDriverReport.TabIndex = 125;
             // 
             // dataGridViewCariKoduReport
             // 
             this.dataGridViewCariKoduReport.AllowUserToAddRows = false;
             this.dataGridViewCariKoduReport.AllowUserToDeleteRows = false;
-            this.dataGridViewCariKoduReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridViewCariKoduReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridViewCariKoduReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCariKoduReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -88,8 +88,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCariKoduReport.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCariKoduReport.Location = new System.Drawing.Point(901, 15);
-            this.dataGridViewCariKoduReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewCariKoduReport.Location = new System.Drawing.Point(577, 13);
+            this.dataGridViewCariKoduReport.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewCariKoduReport.MaximumSize = new System.Drawing.Size(992, 164);
             this.dataGridViewCariKoduReport.MultiSelect = false;
             this.dataGridViewCariKoduReport.Name = "dataGridViewCariKoduReport";
@@ -97,51 +97,67 @@
             this.dataGridViewCariKoduReport.RowHeadersVisible = false;
             this.dataGridViewCariKoduReport.RowHeadersWidth = 51;
             this.dataGridViewCariKoduReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCariKoduReport.Size = new System.Drawing.Size(992, 159);
+            this.dataGridViewCariKoduReport.Size = new System.Drawing.Size(515, 77);
             this.dataGridViewCariKoduReport.TabIndex = 126;
             // 
             // chartDriverReport
             // 
+            this.chartDriverReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chartDriverReport.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.None;
+            this.chartDriverReport.BorderlineWidth = 0;
+            this.chartDriverReport.BorderSkin.BorderWidth = 0;
             chartArea1.Name = "ChartArea1";
             this.chartDriverReport.ChartAreas.Add(chartArea1);
+            this.chartDriverReport.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chartDriverReport.IsSoftShadows = false;
             legend1.Name = "Legend1";
             this.chartDriverReport.Legends.Add(legend1);
-            this.chartDriverReport.Location = new System.Drawing.Point(16, 210);
+            this.chartDriverReport.Location = new System.Drawing.Point(12, 97);
             this.chartDriverReport.Name = "chartDriverReport";
+            this.chartDriverReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartDriverReport.Series.Add(series1);
-            this.chartDriverReport.Size = new System.Drawing.Size(860, 569);
-            this.chartDriverReport.TabIndex = 127;
-            this.chartDriverReport.Text = "chart1";
+            this.chartDriverReport.Size = new System.Drawing.Size(478, 443);
+            this.chartDriverReport.TabIndex = 129;
+            this.chartDriverReport.Text = "Yakıt Grafik";
             // 
             // chartCariKoduReport
             // 
+            this.chartCariKoduReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chartCariKoduReport.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.None;
+            this.chartCariKoduReport.BorderlineWidth = 0;
+            this.chartCariKoduReport.BorderSkin.BorderWidth = 0;
             chartArea2.Name = "ChartArea1";
             this.chartCariKoduReport.ChartAreas.Add(chartArea2);
+            this.chartCariKoduReport.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chartCariKoduReport.IsSoftShadows = false;
             legend2.Name = "Legend1";
             this.chartCariKoduReport.Legends.Add(legend2);
-            this.chartCariKoduReport.Location = new System.Drawing.Point(901, 210);
+            this.chartCariKoduReport.Location = new System.Drawing.Point(577, 97);
             this.chartCariKoduReport.Name = "chartCariKoduReport";
+            this.chartCariKoduReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartCariKoduReport.Series.Add(series2);
-            this.chartCariKoduReport.Size = new System.Drawing.Size(992, 569);
-            this.chartCariKoduReport.TabIndex = 128;
-            this.chartCariKoduReport.Text = "chart2";
+            this.chartCariKoduReport.Size = new System.Drawing.Size(515, 443);
+            this.chartCariKoduReport.TabIndex = 130;
+            this.chartCariKoduReport.Text = "Yakıt Grafik";
             // 
             // RaporEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1925, 804);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1104, 552);
             this.Controls.Add(this.chartCariKoduReport);
             this.Controls.Add(this.chartDriverReport);
             this.Controls.Add(this.dataGridViewCariKoduReport);
             this.Controls.Add(this.dataGridViewDriverReport);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RaporEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaporEkrani";

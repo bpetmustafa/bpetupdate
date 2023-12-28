@@ -24,7 +24,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri
 
             foreach (DataRow row in data.Rows)
             {
-                string xValue = row["BelirliBirSutun"].ToString(); // x ekseni değeri, gerekli bir sütun adını belirtin
+                string xValue = row["Plaka"].ToString(); // x ekseni değeri, gerekli bir sütun adını belirtin
                 double yValue = Convert.ToDouble(row["ToplamFaturaToplam"]); // y ekseni değeri, ToplamFaturaToplam sütununu kullanabilirsiniz
 
                 series.Points.AddXY(xValue, yValue);
@@ -45,7 +45,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri
 
             foreach (DataRow row in data.Rows)
             {
-                string xValue = row["BelirliBirSutun"].ToString(); // x ekseni değeri, gerekli bir sütun adını belirtin
+                string xValue = row["CariKodu"].ToString(); // x ekseni değeri, gerekli bir sütun adını belirtin
                 double yValue = Convert.ToDouble(row["ToplamFaturaToplam"]); // y ekseni değeri, ToplamFaturaToplam sütununu kullanabilirsiniz
 
                 series.Points.AddXY(xValue, yValue);

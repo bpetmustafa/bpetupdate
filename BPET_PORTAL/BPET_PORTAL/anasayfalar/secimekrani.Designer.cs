@@ -126,7 +126,8 @@
             // 
             // secimekrani
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::BPET_PORTAL.Properties.Resources.banner2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

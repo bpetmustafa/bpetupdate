@@ -52,7 +52,7 @@
             this.epostalabel.Location = new System.Drawing.Point(13, 9);
             this.epostalabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(27, 14);
+            this.epostalabel.Size = new System.Drawing.Size(27, 16);
             this.epostalabel.TabIndex = 19;
             this.epostalabel.Text = "-----";
             this.epostalabel.Visible = false;
@@ -120,7 +120,7 @@
             this.checkBoxAktifBayiler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAktifBayiler.Location = new System.Drawing.Point(13, 29);
             this.checkBoxAktifBayiler.Name = "checkBoxAktifBayiler";
-            this.checkBoxAktifBayiler.Size = new System.Drawing.Size(142, 20);
+            this.checkBoxAktifBayiler.Size = new System.Drawing.Size(145, 20);
             this.checkBoxAktifBayiler.TabIndex = 24;
             this.checkBoxAktifBayiler.Text = "Aktif Bayileri Göster";
             this.checkBoxAktifBayiler.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@
             this.checkBoxIptalBayiler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxIptalBayiler.Location = new System.Drawing.Point(12, 55);
             this.checkBoxIptalBayiler.Name = "checkBoxIptalBayiler";
-            this.checkBoxIptalBayiler.Size = new System.Drawing.Size(142, 20);
+            this.checkBoxIptalBayiler.Size = new System.Drawing.Size(145, 20);
             this.checkBoxIptalBayiler.TabIndex = 26;
             this.checkBoxIptalBayiler.Text = "İptal Bayileri Göster";
             this.checkBoxIptalBayiler.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.checkBoxLPG.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxLPG.Location = new System.Drawing.Point(11, 107);
             this.checkBoxLPG.Name = "checkBoxLPG";
-            this.checkBoxLPG.Size = new System.Drawing.Size(116, 20);
+            this.checkBoxLPG.Size = new System.Drawing.Size(119, 20);
             this.checkBoxLPG.TabIndex = 29;
             this.checkBoxLPG.Text = "LPG\'leri Göster";
             this.checkBoxLPG.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@
             this.checkBoxAkaryakit.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAkaryakit.Location = new System.Drawing.Point(11, 81);
             this.checkBoxAkaryakit.Name = "checkBoxAkaryakit";
-            this.checkBoxAkaryakit.Size = new System.Drawing.Size(143, 20);
+            this.checkBoxAkaryakit.Size = new System.Drawing.Size(146, 20);
             this.checkBoxAkaryakit.TabIndex = 28;
             this.checkBoxAkaryakit.Text = "Akaryakıtları Göster";
             this.checkBoxAkaryakit.UseVisualStyleBackColor = true;
@@ -212,8 +212,8 @@
             // 
             // bayianaekran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1318, 559);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBoxLPG);

@@ -123,8 +123,8 @@ namespace destek_otomasyonu
             // 
             // Taleplerim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(976, 624);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

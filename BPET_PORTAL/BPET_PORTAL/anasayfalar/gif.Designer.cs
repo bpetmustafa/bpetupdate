@@ -32,7 +32,8 @@
             // 
             // gif
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::BPET_PORTAL.Properties.Resources.arşiv_giriş;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

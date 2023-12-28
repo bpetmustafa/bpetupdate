@@ -74,7 +74,7 @@
             this.txtDosyaAdi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtDosyaAdi.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtDosyaAdi.Name = "txtDosyaAdi";
-            this.txtDosyaAdi.Size = new System.Drawing.Size(286, 26);
+            this.txtDosyaAdi.Size = new System.Drawing.Size(286, 30);
             this.txtDosyaAdi.TabIndex = 1;
             // 
             // txtBirimAdi
@@ -86,7 +86,7 @@
             this.txtBirimAdi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtBirimAdi.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtBirimAdi.Name = "txtBirimAdi";
-            this.txtBirimAdi.Size = new System.Drawing.Size(286, 26);
+            this.txtBirimAdi.Size = new System.Drawing.Size(286, 30);
             this.txtBirimAdi.TabIndex = 7;
             this.txtBirimAdi.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -100,7 +100,7 @@
             this.txtSirketAdi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtSirketAdi.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtSirketAdi.Name = "txtSirketAdi";
-            this.txtSirketAdi.Size = new System.Drawing.Size(286, 26);
+            this.txtSirketAdi.Size = new System.Drawing.Size(286, 23);
             this.txtSirketAdi.TabIndex = 2;
             this.txtSirketAdi.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -113,7 +113,7 @@
             this.txtDolap.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtDolap.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtDolap.Name = "txtDolap";
-            this.txtDolap.Size = new System.Drawing.Size(286, 26);
+            this.txtDolap.Size = new System.Drawing.Size(286, 30);
             this.txtDolap.TabIndex = 10;
             this.txtDolap.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -126,7 +126,7 @@
             this.txtRaf.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtRaf.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtRaf.Name = "txtRaf";
-            this.txtRaf.Size = new System.Drawing.Size(286, 26);
+            this.txtRaf.Size = new System.Drawing.Size(286, 30);
             this.txtRaf.TabIndex = 11;
             this.txtRaf.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -139,7 +139,7 @@
             this.txtSiraNo.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtSiraNo.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtSiraNo.Name = "txtSiraNo";
-            this.txtSiraNo.Size = new System.Drawing.Size(286, 26);
+            this.txtSiraNo.Size = new System.Drawing.Size(286, 30);
             this.txtSiraNo.TabIndex = 12;
             this.txtSiraNo.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -152,7 +152,7 @@
             this.txtOdaAdi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtOdaAdi.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtOdaAdi.Name = "txtOdaAdi";
-            this.txtOdaAdi.Size = new System.Drawing.Size(286, 26);
+            this.txtOdaAdi.Size = new System.Drawing.Size(286, 30);
             this.txtOdaAdi.TabIndex = 13;
             this.txtOdaAdi.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -358,7 +358,7 @@
             this.dosyaidtextbox.MinimumSize = new System.Drawing.Size(286, 26);
             this.dosyaidtextbox.Name = "dosyaidtextbox";
             this.dosyaidtextbox.ReadOnly = true;
-            this.dosyaidtextbox.Size = new System.Drawing.Size(286, 26);
+            this.dosyaidtextbox.Size = new System.Drawing.Size(286, 34);
             this.dosyaidtextbox.TabIndex = 5;
             this.dosyaidtextbox.TextChanged += new System.EventHandler(this.RemoveSpacesFromTextBox);
             // 
@@ -407,7 +407,7 @@
             this.txtdosyanumarasi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtdosyanumarasi.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtdosyanumarasi.Name = "txtdosyanumarasi";
-            this.txtdosyanumarasi.Size = new System.Drawing.Size(286, 26);
+            this.txtdosyanumarasi.Size = new System.Drawing.Size(286, 30);
             this.txtdosyanumarasi.TabIndex = 3;
             // 
             // label13
@@ -431,7 +431,7 @@
             this.txtdosyatipi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtdosyatipi.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtdosyatipi.Name = "txtdosyatipi";
-            this.txtdosyatipi.Size = new System.Drawing.Size(286, 26);
+            this.txtdosyatipi.Size = new System.Drawing.Size(286, 30);
             this.txtdosyatipi.TabIndex = 4;
             // 
             // label14
@@ -546,7 +546,8 @@
             // 
             // EditForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1014, 564);
             this.Controls.Add(this.checkedListBox2);
@@ -584,7 +585,7 @@
             this.Controls.Add(this.txtDosyaAdi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(286, 0);
+            this.MinimumSize = new System.Drawing.Size(286, 47);
             this.Name = "EditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditForm";

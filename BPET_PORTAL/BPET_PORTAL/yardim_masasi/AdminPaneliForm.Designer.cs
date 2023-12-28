@@ -51,7 +51,8 @@ namespace destek_otomasyonu
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTalepler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTalepler.Location = new System.Drawing.Point(12, 12);
+            this.dgvTalepler.Location = new System.Drawing.Point(16, 15);
+            this.dgvTalepler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTalepler.Name = "dgvTalepler";
             this.dgvTalepler.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -64,7 +65,7 @@ namespace destek_otomasyonu
             this.dgvTalepler.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTalepler.RowHeadersWidth = 51;
             this.dgvTalepler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTalepler.Size = new System.Drawing.Size(946, 353);
+            this.dgvTalepler.Size = new System.Drawing.Size(1261, 434);
             this.dgvTalepler.TabIndex = 0;
             this.dgvTalepler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTalepler_CellContentClick);
             // 
@@ -76,10 +77,11 @@ namespace destek_otomasyonu
             this.cmbSonuclandirmaDurumu.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cmbSonuclandirmaDurumu.FormattingEnabled = true;
             this.cmbSonuclandirmaDurumu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbSonuclandirmaDurumu.Location = new System.Drawing.Point(602, 399);
-            this.cmbSonuclandirmaDurumu.MaximumSize = new System.Drawing.Size(100, 0);
+            this.cmbSonuclandirmaDurumu.Location = new System.Drawing.Point(803, 491);
+            this.cmbSonuclandirmaDurumu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSonuclandirmaDurumu.MaximumSize = new System.Drawing.Size(132, 0);
             this.cmbSonuclandirmaDurumu.Name = "cmbSonuclandirmaDurumu";
-            this.cmbSonuclandirmaDurumu.Size = new System.Drawing.Size(96, 21);
+            this.cmbSonuclandirmaDurumu.Size = new System.Drawing.Size(127, 24);
             this.cmbSonuclandirmaDurumu.TabIndex = 1;
             // 
             // button2
@@ -87,10 +89,11 @@ namespace destek_otomasyonu
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(294, 390);
-            this.button2.MaximumSize = new System.Drawing.Size(100, 100);
+            this.button2.Location = new System.Drawing.Point(392, 480);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.MaximumSize = new System.Drawing.Size(133, 123);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 37);
+            this.button2.Size = new System.Drawing.Size(133, 46);
             this.button2.TabIndex = 3;
             this.button2.Text = "Açıklama Göster";
             this.button2.UseVisualStyleBackColor = false;
@@ -102,10 +105,11 @@ namespace destek_otomasyonu
             this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(719, 390);
-            this.button3.MaximumSize = new System.Drawing.Size(100, 100);
+            this.button3.Location = new System.Drawing.Point(959, 480);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.MaximumSize = new System.Drawing.Size(133, 123);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 37);
+            this.button3.Size = new System.Drawing.Size(133, 46);
             this.button3.TabIndex = 2;
             this.button3.Text = "Sonuçlandır";
             this.button3.UseVisualStyleBackColor = false;
@@ -116,10 +120,11 @@ namespace destek_otomasyonu
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(16, 390);
-            this.button1.MaximumSize = new System.Drawing.Size(100, 100);
+            this.button1.Location = new System.Drawing.Point(21, 480);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.MaximumSize = new System.Drawing.Size(133, 123);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 37);
+            this.button1.Size = new System.Drawing.Size(133, 46);
             this.button1.TabIndex = 4;
             this.button1.Text = "Raporlar";
             this.button1.UseVisualStyleBackColor = false;
@@ -130,10 +135,11 @@ namespace destek_otomasyonu
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(155, 390);
-            this.button4.MaximumSize = new System.Drawing.Size(100, 100);
+            this.button4.Location = new System.Drawing.Point(207, 480);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.MaximumSize = new System.Drawing.Size(133, 123);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 37);
+            this.button4.Size = new System.Drawing.Size(133, 46);
             this.button4.TabIndex = 5;
             this.button4.Text = "Tabloyu Yenile";
             this.button4.UseVisualStyleBackColor = false;
@@ -144,10 +150,11 @@ namespace destek_otomasyonu
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Location = new System.Drawing.Point(848, 390);
-            this.button5.MaximumSize = new System.Drawing.Size(100, 100);
+            this.button5.Location = new System.Drawing.Point(1131, 480);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.MaximumSize = new System.Drawing.Size(133, 123);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 37);
+            this.button5.Size = new System.Drawing.Size(133, 46);
             this.button5.TabIndex = 6;
             this.button5.Text = "Talep Sil";
             this.button5.UseVisualStyleBackColor = false;
@@ -158,10 +165,11 @@ namespace destek_otomasyonu
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button6.Location = new System.Drawing.Point(410, 390);
-            this.button6.MaximumSize = new System.Drawing.Size(100, 100);
+            this.button6.Location = new System.Drawing.Point(547, 480);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.MaximumSize = new System.Drawing.Size(133, 123);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 37);
+            this.button6.Size = new System.Drawing.Size(133, 46);
             this.button6.TabIndex = 7;
             this.button6.Text = "Dosya Göster";
             this.button6.UseVisualStyleBackColor = false;
@@ -169,9 +177,9 @@ namespace destek_otomasyonu
             // 
             // AdminPaneliForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 455);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1293, 560);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -181,6 +189,7 @@ namespace destek_otomasyonu
             this.Controls.Add(this.cmbSonuclandirmaDurumu);
             this.Controls.Add(this.dgvTalepler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminPaneliForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPaneliForm";

@@ -345,3 +345,5 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Diagnostics.DiagnosticSou
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah.harcirahlistesi.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah.yeniharcirah.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.BilgiIslemAciklamaFormu.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.RaporEkrani.resources

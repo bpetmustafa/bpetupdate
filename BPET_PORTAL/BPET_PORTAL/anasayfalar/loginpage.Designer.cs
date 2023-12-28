@@ -73,9 +73,9 @@
             this.panelheader.Controls.Add(this.button1);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
-            this.panelheader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelheader.Margin = new System.Windows.Forms.Padding(2);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1010, 26);
+            this.panelheader.Size = new System.Drawing.Size(979, 26);
             this.panelheader.TabIndex = 5;
             // 
             // button5
@@ -89,8 +89,8 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(939, 1);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(908, 1);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(32, 24);
             this.button5.TabIndex = 5;
@@ -109,8 +109,8 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(976, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(945, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 24);
             this.button1.TabIndex = 4;
@@ -131,10 +131,10 @@
             this.panel1.Controls.Add(this.epostalogin);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btngirisyap);
-            this.panel1.Location = new System.Drawing.Point(10, 38);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(-6, 38);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 470);
+            this.panel1.Size = new System.Drawing.Size(274, 600);
             this.panel1.TabIndex = 6;
             // 
             // button4
@@ -145,11 +145,11 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(126, 322);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.MaximumSize = new System.Drawing.Size(96, 40);
+            this.button4.Location = new System.Drawing.Point(149, 352);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.MaximumSize = new System.Drawing.Size(123, 49);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 40);
+            this.button4.Size = new System.Drawing.Size(123, 49);
             this.button4.TabIndex = 18;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -162,11 +162,11 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(18, 322);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.MaximumSize = new System.Drawing.Size(96, 40);
+            this.button3.Location = new System.Drawing.Point(6, 352);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.MaximumSize = new System.Drawing.Size(123, 49);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 40);
+            this.button3.Size = new System.Drawing.Size(123, 49);
             this.button3.TabIndex = 17;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -178,8 +178,8 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.RosyBrown;
-            this.button2.Location = new System.Drawing.Point(29, 378);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(29, 508);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 44);
             this.button2.TabIndex = 7;
@@ -190,19 +190,19 @@
             // 
             this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Lime;
             this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Black;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.linkLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkLabel3.LinkColor = System.Drawing.Color.Lime;
-            this.linkLabel3.Location = new System.Drawing.Point(143, 447);
+            this.linkLabel3.Location = new System.Drawing.Point(129, 580);
             this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel3.MaximumSize = new System.Drawing.Size(128, 22);
-            this.linkLabel3.MinimumSize = new System.Drawing.Size(128, 22);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(128, 22);
+            this.linkLabel3.Size = new System.Drawing.Size(143, 20);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.3.4.13 -Cloud";
+            this.linkLabel3.Text = "V2.3.4.15 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox
@@ -212,7 +212,7 @@
             this.beniHatirlaCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.beniHatirlaCheckBox.ForeColor = System.Drawing.Color.Transparent;
             this.beniHatirlaCheckBox.Location = new System.Drawing.Point(30, 223);
-            this.beniHatirlaCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.beniHatirlaCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.beniHatirlaCheckBox.Name = "beniHatirlaCheckBox";
             this.beniHatirlaCheckBox.Size = new System.Drawing.Size(84, 15);
             this.beniHatirlaCheckBox.TabIndex = 3;
@@ -226,10 +226,10 @@
             // 
             // 
             this.sifrelogin.CustomButton.Image = null;
-            this.sifrelogin.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.sifrelogin.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sifrelogin.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.sifrelogin.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.sifrelogin.CustomButton.Name = "";
-            this.sifrelogin.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.sifrelogin.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.sifrelogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.sifrelogin.CustomButton.TabIndex = 1;
             this.sifrelogin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -238,7 +238,7 @@
             this.sifrelogin.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.sifrelogin.Lines = new string[0];
             this.sifrelogin.Location = new System.Drawing.Point(30, 188);
-            this.sifrelogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sifrelogin.Margin = new System.Windows.Forms.Padding(2);
             this.sifrelogin.MaximumSize = new System.Drawing.Size(178, 28);
             this.sifrelogin.MaxLength = 32767;
             this.sifrelogin.Name = "sifrelogin";
@@ -264,10 +264,10 @@
             // 
             // 
             this.epostalogin.CustomButton.Image = null;
-            this.epostalogin.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.epostalogin.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.epostalogin.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.epostalogin.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.epostalogin.CustomButton.Name = "";
-            this.epostalogin.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.epostalogin.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.epostalogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.epostalogin.CustomButton.TabIndex = 1;
             this.epostalogin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -276,7 +276,7 @@
             this.epostalogin.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.epostalogin.Lines = new string[0];
             this.epostalogin.Location = new System.Drawing.Point(30, 146);
-            this.epostalogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.epostalogin.Margin = new System.Windows.Forms.Padding(2);
             this.epostalogin.MaximumSize = new System.Drawing.Size(178, 28);
             this.epostalogin.MaxLength = 32767;
             this.epostalogin.Name = "epostalogin";
@@ -319,10 +319,10 @@
             this.btngirisyap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btngirisyap.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btngirisyap.Location = new System.Drawing.Point(66, 252);
-            this.btngirisyap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btngirisyap.MaximumSize = new System.Drawing.Size(96, 40);
+            this.btngirisyap.Margin = new System.Windows.Forms.Padding(2);
+            this.btngirisyap.MaximumSize = new System.Drawing.Size(123, 49);
             this.btngirisyap.Name = "btngirisyap";
-            this.btngirisyap.Size = new System.Drawing.Size(96, 40);
+            this.btngirisyap.Size = new System.Drawing.Size(123, 49);
             this.btngirisyap.TabIndex = 4;
             this.btngirisyap.UseVisualStyleBackColor = false;
             this.btngirisyap.Click += new System.EventHandler(this.btngirisyap_Click);
@@ -342,10 +342,10 @@
             this.panel2.Controls.Add(this.txtadsoyadrg);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btnregister);
-            this.panel2.Location = new System.Drawing.Point(738, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(722, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 470);
+            this.panel2.Size = new System.Drawing.Size(270, 600);
             this.panel2.TabIndex = 7;
             this.panel2.Visible = false;
             // 
@@ -358,7 +358,7 @@
             this.btndogrularg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btndogrularg.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btndogrularg.Location = new System.Drawing.Point(75, 377);
-            this.btndogrularg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btndogrularg.Margin = new System.Windows.Forms.Padding(2);
             this.btndogrularg.MaximumSize = new System.Drawing.Size(96, 40);
             this.btndogrularg.Name = "btndogrularg";
             this.btndogrularg.Size = new System.Drawing.Size(96, 40);
@@ -378,7 +378,7 @@
             this.kayitlabel.Location = new System.Drawing.Point(26, 419);
             this.kayitlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kayitlabel.Name = "kayitlabel";
-            this.kayitlabel.Size = new System.Drawing.Size(220, 16);
+            this.kayitlabel.Size = new System.Drawing.Size(220, 146);
             this.kayitlabel.TabIndex = 20;
             this.kayitlabel.TabStop = true;
             this.kayitlabel.Text = "Zaten hesabınız varmı? Giriş Yapın!";
@@ -391,10 +391,10 @@
             // 
             // 
             this.mailverifytxtbox.CustomButton.Image = null;
-            this.mailverifytxtbox.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.mailverifytxtbox.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mailverifytxtbox.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.mailverifytxtbox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.mailverifytxtbox.CustomButton.Name = "";
-            this.mailverifytxtbox.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.mailverifytxtbox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mailverifytxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mailverifytxtbox.CustomButton.TabIndex = 1;
             this.mailverifytxtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -402,7 +402,7 @@
             this.mailverifytxtbox.CustomButton.Visible = false;
             this.mailverifytxtbox.Lines = new string[0];
             this.mailverifytxtbox.Location = new System.Drawing.Point(40, 342);
-            this.mailverifytxtbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mailverifytxtbox.Margin = new System.Windows.Forms.Padding(2);
             this.mailverifytxtbox.MaximumSize = new System.Drawing.Size(178, 28);
             this.mailverifytxtbox.MaxLength = 32767;
             this.mailverifytxtbox.Name = "mailverifytxtbox";
@@ -429,10 +429,10 @@
             // 
             // 
             this.txtsifrerg.CustomButton.Image = null;
-            this.txtsifrerg.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.txtsifrerg.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsifrerg.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.txtsifrerg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtsifrerg.CustomButton.Name = "";
-            this.txtsifrerg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txtsifrerg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtsifrerg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtsifrerg.CustomButton.TabIndex = 1;
             this.txtsifrerg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -441,7 +441,7 @@
             this.txtsifrerg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtsifrerg.Lines = new string[0];
             this.txtsifrerg.Location = new System.Drawing.Point(40, 262);
-            this.txtsifrerg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsifrerg.Margin = new System.Windows.Forms.Padding(2);
             this.txtsifrerg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txtsifrerg.MaxLength = 32767;
             this.txtsifrerg.Name = "txtsifrerg";
@@ -467,10 +467,10 @@
             // 
             // 
             this.txttelefonrg.CustomButton.Image = null;
-            this.txttelefonrg.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.txttelefonrg.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttelefonrg.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.txttelefonrg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefonrg.CustomButton.Name = "";
-            this.txttelefonrg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txttelefonrg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txttelefonrg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txttelefonrg.CustomButton.TabIndex = 1;
             this.txttelefonrg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -479,7 +479,7 @@
             this.txttelefonrg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txttelefonrg.Lines = new string[0];
             this.txttelefonrg.Location = new System.Drawing.Point(40, 208);
-            this.txttelefonrg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttelefonrg.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefonrg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txttelefonrg.MaxLength = 32767;
             this.txttelefonrg.Name = "txttelefonrg";
@@ -505,10 +505,10 @@
             // 
             // 
             this.txtepostarg.CustomButton.Image = null;
-            this.txtepostarg.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.txtepostarg.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtepostarg.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.txtepostarg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtepostarg.CustomButton.Name = "";
-            this.txtepostarg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txtepostarg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtepostarg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtepostarg.CustomButton.TabIndex = 1;
             this.txtepostarg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -517,7 +517,7 @@
             this.txtepostarg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtepostarg.Lines = new string[0];
             this.txtepostarg.Location = new System.Drawing.Point(40, 162);
-            this.txtepostarg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtepostarg.Margin = new System.Windows.Forms.Padding(2);
             this.txtepostarg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txtepostarg.MaxLength = 32767;
             this.txtepostarg.Name = "txtepostarg";
@@ -543,10 +543,10 @@
             // 
             // 
             this.txtadsoyadrg.CustomButton.Image = null;
-            this.txtadsoyadrg.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.txtadsoyadrg.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtadsoyadrg.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.txtadsoyadrg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtadsoyadrg.CustomButton.Name = "";
-            this.txtadsoyadrg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txtadsoyadrg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtadsoyadrg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtadsoyadrg.CustomButton.TabIndex = 1;
             this.txtadsoyadrg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -555,7 +555,7 @@
             this.txtadsoyadrg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtadsoyadrg.Lines = new string[0];
             this.txtadsoyadrg.Location = new System.Drawing.Point(40, 110);
-            this.txtadsoyadrg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtadsoyadrg.Margin = new System.Windows.Forms.Padding(2);
             this.txtadsoyadrg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txtadsoyadrg.MaxLength = 32767;
             this.txtadsoyadrg.Name = "txtadsoyadrg";
@@ -596,7 +596,7 @@
             this.btnregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnregister.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnregister.Location = new System.Drawing.Point(59, 298);
-            this.btnregister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnregister.Margin = new System.Windows.Forms.Padding(2);
             this.btnregister.MaximumSize = new System.Drawing.Size(0, 40);
             this.btnregister.MinimumSize = new System.Drawing.Size(96, 40);
             this.btnregister.Name = "btnregister";
@@ -616,10 +616,10 @@
             this.panel3.Controls.Add(this.sfrreseteposta);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.sifirlamaepostakontrol);
-            this.panel3.Location = new System.Drawing.Point(375, 38);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(359, 38);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(274, 470);
+            this.panel3.Size = new System.Drawing.Size(274, 600);
             this.panel3.TabIndex = 15;
             this.panel3.Visible = false;
             // 
@@ -635,7 +635,7 @@
             this.btnsifremiunuttumkapat.ForeColor = System.Drawing.Color.White;
             this.btnsifremiunuttumkapat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsifremiunuttumkapat.Location = new System.Drawing.Point(242, 2);
-            this.btnsifremiunuttumkapat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsifremiunuttumkapat.Margin = new System.Windows.Forms.Padding(2);
             this.btnsifremiunuttumkapat.Name = "btnsifremiunuttumkapat";
             this.btnsifremiunuttumkapat.Size = new System.Drawing.Size(32, 24);
             this.btnsifremiunuttumkapat.TabIndex = 6;
@@ -654,7 +654,7 @@
             this.resetsifrebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.resetsifrebtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.resetsifrebtn.Location = new System.Drawing.Point(60, 285);
-            this.resetsifrebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetsifrebtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetsifrebtn.MaximumSize = new System.Drawing.Size(133, 28);
             this.resetsifrebtn.Name = "resetsifrebtn";
             this.resetsifrebtn.Size = new System.Drawing.Size(133, 28);
@@ -672,10 +672,10 @@
             // 
             // 
             this.resetdogrulamatxt.CustomButton.Image = null;
-            this.resetdogrulamatxt.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.resetdogrulamatxt.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetdogrulamatxt.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.resetdogrulamatxt.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetdogrulamatxt.CustomButton.Name = "";
-            this.resetdogrulamatxt.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.resetdogrulamatxt.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.resetdogrulamatxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.resetdogrulamatxt.CustomButton.TabIndex = 1;
             this.resetdogrulamatxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -683,7 +683,7 @@
             this.resetdogrulamatxt.CustomButton.Visible = false;
             this.resetdogrulamatxt.Lines = new string[0];
             this.resetdogrulamatxt.Location = new System.Drawing.Point(46, 252);
-            this.resetdogrulamatxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetdogrulamatxt.Margin = new System.Windows.Forms.Padding(2);
             this.resetdogrulamatxt.MaximumSize = new System.Drawing.Size(178, 28);
             this.resetdogrulamatxt.MaxLength = 32767;
             this.resetdogrulamatxt.Name = "resetdogrulamatxt";
@@ -712,10 +712,10 @@
             // 
             // 
             this.resetsifretxt.CustomButton.Image = null;
-            this.resetsifretxt.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.resetsifretxt.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetsifretxt.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.resetsifretxt.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetsifretxt.CustomButton.Name = "";
-            this.resetsifretxt.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.resetsifretxt.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.resetsifretxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.resetsifretxt.CustomButton.TabIndex = 1;
             this.resetsifretxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -724,7 +724,7 @@
             this.resetsifretxt.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.resetsifretxt.Lines = new string[0];
             this.resetsifretxt.Location = new System.Drawing.Point(46, 162);
-            this.resetsifretxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetsifretxt.Margin = new System.Windows.Forms.Padding(2);
             this.resetsifretxt.MaximumSize = new System.Drawing.Size(178, 28);
             this.resetsifretxt.MaxLength = 32767;
             this.resetsifretxt.Name = "resetsifretxt";
@@ -752,10 +752,10 @@
             // 
             // 
             this.sfrreseteposta.CustomButton.Image = null;
-            this.sfrreseteposta.CustomButton.Location = new System.Drawing.Point(122, 2);
-            this.sfrreseteposta.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sfrreseteposta.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.sfrreseteposta.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.sfrreseteposta.CustomButton.Name = "";
-            this.sfrreseteposta.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.sfrreseteposta.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.sfrreseteposta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.sfrreseteposta.CustomButton.TabIndex = 1;
             this.sfrreseteposta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -764,7 +764,7 @@
             this.sfrreseteposta.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.sfrreseteposta.Lines = new string[0];
             this.sfrreseteposta.Location = new System.Drawing.Point(46, 119);
-            this.sfrreseteposta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sfrreseteposta.Margin = new System.Windows.Forms.Padding(2);
             this.sfrreseteposta.MaximumSize = new System.Drawing.Size(178, 28);
             this.sfrreseteposta.MaxLength = 32767;
             this.sfrreseteposta.Name = "sfrreseteposta";
@@ -808,7 +808,7 @@
             this.sifirlamaepostakontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sifirlamaepostakontrol.ForeColor = System.Drawing.SystemColors.ControlText;
             this.sifirlamaepostakontrol.Location = new System.Drawing.Point(80, 201);
-            this.sifirlamaepostakontrol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sifirlamaepostakontrol.Margin = new System.Windows.Forms.Padding(2);
             this.sifirlamaepostakontrol.MaximumSize = new System.Drawing.Size(96, 40);
             this.sifirlamaepostakontrol.Name = "sifirlamaepostakontrol";
             this.sifirlamaepostakontrol.Size = new System.Drawing.Size(96, 40);
@@ -823,7 +823,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::BPET_PORTAL.Properties.Resources.banner2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1010, 538);
+            this.ClientSize = new System.Drawing.Size(979, 668);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -831,7 +831,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "loginpage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BPET PORTAL";
