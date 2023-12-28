@@ -197,7 +197,7 @@
             this.linkLabel3.Size = new System.Drawing.Size(160, 28);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.3.4.11 -Cloud";
+            this.linkLabel3.Text = "V2.3.4.12 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox

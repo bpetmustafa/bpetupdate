@@ -27,7 +27,6 @@ using MessageBox = System.Windows.Forms.MessageBox;
 using Size = System.Drawing.Size;
 using FontStyle = System.Drawing.FontStyle;
 using Application = System.Windows.Forms.Application;
-using LiveCharts.WinForms;
 
 
 namespace BPET_PORTAL
@@ -133,9 +132,7 @@ namespace BPET_PORTAL
                         // MessageBox.Show($"SQL Server Response Time: {responseTime.TotalMilliseconds} ms", "Test Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // SolidGauge1'e cevap süresini ayarla
-                        solidGauge1.Value = (int)responseTime.TotalMilliseconds;
-                        solidGauge1.To = 100;
-                        solidGauge1.HighFontSize = 24;
+                        label2.Text = "Sunucu Yanıt Süresi " + (int)responseTime.TotalMilliseconds + "ms";                        
 
                     }
                 }

@@ -37,6 +37,7 @@
             this.txtMessage = new MetroFramework.Controls.MetroTextBox();
             this.txtChatLog = new System.Windows.Forms.RichTextBox();
             this.panelside = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnlojistik = new System.Windows.Forms.Button();
             this.btninsankaynaklari = new System.Windows.Forms.Button();
             this.btnmuhasebe = new System.Windows.Forms.Button();
@@ -58,8 +59,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.livechatbtn = new System.Windows.Forms.Button();
-            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
-            this.label2 = new System.Windows.Forms.Label();
             this.livechat.SuspendLayout();
             this.panelside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bpetlogo)).BeginInit();
@@ -197,8 +196,6 @@
             // panelside
             // 
             this.panelside.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelside.Controls.Add(this.label2);
-            this.panelside.Controls.Add(this.solidGauge1);
             this.panelside.Controls.Add(this.btnlojistik);
             this.panelside.Controls.Add(this.btninsankaynaklari);
             this.panelside.Controls.Add(this.btnmuhasebe);
@@ -219,6 +216,22 @@
             this.panelside.Name = "panelside";
             this.panelside.Size = new System.Drawing.Size(200, 658);
             this.panelside.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.Lime;
+            this.label2.Location = new System.Drawing.Point(895, 8);
+            this.label2.MaximumSize = new System.Drawing.Size(215, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 18);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Sunucu Yanıt Süresi 51 (ms)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnlojistik
             // 
@@ -526,6 +539,7 @@
             // panelheader
             // 
             this.panelheader.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelheader.Controls.Add(this.label2);
             this.panelheader.Controls.Add(this.boyutlandırma);
             this.panelheader.Controls.Add(this.Togglemenubutton);
             this.panelheader.Controls.Add(this.epostalabel);
@@ -640,28 +654,6 @@
             this.livechatbtn.UseVisualStyleBackColor = false;
             this.livechatbtn.Click += new System.EventHandler(this.livechatbtn_Click);
             // 
-            // solidGauge1
-            // 
-            this.solidGauge1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.solidGauge1.Location = new System.Drawing.Point(-1, 526);
-            this.solidGauge1.Name = "solidGauge1";
-            this.solidGauge1.Size = new System.Drawing.Size(198, 98);
-            this.solidGauge1.TabIndex = 32;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.BackColor = System.Drawing.Color.DarkBlue;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 526);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 20);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Sunucu Yanıt Süresi (ms)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // mainpage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -723,7 +715,6 @@
         public MetroFramework.Controls.MetroTextBox txtMessage;
         public System.Windows.Forms.Button gondertusu;
         public System.Windows.Forms.Button btnlojistik;
-        private LiveCharts.WinForms.SolidGauge solidGauge1;
         private System.Windows.Forms.Label label2;
     }
 }
