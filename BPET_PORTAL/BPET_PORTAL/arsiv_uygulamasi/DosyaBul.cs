@@ -275,6 +275,10 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             {
                 connection.Close();
             }
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                dataGridView.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
+            }
         }
         private void resetle_Click(object sender, EventArgs e)
         {
@@ -417,14 +421,26 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                 okButton.ForeColor = Color.White;
                 okButton.FlatStyle = FlatStyle.Flat;
                 okButton.Height = 40;
-                okButton.Click += (s, e) => { form.Close(); }; // Formu kapat
+
+                okButton.Click += (s, e) =>
+                {
+                    talepAciklama = textBox.Text.Trim(); // Kullanıcının girdiği metni alın, trim() ile baştaki ve sondaki boşlukları temizleyin
+                    if (string.IsNullOrEmpty(talepAciklama))
+                    {
+                        MessageBox.Show("Talep açıklaması boş olamaz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        form.Close(); // Formu kapat
+                    }
+                };
 
                 form.Controls.Add(titleLabel);
                 form.Controls.Add(infoLabel);
                 form.Controls.Add(textBox);
                 form.Controls.Add(okButton);
                 form.ShowDialog();
-                talepAciklama = textBox.Text; // Kullanıcının girdiği metni alın
+
             }
             return talepAciklama;
         }

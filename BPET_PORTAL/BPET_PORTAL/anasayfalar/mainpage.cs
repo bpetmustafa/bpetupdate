@@ -19,6 +19,15 @@ using System.Net.Sockets;
 using System.Media;
 using BPET_PORTAL.arsiv_uygulamasi;
 using BPET_PORTAL.borsauygulamasi;
+using LiveCharts.Wpf;
+using Brushes = System.Windows.Media.Brushes;
+using System.Windows;
+using Point = System.Drawing.Point;
+using MessageBox = System.Windows.Forms.MessageBox;
+using Size = System.Drawing.Size;
+using FontStyle = System.Drawing.FontStyle;
+using Application = System.Windows.Forms.Application;
+using LiveCharts.WinForms;
 
 
 namespace BPET_PORTAL
@@ -56,7 +65,7 @@ namespace BPET_PORTAL
         private Color blinkColor = Color.Red; // Yanıp sönen rengi belirle
 
         private DateTime lastUserMessageTime = DateTime.MinValue;
-
+       
         public mainpage(string eposta)
         {
 
@@ -93,7 +102,50 @@ namespace BPET_PORTAL
             blinkTimer = new Timer();
             blinkTimer.Interval = 500; // Yanıp sönme süresi (milisaniye cinsinden)
             blinkTimer.Tick += new EventHandler(BlinkTimer_Tick);
+
+       }
+        private void testping()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sqlQuery = "SELECT TOP 1 * FROM Messages";
+
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        connection.Open();
+
+                        DateTime startTime = DateTime.Now;
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Veri işlemleri
+                            }
+                        }
+
+                        DateTime endTime = DateTime.Now;
+                        TimeSpan responseTime = endTime - startTime;
+
+                        // Elde edilen cevap süresini ekrana yazdır
+                        // MessageBox.Show($"SQL Server Response Time: {responseTime.TotalMilliseconds} ms", "Test Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // SolidGauge1'e cevap süresini ayarla
+                        solidGauge1.Value = (int)responseTime.TotalMilliseconds;
+                        solidGauge1.To = 100;
+                        solidGauge1.HighFontSize = 24;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
             if (livechat.BackColor == originalColor)
@@ -167,6 +219,7 @@ namespace BPET_PORTAL
         {
             // Timer tetiklendiğinde chat ekranını güncelle
             LoadChatHistory();
+            testping();
         }
 
         private void LoadChatHistory()
@@ -333,7 +386,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
         }
         public void loadform(object form)
         {
-            SetButtonAndFormProperties(activeForm, SystemColors.ControlDarkDark, FontStyle.Regular, 10);
+            SetButtonAndFormProperties(activeForm, System.Drawing.SystemColors.ControlDarkDark, FontStyle.Regular, 10);
 
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.RemoveAt(0);
@@ -351,7 +404,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
 
         private void SetButtonAndFormProperties(Form form, Color backColor, FontStyle fontStyle, int fontSize)
         {
-            if (form is raporekrani)
+            if (form is gunluksatisraporekrani)
             {
                 btnrapor.BackColor = backColor;
                 btnrapor.Font = new Font(btnrapor.Font.FontFamily, fontSize, fontStyle);
@@ -617,7 +670,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
 
         private void btnrapor_Click(object sender, EventArgs e)
         {
-            loadform(new raporekrani());
+            loadform(new gunluksatisraporekrani());
         }
         private void kullaniciyetkileri()
         {
@@ -924,7 +977,10 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             }
         }
 
-       
+        private void mainpage_Shown(object sender, EventArgs e)
+        {
+            testping();
+        }
     }
 
 }

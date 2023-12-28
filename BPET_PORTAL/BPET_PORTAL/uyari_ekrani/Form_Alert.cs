@@ -76,7 +76,11 @@ namespace BPET_PORTAL
                     break;
             }
         }
-
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             timer1.Interval = 1;

@@ -1,7 +1,9 @@
 ﻿using BPET_PORTAL.arsiv_uygulamasi;
 using BPET_PORTAL.lojistik.lojistikekranlar;
 using BPET_PORTAL.lojistik.lojistikekranlar.aractakip;
+using BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri;
 using BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri;
+using BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,7 +74,13 @@ namespace BPET_PORTAL.lojistik
 
         private void nAKLİYEGELİRLERİToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lojistikloadform(new nakliyegelirleri());
 
+        }
+
+        private void yOLHARCIRAHLİSTESİToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lojistikloadform(new harcirahlistesi());
         }
     }
 }

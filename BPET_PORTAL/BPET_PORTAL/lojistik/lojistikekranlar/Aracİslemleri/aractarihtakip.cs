@@ -151,6 +151,10 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
                 {
                     MessageBox.Show("Veri okuma hatası: " + ex.Message);
                 }
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    dataGridView1.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
+                }
             }
         }
 
@@ -408,6 +412,14 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void aractarihtakip_Shown(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                dataGridView1.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
+            }
         }
     }
 }

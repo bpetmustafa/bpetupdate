@@ -35,6 +35,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnYeniArac = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sagtikmenutablo = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.seçiliVeriyiDüzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.labelToplamYakitTutariTLKDV = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
@@ -53,22 +55,20 @@
             this.cmbHizmetKodu = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbYil = new System.Windows.Forms.ComboBox();
+            this.btnFiltrele = new System.Windows.Forms.Button();
             this.txtPlaka = new MetroFramework.Controls.MetroTextBox();
+            this.resetle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbPlakalar = new System.Windows.Forms.ComboBox();
             this.btnRaporOlustur = new System.Windows.Forms.Button();
-            this.sagtikmenutablo = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.btnFiltrele = new System.Windows.Forms.Button();
-            this.resetle = new System.Windows.Forms.Button();
-            this.seçiliVeriyiDüzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.sagtikmenutablo.SuspendLayout();
             this.Panel4.SuspendLayout();
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.sagtikmenutablo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -147,8 +147,26 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1468, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(1187, 335);
             this.dataGridView1.TabIndex = 65;
+            // 
+            // sagtikmenutablo
+            // 
+            this.sagtikmenutablo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seçiliVeriyiDüzenleToolStripMenuItem});
+            this.sagtikmenutablo.Name = "metroContextMenu1";
+            this.sagtikmenutablo.Size = new System.Drawing.Size(252, 58);
+            // 
+            // seçiliVeriyiDüzenleToolStripMenuItem
+            // 
+            this.seçiliVeriyiDüzenleToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_edit_48;
+            this.seçiliVeriyiDüzenleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.seçiliVeriyiDüzenleToolStripMenuItem.Name = "seçiliVeriyiDüzenleToolStripMenuItem";
+            this.seçiliVeriyiDüzenleToolStripMenuItem.RightToLeftAutoMirrorImage = true;
+            this.seçiliVeriyiDüzenleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.seçiliVeriyiDüzenleToolStripMenuItem.Size = new System.Drawing.Size(251, 54);
+            this.seçiliVeriyiDüzenleToolStripMenuItem.Text = "Seçili Veriyi Düzenle";
+            this.seçiliVeriyiDüzenleToolStripMenuItem.Click += new System.EventHandler(this.seçiliVeriyiDüzenleToolStripMenuItem_Click);
             // 
             // Panel4
             // 
@@ -156,7 +174,7 @@
             this.Panel4.BackColor = System.Drawing.Color.RoyalBlue;
             this.Panel4.Controls.Add(this.labelToplamYakitTutariTLKDV);
             this.Panel4.Controls.Add(this.Label3);
-            this.Panel4.Location = new System.Drawing.Point(1346, 21);
+            this.Panel4.Location = new System.Drawing.Point(1065, 21);
             this.Panel4.Margin = new System.Windows.Forms.Padding(4);
             this.Panel4.MaximumSize = new System.Drawing.Size(185, 97);
             this.Panel4.Name = "Panel4";
@@ -193,7 +211,7 @@
             this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(156)))), ((int)(((byte)(252)))));
             this.Panel3.Controls.Add(this.labelToplamYakitTutariKDVsizTL);
             this.Panel3.Controls.Add(this.Label2);
-            this.Panel3.Location = new System.Drawing.Point(1199, 21);
+            this.Panel3.Location = new System.Drawing.Point(918, 21);
             this.Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.Panel3.MaximumSize = new System.Drawing.Size(185, 97);
             this.Panel3.Name = "Panel3";
@@ -230,7 +248,7 @@
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
             this.Panel2.Controls.Add(this.labelToplamYakitMiktari);
             this.Panel2.Controls.Add(this.Label1);
-            this.Panel2.Location = new System.Drawing.Point(1051, 21);
+            this.Panel2.Location = new System.Drawing.Point(770, 21);
             this.Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.Panel2.MaximumSize = new System.Drawing.Size(185, 97);
             this.Panel2.Name = "Panel2";
@@ -396,6 +414,27 @@
             this.cmbYil.Size = new System.Drawing.Size(116, 27);
             this.cmbYil.TabIndex = 47;
             // 
+            // btnFiltrele
+            // 
+            this.btnFiltrele.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltrele.AutoSize = true;
+            this.btnFiltrele.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFiltrele.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFiltrele.BackgroundImage")));
+            this.btnFiltrele.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFiltrele.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrele.FlatAppearance.BorderSize = 0;
+            this.btnFiltrele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrele.Location = new System.Drawing.Point(365, 56);
+            this.btnFiltrele.MaximumSize = new System.Drawing.Size(31, 37);
+            this.btnFiltrele.Name = "btnFiltrele";
+            this.btnFiltrele.Size = new System.Drawing.Size(31, 37);
+            this.btnFiltrele.TabIndex = 46;
+            this.btnFiltrele.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFiltrele.UseVisualStyleBackColor = false;
+            this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
+            // 
             // txtPlaka
             // 
             this.txtPlaka.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -434,6 +473,27 @@
             this.txtPlaka.WaterMark = "PLAKA ARAMA";
             this.txtPlaka.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlaka.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // resetle
+            // 
+            this.resetle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resetle.AutoSize = true;
+            this.resetle.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resetle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetle.BackgroundImage")));
+            this.resetle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetle.FlatAppearance.BorderSize = 0;
+            this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetle.Location = new System.Drawing.Point(365, 16);
+            this.resetle.MaximumSize = new System.Drawing.Size(31, 37);
+            this.resetle.Name = "resetle";
+            this.resetle.Size = new System.Drawing.Size(31, 37);
+            this.resetle.TabIndex = 33;
+            this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.resetle.UseVisualStyleBackColor = false;
+            this.resetle.Click += new System.EventHandler(this.resetle_Click);
             // 
             // groupBox1
             // 
@@ -478,71 +538,11 @@
             this.btnRaporOlustur.UseVisualStyleBackColor = true;
             this.btnRaporOlustur.Click += new System.EventHandler(this.btnRaporOlustur_Click);
             // 
-            // sagtikmenutablo
-            // 
-            this.sagtikmenutablo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seçiliVeriyiDüzenleToolStripMenuItem});
-            this.sagtikmenutablo.Name = "metroContextMenu1";
-            this.sagtikmenutablo.Size = new System.Drawing.Size(252, 80);
-            // 
-            // btnFiltrele
-            // 
-            this.btnFiltrele.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltrele.AutoSize = true;
-            this.btnFiltrele.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFiltrele.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFiltrele.BackgroundImage")));
-            this.btnFiltrele.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFiltrele.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltrele.FlatAppearance.BorderSize = 0;
-            this.btnFiltrele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrele.Location = new System.Drawing.Point(365, 56);
-            this.btnFiltrele.MaximumSize = new System.Drawing.Size(31, 37);
-            this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(31, 37);
-            this.btnFiltrele.TabIndex = 46;
-            this.btnFiltrele.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFiltrele.UseVisualStyleBackColor = false;
-            this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
-            // 
-            // resetle
-            // 
-            this.resetle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resetle.AutoSize = true;
-            this.resetle.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resetle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetle.BackgroundImage")));
-            this.resetle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetle.FlatAppearance.BorderSize = 0;
-            this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetle.Location = new System.Drawing.Point(365, 16);
-            this.resetle.MaximumSize = new System.Drawing.Size(31, 37);
-            this.resetle.Name = "resetle";
-            this.resetle.Size = new System.Drawing.Size(31, 37);
-            this.resetle.TabIndex = 33;
-            this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.resetle.UseVisualStyleBackColor = false;
-            this.resetle.Click += new System.EventHandler(this.resetle_Click);
-            // 
-            // seçiliVeriyiDüzenleToolStripMenuItem
-            // 
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_edit_48;
-            this.seçiliVeriyiDüzenleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Name = "seçiliVeriyiDüzenleToolStripMenuItem";
-            this.seçiliVeriyiDüzenleToolStripMenuItem.RightToLeftAutoMirrorImage = true;
-            this.seçiliVeriyiDüzenleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Size = new System.Drawing.Size(251, 54);
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Text = "Seçili Veriyi Düzenle";
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Click += new System.EventHandler(this.seçiliVeriyiDüzenleToolStripMenuItem_Click);
-            // 
             // yakitgiderleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 494);
+            this.ClientSize = new System.Drawing.Size(1210, 483);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.Panel4);
@@ -559,6 +559,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.sagtikmenutablo.ResumeLayout(false);
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
             this.Panel3.ResumeLayout(false);
@@ -568,7 +569,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.sagtikmenutablo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

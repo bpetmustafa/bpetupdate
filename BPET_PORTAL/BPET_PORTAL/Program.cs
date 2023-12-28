@@ -18,7 +18,7 @@ namespace BPET_PORTAL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginpage());
-           //Application.Run(new borsaanasayfa("")); //test 
+            //Application.Run(new borsaanasayfa("")); //test 
         }
     }
 }

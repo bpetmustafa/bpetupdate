@@ -32,7 +32,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -49,6 +49,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -105,6 +106,15 @@
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -148,6 +158,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -162,6 +175,7 @@
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net" />
     <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
       <Private>True</Private>
@@ -226,6 +240,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -235,6 +250,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
     </Reference>
@@ -400,6 +416,30 @@
     <Compile Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\YeniAracEkleForm.Designer.cs">
       <DependentUpon>YeniAracEkleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="lojistik\lojistikekranlar\nakliyegelirleri\nakliyegelirleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\nakliyegelirleri\nakliyegelirleri.Designer.cs">
+      <DependentUpon>nakliyegelirleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\nakliyegelirleri\RaporEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\nakliyegelirleri\RaporEkrani.Designer.cs">
+      <DependentUpon>RaporEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\yolharcirah\harcirahlistesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\yolharcirah\harcirahlistesi.Designer.cs">
+      <DependentUpon>harcirahlistesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\yolharcirah\yeniharcirah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lojistik\lojistikekranlar\yolharcirah\yeniharcirah.Designer.cs">
+      <DependentUpon>yeniharcirah.cs</DependentUpon>
+    </Compile>
     <Compile Include="muhasebe\muhasebeanasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,11 +490,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="gunluksatisrapor\raporekrani.cs">
+    <Compile Include="gunluksatisrapor\gunluksatisraporekrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gunluksatisrapor\raporekrani.Designer.cs">
-      <DependentUpon>raporekrani.cs</DependentUpon>
+    <Compile Include="gunluksatisrapor\gunluksatisraporekrani.Designer.cs">
+      <DependentUpon>gunluksatisraporekrani.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="sms_otomasyonu\LicenseKeyInputForm.cs">
@@ -596,6 +636,18 @@
     <EmbeddedResource Include="lojistik\lojistikekranlar\Aracİslemleri\yakitgiderleri\YeniAracEkleForm.resx">
       <DependentUpon>YeniAracEkleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\nakliyegelirleri\nakliyegelirleri.resx">
+      <DependentUpon>nakliyegelirleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\nakliyegelirleri\RaporEkrani.resx">
+      <DependentUpon>RaporEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\yolharcirah\harcirahlistesi.resx">
+      <DependentUpon>harcirahlistesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lojistik\lojistikekranlar\yolharcirah\yeniharcirah.resx">
+      <DependentUpon>yeniharcirah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="muhasebe\muhasebeanasayfa.resx">
       <DependentUpon>muhasebeanasayfa.cs</DependentUpon>
     </EmbeddedResource>
@@ -630,8 +682,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="gunluksatisrapor\raporekrani.resx">
-      <DependentUpon>raporekrani.cs</DependentUpon>
+    <EmbeddedResource Include="gunluksatisrapor\gunluksatisraporekrani.resx">
+      <DependentUpon>gunluksatisraporekrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sms_otomasyonu\LicenseKeyInputForm.resx">
       <DependentUpon>LicenseKeyInputForm.cs</DependentUpon>
@@ -718,6 +770,8 @@
   <ItemGroup>
     <Content Include="bpet_logo %281%29.ico" />
     <Content Include="icons8-portal-70.ico" />
+    <None Include="Resources\icons8-road-48.png" />
+    <None Include="Resources\icons8-delivery-48.png" />
     <None Include="Resources\arşiv giriş.png" />
     <None Include="Resources\icons8-edit-48.png" />
     <None Include="Resources\icons8-save-96.png" />

@@ -605,6 +605,8 @@ namespace BPET_PORTAL
             panel3.Visible = true;
             panel1.Visible = false;
         }
+
+        
     }
 
 }

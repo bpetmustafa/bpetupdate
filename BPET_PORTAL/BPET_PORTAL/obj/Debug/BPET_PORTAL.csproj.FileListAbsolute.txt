@@ -319,7 +319,6 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.gif.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.loginpage.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.mainpage.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.Properties.Resources.resources
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.raporekrani.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.sms_otomasyonu.LicenseKeyInputForm.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.sms_otomasyonu.sms.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.victorreklam.victorreklamform.resources
@@ -339,3 +338,19 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekr
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri.YeniAracEkleForm.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aractakip.YeniAracKullaniciAtamaForm.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.aractarihtakip.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri.nakliyegelirleri.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri.RaporEkrani.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.WinForms.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.Wpf.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.WinForms.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.WinForms.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.Wpf.pdb
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\LiveCharts.Wpf.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.gunluksatisraporekrani.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah.harcirahlistesi.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah.yeniharcirah.resources

@@ -372,6 +372,16 @@ namespace BPET_PORTAL.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delivery_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delivery-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_edit_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit-48", resourceCulture);
@@ -495,6 +505,16 @@ namespace BPET_PORTAL.Properties {
         internal static System.Drawing.Bitmap icons8_return_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-return-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_road_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-road-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
