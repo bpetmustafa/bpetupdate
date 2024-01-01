@@ -28,11 +28,11 @@
     <ProductName>BPET PORTAL</ProductName>
     <PublisherName>BPET_Bilgi_İslem</PublisherName>
     <SuiteName>PORTAL</SuiteName>
-    <MinimumRequiredVersion>2.3.4.16</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.3.4.17</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -794,6 +794,7 @@
   <ItemGroup>
     <Content Include="bpet_logo %281%29.ico" />
     <Content Include="icons8-portal-70.ico" />
+    <None Include="Resources\Snapinsta.app_414692624_2680767112098871_4676329216170771307_n_1080.jpg" />
     <None Include="Resources\icons8-road-48.png" />
     <None Include="Resources\icons8-delivery-48.png" />
     <None Include="Resources\arşiv giriş.png" />

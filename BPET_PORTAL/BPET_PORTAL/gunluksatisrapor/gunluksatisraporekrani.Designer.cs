@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.anlikvericek = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.siyahtoplamlabel = new System.Windows.Forms.Label();
@@ -99,8 +100,8 @@
             this.dateTimePicker2 = new MetroFramework.Controls.MetroDateTime();
             this.dateTimePicker1 = new MetroFramework.Controls.MetroDateTime();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel14.SuspendLayout();
             this.sonucyüzdegroup.SuspendLayout();
             this.toplamlabelfarkpanel.SuspendLayout();
@@ -125,7 +126,6 @@
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -153,6 +153,31 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(1407, 751);
             this.Panel1.TabIndex = 1;
+            // 
+            // chart1
+            // 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart1.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.None;
+            this.chart1.BorderlineWidth = 0;
+            this.chart1.BorderSkin.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chart1.IsSoftShadows = false;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(608, 332);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(758, 416);
+            this.chart1.TabIndex = 17;
+            this.chart1.Text = "Yakıt Grafik";
             // 
             // anlikvericek
             // 
@@ -385,13 +410,14 @@
             this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.metroDateTime1.Location = new System.Drawing.Point(6, 21);
-            this.metroDateTime1.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.metroDateTime1.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.metroDateTime1.MaximumSize = new System.Drawing.Size(200, 30);
             this.metroDateTime1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(107, 30);
             this.metroDateTime1.TabIndex = 7;
+            this.metroDateTime1.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.metroDateTime1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged_1);
             // 
             // metroDateTime2
@@ -400,13 +426,14 @@
             this.metroDateTime2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroDateTime2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.metroDateTime2.Location = new System.Drawing.Point(263, 21);
-            this.metroDateTime2.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.metroDateTime2.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.metroDateTime2.MaximumSize = new System.Drawing.Size(200, 30);
             this.metroDateTime2.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(98, 30);
             this.metroDateTime2.TabIndex = 8;
+            this.metroDateTime2.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.metroDateTime2.ValueChanged += new System.EventHandler(this.metroDateTime2_ValueChanged);
             // 
             // aralikhesapla2
@@ -961,13 +988,14 @@
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePicker2.Location = new System.Drawing.Point(263, 21);
-            this.dateTimePicker2.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker2.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.MaximumSize = new System.Drawing.Size(200, 30);
             this.dateTimePicker2.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(97, 30);
             this.dateTimePicker2.TabIndex = 8;
+            this.dateTimePicker2.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             // 
             // dateTimePicker1
             // 
@@ -975,13 +1003,14 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePicker1.Location = new System.Drawing.Point(6, 21);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MaximumSize = new System.Drawing.Size(200, 30);
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(107, 30);
             this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged);
             // 
             // groupBox1
@@ -997,31 +1026,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Veri Çek";
             // 
-            // chart1
-            // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chart1.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.None;
-            this.chart1.BorderlineWidth = 0;
-            this.chart1.BorderSkin.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chart1.IsSoftShadows = false;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(608, 332);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(758, 416);
-            this.chart1.TabIndex = 17;
-            this.chart1.Text = "Yakıt Grafik";
-            // 
             // gunluksatisraporekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1035,8 +1039,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "s";
             this.Load += new System.EventHandler(this.raporekrani_Load);
+            this.Shown += new System.EventHandler(this.gunluksatisraporekrani_Shown);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.sonucyüzdegroup.ResumeLayout(false);
@@ -1074,7 +1080,6 @@
             this.Panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }

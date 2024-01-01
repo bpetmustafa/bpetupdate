@@ -708,7 +708,13 @@ namespace BPET_PORTAL
                 DoldurTablo2(veriler2);
                 karislastirgroup.Visible = Enabled;
                 KarşılaştırVeriler();
-            }
+            }   
+        }
+
+        private void gunluksatisraporekrani_Shown(object sender, EventArgs e)
+        {
+            metroDateTime1_ValueChanged(sender, e);
+
         }
     }
 }

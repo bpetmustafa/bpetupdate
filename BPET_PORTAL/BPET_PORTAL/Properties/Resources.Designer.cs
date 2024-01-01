@@ -712,6 +712,16 @@ namespace BPET_PORTAL.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Snapinsta_app_414692624_2680767112098871_4676329216170771307_n_1080 {
+            get {
+                object obj = ResourceManager.GetObject("Snapinsta.app_414692624_2680767112098871_4676329216170771307_n_1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap success {
             get {
                 object obj = ResourceManager.GetObject("success", resourceCulture);
