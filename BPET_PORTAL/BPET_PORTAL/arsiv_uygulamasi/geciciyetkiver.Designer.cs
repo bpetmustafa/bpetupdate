@@ -126,13 +126,14 @@
             this.bitisTarihiPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.bitisTarihiPicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bitisTarihiPicker.Location = new System.Drawing.Point(176, 63);
-            this.bitisTarihiPicker.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.bitisTarihiPicker.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.bitisTarihiPicker.MaximumSize = new System.Drawing.Size(200, 30);
             this.bitisTarihiPicker.MinDate = new System.DateTime(2023, 9, 1, 0, 0, 0, 0);
-            this.bitisTarihiPicker.MinimumSize = new System.Drawing.Size(4, 30);
+            this.bitisTarihiPicker.MinimumSize = new System.Drawing.Size(0, 30);
             this.bitisTarihiPicker.Name = "bitisTarihiPicker";
             this.bitisTarihiPicker.Size = new System.Drawing.Size(150, 30);
             this.bitisTarihiPicker.TabIndex = 36;
+            this.bitisTarihiPicker.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             // 
             // yetkiKategorisiComboBox
             // 

@@ -227,7 +227,7 @@ namespace BPET_PORTAL.muhasebe.mutabakat
                     else
                     {
                         // CheckBox işaretli değilse, tüm kayıtları getir ve ID'ye göre azalan sırayla sırala
-                        query = "SELECT id, adi, vergino, sonislemtarihi, borcbakiye, alacakbakiye, mutabakattarihi FROM mutabakat WHERE pdfolustu = 0 ORDER BY id DESC";
+                        query = "SELECT id, adi, vergino, sonislemtarihi, borcbakiye, alacakbakiye, mutabakattarihi FROM mutabakat WHERE pdfolustu IS NULL ORDER BY id DESC";
                     }
 
                     dataAdapter = new SqlDataAdapter(query, connection);

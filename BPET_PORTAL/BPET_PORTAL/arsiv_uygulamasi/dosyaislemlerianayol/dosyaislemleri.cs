@@ -680,6 +680,11 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                     query += " AND (Barkod = 0 OR Barkod = 2)";
                 }
 
+                if (checkBoxAciklama.Checked)
+                {
+                    query += " AND Aciklama = ' '";
+                }
+
                 if (comboboxDosyaYukleyen.SelectedIndex != -1 || comboboxDosyaYukleyen.Text.Length > 2)
                 {
                     string selectedyukleyen = comboboxDosyaYukleyen.Text.ToString();
@@ -740,6 +745,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                 dataAdapter.Fill(dataTable);
 
                 dataGridView.DataSource = dataTable;
+                lblverisayisi.Text = "VERİ SAYISI: " + dataGridView.RowCount.ToString();
             }
             catch (Exception ex)
             {
@@ -937,6 +943,11 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             {
                 
             }
+        }
+
+        private void checkBoxAciklama_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterDataInDatabase();
         }
     }
 }

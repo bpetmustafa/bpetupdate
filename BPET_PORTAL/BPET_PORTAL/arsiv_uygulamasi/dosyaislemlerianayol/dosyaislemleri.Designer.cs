@@ -70,6 +70,8 @@
             this.checkBoxDosyaAdi = new System.Windows.Forms.CheckBox();
             this.checkBoxDosyaID = new System.Windows.Forms.CheckBox();
             this.closebtn = new System.Windows.Forms.PictureBox();
+            this.checkBoxAciklama = new MetroFramework.Controls.MetroCheckBox();
+            this.lblverisayisi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -83,9 +85,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.epostalabel.AutoSize = true;
             this.epostalabel.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.epostalabel.Location = new System.Drawing.Point(10, 7);
+            this.epostalabel.Location = new System.Drawing.Point(12, 9);
+            this.epostalabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(27, 14);
+            this.epostalabel.Size = new System.Drawing.Size(27, 16);
             this.epostalabel.TabIndex = 56;
             this.epostalabel.Text = "-----";
             // 
@@ -106,31 +109,34 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.Location = new System.Drawing.Point(10, 111);
-            this.dataGridView.MinimumSize = new System.Drawing.Size(899, 330);
+            this.dataGridView.Location = new System.Drawing.Point(12, 139);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.MinimumSize = new System.Drawing.Size(1124, 412);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(900, 351);
+            this.dataGridView.Size = new System.Drawing.Size(1286, 439);
             this.dataGridView.TabIndex = 59;
             this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblverisayisi);
+            this.groupBox2.Controls.Add(this.checkBoxAciklama);
             this.groupBox2.Controls.Add(this.hepsinigoster);
             this.groupBox2.Controls.Add(this.checkBoxBarkod);
             this.groupBox2.Controls.Add(this.dosyaekle);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 21);
+            this.groupBox2.Location = new System.Drawing.Point(16, 26);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.MinimumSize = new System.Drawing.Size(102, 85);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(128, 106);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(102, 85);
+            this.groupBox2.Size = new System.Drawing.Size(237, 106);
             this.groupBox2.TabIndex = 59;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
@@ -144,9 +150,10 @@
             this.hepsinigoster.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.hepsinigoster.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hepsinigoster.ForeColor = System.Drawing.Color.Black;
-            this.hepsinigoster.Location = new System.Drawing.Point(6, 61);
+            this.hepsinigoster.Location = new System.Drawing.Point(8, 76);
+            this.hepsinigoster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.hepsinigoster.Name = "hepsinigoster";
-            this.hepsinigoster.Size = new System.Drawing.Size(80, 15);
+            this.hepsinigoster.Size = new System.Drawing.Size(100, 19);
             this.hepsinigoster.TabIndex = 40;
             this.hepsinigoster.Text = "Hepsini Göster";
             this.hepsinigoster.UseVisualStyleBackColor = false;
@@ -156,10 +163,10 @@
             // 
             this.checkBoxBarkod.AutoSize = true;
             this.checkBoxBarkod.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.checkBoxBarkod.Location = new System.Drawing.Point(6, 45);
+            this.checkBoxBarkod.Location = new System.Drawing.Point(8, 56);
             this.checkBoxBarkod.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxBarkod.Name = "checkBoxBarkod";
-            this.checkBoxBarkod.Size = new System.Drawing.Size(94, 15);
+            this.checkBoxBarkod.Size = new System.Drawing.Size(103, 17);
             this.checkBoxBarkod.TabIndex = 41;
             this.checkBoxBarkod.Text = "Talepleri Gör";
             this.checkBoxBarkod.UseSelectable = true;
@@ -175,9 +182,10 @@
             this.dosyaekle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dosyaekle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dosyaekle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dosyaekle.Location = new System.Drawing.Point(6, 21);
+            this.dosyaekle.Location = new System.Drawing.Point(8, 26);
+            this.dosyaekle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dosyaekle.Name = "dosyaekle";
-            this.dosyaekle.Size = new System.Drawing.Size(77, 23);
+            this.dosyaekle.Size = new System.Drawing.Size(118, 32);
             this.dosyaekle.TabIndex = 39;
             this.dosyaekle.Text = "Dosya Yükle";
             this.dosyaekle.UseVisualStyleBackColor = false;
@@ -187,13 +195,13 @@
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.BackColor = System.Drawing.Color.Black;
-            this.progressBar.Location = new System.Drawing.Point(869, 52);
+            this.progressBar.Location = new System.Drawing.Point(1247, 65);
             this.progressBar.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar.Maximum = 100;
-            this.progressBar.MaximumSize = new System.Drawing.Size(45, 42);
-            this.progressBar.MinimumSize = new System.Drawing.Size(45, 42);
+            this.progressBar.MaximumSize = new System.Drawing.Size(56, 52);
+            this.progressBar.MinimumSize = new System.Drawing.Size(56, 52);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(45, 42);
+            this.progressBar.Size = new System.Drawing.Size(56, 52);
             this.progressBar.TabIndex = 60;
             this.progressBar.UseSelectable = true;
             this.progressBar.Visible = false;
@@ -215,12 +223,12 @@
             this.groupBox4.Controls.Add(this.textBoxArama);
             this.groupBox4.Controls.Add(this.resetle);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(120, 12);
+            this.groupBox4.Location = new System.Drawing.Point(257, 15);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.MinimumSize = new System.Drawing.Size(401, 94);
+            this.groupBox4.MinimumSize = new System.Drawing.Size(501, 118);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(401, 94);
+            this.groupBox4.Size = new System.Drawing.Size(501, 118);
             this.groupBox4.TabIndex = 61;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama Yap";
@@ -229,10 +237,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(262, 5);
+            this.label5.Location = new System.Drawing.Point(328, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.Size = new System.Drawing.Size(60, 19);
             this.label5.TabIndex = 66;
             this.label5.Text = "Kategori";
             // 
@@ -240,10 +248,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(162, 5);
+            this.label4.Location = new System.Drawing.Point(202, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(40, 19);
             this.label4.TabIndex = 65;
             this.label4.Text = "Aylar";
             // 
@@ -254,10 +262,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(253, 44);
+            this.label3.Location = new System.Drawing.Point(316, 55);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(106, 19);
             this.label3.TabIndex = 64;
             this.label3.Text = "Dosya Yükleyen";
             // 
@@ -269,11 +277,11 @@
             this.comboBoxAy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxAy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxAy.FormattingEnabled = true;
-            this.comboBoxAy.Location = new System.Drawing.Point(116, 20);
+            this.comboBoxAy.Location = new System.Drawing.Point(145, 25);
             this.comboBoxAy.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxAy.MaximumSize = new System.Drawing.Size(116, 0);
+            this.comboBoxAy.MaximumSize = new System.Drawing.Size(144, 0);
             this.comboBoxAy.Name = "comboBoxAy";
-            this.comboBoxAy.Size = new System.Drawing.Size(116, 27);
+            this.comboBoxAy.Size = new System.Drawing.Size(144, 31);
             this.comboBoxAy.TabIndex = 62;
             this.comboBoxAy.SelectedIndexChanged += new System.EventHandler(this.comboBoxAy_SelectedIndexChanged_1);
             // 
@@ -285,11 +293,11 @@
             this.comboBoxKategori.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxKategori.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(237, 20);
+            this.comboBoxKategori.Location = new System.Drawing.Point(296, 25);
             this.comboBoxKategori.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxKategori.MaximumSize = new System.Drawing.Size(116, 0);
+            this.comboBoxKategori.MaximumSize = new System.Drawing.Size(144, 0);
             this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(116, 27);
+            this.comboBoxKategori.Size = new System.Drawing.Size(144, 31);
             this.comboBoxKategori.TabIndex = 63;
             this.comboBoxKategori.SelectedIndexChanged += new System.EventHandler(this.comboBoxAy_SelectedIndexChanged_1);
             // 
@@ -300,10 +308,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(150, 44);
+            this.label2.Location = new System.Drawing.Point(188, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 50;
             this.label2.Text = "Şirket İsmi";
             // 
@@ -315,11 +323,11 @@
             this.comboBoxSirketIsmi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxSirketIsmi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxSirketIsmi.FormattingEnabled = true;
-            this.comboBoxSirketIsmi.Location = new System.Drawing.Point(114, 59);
+            this.comboBoxSirketIsmi.Location = new System.Drawing.Point(142, 74);
             this.comboBoxSirketIsmi.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxSirketIsmi.MaximumSize = new System.Drawing.Size(116, 0);
+            this.comboBoxSirketIsmi.MaximumSize = new System.Drawing.Size(144, 0);
             this.comboBoxSirketIsmi.Name = "comboBoxSirketIsmi";
-            this.comboBoxSirketIsmi.Size = new System.Drawing.Size(116, 27);
+            this.comboBoxSirketIsmi.Size = new System.Drawing.Size(144, 31);
             this.comboBoxSirketIsmi.TabIndex = 49;
             this.comboBoxSirketIsmi.SelectedIndexChanged += new System.EventHandler(this.comboBoxAy_SelectedIndexChanged_1);
             // 
@@ -331,11 +339,11 @@
             this.comboboxDosyaYukleyen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboboxDosyaYukleyen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboboxDosyaYukleyen.FormattingEnabled = true;
-            this.comboboxDosyaYukleyen.Location = new System.Drawing.Point(237, 59);
+            this.comboboxDosyaYukleyen.Location = new System.Drawing.Point(296, 74);
             this.comboboxDosyaYukleyen.Margin = new System.Windows.Forms.Padding(2);
-            this.comboboxDosyaYukleyen.MaximumSize = new System.Drawing.Size(116, 0);
+            this.comboboxDosyaYukleyen.MaximumSize = new System.Drawing.Size(144, 0);
             this.comboboxDosyaYukleyen.Name = "comboboxDosyaYukleyen";
-            this.comboboxDosyaYukleyen.Size = new System.Drawing.Size(116, 27);
+            this.comboboxDosyaYukleyen.Size = new System.Drawing.Size(144, 31);
             this.comboboxDosyaYukleyen.TabIndex = 51;
             this.comboboxDosyaYukleyen.SelectedIndexChanged += new System.EventHandler(this.comboBoxAy_SelectedIndexChanged_1);
             // 
@@ -346,10 +354,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(42, 42);
+            this.label1.Location = new System.Drawing.Point(52, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(38, 19);
             this.label1.TabIndex = 48;
             this.label1.Text = "Yıllar";
             // 
@@ -361,11 +369,11 @@
             this.comboBoxYil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxYil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxYil.FormattingEnabled = true;
-            this.comboBoxYil.Location = new System.Drawing.Point(0, 58);
+            this.comboBoxYil.Location = new System.Drawing.Point(0, 72);
             this.comboBoxYil.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxYil.MaximumSize = new System.Drawing.Size(116, 0);
+            this.comboBoxYil.MaximumSize = new System.Drawing.Size(144, 0);
             this.comboBoxYil.Name = "comboBoxYil";
-            this.comboBoxYil.Size = new System.Drawing.Size(116, 27);
+            this.comboBoxYil.Size = new System.Drawing.Size(144, 31);
             this.comboBoxYil.TabIndex = 47;
             this.comboBoxYil.SelectedIndexChanged += new System.EventHandler(this.comboBoxAy_SelectedIndexChanged_1);
             // 
@@ -381,10 +389,11 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(358, 46);
-            this.button1.MaximumSize = new System.Drawing.Size(31, 37);
+            this.button1.Location = new System.Drawing.Point(448, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.MaximumSize = new System.Drawing.Size(39, 46);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 37);
+            this.button1.Size = new System.Drawing.Size(39, 46);
             this.button1.TabIndex = 46;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
@@ -399,10 +408,10 @@
             // 
             // 
             this.textBoxArama.CustomButton.Image = null;
-            this.textBoxArama.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.textBoxArama.CustomButton.Location = new System.Drawing.Point(140, 2);
             this.textBoxArama.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxArama.CustomButton.Name = "";
-            this.textBoxArama.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textBoxArama.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.textBoxArama.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.textBoxArama.CustomButton.TabIndex = 1;
             this.textBoxArama.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -410,9 +419,9 @@
             this.textBoxArama.CustomButton.Visible = false;
             this.textBoxArama.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.textBoxArama.Lines = new string[0];
-            this.textBoxArama.Location = new System.Drawing.Point(4, 20);
+            this.textBoxArama.Location = new System.Drawing.Point(5, 25);
             this.textBoxArama.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxArama.MaximumSize = new System.Drawing.Size(119, 24);
+            this.textBoxArama.MaximumSize = new System.Drawing.Size(149, 30);
             this.textBoxArama.MaxLength = 32767;
             this.textBoxArama.Name = "textBoxArama";
             this.textBoxArama.PasswordChar = '\0';
@@ -422,7 +431,7 @@
             this.textBoxArama.SelectionLength = 0;
             this.textBoxArama.SelectionStart = 0;
             this.textBoxArama.ShortcutsEnabled = true;
-            this.textBoxArama.Size = new System.Drawing.Size(112, 24);
+            this.textBoxArama.Size = new System.Drawing.Size(140, 30);
             this.textBoxArama.TabIndex = 44;
             this.textBoxArama.UseSelectable = true;
             this.textBoxArama.WaterMark = "GENEL ARAMA";
@@ -442,10 +451,11 @@
             this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetle.FlatAppearance.BorderSize = 0;
             this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetle.Location = new System.Drawing.Point(358, 9);
-            this.resetle.MaximumSize = new System.Drawing.Size(31, 37);
+            this.resetle.Location = new System.Drawing.Point(448, 11);
+            this.resetle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resetle.MaximumSize = new System.Drawing.Size(39, 46);
             this.resetle.Name = "resetle";
-            this.resetle.Size = new System.Drawing.Size(31, 37);
+            this.resetle.Size = new System.Drawing.Size(39, 46);
             this.resetle.TabIndex = 33;
             this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.resetle.UseVisualStyleBackColor = false;
@@ -471,12 +481,12 @@
             this.groupBox5.Controls.Add(this.checkBoxDosyaAdi);
             this.groupBox5.Controls.Add(this.checkBoxDosyaID);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox5.Location = new System.Drawing.Point(526, 21);
+            this.groupBox5.Location = new System.Drawing.Point(762, 26);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.MinimumSize = new System.Drawing.Size(338, 85);
+            this.groupBox5.MinimumSize = new System.Drawing.Size(422, 106);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(338, 85);
+            this.groupBox5.Size = new System.Drawing.Size(422, 106);
             this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Filtre İşlemleri";
@@ -487,10 +497,10 @@
             this.Aciklama.Checked = true;
             this.Aciklama.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Aciklama.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Aciklama.Location = new System.Drawing.Point(262, 65);
+            this.Aciklama.Location = new System.Drawing.Point(328, 81);
             this.Aciklama.Margin = new System.Windows.Forms.Padding(2);
             this.Aciklama.Name = "Aciklama";
-            this.Aciklama.Size = new System.Drawing.Size(76, 17);
+            this.Aciklama.Size = new System.Drawing.Size(82, 19);
             this.Aciklama.TabIndex = 16;
             this.Aciklama.Tag = "Aciklama";
             this.Aciklama.Text = "Aciklama";
@@ -504,10 +514,10 @@
             this.Barkod.Checked = true;
             this.Barkod.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Barkod.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Barkod.Location = new System.Drawing.Point(207, 65);
+            this.Barkod.Location = new System.Drawing.Point(259, 81);
             this.Barkod.Margin = new System.Windows.Forms.Padding(2);
             this.Barkod.Name = "Barkod";
-            this.Barkod.Size = new System.Drawing.Size(64, 17);
+            this.Barkod.Size = new System.Drawing.Size(70, 19);
             this.Barkod.TabIndex = 15;
             this.Barkod.Tag = "Barkod";
             this.Barkod.Text = "Barkod";
@@ -521,10 +531,10 @@
             this.OdaAdi.Checked = true;
             this.OdaAdi.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OdaAdi.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.OdaAdi.Location = new System.Drawing.Point(252, 50);
+            this.OdaAdi.Location = new System.Drawing.Point(315, 62);
             this.OdaAdi.Margin = new System.Windows.Forms.Padding(2);
             this.OdaAdi.Name = "OdaAdi";
-            this.OdaAdi.Size = new System.Drawing.Size(66, 17);
+            this.OdaAdi.Size = new System.Drawing.Size(70, 19);
             this.OdaAdi.TabIndex = 14;
             this.OdaAdi.Tag = "OdaAdi";
             this.OdaAdi.Text = "OdaAdi";
@@ -538,10 +548,10 @@
             this.SıraNo.Checked = true;
             this.SıraNo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.SıraNo.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SıraNo.Location = new System.Drawing.Point(252, 31);
+            this.SıraNo.Location = new System.Drawing.Point(315, 39);
             this.SıraNo.Margin = new System.Windows.Forms.Padding(2);
             this.SıraNo.Name = "SıraNo";
-            this.SıraNo.Size = new System.Drawing.Size(62, 17);
+            this.SıraNo.Size = new System.Drawing.Size(68, 19);
             this.SıraNo.TabIndex = 13;
             this.SıraNo.Tag = "SıraNo";
             this.SıraNo.Text = "SıraNo";
@@ -555,10 +565,10 @@
             this.Raf.Checked = true;
             this.Raf.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Raf.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Raf.Location = new System.Drawing.Point(252, 14);
+            this.Raf.Location = new System.Drawing.Point(315, 18);
             this.Raf.Margin = new System.Windows.Forms.Padding(2);
             this.Raf.Name = "Raf";
-            this.Raf.Size = new System.Drawing.Size(44, 17);
+            this.Raf.Size = new System.Drawing.Size(48, 19);
             this.Raf.TabIndex = 12;
             this.Raf.Tag = "Raf";
             this.Raf.Text = "Raf";
@@ -572,10 +582,10 @@
             this.Dolap.Checked = true;
             this.Dolap.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Dolap.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Dolap.Location = new System.Drawing.Point(154, 65);
+            this.Dolap.Location = new System.Drawing.Point(192, 81);
             this.Dolap.Margin = new System.Windows.Forms.Padding(2);
             this.Dolap.Name = "Dolap";
-            this.Dolap.Size = new System.Drawing.Size(56, 17);
+            this.Dolap.Size = new System.Drawing.Size(60, 19);
             this.Dolap.TabIndex = 11;
             this.Dolap.Tag = "Dolap";
             this.Dolap.Text = "Dolap";
@@ -589,10 +599,10 @@
             this.OlusturmaTarihi.Checked = true;
             this.OlusturmaTarihi.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OlusturmaTarihi.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.OlusturmaTarihi.Location = new System.Drawing.Point(154, 50);
+            this.OlusturmaTarihi.Location = new System.Drawing.Point(192, 62);
             this.OlusturmaTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.OlusturmaTarihi.Name = "OlusturmaTarihi";
-            this.OlusturmaTarihi.Size = new System.Drawing.Size(115, 17);
+            this.OlusturmaTarihi.Size = new System.Drawing.Size(123, 19);
             this.OlusturmaTarihi.TabIndex = 10;
             this.OlusturmaTarihi.Tag = "OlusturmaTarihi";
             this.OlusturmaTarihi.Text = "OlusturmaTarihi";
@@ -606,10 +616,10 @@
             this.DosyaYukleyen.Checked = true;
             this.DosyaYukleyen.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DosyaYukleyen.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DosyaYukleyen.Location = new System.Drawing.Point(154, 31);
+            this.DosyaYukleyen.Location = new System.Drawing.Point(192, 39);
             this.DosyaYukleyen.Margin = new System.Windows.Forms.Padding(2);
             this.DosyaYukleyen.Name = "DosyaYukleyen";
-            this.DosyaYukleyen.Size = new System.Drawing.Size(107, 17);
+            this.DosyaYukleyen.Size = new System.Drawing.Size(113, 19);
             this.DosyaYukleyen.TabIndex = 9;
             this.DosyaYukleyen.Tag = "DosyaYukleyen";
             this.DosyaYukleyen.Text = "DosyaYukleyen";
@@ -623,10 +633,10 @@
             this.DosyaTipi.Checked = true;
             this.DosyaTipi.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DosyaTipi.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DosyaTipi.Location = new System.Drawing.Point(78, 66);
+            this.DosyaTipi.Location = new System.Drawing.Point(98, 82);
             this.DosyaTipi.Margin = new System.Windows.Forms.Padding(2);
             this.DosyaTipi.Name = "DosyaTipi";
-            this.DosyaTipi.Size = new System.Drawing.Size(77, 17);
+            this.DosyaTipi.Size = new System.Drawing.Size(84, 19);
             this.DosyaTipi.TabIndex = 8;
             this.DosyaTipi.Tag = "DosyaTipi";
             this.DosyaTipi.Text = "DosyaTipi";
@@ -640,10 +650,10 @@
             this.DosyaNumarasi.Checked = true;
             this.DosyaNumarasi.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DosyaNumarasi.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DosyaNumarasi.Location = new System.Drawing.Point(154, 14);
+            this.DosyaNumarasi.Location = new System.Drawing.Point(192, 18);
             this.DosyaNumarasi.Margin = new System.Windows.Forms.Padding(2);
             this.DosyaNumarasi.Name = "DosyaNumarasi";
-            this.DosyaNumarasi.Size = new System.Drawing.Size(108, 17);
+            this.DosyaNumarasi.Size = new System.Drawing.Size(116, 19);
             this.DosyaNumarasi.TabIndex = 7;
             this.DosyaNumarasi.Tag = "DosyaNumarasi";
             this.DosyaNumarasi.Text = "DosyaNumarasi";
@@ -657,10 +667,10 @@
             this.DosyaAy.Checked = true;
             this.DosyaAy.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DosyaAy.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DosyaAy.Location = new System.Drawing.Point(78, 50);
+            this.DosyaAy.Location = new System.Drawing.Point(98, 62);
             this.DosyaAy.Margin = new System.Windows.Forms.Padding(2);
             this.DosyaAy.Name = "DosyaAy";
-            this.DosyaAy.Size = new System.Drawing.Size(70, 17);
+            this.DosyaAy.Size = new System.Drawing.Size(76, 19);
             this.DosyaAy.TabIndex = 6;
             this.DosyaAy.Tag = "DosyaAy";
             this.DosyaAy.Text = "DosyaAy";
@@ -674,10 +684,10 @@
             this.DosyaYili.Checked = true;
             this.DosyaYili.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DosyaYili.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DosyaYili.Location = new System.Drawing.Point(78, 31);
+            this.DosyaYili.Location = new System.Drawing.Point(98, 39);
             this.DosyaYili.Margin = new System.Windows.Forms.Padding(2);
             this.DosyaYili.Name = "DosyaYili";
-            this.DosyaYili.Size = new System.Drawing.Size(77, 17);
+            this.DosyaYili.Size = new System.Drawing.Size(82, 19);
             this.DosyaYili.TabIndex = 5;
             this.DosyaYili.Tag = "DosyaYili";
             this.DosyaYili.Text = "DosyaYili";
@@ -691,10 +701,10 @@
             this.checkBoxSirketIsmi.Checked = true;
             this.checkBoxSirketIsmi.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxSirketIsmi.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.checkBoxSirketIsmi.Location = new System.Drawing.Point(78, 14);
+            this.checkBoxSirketIsmi.Location = new System.Drawing.Point(98, 18);
             this.checkBoxSirketIsmi.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxSirketIsmi.Name = "checkBoxSirketIsmi";
-            this.checkBoxSirketIsmi.Size = new System.Drawing.Size(82, 17);
+            this.checkBoxSirketIsmi.Size = new System.Drawing.Size(89, 19);
             this.checkBoxSirketIsmi.TabIndex = 4;
             this.checkBoxSirketIsmi.Tag = "SirketIsmi";
             this.checkBoxSirketIsmi.Text = "Şirketİsmi";
@@ -707,10 +717,10 @@
             this.checkBoxFizikselYer.Checked = true;
             this.checkBoxFizikselYer.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxFizikselYer.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.checkBoxFizikselYer.Location = new System.Drawing.Point(4, 66);
+            this.checkBoxFizikselYer.Location = new System.Drawing.Point(5, 82);
             this.checkBoxFizikselYer.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxFizikselYer.Name = "checkBoxFizikselYer";
-            this.checkBoxFizikselYer.Size = new System.Drawing.Size(86, 17);
+            this.checkBoxFizikselYer.Size = new System.Drawing.Size(93, 19);
             this.checkBoxFizikselYer.TabIndex = 3;
             this.checkBoxFizikselYer.Tag = "FizikselYer";
             this.checkBoxFizikselYer.Text = "FizikselYer";
@@ -723,10 +733,10 @@
             this.checkBoxKategori.Checked = true;
             this.checkBoxKategori.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxKategori.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.checkBoxKategori.Location = new System.Drawing.Point(4, 50);
+            this.checkBoxKategori.Location = new System.Drawing.Point(5, 62);
             this.checkBoxKategori.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxKategori.Name = "checkBoxKategori";
-            this.checkBoxKategori.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxKategori.Size = new System.Drawing.Size(77, 19);
             this.checkBoxKategori.TabIndex = 2;
             this.checkBoxKategori.Tag = "Kategori";
             this.checkBoxKategori.Text = "Kategori";
@@ -739,10 +749,10 @@
             this.checkBoxDosyaAdi.Checked = true;
             this.checkBoxDosyaAdi.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDosyaAdi.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.checkBoxDosyaAdi.Location = new System.Drawing.Point(4, 31);
+            this.checkBoxDosyaAdi.Location = new System.Drawing.Point(5, 39);
             this.checkBoxDosyaAdi.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxDosyaAdi.Name = "checkBoxDosyaAdi";
-            this.checkBoxDosyaAdi.Size = new System.Drawing.Size(75, 17);
+            this.checkBoxDosyaAdi.Size = new System.Drawing.Size(81, 19);
             this.checkBoxDosyaAdi.TabIndex = 1;
             this.checkBoxDosyaAdi.Tag = "DosyaAdi";
             this.checkBoxDosyaAdi.Text = "DosyaAdi";
@@ -755,10 +765,10 @@
             this.checkBoxDosyaID.Checked = true;
             this.checkBoxDosyaID.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDosyaID.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.checkBoxDosyaID.Location = new System.Drawing.Point(4, 14);
+            this.checkBoxDosyaID.Location = new System.Drawing.Point(5, 18);
             this.checkBoxDosyaID.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxDosyaID.Name = "checkBoxDosyaID";
-            this.checkBoxDosyaID.Size = new System.Drawing.Size(69, 17);
+            this.checkBoxDosyaID.Size = new System.Drawing.Size(75, 19);
             this.checkBoxDosyaID.TabIndex = 0;
             this.checkBoxDosyaID.Tag = "DosyaID";
             this.checkBoxDosyaID.Text = "DosyaID";
@@ -771,19 +781,44 @@
             this.closebtn.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_return_48;
             this.closebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.closebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closebtn.Location = new System.Drawing.Point(870, 11);
-            this.closebtn.MaximumSize = new System.Drawing.Size(41, 40);
+            this.closebtn.Location = new System.Drawing.Point(1249, 14);
+            this.closebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.closebtn.MaximumSize = new System.Drawing.Size(51, 50);
             this.closebtn.Name = "closebtn";
-            this.closebtn.Size = new System.Drawing.Size(41, 40);
+            this.closebtn.Size = new System.Drawing.Size(51, 50);
             this.closebtn.TabIndex = 55;
             this.closebtn.TabStop = false;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
+            // checkBoxAciklama
+            // 
+            this.checkBoxAciklama.AutoSize = true;
+            this.checkBoxAciklama.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.checkBoxAciklama.Location = new System.Drawing.Point(132, 27);
+            this.checkBoxAciklama.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxAciklama.Name = "checkBoxAciklama";
+            this.checkBoxAciklama.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxAciklama.TabIndex = 42;
+            this.checkBoxAciklama.Text = "Boş Açıklama";
+            this.checkBoxAciklama.UseSelectable = true;
+            this.checkBoxAciklama.CheckedChanged += new System.EventHandler(this.checkBoxAciklama_CheckedChanged);
+            // 
+            // lblverisayisi
+            // 
+            this.lblverisayisi.AutoSize = true;
+            this.lblverisayisi.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblverisayisi.Location = new System.Drawing.Point(115, 69);
+            this.lblverisayisi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblverisayisi.Name = "lblverisayisi";
+            this.lblverisayisi.Size = new System.Drawing.Size(82, 19);
+            this.lblverisayisi.TabIndex = 67;
+            this.lblverisayisi.Text = "VERİ SAYISI:";
+            // 
             // dosyaislemleri2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(920, 473);
+            this.ClientSize = new System.Drawing.Size(1311, 591);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBox5);
@@ -853,5 +888,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private MetroFramework.Controls.MetroCheckBox checkBoxAciklama;
+        private System.Windows.Forms.Label lblverisayisi;
     }
 }
