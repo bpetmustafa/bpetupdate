@@ -31,17 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainpage));
             this.mainpanel = new System.Windows.Forms.Panel();
             this.livechat = new System.Windows.Forms.Panel();
+            this.chatclose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gondertusu = new System.Windows.Forms.Button();
             this.txtMessage = new MetroFramework.Controls.MetroTextBox();
             this.txtChatLog = new System.Windows.Forms.RichTextBox();
             this.panelside = new System.Windows.Forms.Panel();
-            this.linkLabel = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelheader = new System.Windows.Forms.Panel();
-            this.epostalabel = new System.Windows.Forms.Label();
-            this.livechatbtn = new System.Windows.Forms.Button();
-            this.chatclose = new System.Windows.Forms.Button();
             this.btnbilgiislem = new System.Windows.Forms.Button();
             this.btnlojistik = new System.Windows.Forms.Button();
             this.btninsankaynaklari = new System.Windows.Forms.Button();
@@ -51,19 +46,24 @@
             this.btnadmin = new System.Windows.Forms.Button();
             this.btnbayitalep = new System.Windows.Forms.Button();
             this.btnborsa = new System.Windows.Forms.Button();
-            this.btnsms = new System.Windows.Forms.Button();
+            this.btnfinans = new System.Windows.Forms.Button();
             this.btnozelrapor = new System.Windows.Forms.Button();
             this.btnarsiv = new System.Windows.Forms.Button();
             this.btnrapor = new System.Windows.Forms.Button();
+            this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.bpetlogo = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelheader = new System.Windows.Forms.Panel();
             this.boyutlandırma = new System.Windows.Forms.Button();
             this.Togglemenubutton = new System.Windows.Forms.Button();
+            this.epostalabel = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.livechatbtn = new System.Windows.Forms.Button();
             this.livechat.SuspendLayout();
             this.panelside.SuspendLayout();
-            this.panelheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bpetlogo)).BeginInit();
+            this.panelheader.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainpanel
@@ -72,9 +72,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainpanel.Location = new System.Drawing.Point(165, 30);
-            this.mainpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainpanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(873, 566);
+            this.mainpanel.Size = new System.Drawing.Size(1230, 641);
             this.mainpanel.TabIndex = 5;
             // 
             // livechat
@@ -86,12 +86,31 @@
             this.livechat.Controls.Add(this.gondertusu);
             this.livechat.Controls.Add(this.txtMessage);
             this.livechat.Controls.Add(this.txtChatLog);
-            this.livechat.Location = new System.Drawing.Point(682, 229);
-            this.livechat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.livechat.Location = new System.Drawing.Point(1039, 304);
+            this.livechat.Margin = new System.Windows.Forms.Padding(2);
             this.livechat.Name = "livechat";
             this.livechat.Size = new System.Drawing.Size(363, 337);
             this.livechat.TabIndex = 0;
             this.livechat.Visible = false;
+            // 
+            // chatclose
+            // 
+            this.chatclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chatclose.BackColor = System.Drawing.Color.White;
+            this.chatclose.BackgroundImage = global::BPET_PORTAL.Properties.Resources.çıkış2;
+            this.chatclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chatclose.FlatAppearance.BorderSize = 0;
+            this.chatclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chatclose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chatclose.ForeColor = System.Drawing.Color.Red;
+            this.chatclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.chatclose.Location = new System.Drawing.Point(322, 2);
+            this.chatclose.Margin = new System.Windows.Forms.Padding(2);
+            this.chatclose.Name = "chatclose";
+            this.chatclose.Size = new System.Drawing.Size(32, 22);
+            this.chatclose.TabIndex = 9;
+            this.chatclose.UseVisualStyleBackColor = false;
+            this.chatclose.Click += new System.EventHandler(this.chatclose_Click);
             // 
             // label1
             // 
@@ -118,7 +137,7 @@
             this.gondertusu.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gondertusu.ForeColor = System.Drawing.Color.Navy;
             this.gondertusu.Location = new System.Drawing.Point(262, 289);
-            this.gondertusu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gondertusu.Margin = new System.Windows.Forms.Padding(2);
             this.gondertusu.Name = "gondertusu";
             this.gondertusu.Size = new System.Drawing.Size(94, 23);
             this.gondertusu.TabIndex = 6;
@@ -147,7 +166,7 @@
             this.txtMessage.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtMessage.Lines = new string[0];
             this.txtMessage.Location = new System.Drawing.Point(2, 278);
-            this.txtMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(2);
             this.txtMessage.MaxLength = 32767;
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
@@ -174,7 +193,7 @@
             this.txtChatLog.BackColor = System.Drawing.Color.White;
             this.txtChatLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtChatLog.Location = new System.Drawing.Point(2, 22);
-            this.txtChatLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChatLog.Margin = new System.Windows.Forms.Padding(2);
             this.txtChatLog.Name = "txtChatLog";
             this.txtChatLog.ReadOnly = true;
             this.txtChatLog.Size = new System.Drawing.Size(353, 252);
@@ -193,7 +212,7 @@
             this.panelside.Controls.Add(this.btnadmin);
             this.panelside.Controls.Add(this.btnbayitalep);
             this.panelside.Controls.Add(this.btnborsa);
-            this.panelside.Controls.Add(this.btnsms);
+            this.panelside.Controls.Add(this.btnfinans);
             this.panelside.Controls.Add(this.btnozelrapor);
             this.panelside.Controls.Add(this.btnarsiv);
             this.panelside.Controls.Add(this.btnrapor);
@@ -201,107 +220,10 @@
             this.panelside.Controls.Add(this.bpetlogo);
             this.panelside.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelside.Location = new System.Drawing.Point(0, 26);
-            this.panelside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelside.Margin = new System.Windows.Forms.Padding(2);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(160, 579);
+            this.panelside.Size = new System.Drawing.Size(160, 654);
             this.panelside.TabIndex = 3;
-            // 
-            // linkLabel
-            // 
-            this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel.AutoSize = true;
-            this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabel.Location = new System.Drawing.Point(12, 558);
-            this.linkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(125, 13);
-            this.linkLabel.TabIndex = 13;
-            this.linkLabel.TabStop = true;
-            this.linkLabel.Text = "Made By @BpetIT v1.8.1";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(733, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 18);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Sunucu Yanıt Süresi 51 (ms)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panelheader
-            // 
-            this.panelheader.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelheader.Controls.Add(this.label2);
-            this.panelheader.Controls.Add(this.boyutlandırma);
-            this.panelheader.Controls.Add(this.Togglemenubutton);
-            this.panelheader.Controls.Add(this.epostalabel);
-            this.panelheader.Controls.Add(this.button5);
-            this.panelheader.Controls.Add(this.button1);
-            this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelheader.Location = new System.Drawing.Point(0, 0);
-            this.panelheader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1047, 26);
-            this.panelheader.TabIndex = 4;
-            this.panelheader.DoubleClick += new System.EventHandler(this.panelheader_DoubleClick);
-            // 
-            // epostalabel
-            // 
-            this.epostalabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.epostalabel.AutoSize = true;
-            this.epostalabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.epostalabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.epostalabel.Location = new System.Drawing.Point(452, 6);
-            this.epostalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(144, 18);
-            this.epostalabel.TabIndex = 6;
-            this.epostalabel.Text = "E POSTA ADRESİNİZ!";
-            this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // livechatbtn
-            // 
-            this.livechatbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
-            this.livechatbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.livechatbtn.BackColor = System.Drawing.Color.Orange;
-            this.livechatbtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.livechatbtn.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.livechatbtn.ForeColor = System.Drawing.Color.Navy;
-            this.livechatbtn.Location = new System.Drawing.Point(893, 570);
-            this.livechatbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.livechatbtn.Name = "livechatbtn";
-            this.livechatbtn.Size = new System.Drawing.Size(154, 34);
-            this.livechatbtn.TabIndex = 1;
-            this.livechatbtn.Text = "CANLI DESTEK";
-            this.livechatbtn.UseVisualStyleBackColor = false;
-            this.livechatbtn.Click += new System.EventHandler(this.livechatbtn_Click);
-            // 
-            // chatclose
-            // 
-            this.chatclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chatclose.BackColor = System.Drawing.Color.White;
-            this.chatclose.BackgroundImage = global::BPET_PORTAL.Properties.Resources.çıkış2;
-            this.chatclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chatclose.FlatAppearance.BorderSize = 0;
-            this.chatclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatclose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chatclose.ForeColor = System.Drawing.Color.Red;
-            this.chatclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.chatclose.Location = new System.Drawing.Point(322, 2);
-            this.chatclose.Margin = new System.Windows.Forms.Padding(2);
-            this.chatclose.Name = "chatclose";
-            this.chatclose.Size = new System.Drawing.Size(32, 22);
-            this.chatclose.TabIndex = 9;
-            this.chatclose.UseVisualStyleBackColor = false;
-            this.chatclose.Click += new System.EventHandler(this.chatclose_Click);
             // 
             // btnbilgiislem
             // 
@@ -409,7 +331,7 @@
             this.btnexit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnexit.Image = ((System.Drawing.Image)(resources.GetObject("btnexit.Image")));
             this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexit.Location = new System.Drawing.Point(-1, 557);
+            this.btnexit.Location = new System.Drawing.Point(-1, 632);
             this.btnexit.Margin = new System.Windows.Forms.Padding(2);
             this.btnexit.Name = "btnexit";
             this.btnexit.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -451,7 +373,7 @@
             this.btnadmin.FlatAppearance.BorderSize = 0;
             this.btnadmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(55)))), ((int)(((byte)(113)))));
             this.btnadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnadmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnadmin.ForeColor = System.Drawing.Color.SeaShell;
             this.btnadmin.Image = ((System.Drawing.Image)(resources.GetObject("btnadmin.Image")));
             this.btnadmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -462,7 +384,7 @@
             this.btnadmin.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btnadmin.Size = new System.Drawing.Size(151, 26);
             this.btnadmin.TabIndex = 26;
-            this.btnadmin.Text = "  Admin Panel";
+            this.btnadmin.Text = " Admin Panel";
             this.btnadmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnadmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnadmin.UseVisualStyleBackColor = true;
@@ -486,7 +408,7 @@
             this.btnbayitalep.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btnbayitalep.Size = new System.Drawing.Size(151, 26);
             this.btnbayitalep.TabIndex = 25;
-            this.btnbayitalep.Text = " Bayi Takip Sistemi";
+            this.btnbayitalep.Text = " Bayi Takip";
             this.btnbayitalep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnbayitalep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnbayitalep.UseVisualStyleBackColor = true;
@@ -517,29 +439,29 @@
             this.btnborsa.Visible = false;
             this.btnborsa.Click += new System.EventHandler(this.btnborsa_Click);
             // 
-            // btnsms
+            // btnfinans
             // 
-            this.btnsms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnsms.FlatAppearance.BorderSize = 0;
-            this.btnsms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(55)))), ((int)(((byte)(113)))));
-            this.btnsms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnsms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnsms.Image = ((System.Drawing.Image)(resources.GetObject("btnsms.Image")));
-            this.btnsms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsms.Location = new System.Drawing.Point(3, 148);
-            this.btnsms.Margin = new System.Windows.Forms.Padding(2);
-            this.btnsms.MaximumSize = new System.Drawing.Size(151, 26);
-            this.btnsms.Name = "btnsms";
-            this.btnsms.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnsms.Size = new System.Drawing.Size(151, 26);
-            this.btnsms.TabIndex = 22;
-            this.btnsms.Text = " SMS Sistemi";
-            this.btnsms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnsms.UseVisualStyleBackColor = true;
-            this.btnsms.Visible = false;
-            this.btnsms.Click += new System.EventHandler(this.btnsms_Click);
+            this.btnfinans.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfinans.FlatAppearance.BorderSize = 0;
+            this.btnfinans.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(55)))), ((int)(((byte)(113)))));
+            this.btnfinans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfinans.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnfinans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnfinans.Image = ((System.Drawing.Image)(resources.GetObject("btnfinans.Image")));
+            this.btnfinans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfinans.Location = new System.Drawing.Point(3, 148);
+            this.btnfinans.Margin = new System.Windows.Forms.Padding(2);
+            this.btnfinans.MaximumSize = new System.Drawing.Size(151, 26);
+            this.btnfinans.Name = "btnfinans";
+            this.btnfinans.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnfinans.Size = new System.Drawing.Size(151, 26);
+            this.btnfinans.TabIndex = 22;
+            this.btnfinans.Text = " Finans ";
+            this.btnfinans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfinans.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnfinans.UseVisualStyleBackColor = true;
+            this.btnfinans.Visible = false;
+            this.btnfinans.Click += new System.EventHandler(this.btnsms_Click);
             // 
             // btnozelrapor
             // 
@@ -614,6 +536,19 @@
             this.btnrapor.Visible = false;
             this.btnrapor.Click += new System.EventHandler(this.btnrapor_Click);
             // 
+            // linkLabel
+            // 
+            this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkLabel.AutoSize = true;
+            this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.linkLabel.Location = new System.Drawing.Point(12, 633);
+            this.linkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel.Name = "linkLabel";
+            this.linkLabel.Size = new System.Drawing.Size(125, 13);
+            this.linkLabel.TabIndex = 13;
+            this.linkLabel.TabStop = true;
+            this.linkLabel.Text = "Made By @BpetIT v1.8.1";
+            // 
             // bpetlogo
             // 
             this.bpetlogo.BackgroundImage = global::BPET_PORTAL.Properties.Resources.My_project__1_;
@@ -629,6 +564,39 @@
             this.bpetlogo.TabStop = false;
             this.bpetlogo.Click += new System.EventHandler(this.bpetlogo_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.Lime;
+            this.label2.Location = new System.Drawing.Point(1090, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 18);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Sunucu Yanıt Süresi 51 (ms)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelheader
+            // 
+            this.panelheader.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelheader.Controls.Add(this.label2);
+            this.panelheader.Controls.Add(this.boyutlandırma);
+            this.panelheader.Controls.Add(this.Togglemenubutton);
+            this.panelheader.Controls.Add(this.epostalabel);
+            this.panelheader.Controls.Add(this.button5);
+            this.panelheader.Controls.Add(this.button1);
+            this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelheader.Location = new System.Drawing.Point(0, 0);
+            this.panelheader.Margin = new System.Windows.Forms.Padding(2);
+            this.panelheader.Name = "panelheader";
+            this.panelheader.Size = new System.Drawing.Size(1404, 26);
+            this.panelheader.TabIndex = 4;
+            this.panelheader.DoubleClick += new System.EventHandler(this.panelheader_DoubleClick);
+            // 
             // boyutlandırma
             // 
             this.boyutlandırma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -640,7 +608,7 @@
             this.boyutlandırma.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.boyutlandırma.ForeColor = System.Drawing.Color.White;
             this.boyutlandırma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boyutlandırma.Location = new System.Drawing.Point(976, 2);
+            this.boyutlandırma.Location = new System.Drawing.Point(1333, 2);
             this.boyutlandırma.Margin = new System.Windows.Forms.Padding(2);
             this.boyutlandırma.Name = "boyutlandırma";
             this.boyutlandırma.Size = new System.Drawing.Size(32, 24);
@@ -662,6 +630,21 @@
             this.Togglemenubutton.UseVisualStyleBackColor = false;
             this.Togglemenubutton.Click += new System.EventHandler(this.Togglemenubutton_Click);
             // 
+            // epostalabel
+            // 
+            this.epostalabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.epostalabel.AutoSize = true;
+            this.epostalabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.epostalabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.epostalabel.Location = new System.Drawing.Point(452, 6);
+            this.epostalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.epostalabel.Name = "epostalabel";
+            this.epostalabel.Size = new System.Drawing.Size(119, 15);
+            this.epostalabel.TabIndex = 6;
+            this.epostalabel.Text = "E POSTA ADRESİNİZ!";
+            this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -673,7 +656,7 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(939, 2);
+            this.button5.Location = new System.Drawing.Point(1296, 2);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(32, 24);
@@ -693,7 +676,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1013, 2);
+            this.button1.Location = new System.Drawing.Point(1370, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 24);
@@ -701,12 +684,29 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // livechatbtn
+            // 
+            this.livechatbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
+            this.livechatbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.livechatbtn.BackColor = System.Drawing.Color.Orange;
+            this.livechatbtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.livechatbtn.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.livechatbtn.ForeColor = System.Drawing.Color.Navy;
+            this.livechatbtn.Location = new System.Drawing.Point(1250, 645);
+            this.livechatbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.livechatbtn.Name = "livechatbtn";
+            this.livechatbtn.Size = new System.Drawing.Size(154, 34);
+            this.livechatbtn.TabIndex = 1;
+            this.livechatbtn.Text = "CANLI DESTEK";
+            this.livechatbtn.UseVisualStyleBackColor = false;
+            this.livechatbtn.Click += new System.EventHandler(this.livechatbtn_Click);
+            // 
             // mainpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1047, 605);
+            this.ClientSize = new System.Drawing.Size(1404, 680);
             this.ControlBox = false;
             this.Controls.Add(this.livechat);
             this.Controls.Add(this.livechatbtn);
@@ -715,7 +715,7 @@
             this.Controls.Add(this.panelheader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainpage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BPET PORTAL";
@@ -726,9 +726,9 @@
             this.livechat.PerformLayout();
             this.panelside.ResumeLayout(false);
             this.panelside.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpetlogo)).EndInit();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpetlogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,7 +746,7 @@
         public System.Windows.Forms.Button btnadmin;
         public System.Windows.Forms.Button btnbayitalep;
         public System.Windows.Forms.Button btnborsa;
-        public System.Windows.Forms.Button btnsms;
+        public System.Windows.Forms.Button btnfinans;
         public System.Windows.Forms.Button btnozelrapor;
         public System.Windows.Forms.Button btnarsiv;
         public System.Windows.Forms.Button btnrapor;

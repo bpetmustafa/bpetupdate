@@ -42,9 +42,10 @@
             // 
             this.lblMsg.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblMsg.ForeColor = System.Drawing.Color.White;
-            this.lblMsg.Location = new System.Drawing.Point(59, 27);
+            this.lblMsg.Location = new System.Drawing.Point(47, 22);
+            this.lblMsg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(315, 75);
+            this.lblMsg.Size = new System.Drawing.Size(252, 60);
             this.lblMsg.TabIndex = 4;
             this.lblMsg.Text = "Message Text";
             // 
@@ -55,9 +56,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BPET_PORTAL.Properties.Resources.success;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 28);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -65,26 +67,26 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::BPET_PORTAL.Properties.Resources.icons8_cancel_25px;
-            this.pictureBox2.Location = new System.Drawing.Point(389, 35);
+            this.pictureBox2.Location = new System.Drawing.Point(311, 28);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 30);
+            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Form_Alert
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(437, 111);
+            this.ClientSize = new System.Drawing.Size(350, 89);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Alert";
             this.Text = "Form_Alert";
             this.Load += new System.EventHandler(this.Form_Alert_Load_1);

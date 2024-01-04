@@ -1,5 +1,4 @@
 ﻿using BPET_PORTAL.admin;
-using BPET_PORTAL.sms_otomasyonu;
 using BPET_PORTAL.victorreklam;
 using SKM.V3.Methods;
 using SKM.V3.Models;
@@ -670,12 +669,12 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
                 y += btnozelrapor.Height + buttonSpacing;
             }
 
-            btnsms.Visible = CheckUserPermission("d", kullaniciYetkileri);
-            btnsms.Location = new Point(x, y);
+            btnfinans.Visible = CheckUserPermission("d", kullaniciYetkileri);
+            btnfinans.Location = new Point(x, y);
 
-            if (btnsms.Visible)
+            if (btnfinans.Visible)
             {
-                y += btnsms.Height + buttonSpacing;
+                y += btnfinans.Height + buttonSpacing;
             }
 
             btnborsa.Visible = CheckUserPermission("e", kullaniciYetkileri);
@@ -746,7 +745,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             btnrapor.Enabled = btnrapor.Visible;
             btnarsiv.Enabled = btnarsiv.Visible;
             btnozelrapor.Enabled = btnozelrapor.Visible;
-            btnsms.Enabled = btnsms.Visible;
+            btnfinans.Enabled = btnfinans.Visible;
             btnborsa.Enabled = btnborsa.Visible;
             btnbayitalep.Enabled = btnbayitalep.Visible;
             btnadmin.Enabled = btnadmin.Visible;
@@ -789,8 +788,8 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
 
         private void btnsms_Click(object sender, EventArgs e)
         {
-            loadform(new sms_otomasyonu.sms());
-
+            //  loadform(new sms_otomasyonu.sms());
+            this.Alert("Çok Yakında Kullanıma Açılacaktır!", Form_Alert.enmType.Warning);
         }
 
         private void btnborsa_Click(object sender, EventArgs e)

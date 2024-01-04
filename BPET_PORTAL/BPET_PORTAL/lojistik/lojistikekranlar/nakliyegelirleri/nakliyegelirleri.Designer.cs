@@ -356,6 +356,7 @@
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(153, 30);
             this.dateTimePickerEnd.TabIndex = 68;
+            this.dateTimePickerEnd.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             // 
             // dateTimePickerStart
             // 
@@ -371,6 +372,7 @@
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(141, 30);
             this.dateTimePickerStart.TabIndex = 67;
+            this.dateTimePickerStart.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             // 
             // btnFiltrele
             // 
@@ -501,7 +503,7 @@
             this.exceldenyukle.Location = new System.Drawing.Point(7, 26);
             this.exceldenyukle.Margin = new System.Windows.Forms.Padding(4);
             this.exceldenyukle.Name = "exceldenyukle";
-            this.exceldenyukle.Size = new System.Drawing.Size(200, 32);
+            this.exceldenyukle.Size = new System.Drawing.Size(175, 32);
             this.exceldenyukle.TabIndex = 39;
             this.exceldenyukle.Text = "EXCELDEN AKTAR";
             this.exceldenyukle.UseVisualStyleBackColor = false;

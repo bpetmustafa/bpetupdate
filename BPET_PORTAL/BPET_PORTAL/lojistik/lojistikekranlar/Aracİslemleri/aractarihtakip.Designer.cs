@@ -57,6 +57,7 @@
             this.txtAraPlaka = new MetroFramework.Controls.MetroTextBox();
             this.resetle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblverisayisi = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,10 +84,10 @@
             this.panel1.Controls.Add(this.dateKaskoTarih);
             this.panel1.Controls.Add(this.plakalabel);
             this.panel1.Controls.Add(this.txtPlaka);
-            this.panel1.Location = new System.Drawing.Point(29, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(23, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 620);
+            this.panel1.Size = new System.Drawing.Size(295, 496);
             this.panel1.TabIndex = 0;
             // 
             // mobbilgilabel
@@ -95,9 +96,10 @@
             this.mobbilgilabel.AutoSize = true;
             this.mobbilgilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mobbilgilabel.ForeColor = System.Drawing.Color.Red;
-            this.mobbilgilabel.Location = new System.Drawing.Point(-3, 15);
+            this.mobbilgilabel.Location = new System.Drawing.Point(-2, 12);
+            this.mobbilgilabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mobbilgilabel.Name = "mobbilgilabel";
-            this.mobbilgilabel.Size = new System.Drawing.Size(372, 29);
+            this.mobbilgilabel.Size = new System.Drawing.Size(292, 24);
             this.mobbilgilabel.TabIndex = 19;
             this.mobbilgilabel.Text = "GÜNCELLEME MODUNDASINIZ!";
             this.mobbilgilabel.Visible = false;
@@ -110,9 +112,10 @@
             this.modlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.modlabel.ForeColor = System.Drawing.Color.Red;
-            this.modlabel.Location = new System.Drawing.Point(3, 561);
+            this.modlabel.Location = new System.Drawing.Point(2, 449);
+            this.modlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.modlabel.Name = "modlabel";
-            this.modlabel.Size = new System.Drawing.Size(339, 25);
+            this.modlabel.Size = new System.Drawing.Size(276, 20);
             this.modlabel.TabIndex = 18;
             this.modlabel.Text = "GÜNCELLEME MODUNDAN ÇIK!";
             this.modlabel.Visible = false;
@@ -125,10 +128,10 @@
             this.btnguncelle.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_update_96;
             this.btnguncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnguncelle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguncelle.Location = new System.Drawing.Point(184, 455);
-            this.btnguncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnguncelle.Location = new System.Drawing.Point(147, 364);
+            this.btnguncelle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnguncelle.Name = "btnguncelle";
-            this.btnguncelle.Size = new System.Drawing.Size(88, 79);
+            this.btnguncelle.Size = new System.Drawing.Size(70, 63);
             this.btnguncelle.TabIndex = 17;
             this.btnguncelle.UseVisualStyleBackColor = false;
             this.btnguncelle.Visible = false;
@@ -139,10 +142,10 @@
             this.radioTicari.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radioTicari.AutoSize = true;
             this.radioTicari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioTicari.Location = new System.Drawing.Point(184, 57);
-            this.radioTicari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioTicari.Location = new System.Drawing.Point(147, 46);
+            this.radioTicari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioTicari.Name = "radioTicari";
-            this.radioTicari.Size = new System.Drawing.Size(138, 29);
+            this.radioTicari.Size = new System.Drawing.Size(112, 24);
             this.radioTicari.TabIndex = 16;
             this.radioTicari.TabStop = true;
             this.radioTicari.Text = "Ticari Araç";
@@ -153,10 +156,10 @@
             this.radioBinek.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radioBinek.AutoSize = true;
             this.radioBinek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioBinek.Location = new System.Drawing.Point(19, 57);
-            this.radioBinek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioBinek.Location = new System.Drawing.Point(15, 46);
+            this.radioBinek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioBinek.Name = "radioBinek";
-            this.radioBinek.Size = new System.Drawing.Size(138, 29);
+            this.radioBinek.Size = new System.Drawing.Size(114, 24);
             this.radioBinek.TabIndex = 15;
             this.radioBinek.TabStop = true;
             this.radioBinek.Text = "Binek Araç";
@@ -169,10 +172,10 @@
             this.btnkaydet.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_save_96;
             this.btnkaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnkaydet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnkaydet.Location = new System.Drawing.Point(68, 455);
-            this.btnkaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnkaydet.Location = new System.Drawing.Point(54, 364);
+            this.btnkaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnkaydet.Name = "btnkaydet";
-            this.btnkaydet.Size = new System.Drawing.Size(88, 79);
+            this.btnkaydet.Size = new System.Drawing.Size(70, 63);
             this.btnkaydet.TabIndex = 14;
             this.btnkaydet.UseVisualStyleBackColor = false;
             this.btnkaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -183,9 +186,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(89, 334);
+            this.label5.Location = new System.Drawing.Point(71, 267);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 29);
+            this.label5.Size = new System.Drawing.Size(119, 24);
             this.label5.TabIndex = 11;
             this.label5.Text = "ADR TARİH";
             // 
@@ -195,13 +199,13 @@
             this.dateAdrTarih.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateAdrTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateAdrTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateAdrTarih.Location = new System.Drawing.Point(61, 366);
-            this.dateAdrTarih.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateAdrTarih.Location = new System.Drawing.Point(49, 293);
+            this.dateAdrTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateAdrTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateAdrTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateAdrTarih.Name = "dateAdrTarih";
             this.dateAdrTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateAdrTarih.Size = new System.Drawing.Size(211, 22);
+            this.dateAdrTarih.Size = new System.Drawing.Size(170, 22);
             this.dateAdrTarih.TabIndex = 10;
             // 
             // label4
@@ -210,9 +214,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(56, 274);
+            this.label4.Location = new System.Drawing.Point(45, 219);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 29);
+            this.label4.Size = new System.Drawing.Size(178, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "MUAYENE TARİH";
             // 
@@ -222,13 +227,13 @@
             this.dateMuayeneTarih.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateMuayeneTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateMuayeneTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateMuayeneTarih.Location = new System.Drawing.Point(61, 306);
-            this.dateMuayeneTarih.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateMuayeneTarih.Location = new System.Drawing.Point(49, 245);
+            this.dateMuayeneTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateMuayeneTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateMuayeneTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateMuayeneTarih.Name = "dateMuayeneTarih";
             this.dateMuayeneTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateMuayeneTarih.Size = new System.Drawing.Size(211, 22);
+            this.dateMuayeneTarih.Size = new System.Drawing.Size(170, 22);
             this.dateMuayeneTarih.TabIndex = 8;
             // 
             // label3
@@ -237,9 +242,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(13, 395);
+            this.label3.Location = new System.Drawing.Point(10, 316);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 29);
+            this.label3.Size = new System.Drawing.Size(257, 24);
             this.label3.TabIndex = 7;
             this.label3.Text = "TEHLİKELİ MADDE TARİH";
             // 
@@ -249,13 +255,13 @@
             this.dateMaddeTarih.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateMaddeTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateMaddeTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateMaddeTarih.Location = new System.Drawing.Point(61, 427);
-            this.dateMaddeTarih.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateMaddeTarih.Location = new System.Drawing.Point(49, 342);
+            this.dateMaddeTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateMaddeTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateMaddeTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateMaddeTarih.Name = "dateMaddeTarih";
             this.dateMaddeTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateMaddeTarih.Size = new System.Drawing.Size(211, 22);
+            this.dateMaddeTarih.Size = new System.Drawing.Size(170, 22);
             this.dateMaddeTarih.TabIndex = 6;
             // 
             // label2
@@ -264,9 +270,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(61, 219);
+            this.label2.Location = new System.Drawing.Point(49, 175);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 29);
+            this.label2.Size = new System.Drawing.Size(167, 24);
             this.label2.TabIndex = 5;
             this.label2.Text = "SİGORTA TARİH";
             // 
@@ -276,13 +283,13 @@
             this.dateSigortaTarih.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateSigortaTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateSigortaTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateSigortaTarih.Location = new System.Drawing.Point(61, 251);
-            this.dateSigortaTarih.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateSigortaTarih.Location = new System.Drawing.Point(49, 201);
+            this.dateSigortaTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateSigortaTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateSigortaTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateSigortaTarih.Name = "dateSigortaTarih";
             this.dateSigortaTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateSigortaTarih.Size = new System.Drawing.Size(211, 22);
+            this.dateSigortaTarih.Size = new System.Drawing.Size(170, 22);
             this.dateSigortaTarih.TabIndex = 4;
             // 
             // label1
@@ -291,9 +298,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(79, 162);
+            this.label1.Location = new System.Drawing.Point(63, 130);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 29);
+            this.label1.Size = new System.Drawing.Size(146, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "KASKO TARİH";
             // 
@@ -303,13 +311,13 @@
             this.dateKaskoTarih.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateKaskoTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateKaskoTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateKaskoTarih.Location = new System.Drawing.Point(61, 194);
-            this.dateKaskoTarih.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateKaskoTarih.Location = new System.Drawing.Point(49, 155);
+            this.dateKaskoTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateKaskoTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateKaskoTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateKaskoTarih.Name = "dateKaskoTarih";
             this.dateKaskoTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateKaskoTarih.Size = new System.Drawing.Size(211, 22);
+            this.dateKaskoTarih.Size = new System.Drawing.Size(170, 22);
             this.dateKaskoTarih.TabIndex = 2;
             // 
             // plakalabel
@@ -318,9 +326,10 @@
             this.plakalabel.AutoSize = true;
             this.plakalabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.plakalabel.Location = new System.Drawing.Point(111, 89);
+            this.plakalabel.Location = new System.Drawing.Point(89, 71);
+            this.plakalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.plakalabel.Name = "plakalabel";
-            this.plakalabel.Size = new System.Drawing.Size(93, 29);
+            this.plakalabel.Size = new System.Drawing.Size(75, 24);
             this.plakalabel.TabIndex = 1;
             this.plakalabel.Text = "PLAKA";
             // 
@@ -328,15 +337,16 @@
             // 
             this.txtPlaka.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPlaka.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPlaka.Location = new System.Drawing.Point(51, 121);
-            this.txtPlaka.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPlaka.Location = new System.Drawing.Point(41, 97);
+            this.txtPlaka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPlaka.Name = "txtPlaka";
-            this.txtPlaka.Size = new System.Drawing.Size(233, 38);
+            this.txtPlaka.Size = new System.Drawing.Size(187, 32);
             this.txtPlaka.TabIndex = 0;
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox4.Controls.Add(this.lblverisayisi);
             this.groupBox4.Controls.Add(this.chkTarihFiltrele);
             this.groupBox4.Controls.Add(this.chkBinek);
             this.groupBox4.Controls.Add(this.chkTicari);
@@ -344,11 +354,11 @@
             this.groupBox4.Controls.Add(this.txtAraPlaka);
             this.groupBox4.Controls.Add(this.resetle);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(404, 42);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Location = new System.Drawing.Point(323, 34);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(501, 103);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Size = new System.Drawing.Size(401, 82);
             this.groupBox4.TabIndex = 62;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama Yap";
@@ -356,10 +366,10 @@
             // chkTarihFiltrele
             // 
             this.chkTarihFiltrele.AutoSize = true;
-            this.chkTarihFiltrele.Location = new System.Drawing.Point(5, 62);
-            this.chkTarihFiltrele.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTarihFiltrele.Location = new System.Drawing.Point(4, 50);
+            this.chkTarihFiltrele.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkTarihFiltrele.Name = "chkTarihFiltrele";
-            this.chkTarihFiltrele.Size = new System.Drawing.Size(149, 27);
+            this.chkTarihFiltrele.Size = new System.Drawing.Size(127, 23);
             this.chkTarihFiltrele.TabIndex = 49;
             this.chkTarihFiltrele.Text = "Tarihi Yaklaşan";
             this.chkTarihFiltrele.UseVisualStyleBackColor = true;
@@ -367,10 +377,10 @@
             // chkBinek
             // 
             this.chkBinek.AutoSize = true;
-            this.chkBinek.Location = new System.Drawing.Point(244, 27);
-            this.chkBinek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkBinek.Location = new System.Drawing.Point(195, 22);
+            this.chkBinek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBinek.Name = "chkBinek";
-            this.chkBinek.Size = new System.Drawing.Size(81, 27);
+            this.chkBinek.Size = new System.Drawing.Size(68, 23);
             this.chkBinek.TabIndex = 48;
             this.chkBinek.Text = "BİNEK";
             this.chkBinek.UseVisualStyleBackColor = true;
@@ -378,10 +388,10 @@
             // chkTicari
             // 
             this.chkTicari.AutoSize = true;
-            this.chkTicari.Location = new System.Drawing.Point(152, 27);
-            this.chkTicari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTicari.Location = new System.Drawing.Point(122, 22);
+            this.chkTicari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkTicari.Name = "chkTicari";
-            this.chkTicari.Size = new System.Drawing.Size(86, 27);
+            this.chkTicari.Size = new System.Drawing.Size(72, 23);
             this.chkTicari.TabIndex = 47;
             this.chkTicari.Text = "TİCARİ";
             this.chkTicari.UseVisualStyleBackColor = true;
@@ -398,11 +408,10 @@
             this.btnara.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnara.FlatAppearance.BorderSize = 0;
             this.btnara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnara.Location = new System.Drawing.Point(412, 11);
-            this.btnara.Margin = new System.Windows.Forms.Padding(4);
-            this.btnara.MaximumSize = new System.Drawing.Size(39, 46);
+            this.btnara.Location = new System.Drawing.Point(330, 9);
+            this.btnara.MaximumSize = new System.Drawing.Size(31, 37);
             this.btnara.Name = "btnara";
-            this.btnara.Size = new System.Drawing.Size(39, 46);
+            this.btnara.Size = new System.Drawing.Size(31, 37);
             this.btnara.TabIndex = 46;
             this.btnara.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnara.UseVisualStyleBackColor = false;
@@ -417,10 +426,10 @@
             // 
             // 
             this.txtAraPlaka.CustomButton.Image = null;
-            this.txtAraPlaka.CustomButton.Location = new System.Drawing.Point(112, 2);
-            this.txtAraPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAraPlaka.CustomButton.Location = new System.Drawing.Point(72, 2);
+            this.txtAraPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAraPlaka.CustomButton.Name = "";
-            this.txtAraPlaka.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtAraPlaka.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.txtAraPlaka.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAraPlaka.CustomButton.TabIndex = 1;
             this.txtAraPlaka.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -428,11 +437,11 @@
             this.txtAraPlaka.CustomButton.Visible = false;
             this.txtAraPlaka.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAraPlaka.Lines = new string[0];
-            this.txtAraPlaka.Location = new System.Drawing.Point(5, 27);
-            this.txtAraPlaka.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAraPlaka.MaximumSize = new System.Drawing.Size(149, 30);
+            this.txtAraPlaka.Location = new System.Drawing.Point(4, 22);
+            this.txtAraPlaka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAraPlaka.MaximumSize = new System.Drawing.Size(119, 24);
             this.txtAraPlaka.MaxLength = 32767;
-            this.txtAraPlaka.MinimumSize = new System.Drawing.Size(140, 30);
+            this.txtAraPlaka.MinimumSize = new System.Drawing.Size(112, 24);
             this.txtAraPlaka.Name = "txtAraPlaka";
             this.txtAraPlaka.PasswordChar = '\0';
             this.txtAraPlaka.PromptText = "PLAKA ARAMA";
@@ -441,7 +450,7 @@
             this.txtAraPlaka.SelectionLength = 0;
             this.txtAraPlaka.SelectionStart = 0;
             this.txtAraPlaka.ShortcutsEnabled = true;
-            this.txtAraPlaka.Size = new System.Drawing.Size(140, 30);
+            this.txtAraPlaka.Size = new System.Drawing.Size(112, 24);
             this.txtAraPlaka.TabIndex = 44;
             this.txtAraPlaka.UseSelectable = true;
             this.txtAraPlaka.WaterMark = "PLAKA ARAMA";
@@ -460,11 +469,10 @@
             this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetle.FlatAppearance.BorderSize = 0;
             this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetle.Location = new System.Drawing.Point(455, 11);
-            this.resetle.Margin = new System.Windows.Forms.Padding(4);
-            this.resetle.MaximumSize = new System.Drawing.Size(39, 46);
+            this.resetle.Location = new System.Drawing.Point(364, 9);
+            this.resetle.MaximumSize = new System.Drawing.Size(31, 37);
             this.resetle.Name = "resetle";
-            this.resetle.Size = new System.Drawing.Size(39, 46);
+            this.resetle.Size = new System.Drawing.Size(31, 37);
             this.resetle.TabIndex = 33;
             this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.resetle.UseVisualStyleBackColor = false;
@@ -488,30 +496,40 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(404, 151);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(323, 121);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(881, 496);
+            this.dataGridView1.Size = new System.Drawing.Size(705, 397);
             this.dataGridView1.TabIndex = 61;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
+            // lblverisayisi
+            // 
+            this.lblverisayisi.AutoSize = true;
+            this.lblverisayisi.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblverisayisi.Location = new System.Drawing.Point(135, 55);
+            this.lblverisayisi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblverisayisi.Name = "lblverisayisi";
+            this.lblverisayisi.Size = new System.Drawing.Size(65, 13);
+            this.lblverisayisi.TabIndex = 68;
+            this.lblverisayisi.Text = "VERİ SAYISI:";
+            // 
             // aractarihtakip
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1298, 676);
+            this.ClientSize = new System.Drawing.Size(1038, 541);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "aractarihtakip";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ARAÇ İŞLEMLERİ";
@@ -554,5 +572,6 @@
         private System.Windows.Forms.CheckBox chkTicari;
         private System.Windows.Forms.CheckBox chkTarihFiltrele;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblverisayisi;
     }
 }

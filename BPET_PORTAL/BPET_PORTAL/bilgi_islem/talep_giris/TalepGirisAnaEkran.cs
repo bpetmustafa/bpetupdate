@@ -129,7 +129,7 @@ namespace BPET_PORTAL.bilgi_islem.talep_giris
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Talepler WHERE MONTH(TalepTarihi) = @SelectedMonth";
+                    string query = "SELECT * FROM Talepler WHERE MONTH(TalepTarihi) = @SelectedMonth ORDER BY TalepTarihi DESC";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@SelectedMonth", selectedMonth);
 

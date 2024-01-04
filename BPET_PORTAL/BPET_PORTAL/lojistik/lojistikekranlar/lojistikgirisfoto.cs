@@ -15,6 +15,8 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
         public lojistikgirisfoto()
         {
             InitializeComponent();
+
         }
+
     }
 }

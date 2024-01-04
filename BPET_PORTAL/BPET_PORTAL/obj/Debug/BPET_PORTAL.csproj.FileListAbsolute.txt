@@ -319,8 +319,6 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.gif.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.loginpage.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.mainpage.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.Properties.Resources.resources
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.sms_otomasyonu.LicenseKeyInputForm.resources
-E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.sms_otomasyonu.sms.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.victorreklam.victorreklamform.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.AdminPaneliForm.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\destek_otomasyonu.AnaEkran.resources
@@ -462,3 +460,4 @@ E:\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET Portal.pdb
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bilgi_islem.bilgiislemanasayfa.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bilgi_islem.talep_giris.TalepGirisAnaEkran.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bilgi_islem.talep_giris.TalepDuzenleEkran.resources
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Xanadu.LocalizedAttributes.dll

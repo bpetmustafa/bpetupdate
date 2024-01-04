@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Linq;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -9,12 +14,27 @@ namespace BPET_PORTAL.bayitakip
 {
     public partial class bayitakipmainpage : Form
     {
+        private List<string> selectedRowsList = new List<string>();
+
         public bayitakipmainpage(string eposta)
         {
             InitializeComponent();
             epostalabel.Text = eposta;
             FillBolgeMuduruComboBox();
         }
+        private string GetBolumMail(string bolgeKodu)
+        {
+            switch (bolgeKodu)
+            {
+                case "B3":
+                    return "mustafa.ceylan@bpet.com.tr";
+                case "B2":
+                    return "b2@bpet.com.tr";
+                default:
+                    return "mustafa.ceylan@bpet.com.tr";
+            }
+        }
+
         private void FillBolgeMuduruComboBox()
         {
             string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
@@ -23,7 +43,7 @@ namespace BPET_PORTAL.bayitakip
             {
                 connection.Open();
 
-                string query = "SELECT DISTINCT BolgeMuduru FROM CariHesaplar";
+                string query = "SELECT DISTINCT BolgeAdi FROM CariHesaplar";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -31,7 +51,7 @@ namespace BPET_PORTAL.bayitakip
                     {
                         while (reader.Read())
                         {
-                            string bolgeMuduru = reader["BolgeMuduru"].ToString();
+                            string bolgeMuduru = reader["BolgeAdi"].ToString();
                             bolgeMuduruComboBox.Items.Add(bolgeMuduru);
                         }
                     }
@@ -65,11 +85,11 @@ namespace BPET_PORTAL.bayitakip
             {
                 connection.Open();
 
-                string query = "SELECT CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, BolgeAdi, BolgeMuduru, SonSatisTarihi, SonSatisMiktari, SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi FROM CariHesaplar WHERE (SonSatisGunSayisi >= @MinimumSonSatisGunSayisi AND SonTahsilatGunSayisi >= @MinimumSonTahsilatGunSayisi)";
+                string query = "SELECT id, CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, BolgeAdi, BolgeMuduru, SonSatisTarihi, SonSatisMiktari, SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi, MailGonderildi, Cevaplandi FROM CariHesaplar WHERE (SonSatisGunSayisi >= @MinimumSonSatisGunSayisi AND SonTahsilatGunSayisi >= @MinimumSonTahsilatGunSayisi)";
 
                 if (!string.IsNullOrEmpty(selectedBolgeMuduru))
                 {
-                    query += " AND BolgeMuduru = @SelectedBolgeMuduru";
+                    query += " AND BolgeAdi = @SelectedBolgeMuduru";
                 }
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -88,11 +108,16 @@ namespace BPET_PORTAL.bayitakip
                         adapter.Fill(dataTable);
                         dataGridView.DataSource = dataTable;
                     }
+                    lblverisayisi.Text = "VERİ SAYISI: " + dataGridView.RowCount.ToString();
+
                 }
             }
         }
         private void resetFiltersButton_Click(object sender, EventArgs e)
         {
+            selectedRowsList.Clear();
+            listBox1.Items.Clear();
+
             // NumericUpdown'ları sıfırla
             numericUpDown.Value = numericUpDown.Minimum;
             numericUpDown1.Value = numericUpDown1.Minimum;
@@ -145,8 +170,17 @@ namespace BPET_PORTAL.bayitakip
                     }
                     else
                     {
-                        // Hatalı tarih değeri, bu durumu işleyebilir veya rapor edebilirsiniz.
-                        continue; // Hata olduğunda bu veriyi atlayın
+                        // Hatalı tarih formatı, gün sayısının başına 0 ekleyip tekrar deneyin
+                        if (DateTime.TryParseExact("0" + xlRange.Cells[i, 10].Text, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out sonSatisTarihi))
+                        {
+                            // Başarıyla tarih çözümlendi, tarih değişkeni artık doğru değeri içeriyor
+                        }
+                        else
+                        {
+                            // İkinci denemede de başarısız olursa hata alın
+                            this.Alert("TARİH HATA: " + sonSatisTarihi + " ft: " + cariHesapKodu, Form_Alert.enmType.Info);
+                            continue;
+                        }
                     }
 
                     if (decimal.TryParse(xlRange.Cells[i, 11].Text, out sonSatisMiktari))
@@ -155,7 +189,7 @@ namespace BPET_PORTAL.bayitakip
                     }
                     else
                     {
-                        // Hatalı sayısal değer, bu durumu işleyebilir veya rapor edebilirsiniz.
+                        this.Alert("satismiktari HATA: " + cariHesapKodu + " ft:", Form_Alert.enmType.Info);
                         continue; // Hata olduğunda bu veriyi atlayın
                     }
 
@@ -169,8 +203,17 @@ namespace BPET_PORTAL.bayitakip
                     }
                     else
                     {
-                        // Hatalı tarih değeri, bu durumu işleyebilir veya rapor edebilirsiniz.
-                        continue; // Hata olduğunda bu veriyi atlayın
+                        // Hatalı tarih formatı, gün sayısının başına 0 ekleyip tekrar deneyin
+                        if (DateTime.TryParseExact("0" + xlRange.Cells[i, 12].Text, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out sonTahsilatTarihi))
+                        {
+                            // Başarıyla tarih çözümlendi, tarih değişkeni artık doğru değeri içeriyor
+                        }
+                        else
+                        {
+                            // İkinci denemede de başarısız olursa hata alın
+                            this.Alert("TARİH2 HATA: " + sonTahsilatTarihi, Form_Alert.enmType.Info);
+                            continue;
+                        }
                     }
 
                     if (int.TryParse(xlRange.Cells[i, 13].Text, out sonSatisGunSayisi))
@@ -206,7 +249,8 @@ namespace BPET_PORTAL.bayitakip
                                                 "BolgeMuduru = @BolgeMuduru, SahaKodu = @SahaKodu, SahaAdi = @SahaAdi, " +
                                                 "SahaMuduru = @SahaMuduru, SonSatisTarihi = @SonSatisTarihi, " +
                                                 "SonSatisMiktari = @SonSatisMiktari, SonTahsilatTarihi = @SonTahsilatTarihi, " +
-                                                "SonSatisGunSayisi = @SonSatisGunSayisi, SonTahsilatGunSayisi = @SonTahsilatGunSayisi " +
+                                                "SonSatisGunSayisi = @SonSatisGunSayisi, MailGonderildi = '0', " +
+                                                "Cevaplandi = '0', SonTahsilatGunSayisi = @SonTahsilatGunSayisi " +
                                                 "WHERE CariHesapUnvani = @CariHesapUnvani";
 
                             using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
@@ -255,13 +299,13 @@ namespace BPET_PORTAL.bayitakip
                         }
                     }
 
-                    if (i % 10 == 0)
-                    {
-                        if (MessageBox.Show("İşlemi durdurmak istiyor musunuz?", "Dikkat", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            break; // Kullanıcı işlemi iptal etti
-                        }
-                    }
+                   // if (i % 10 == 0)
+                    //{
+                     //   if (MessageBox.Show("İşlemi durdurmak istiyor musunuz?", "Dikkat", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                      //  {
+                        //    break; // Kullanıcı işlemi iptal etti
+                        //}
+                   // }
                 }
             }
 
@@ -274,6 +318,7 @@ namespace BPET_PORTAL.bayitakip
             Marshal.ReleaseComObject(xlApp);
 
             this.Alert("Veriler başarıyla SQL tablosuna aktarıldı.", Form_Alert.enmType.Success);
+            LoadDataFromDatabase(0, 0, null);
         }
 
         public void Alert(string msg, Form_Alert.enmType type)
@@ -302,5 +347,227 @@ namespace BPET_PORTAL.bayitakip
             LoadDataFromDatabase(0, 0, null);
 
         }
+
+        private void EkleMenuItem_Click(object sender, EventArgs e)
+        {
+            label4.Visible = Enabled;
+            listBox1.Visible = Enabled;
+            foreach (DataGridViewRow row in dataGridView.SelectedRows)
+            {
+                string id = row.Cells["id"].Value.ToString();
+                string cariHesapKodu = row.Cells["CariHesapKodu"].Value.ToString();
+                string cariHesapUnvani = row.Cells["CariHesapUnvani"].Value.ToString();
+                string sehir = row.Cells["Sehir"].Value.ToString();
+                string bolgeMuduru = row.Cells["BolgeMuduru"].Value.ToString();
+                string sonSatisTarihi = row.Cells["SonSatisTarihi"].Value.ToString();
+                string sonSatisGunSayisi = row.Cells["SonSatisGunSayisi"].Value.ToString();
+                string sonTahsilatTarihi = row.Cells["SonTahsilatTarihi"].Value.ToString();
+                string sonTahsilatGunSayisi = row.Cells["SonTahsilatGunSayisi"].Value.ToString();
+
+                string rowData = $"{id} * {cariHesapKodu} * {cariHesapUnvani} * {sehir} * {bolgeMuduru} * {sonSatisTarihi} * {sonSatisGunSayisi} * {sonTahsilatTarihi} * {sonTahsilatGunSayisi}";
+                selectedRowsList.Add(rowData);
+                listBox1.Items.Add(rowData);
+
+                //MessageBox.Show($"Satır eklendi: {row.Cells["CariHesapKodu"].Value}");
+                Alert("Satır Eklendi: " + row.Cells["CariHesapKodu"].Value, Form_Alert.enmType.Info);
+            }
+        }
+        private void MailGonderMenuItem_Click(object sender, EventArgs e)
+        {
+            // Alıcı maili bölge koduna göre otomatik seç
+            string bolgeKodu = dataGridView.SelectedRows[0].Cells["BolgeKodu"].Value.ToString();
+            string bolumMail = GetBolumMail(bolgeKodu);
+
+            // Her bir seçilen satırın bilgilerini ListBox kontrolünde gösterme işlemi
+            listBox1.Items.Clear();
+            foreach (string rowData in selectedRowsList)
+            {
+                listBox1.Items.Add(rowData);
+            }
+
+            // Burada e-posta gönderme işlemini gerçekleştir.
+            SendEmail(selectedRowsList, bolumMail);
+        }
+
+        private void SendEmail(List<string> selectedRows, string receiverEmail)
+        {
+            string smtpServer = "smtp.office365.com";
+            int smtpPort = 587;
+            string senderEmail = "info@bpet.com.tr";
+            string senderPassword = "IbBc*2014";
+
+            try
+            {
+                using (SmtpClient client = new SmtpClient(smtpServer, smtpPort))
+                {
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new System.Net.NetworkCredential(senderEmail, senderPassword);
+                    client.EnableSsl = true;
+
+                    MailMessage mail = new MailMessage();
+                    mail.From = new MailAddress(senderEmail);
+
+                    mail.To.Add(receiverEmail);
+
+                    mail.Subject = "Bayi Takip Sistemi!";
+
+                    // DataTable oluştur ve sütunları ekle
+                    DataTable dataTable = new DataTable();
+                    dataTable.Columns.Add("Bayi Adı");
+                    dataTable.Columns.Add("Şehir");
+                    dataTable.Columns.Add("BolgeAdi");
+                    dataTable.Columns.Add("Son Satış Tarihi");
+                    dataTable.Columns.Add("Son Satıştan Gün Sayısı");
+                    dataTable.Columns.Add("Son Tahsilat Tarihi");
+                    dataTable.Columns.Add("Son Tahsilattan Gün Sayısı");
+
+                    foreach (string rowData in selectedRows)
+                    {
+                        string[] rowValues = rowData.Split('*').Select(value => value.Trim()).ToArray();
+
+                        // Satır değerlerini kontrol et
+                        Console.WriteLine("Row Values: " + string.Join(", ", rowValues));
+                        // Veri tablosuna ekle
+                        DataRow row = dataTable.NewRow();
+                        int id;
+                        if (int.TryParse(rowValues[0], out id))
+                        {
+                            // Dönüşüm başarılı, id değişkeni şu anda bir integer değeri içerir.
+                            UpdateDatabase(id);
+                        }
+                        else
+                        {
+                            // Dönüşüm başarısız oldu, hata mesajı göster veya uygun bir işlem yap.
+                            MessageBox.Show("ID dönüşümü başarısız oldu. " + id);
+                        }
+
+
+                        UpdateDatabase(id);
+                       
+                        row["Bayi Adı"] = rowValues[2];
+                        row["Şehir"] = rowValues[3];
+                        row["BolgeAdi"] = rowValues[4];
+                        DateTime sonSatisTarihi;
+                        if (DateTime.TryParse(rowValues[5], out sonSatisTarihi))
+                        {
+                            row["Son Satış Tarihi"] = sonSatisTarihi.ToShortDateString();
+                        }
+                        row["Son Satıştan Gün Sayısı"] = rowValues[6];
+                        DateTime sonTahsilatTarihi;
+                        if (DateTime.TryParse(rowValues[7], out sonTahsilatTarihi))
+                        {
+                            row["Son Tahsilat Tarihi"] = sonTahsilatTarihi.ToShortDateString();
+                        }
+                        row["Son Tahsilattan Gün Sayısı"] = rowValues[8];
+
+                        dataTable.Rows.Add(row);
+                        UpdateDatabase(id);
+
+                    }
+
+                    // DataTable'ı kullanarak HTML tablosunu oluştur
+                    StringBuilder htmlTable = new StringBuilder();
+                    htmlTable.Append("<html><body><table border='1'>");
+
+                    // Sütun başlıklarını ekle
+                    htmlTable.Append("<tr>");
+                    foreach (DataColumn column in dataTable.Columns)
+                    {
+                        htmlTable.Append($"<th>{column.ColumnName}</th>");
+                    }
+                    htmlTable.Append("</tr>");
+
+                    // Verileri ekleyerek tabloyu oluştur
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        htmlTable.Append("<tr>");
+                        foreach (var item in row.ItemArray)
+                        {
+                            htmlTable.Append($"<td>{item}</td>");
+                        }
+                        htmlTable.Append("</tr>");
+                    }
+
+                    htmlTable.Append("</table></body></html>");
+
+                    // Şimdi mail.Body'yi bu HTML tablosuyla doldurabilirsiniz
+                    mail.Body = htmlTable.ToString();
+                    mail.IsBodyHtml = true;
+                    client.Send(mail);
+
+                    
+                    //MessageBox.Show($"E-posta başarıyla gönderildi. Alıcı: {receiverEmail}");
+                    Alert("E-Posta Başarıyla Gönderildi. " + receiverEmail, Form_Alert.enmType.Info);
+                    listBox1.Items.Clear();
+                    selectedRowsList.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"E-posta gönderme hatası: {ex.Message}");
+            }
+        }
+        private void UpdateDatabase(int id)
+        {
+            string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string updateQuery = "UPDATE CariHesaplar SET MailGonderildi = 1 WHERE id = @Id";
+
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void btnverileriekle_Click(object sender, EventArgs e)
+        {
+            label4.Visible = Enabled;
+            listBox1.Visible = Enabled;
+            selectedRowsList.Clear();
+            listBox1.Items.Clear();
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                string id = row.Cells["id"].Value.ToString();
+                string cariHesapKodu = row.Cells["CariHesapKodu"].Value.ToString();
+                string cariHesapUnvani = row.Cells["CariHesapUnvani"].Value.ToString();
+                string sehir = row.Cells["Sehir"].Value.ToString();
+                string bolgeMuduru = row.Cells["BolgeMuduru"].Value.ToString();
+                string sonSatisTarihi = row.Cells["SonSatisTarihi"].Value.ToString();
+                string sonSatisGunSayisi = row.Cells["SonSatisGunSayisi"].Value.ToString();
+                string sonTahsilatTarihi = row.Cells["SonTahsilatTarihi"].Value.ToString();
+                string sonTahsilatGunSayisi = row.Cells["SonTahsilatGunSayisi"].Value.ToString();
+
+                string rowData = $"{id} * {cariHesapKodu} * {cariHesapUnvani} * {sehir} * {bolgeMuduru} * {sonSatisTarihi} * {sonSatisGunSayisi} * {sonTahsilatTarihi} * {sonTahsilatGunSayisi}";
+                selectedRowsList.Add(rowData);
+                listBox1.Items.Add(rowData);
+            }
+
+            Alert("Tüm Hesaplar Eklendi", Form_Alert.enmType.Info);
+        }
+
+        private void btntoplumailgndr_Click(object sender, EventArgs e)
+        {
+            // Alıcı maili bölge koduna göre otomatik seç
+            string bolgeKodu = dataGridView.Rows[0].Cells["BolgeKodu"].Value.ToString();
+            string bolumMail = GetBolumMail(bolgeKodu);
+
+            // Her bir seçilen satırın bilgilerini ListBox kontrolünde gösterme işlemi
+            listBox1.Items.Clear();
+            foreach (string rowData in selectedRowsList)
+            {
+                listBox1.Items.Add(rowData);
+            }
+
+            // Burada e-posta gönderme işlemini gerçekleştir.
+            SendEmail(selectedRowsList, bolumMail);
+        }
+
     }
 }

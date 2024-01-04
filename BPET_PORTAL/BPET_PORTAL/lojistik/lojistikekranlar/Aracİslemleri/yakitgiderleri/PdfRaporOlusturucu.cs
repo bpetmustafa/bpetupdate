@@ -54,7 +54,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.Aracİslemleri.yakitgiderleri
 
             System.Diagnostics.Process.Start(pdfDosyaYolu);
 
-            MessageBox.Show("PDF raporu başarıyla oluşturuldu ve açıldı.");
+           // MessageBox.Show("PDF raporu başarıyla oluşturuldu ve açıldı.");
         }
 
         private static void AddTitleToPdf(Document document, DataTable raporVerileri)

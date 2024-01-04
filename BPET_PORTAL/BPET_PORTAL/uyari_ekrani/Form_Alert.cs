@@ -89,8 +89,8 @@ namespace BPET_PORTAL
 
         private void Form_Alert_Load_1(object sender, EventArgs e)
         {
-            this.TopMost = true;
-
+           // this.TopMost = true;
+           //açınca ekranda önde çıkıyor ama bug oluyor
         }
 
         public void showAlert(string msg, enmType type)

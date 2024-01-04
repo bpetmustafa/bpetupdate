@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using MessageBox = System.Windows.Forms.MessageBox;
 using Color = System.Drawing.Color;
+using System.Runtime.Serialization;
 
 namespace BPET_PORTAL
 {
@@ -64,14 +65,16 @@ namespace BPET_PORTAL
                     DateTime selectedDate2 = dateTimePicker2.Value;
                     List<string> veriler = GetVeriler(startDate, endDate);
                     DoldurTablo(veriler);
-                    DoldurDataGridView(veriler);
+                    //DoldurDataGridView(veriler);
+                    DonutGrafik(veriler);
                 }
                 if (karsilastir.Checked == false)
                 {
                     DateTime selectedDate = dateTimePicker1.Value;
                     List<string> veriler = GetVeriler(startDate, startDate);
                     DoldurTablo(veriler);
-                    DoldurDataGridView(veriler);
+                    //DoldurDataGridView(veriler);
+                    DonutGrafik(veriler);
                 }
             };
 
@@ -88,7 +91,8 @@ namespace BPET_PORTAL
 
                 List<string> veriler = GetVeriler(startDate, endDate);
                 DoldurTablo(veriler);
-                DoldurDataGridView(veriler);
+                //DoldurDataGridView(veriler);
+                DonutGrafik(veriler);
             };
         }
 
@@ -147,57 +151,7 @@ namespace BPET_PORTAL
 
             return veriler;
         }
-        private void DoldurDataGridView(List<string> veriler)
-        {
-            // DataGridView'i temizle
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
-
-            // İller sütunu oluştur
-            dataGridView1.Columns.Add("Iller", "İller");
-
-            // İl isimleri
-            string[] iller = { "Mersin", "İzmir", "İzmit", "Kırıkkale", "Batman", "Tekirdağ", "Giresun", "Antalya", "Trabzon", "Diyarbakır", "Hatay", "Samsun" };
-
-            if (veriler.Count >= 13) // İller ve Toplam değeri için toplam 13 veri bekleniyor.
-            {
-                // İl değerlerini DataGridView'e ekle
-                for (int i = 0; i < 12; i++)
-                {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.Cells.Add(new DataGridViewTextBoxCell { Value = iller[i] });
-                    dataGridView1.Rows.Add(row);
-                }
-
-                // Tek bir değer sütunu oluştur
-                dataGridView1.Columns.Add("Degerler", "Değerler");
-
-                // İl değerlerini DataGridView'e ekle
-                for (int i = 0; i < 12; i++)
-                {
-                    dataGridView1.Rows[i].Cells["Degerler"].Value = veriler[i + 1]; // İlgili değeri al (veriler listesinde ilk veri iller için)
-                }
-
-                // Toplam değerini DataGridView'e ekle
-                DataGridViewRow totalRow = new DataGridViewRow();
-                totalRow.Cells.Add(new DataGridViewTextBoxCell { Value = "Toplam" });
-                dataGridView1.Rows.Add(totalRow);
-                dataGridView1.Rows[12].Cells["Degerler"].Value = veriler[17];
-
-                // DataGridView stilini özelleştir
-               
-                dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders; // İller sütununun otomatik boyutlanmasını sağla
-                dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Hücre içeriğini ortala
-            }
-            else
-            {
-                // Veriler eksikse veya hata varsa uyarı ver
-                MessageBox.Show("Veriler eksik veya hatalı. Lütfen geçerli verileri çekin.");
-            }
-        }
-
-
-
+      
         private void DoldurTablo(List<string> veriler)
         {
             bool verilerEksik = veriler.Count < 5; // Verilerin eksik olduğunu kontrol et (5 veri bekleniyor)
@@ -216,6 +170,7 @@ namespace BPET_PORTAL
             // Grafiği doldurmadan önce temizle
             chart1.Series.Clear();
 
+            //chart1.is
             if (verilerEksik || hataVar)
             {
                 motorindigerlabel.Text = "HATA";
@@ -225,8 +180,6 @@ namespace BPET_PORTAL
                 lpgdokme.Text = "HATA";
                 toplamlabel.Text = "HATA";
                 this.Alert("Veriler eksik veya hatalı. Lütfen geçerli verileri girin.", Form_Alert.enmType.Warning);
-
-
             }
             else
             {
@@ -245,10 +198,11 @@ namespace BPET_PORTAL
                 decimal toplamLT = motorinLT + motorinDigerLT + benzinLT;
                 toplamlabel.Text = toplamLT.ToString("N0") + " LT";
                 siyahtoplamlabel.Text = siyahtoplamlabel2.ToString("N0") + " LT";
+
                 // Seriyi oluşturun ve verileri bağlayın
                 Series yakitSeries = new Series("Yakıt Miktarları");
-                yakitSeries.Points.DataBindY(new int[] { Convert.ToInt32(veriler[0]), Convert.ToInt32(veriler[1]), Convert.ToInt32(veriler[2]), Convert.ToInt32(veriler[3]), Convert.ToInt32(veriler[4]) });
-                yakitSeries.ChartType = SeriesChartType.Column;
+                yakitSeries.Points.DataBindY(new int[] { 0, Convert.ToInt32(veriler[0]), Convert.ToInt32(veriler[1]), Convert.ToInt32(veriler[2]), Convert.ToInt32(veriler[3]), Convert.ToInt32(veriler[4]) });
+                yakitSeries.ChartType = SeriesChartType.Bar; // Bar grafik türüne değiştirin
 
                 // Grafiğe seriyi ekleyin
                 chart1.Series.Add(yakitSeries);
@@ -256,7 +210,7 @@ namespace BPET_PORTAL
                 // Grafik stilini özelleştirin
                 chart1.BackColor = Color.Transparent;
                 chart1.ChartAreas[0].BackColor = Color.White;
-                chart1.Series["Yakıt Miktarları"].Color = Color.DarkOrange;
+                chart1.Series["Yakıt Miktarları"].Color = Color.FromArgb(52, 152, 219); // Renk değiştirin
                 chart1.Series["Yakıt Miktarları"].BorderColor = Color.Black;
                 chart1.Series["Yakıt Miktarları"].BorderWidth = 2;
                 chart1.Series["Yakıt Miktarları"].IsValueShownAsLabel = true;
@@ -270,10 +224,10 @@ namespace BPET_PORTAL
                 chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Arial", 10);
 
                 // X ekseni etiketlerini ayarlayın
-                string[] yakitTurleri = { "Motorin", "Motorin Diğer", "Benzin", "LPG", "LPG Dökme" };
+                string[] yakitTurleri = { "", "Motorin", "Motorin Diğer", "Benzin", "LPG", "LPG Dökme" };
                 for (int i = 0; i < yakitTurleri.Length; i++)
                 {
-                    chart1.ChartAreas[0].AxisX.CustomLabels.Add(i + 1.0, i + 2.0, yakitTurleri[i]);
+                    chart1.ChartAreas[0].AxisX.CustomLabels.Add(i + 0.5, i + 1.5, yakitTurleri[i], 0, LabelMarkStyle.LineSideMark); // Etiketleri ortala ve çizgiyi göster
                 }
 
                 // Izgara çizgilerini kaldırın
@@ -297,7 +251,8 @@ namespace BPET_PORTAL
                 DateTime selectedDate2 = dateTimePicker2.Value;
                 List<string> veriler = GetVeriler(selectedDate, selectedDate2);
                 DoldurTablo(veriler);
-                DoldurDataGridView(veriler);
+                //DoldurDataGridView(veriler);
+                DonutGrafik(veriler);
             }
             if (karsilastir.Checked == false)
             {
@@ -305,11 +260,63 @@ namespace BPET_PORTAL
                 
                 List<string> veriler = GetVeriler(selectedDate, selectedDate);
                 DoldurTablo(veriler);
-                DoldurDataGridView(veriler);
+                //DoldurDataGridView(veriler);
+                DonutGrafik(veriler);
             }
 
         }
+        private void DonutGrafik(List<string> veriler)
+        {
+            // Tasarım ekranında yapılan ayarları kaybetmemek için yeni bir Series oluşturun
+            Series series = new Series("İl Değerleri");
+            chart2.Series.Clear(); // Var olan Series'leri temizleyin
+            chart2.Series.Add(series); // Yeni Series'i ekleyin
 
+            // Seri ayarlarını tasarım ekranında yaptıklarınıza göre ayarlayın
+            series.ChartType = SeriesChartType.Bar;
+            series.Color = Color.FromArgb(0, 102, 204);
+            series.LabelForeColor = Color.Black;
+            series.LabelBackColor = Color.White;
+            series.LabelBorderColor = Color.Black;
+            series.LabelBorderWidth = 4;
+            series.Font = new Font("Microsoft Sans Serif", 10.75f, FontStyle.Bold);
+
+            // İl isimleri
+            string[] iller = { "Mersin", "İzmir", "İzmit", "Kırıkkale", "Batman", "Tekirdağ", "Giresun", "Antalya", "Trabzon", "Diyarbakır", "Hatay", "Samsun" };
+
+            // Verilerin eklenmesi
+            for (int i = 0; i < 12; i++)
+            {
+                double ilDeger = double.Parse(veriler[i + 5]);
+
+                // Değeri 0 olan verileri gösterme
+                if (ilDeger != 0)
+                {
+                    DataPoint dataPoint = new DataPoint();
+                    dataPoint.YValues = new double[] { ilDeger };
+                    dataPoint.AxisLabel = iller[i]; // İl isimlerini etiket olarak ayarla
+                    dataPoint.Label = $"{iller[i]}: {ilDeger:N0}"; // Etiket ve değeri göster
+
+                    series.Points.Add(dataPoint);
+
+                }
+            }
+
+            // Eksen adlarını ayarla
+            chart2.ChartAreas[0].AxisX.Title = "Değerler";
+            chart2.ChartAreas[0].AxisY.Title = "İller";
+
+            // Yazı boyutunu ve kalınlığını artır
+            chart2.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
+            chart2.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            // Eksen etiket renklerini ayarla
+            chart2.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.White;
+            chart2.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.White;
+
+            // Grafiği güncelle
+            chart2.Invalidate();
+        }
         private void karsilastir_CheckedChanged(object sender, EventArgs e)
         {
             if (karsilastir.Checked == true)
@@ -318,14 +325,16 @@ namespace BPET_PORTAL
                 DateTime selectedDate2 = dateTimePicker2.Value;
                 List<string> veriler = GetVeriler(selectedDate, selectedDate2);
                 DoldurTablo(veriler);
-                DoldurDataGridView(veriler);
+                //DoldurDataGridView(veriler);
+                DonutGrafik(veriler);
             }
             if (karsilastir.Checked == false)
             {
                 DateTime selectedDate = dateTimePicker1.Value;
                 List<string> veriler = GetVeriler(selectedDate, selectedDate);
                 DoldurTablo(veriler);
-                DoldurDataGridView(veriler);
+                //DoldurDataGridView(veriler);
+                DonutGrafik(veriler);
             }
         }
 
@@ -505,7 +514,7 @@ namespace BPET_PORTAL
         private void KarşılaştırVeriler()
         {
             // Karşılaştırılacak etiketlerin dizisi
-            Label[] labels = { motorinlabel, motorinlabel2, motorindigerlabel, motorindigerlabel2, benzinlabel, benzinlabel2, toplamlabel, toplamlabel2, lpgperakende, lpgperakende2, lpgdokme, lpgdokme2 };
+            Label[] labels = { motorinlabel, motorinlabel2, motorindigerlabel, motorindigerlabel2, benzinlabel, benzinlabel2, toplamlabel, toplamlabel2,siyahtoplamlabel, siyahtoplamlabel2, lpgperakende, lpgperakende2, lpgdokme, lpgdokme2 };
 
             for (int i = 0; i < labels.Length; i += 2)
             {
@@ -579,10 +588,10 @@ namespace BPET_PORTAL
                 string query = "SELECT SUM(Motorin) AS Motorin, SUM(MotorinDiger) AS MotorinDiger, SUM(Benzin) AS Benzin, SUM(Lpg) AS Lpg, SUM(LpgDokme) AS LpgDokme, " +
                     "SUM(Mersin) AS Mersin, SUM(İzmir) AS İzmir, SUM(İzmit) AS İzmit, SUM(Kırıkkale) AS Kırıkkale, SUM(Batman) AS Batman, SUM(Tekirdag) AS Tekirdag, " +
                     "SUM(Giresun) AS Giresun, SUM(Antalya) AS Antalya, SUM(Trabzon) AS Trabzon, SUM(Diyarbakır) AS Diyarbakır, SUM(Hatay) AS Hatay, " +
-                    "SUM(Samsun) AS Samsun, SUM(Toplam) AS Toplam FROM gunluk_veri WHERE Zaman >= @StartDate AND Zaman <= @EndDate";
+                    "SUM(Samsun) AS Samsun, SUM(Toplam) AS Toplam, SUM(ToplamKara) AS ToplamKara FROM gunluk_veri WHERE Zaman >= @StartDate AND Zaman <= @EndDate";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@StartDate", startDate);
-                if (aralikhesapla2.Checked == true)
+                if (karsilastir.Checked == true)
                 {
                     command.Parameters.AddWithValue("@EndDate", endDate);
                 }
@@ -616,6 +625,7 @@ namespace BPET_PORTAL
                         veriler2.Add(reader["Hatay"].ToString());
                         veriler2.Add(reader["Samsun"].ToString());
                         veriler2.Add(reader["Toplam"].ToString());
+                        veriler2.Add(reader["ToplamKara"].ToString());
                     }
                 }
             }
@@ -654,10 +664,12 @@ namespace BPET_PORTAL
                 decimal motorinLT = Convert.ToDecimal(veriler2[0]);
                 decimal motorinDigerLT = Convert.ToDecimal(veriler2[1]);
                 decimal benzinLT = Convert.ToDecimal(veriler2[2]);
-
+                decimal siyahtoplam = Convert.ToDecimal(veriler2[18]);
                 motorinlabel2.Text = motorinLT.ToString("N0") + " LT";
                 motorindigerlabel2.Text = motorinDigerLT.ToString("N0") + " LT";
                 benzinlabel2.Text = benzinLT.ToString("N0") + " LT";
+                siyahtoplamlabel2.Text = siyahtoplam.ToString("N0") + " LT";
+
                 lpgperakende2.Text = Convert.ToDecimal(veriler2[3]).ToString("N0") + " KG";
                 lpgdokme2.Text = Convert.ToDecimal(veriler2[4]).ToString("N0") + " KG";
 

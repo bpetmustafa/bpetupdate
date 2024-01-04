@@ -155,6 +155,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
                 {
                     dataGridView1.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
                 }
+                lblverisayisi.Text = "VERİ SAYISI: " + dataGridView1.RowCount.ToString();
             }
         }
 
@@ -405,6 +406,11 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
                 {
                     row.DefaultCellStyle.BackColor = Color.Yellow;
                     row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else if (neden == YaklasanTarihNedeni.Normal.ToString())
+                {
+                    row.DefaultCellStyle.BackColor = Color.Green;
+                    row.DefaultCellStyle.ForeColor = Color.White;
                 }
             }
         }
