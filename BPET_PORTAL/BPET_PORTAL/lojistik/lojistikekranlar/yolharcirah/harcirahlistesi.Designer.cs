@@ -29,276 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(harcirahlistesi));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbAy = new System.Windows.Forms.ComboBox();
-            this.cmbBolum = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbHizmetKodu = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbYil = new System.Windows.Forms.ComboBox();
-            this.btnFiltrele = new System.Windows.Forms.Button();
-            this.txtPlaka = new MetroFramework.Controls.MetroTextBox();
-            this.resetle = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.seçiliVeriyiDüzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sagtikmenutablo = new MetroFramework.Controls.MetroContextMenu(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(harcirahlistesi));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yENİEKLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dÜZENLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnYeniArac = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox4.SuspendLayout();
-            this.sagtikmenutablo.SuspendLayout();
+            this.driverTotalsDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnOdemeEmri = new System.Windows.Forms.Button();
+            this.dateTimePickerEnd = new MetroFramework.Controls.MetroDateTime();
+            this.dateTimePickerStart = new MetroFramework.Controls.MetroDateTime();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnFiltrele = new System.Windows.Forms.Button();
+            this.resetle = new System.Windows.Forms.Button();
+            this.labelDateRange = new System.Windows.Forms.Label();
+            this.sİLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverTotalsDataGridView)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(294, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "Bölüm";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(173, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "Aylar";
-            // 
-            // cmbAy
-            // 
-            this.cmbAy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbAy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbAy.FormattingEnabled = true;
-            this.cmbAy.Location = new System.Drawing.Point(128, 24);
-            this.cmbAy.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbAy.MaximumSize = new System.Drawing.Size(123, 0);
-            this.cmbAy.Name = "cmbAy";
-            this.cmbAy.Size = new System.Drawing.Size(123, 27);
-            this.cmbAy.TabIndex = 62;
-            // 
-            // cmbBolum
-            // 
-            this.cmbBolum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbBolum.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbBolum.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbBolum.FormattingEnabled = true;
-            this.cmbBolum.Location = new System.Drawing.Point(260, 22);
-            this.cmbBolum.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbBolum.MaximumSize = new System.Drawing.Size(123, 0);
-            this.cmbBolum.Name = "cmbBolum";
-            this.cmbBolum.Size = new System.Drawing.Size(123, 27);
-            this.cmbBolum.TabIndex = 63;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(148, 48);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
-            this.label7.TabIndex = 50;
-            this.label7.Text = "Hizmet Kodu";
-            // 
-            // cmbHizmetKodu
-            // 
-            this.cmbHizmetKodu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbHizmetKodu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbHizmetKodu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbHizmetKodu.FormattingEnabled = true;
-            this.cmbHizmetKodu.Location = new System.Drawing.Point(128, 65);
-            this.cmbHizmetKodu.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbHizmetKodu.MaximumSize = new System.Drawing.Size(123, 0);
-            this.cmbHizmetKodu.Name = "cmbHizmetKodu";
-            this.cmbHizmetKodu.Size = new System.Drawing.Size(123, 27);
-            this.cmbHizmetKodu.TabIndex = 49;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(45, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Yıllar";
-            // 
-            // cmbYil
-            // 
-            this.cmbYil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbYil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbYil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbYil.FormattingEnabled = true;
-            this.cmbYil.Location = new System.Drawing.Point(0, 65);
-            this.cmbYil.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbYil.MaximumSize = new System.Drawing.Size(123, 0);
-            this.cmbYil.Name = "cmbYil";
-            this.cmbYil.Size = new System.Drawing.Size(123, 27);
-            this.cmbYil.TabIndex = 47;
-            // 
-            // btnFiltrele
-            // 
-            this.btnFiltrele.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltrele.AutoSize = true;
-            this.btnFiltrele.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFiltrele.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFiltrele.BackgroundImage")));
-            this.btnFiltrele.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFiltrele.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltrele.FlatAppearance.BorderSize = 0;
-            this.btnFiltrele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrele.Location = new System.Drawing.Point(390, 55);
-            this.btnFiltrele.MaximumSize = new System.Drawing.Size(33, 37);
-            this.btnFiltrele.Name = "btnFiltrele";
-            this.btnFiltrele.Size = new System.Drawing.Size(33, 37);
-            this.btnFiltrele.TabIndex = 46;
-            this.btnFiltrele.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFiltrele.UseVisualStyleBackColor = false;
-            // 
-            // txtPlaka
-            // 
-            this.txtPlaka.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.txtPlaka.CustomButton.Image = null;
-            this.txtPlaka.CustomButton.Location = new System.Drawing.Point(97, 2);
-            this.txtPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPlaka.CustomButton.Name = "";
-            this.txtPlaka.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtPlaka.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPlaka.CustomButton.TabIndex = 1;
-            this.txtPlaka.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPlaka.CustomButton.UseSelectable = true;
-            this.txtPlaka.CustomButton.Visible = false;
-            this.txtPlaka.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtPlaka.Lines = new string[0];
-            this.txtPlaka.Location = new System.Drawing.Point(4, 24);
-            this.txtPlaka.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPlaka.MaximumSize = new System.Drawing.Size(127, 24);
-            this.txtPlaka.MaxLength = 32767;
-            this.txtPlaka.Name = "txtPlaka";
-            this.txtPlaka.PasswordChar = '\0';
-            this.txtPlaka.PromptText = "PLAKA ARAMA";
-            this.txtPlaka.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPlaka.SelectedText = "";
-            this.txtPlaka.SelectionLength = 0;
-            this.txtPlaka.SelectionStart = 0;
-            this.txtPlaka.ShortcutsEnabled = true;
-            this.txtPlaka.Size = new System.Drawing.Size(119, 24);
-            this.txtPlaka.TabIndex = 44;
-            this.txtPlaka.UseSelectable = true;
-            this.txtPlaka.WaterMark = "PLAKA ARAMA";
-            this.txtPlaka.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPlaka.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // resetle
-            // 
-            this.resetle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resetle.AutoSize = true;
-            this.resetle.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resetle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetle.BackgroundImage")));
-            this.resetle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetle.FlatAppearance.BorderSize = 0;
-            this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetle.Location = new System.Drawing.Point(390, 16);
-            this.resetle.MaximumSize = new System.Drawing.Size(33, 37);
-            this.resetle.Name = "resetle";
-            this.resetle.Size = new System.Drawing.Size(33, 37);
-            this.resetle.TabIndex = 33;
-            this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.resetle.UseVisualStyleBackColor = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.cmbAy);
-            this.groupBox4.Controls.Add(this.cmbBolum);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.cmbHizmetKodu);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.cmbYil);
-            this.groupBox4.Controls.Add(this.btnFiltrele);
-            this.groupBox4.Controls.Add(this.txtPlaka);
-            this.groupBox4.Controls.Add(this.resetle);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(141, 11);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.MinimumSize = new System.Drawing.Size(428, 93);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(428, 104);
-            this.groupBox4.TabIndex = 128;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Arama Yap";
-            // 
-            // seçiliVeriyiDüzenleToolStripMenuItem
-            // 
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_edit_48;
-            this.seçiliVeriyiDüzenleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Name = "seçiliVeriyiDüzenleToolStripMenuItem";
-            this.seçiliVeriyiDüzenleToolStripMenuItem.RightToLeftAutoMirrorImage = true;
-            this.seçiliVeriyiDüzenleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Size = new System.Drawing.Size(251, 54);
-            this.seçiliVeriyiDüzenleToolStripMenuItem.Text = "Seçili Veriyi Düzenle";
-            // 
-            // sagtikmenutablo
-            // 
-            this.sagtikmenutablo.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.sagtikmenutablo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seçiliVeriyiDüzenleToolStripMenuItem});
-            this.sagtikmenutablo.Name = "metroContextMenu1";
-            this.sagtikmenutablo.Size = new System.Drawing.Size(252, 58);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ContextMenuStrip = this.sagtikmenutablo;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -307,14 +76,40 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 134);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 130);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1142, 330);
+            this.dataGridView1.Size = new System.Drawing.Size(1259, 228);
             this.dataGridView1.TabIndex = 124;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yENİEKLEToolStripMenuItem,
+            this.dÜZENLEToolStripMenuItem,
+            this.sİLToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 70);
+            // 
+            // yENİEKLEToolStripMenuItem
+            // 
+            this.yENİEKLEToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_add_folder_80;
+            this.yENİEKLEToolStripMenuItem.Name = "yENİEKLEToolStripMenuItem";
+            this.yENİEKLEToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.yENİEKLEToolStripMenuItem.Text = "YENİ EKLE";
+            this.yENİEKLEToolStripMenuItem.Click += new System.EventHandler(this.yENİEKLEToolStripMenuItem_Click);
+            // 
+            // dÜZENLEToolStripMenuItem
+            // 
+            this.dÜZENLEToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_edit_48;
+            this.dÜZENLEToolStripMenuItem.Name = "dÜZENLEToolStripMenuItem";
+            this.dÜZENLEToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.dÜZENLEToolStripMenuItem.Text = "DÜZENLE";
+            this.dÜZENLEToolStripMenuItem.Click += new System.EventHandler(this.dÜZENLEToolStripMenuItem_Click);
             // 
             // btnUpdate
             // 
@@ -326,11 +121,11 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(6, 54);
+            this.btnUpdate.Location = new System.Drawing.Point(6, 53);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(119, 26);
             this.btnUpdate.TabIndex = 40;
-            this.btnUpdate.Text = "Bilgi Düzelt";
+            this.btnUpdate.Text = "Bilgi Sil";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // btnYeniArac
@@ -353,6 +148,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.btnYeniArac);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -361,67 +157,261 @@
             this.groupBox2.MinimumSize = new System.Drawing.Size(102, 85);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(131, 104);
+            this.groupBox2.Size = new System.Drawing.Size(131, 114);
             this.groupBox2.TabIndex = 123;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
             // 
-            // metroLabel1
+            // driverTotalsDataGridView
             // 
-            this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(438, 256);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(291, 50);
-            this.metroLabel1.TabIndex = 129;
-            this.metroLabel1.Text = "Bu Sistem Yapım Aşamasındadır. \r\nİlginiz için teşekkürler.";
-            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.driverTotalsDataGridView.AllowUserToAddRows = false;
+            this.driverTotalsDataGridView.AllowUserToDeleteRows = false;
+            this.driverTotalsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.driverTotalsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.driverTotalsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.driverTotalsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.driverTotalsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.driverTotalsDataGridView.Location = new System.Drawing.Point(6, 413);
+            this.driverTotalsDataGridView.MultiSelect = false;
+            this.driverTotalsDataGridView.Name = "driverTotalsDataGridView";
+            this.driverTotalsDataGridView.ReadOnly = true;
+            this.driverTotalsDataGridView.RowHeadersVisible = false;
+            this.driverTotalsDataGridView.RowHeadersWidth = 51;
+            this.driverTotalsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.driverTotalsDataGridView.Size = new System.Drawing.Size(1259, 155);
+            this.driverTotalsDataGridView.TabIndex = 129;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox4.Controls.Add(this.btnOdemeEmri);
+            this.groupBox4.Controls.Add(this.dateTimePickerEnd);
+            this.groupBox4.Controls.Add(this.dateTimePickerStart);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.btnFiltrele);
+            this.groupBox4.Controls.Add(this.resetle);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox4.Location = new System.Drawing.Point(141, 11);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.MinimumSize = new System.Drawing.Size(428, 93);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(428, 104);
+            this.groupBox4.TabIndex = 130;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Arama Yap";
+            // 
+            // btnOdemeEmri
+            // 
+            this.btnOdemeEmri.AutoSize = true;
+            this.btnOdemeEmri.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnOdemeEmri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOdemeEmri.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOdemeEmri.FlatAppearance.BorderSize = 0;
+            this.btnOdemeEmri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOdemeEmri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOdemeEmri.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnOdemeEmri.Location = new System.Drawing.Point(4, 69);
+            this.btnOdemeEmri.MaximumSize = new System.Drawing.Size(256, 26);
+            this.btnOdemeEmri.MinimumSize = new System.Drawing.Size(212, 26);
+            this.btnOdemeEmri.Name = "btnOdemeEmri";
+            this.btnOdemeEmri.Size = new System.Drawing.Size(244, 26);
+            this.btnOdemeEmri.TabIndex = 40;
+            this.btnOdemeEmri.Text = "Finans\'a Aylık Ödeme Emri Gönder!";
+            this.btnOdemeEmri.UseVisualStyleBackColor = false;
+            this.btnOdemeEmri.Click += new System.EventHandler(this.btnOdemeEmri_Click);
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.CustomFormat = "\"yyyy-MM-dd\"";
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(125, 34);
+            this.dateTimePickerEnd.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerEnd.MaximumSize = new System.Drawing.Size(213, 30);
+            this.dateTimePickerEnd.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerEnd.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(123, 29);
+            this.dateTimePickerEnd.TabIndex = 68;
+            this.dateTimePickerEnd.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CustomFormat = "\"yyyy-MM-dd\"";
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(5, 34);
+            this.dateTimePickerStart.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerStart.MaximumSize = new System.Drawing.Size(213, 30);
+            this.dateTimePickerStart.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerStart.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(114, 29);
+            this.dateTimePickerStart.TabIndex = 67;
+            this.dateTimePickerStart.Value = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(143, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Tarih Bitiş";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(15, 20);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Tarih Başlangıç";
+            // 
+            // btnFiltrele
+            // 
+            this.btnFiltrele.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltrele.AutoSize = true;
+            this.btnFiltrele.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFiltrele.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFiltrele.BackgroundImage")));
+            this.btnFiltrele.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFiltrele.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrele.FlatAppearance.BorderSize = 0;
+            this.btnFiltrele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrele.Location = new System.Drawing.Point(254, 28);
+            this.btnFiltrele.MaximumSize = new System.Drawing.Size(33, 37);
+            this.btnFiltrele.Name = "btnFiltrele";
+            this.btnFiltrele.Size = new System.Drawing.Size(33, 37);
+            this.btnFiltrele.TabIndex = 46;
+            this.btnFiltrele.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFiltrele.UseVisualStyleBackColor = false;
+            this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
+            // 
+            // resetle
+            // 
+            this.resetle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resetle.AutoSize = true;
+            this.resetle.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resetle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetle.BackgroundImage")));
+            this.resetle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetle.FlatAppearance.BorderSize = 0;
+            this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetle.Location = new System.Drawing.Point(293, 28);
+            this.resetle.MaximumSize = new System.Drawing.Size(33, 37);
+            this.resetle.Name = "resetle";
+            this.resetle.Size = new System.Drawing.Size(33, 37);
+            this.resetle.TabIndex = 33;
+            this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.resetle.UseVisualStyleBackColor = false;
+            this.resetle.Click += new System.EventHandler(this.resetle_Click);
+            // 
+            // labelDateRange
+            // 
+            this.labelDateRange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelDateRange.AutoSize = true;
+            this.labelDateRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelDateRange.Location = new System.Drawing.Point(489, 370);
+            this.labelDateRange.Name = "labelDateRange";
+            this.labelDateRange.Size = new System.Drawing.Size(223, 31);
+            this.labelDateRange.TabIndex = 131;
+            this.labelDateRange.Text = "labelDateRange";
+            // 
+            // sİLToolStripMenuItem
+            // 
+            this.sİLToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_delete_48;
+            this.sİLToolStripMenuItem.Name = "sİLToolStripMenuItem";
+            this.sİLToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.sİLToolStripMenuItem.Text = "SİL";
+            this.sİLToolStripMenuItem.Click += new System.EventHandler(this.sİLToolStripMenuItem_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete.Location = new System.Drawing.Point(6, 83);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(119, 26);
+            this.btnDelete.TabIndex = 41;
+            this.btnDelete.Text = "Şeçili Veriyi Sİl";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // harcirahlistesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1166, 475);
-            this.Controls.Add(this.metroLabel1);
+            this.ClientSize = new System.Drawing.Size(1283, 580);
+            this.Controls.Add(this.labelDateRange);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.driverTotalsDataGridView);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "harcirahlistesi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.sagtikmenutablo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverTotalsDataGridView)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbAy;
-        private System.Windows.Forms.ComboBox cmbBolum;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbHizmetKodu;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbYil;
-        private System.Windows.Forms.Button btnFiltrele;
-        private MetroFramework.Controls.MetroTextBox txtPlaka;
-        private System.Windows.Forms.Button resetle;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ToolStripMenuItem seçiliVeriyiDüzenleToolStripMenuItem;
-        private MetroFramework.Controls.MetroContextMenu sagtikmenutablo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnYeniArac;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.DataGridView driverTotalsDataGridView;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnOdemeEmri;
+        private MetroFramework.Controls.MetroDateTime dateTimePickerEnd;
+        private MetroFramework.Controls.MetroDateTime dateTimePickerStart;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnFiltrele;
+        private System.Windows.Forms.Button resetle;
+        private System.Windows.Forms.Label labelDateRange;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dÜZENLEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yENİEKLEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sİLToolStripMenuItem;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

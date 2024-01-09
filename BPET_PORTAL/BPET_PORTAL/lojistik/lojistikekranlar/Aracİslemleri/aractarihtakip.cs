@@ -2,6 +2,9 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
 using System.Windows.Forms;
 
 namespace BPET_PORTAL.lojistik.lojistikekranlar
@@ -12,12 +15,14 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
         private const string connectionString = "Server=95.0.50.22,1382;Database=lojistik;User ID=sa;Password=Mustafa1;";
         string eposta;
         private int selectedRowIndex = -1;
+
         public enum YaklasanTarihNedeni
     {
         Gecmis,
         Yaklasan,
         Normal
     }
+
 
         public aractarihtakip(lojistikanasayfa mainform)
         {
@@ -74,6 +79,113 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
             {
                 return YaklasanTarihNedeni.Normal;
             }
+        }
+        private void SendEmail(string smtpServer, int smtpPort, string senderEmail, string senderPassword, string recipientEmail, string subject, string body)
+        {
+            try
+            {
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.From = new MailAddress(senderEmail);
+                    mail.To.Add(recipientEmail);
+                    mail.Subject = subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = true;
+                    mail.Bcc.Add ("mustafa.ceylan@bpet.com.tr");
+
+                    using (SmtpClient smtp = new SmtpClient(smtpServer, smtpPort))
+                    {
+                        smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                        smtp.EnableSsl = true;
+                        smtp.Send(mail);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"E-posta gönderme hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string ConvertDataTableToHtmlTable(DataTable dataTable, string tableName)
+        {
+            StringBuilder htmlTable = new StringBuilder();
+            htmlTable.AppendLine("<style>");
+            htmlTable.AppendLine("    table {");
+            htmlTable.AppendLine("        font-family: Arial, sans-serif;");
+            htmlTable.AppendLine("        border-collapse: collapse;");
+            htmlTable.AppendLine("        width: 100%;");
+            htmlTable.AppendLine("        margin-bottom: 20px;");
+            htmlTable.AppendLine("    }");
+            htmlTable.AppendLine("    th, td {");
+            htmlTable.AppendLine("        border: 1px solid #dddddd;");
+            htmlTable.AppendLine("        text-align: left;");
+            htmlTable.AppendLine("        padding: 8px;");
+            htmlTable.AppendLine("    }");
+            htmlTable.AppendLine("    th {");
+            htmlTable.AppendLine("        background-color: #f2f2f2;");
+            htmlTable.AppendLine("    }");
+            htmlTable.AppendLine("    tr:nth-child(even) {");
+            htmlTable.AppendLine("        background-color: #f9f9f9;");
+            htmlTable.AppendLine("    }");
+            htmlTable.AppendLine("</style>");
+
+            htmlTable.AppendLine($"<h2>{tableName}</h2>");
+            htmlTable.AppendLine("<table>");
+
+            // Header
+            htmlTable.AppendLine("<thead>");
+            htmlTable.AppendLine("<tr>");
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                if (column.ColumnName != "id") // id sütununu hariç tut
+                {
+                    htmlTable.AppendLine($"<th>{column.ColumnName}</th>");
+                }
+            }
+            htmlTable.AppendLine("</tr>");
+            htmlTable.AppendLine("</thead>");
+
+            // Rows
+            htmlTable.AppendLine("<tbody>");
+            foreach (DataRow row in dataTable.Rows)
+            {
+                htmlTable.AppendLine("<tr>");
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    if (column.ColumnName != "id") // id sütununu hariç tut
+                    {
+                        if (column.DataType == typeof(DateTime)) // Eğer sütun tipi DateTime ise sadece tarih kısmını al
+                        {
+                            if (row[column] != DBNull.Value)
+                            {
+                                htmlTable.AppendLine($"<td>{((DateTime)row[column]).ToString("dd.MM.yyyy")}</td>");
+                            }
+                            else
+                            {
+                                htmlTable.AppendLine($"<td></td>");
+                            }
+                        }
+                        else
+                        {
+                            htmlTable.AppendLine($"<td>{row[column]}</td>");
+                        }
+                    }
+                }
+                htmlTable.AppendLine("</tr>");
+            }
+            htmlTable.AppendLine("</tbody>");
+
+            htmlTable.AppendLine("</table>");
+
+            // Mail başlığı ve not
+            string mailBasligi = "BPET PORTAL Uygulaması Bildirimi";
+            string not = "Bu mail BPET PORTAL uygulaması tarafından otomatik olarak gönderilmiştir.";
+
+            // Mail başlığı ve notu ekleyin
+            string finalHtml = $"{htmlTable.ToString()}\n\n<p>{not}</p>";
+
+            return finalHtml;
         }
 
         private void VerileriGoster()
@@ -133,7 +245,33 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
                             row["YaklasanTarihNedeni"] = TarihYaklasanNedeni(Convert.ToDateTime(row["kasko_tarih"]), currentDate);
                             // Diğer tarih alanları için aynı işlemi yapabilirsiniz.
                         }
+                        int gecmisSayisi = 0;
+                        int yaklasanSayisi = 0;
+                        int normalSayisi = 0;
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            DateTime currentDate = DateTime.Now;
+                            YaklasanTarihNedeni neden = TarihYaklasanNedeni(Convert.ToDateTime(row["kasko_tarih"]), currentDate);
 
+                            switch (neden)
+                            {
+                                case YaklasanTarihNedeni.Gecmis:
+                                    gecmisSayisi++;
+                                    break;
+                                case YaklasanTarihNedeni.Yaklasan:
+                                    yaklasanSayisi++;
+                                    break;
+                                case YaklasanTarihNedeni.Normal:
+                                    normalSayisi++;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        //lblDurum.Text = $"Geçmiş: {gecmisSayisi}, Yaklaşan: {yaklasanSayisi}, Normal: {normalSayisi}";
+                        normallabel.Text = normalSayisi.ToString();
+                        yaklasanlabel.Text = yaklasanSayisi.ToString();
+                        gecenlabel.Text = gecmisSayisi.ToString();
                         // DataGridView'e verileri bağla
                         dataGridView1.DataSource = dataTable;
 
@@ -141,6 +279,57 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
                         if (selectedRowIndex >= 0 && selectedRowIndex < dataGridView1.Rows.Count)
                         {
                             dataGridView1.Rows[selectedRowIndex].Selected = true;
+                        }
+
+                        DataTable gecmisAracTable = dataTable.Clone();
+                        DataTable yaklasanAracTable = dataTable.Clone();
+                        DataTable normalAracTable = dataTable.Clone();
+
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            DateTime currentDate = DateTime.Now;
+                            YaklasanTarihNedeni neden = TarihYaklasanNedeni(Convert.ToDateTime(row["kasko_tarih"]), currentDate);
+
+                            switch (neden)
+                            {
+                                case YaklasanTarihNedeni.Gecmis:
+                                    gecmisAracTable.ImportRow(row);
+                                    break;
+                                case YaklasanTarihNedeni.Yaklasan:
+                                    yaklasanAracTable.ImportRow(row);
+                                    break;
+                                case YaklasanTarihNedeni.Normal:
+                                    normalAracTable.ImportRow(row);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        string gecmisTableHtml = ConvertDataTableToHtmlTable(gecmisAracTable, "Tarihleri Geçmiş Araçlar");
+                        string yaklasanTableHtml = ConvertDataTableToHtmlTable(yaklasanAracTable, "Tarihleri Yaklaşan Araçlar");
+                        string normalTableHtml = ConvertDataTableToHtmlTable(normalAracTable, "Tarihleri Normal Araçlar");
+
+                        // E-posta gönderme işlemi
+                        string smtpServer = "smtp.office365.com";
+                        int smtpPort = 587;
+                        string senderEmail = "info@bpet.com.tr";
+                        string senderPassword = "IbBc*2014";
+                        string recipientEmail = "lojistik@bpet.com.tr"; // Alıcı e-posta adresi
+
+                        string subject = "Araç Durum Raporu (BPET PORTAL)";
+                        string body = $"{gecmisTableHtml}<br/><br/>{yaklasanTableHtml}<br/><br/>{normalTableHtml}";
+                        if(eposta == "mustafa.ceylan@bpet.com.tr")
+                        {
+                            DialogResult result = MessageBox.Show("MAİL GÖNDEREYİM Mİ? -ADMİN",
+                                                 "Onay",
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Warning);
+
+                            // Kullanıcı 'Evet' seçeneğini tıklarsa, işlemi yap
+                            if (result == DialogResult.Yes)
+                            {
+                                SendEmail(smtpServer, smtpPort, senderEmail, senderPassword, recipientEmail, subject, body);
+                            }
                         }
 
                         // DataGridView'deki "YaklasanTarihNedeni" sütununu belirt
@@ -427,5 +616,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar
                 dataGridView1.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
             }
         }
+
+       
     }
 }

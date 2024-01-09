@@ -202,7 +202,7 @@ namespace BPET_PORTAL.muhasebe.mutabakat
                 MessageBox.Show("Arama sırasında bir hata meydana geldi: " + ex.Message);
             }
         }
-        private void GetDataFromDatabase()
+        public void GetDataFromDatabase()
         {
             int selectedRowIndex = -1;
             int scrollPosition = -1;
@@ -393,7 +393,7 @@ namespace BPET_PORTAL.muhasebe.mutabakat
 
         private void yeniekle_Click(object sender, EventArgs e)
         {
-            mutabakatislemkayit mutabakatisemkayitform = new mutabakatislemkayit();
+            mutabakatislemkayit mutabakatisemkayitform = new mutabakatislemkayit(this);
             mutabakatisemkayitform.ShowDialog();
         }
 

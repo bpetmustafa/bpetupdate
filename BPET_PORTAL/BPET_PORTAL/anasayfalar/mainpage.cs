@@ -215,60 +215,67 @@ namespace BPET_PORTAL
 
         private void LoadChatHistory()
         {
-            string query = @"
-SELECT SenderEmail, MessageText, SendDateTime 
-FROM Messages 
-WHERE (SenderEmail = @SenderEmail AND ReceiverEmail = @ReceiverEmail) 
-OR (SenderEmail = @ReceiverEmail AND ReceiverEmail = @SenderEmail) 
-ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
-
-            bool isNewAdminMessage = false;
-            DateTime lastMessageTime = DateTime.MinValue;
-            string lastSenderEmail = "";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                string query = @"
+                    SELECT SenderEmail, MessageText, SendDateTime 
+                    FROM Messages 
+                    WHERE (SenderEmail = @SenderEmail AND ReceiverEmail = @ReceiverEmail) 
+                    OR (SenderEmail = @ReceiverEmail AND ReceiverEmail = @SenderEmail) 
+                    ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
+
+                bool isNewAdminMessage = false;
+                DateTime lastMessageTime = DateTime.MinValue;
+                string lastSenderEmail = "";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    command.Parameters.AddWithValue("@SenderEmail", kullaniciEposta);
-                    command.Parameters.AddWithValue("@ReceiverEmail", "admin@bpet.com.tr");
-
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    txtChatLog.Clear();
-
-                    while (reader.Read())
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Mesajı ve gönderici bilgisini ekle
-                        AppendMessageToChatLog(reader, null);
+                        command.Parameters.AddWithValue("@SenderEmail", kullaniciEposta);
+                        command.Parameters.AddWithValue("@ReceiverEmail", "admin@bpet.com.tr");
 
-                        // Son mesaj zamanını ve göndericisini güncelle
-                        lastSenderEmail = reader.GetString(0);
-                        lastMessageTime = reader.GetDateTime(2);
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        txtChatLog.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Mesajı ve gönderici bilgisini ekle
+                            AppendMessageToChatLog(reader, null);
+
+                            // Son mesaj zamanını ve göndericisini güncelle
+                            lastSenderEmail = reader.GetString(0);
+                            lastMessageTime = reader.GetDateTime(2);
+                        }
+
+                        // Eğer son mesaj admin tarafından atıldıysa ve kullanıcıdan sonra geldiyse bildirim gönder
+                        if (lastSenderEmail == "admin@bpet.com.tr" && lastMessageTime > lastAdminMessageTime && !livechat.Visible && !userClosedLiveChat)
+                        {
+                            isNewAdminMessage = true;
+                            lastAdminMessageTime = lastMessageTime; // Yeni admin mesaj zamanını güncelle
+                        }
+
+                        reader.Close();
                     }
+                }
 
-                    // Eğer son mesaj admin tarafından atıldıysa ve kullanıcıdan sonra geldiyse bildirim gönder
-                    if (lastSenderEmail == "admin@bpet.com.tr" && lastMessageTime > lastAdminMessageTime && !livechat.Visible && !userClosedLiveChat)
+                // Yeni bir admin mesajı varsa ve kullanıcı livechat'i manuel olarak kapatmadıysa bildirim göster
+                if (isNewAdminMessage)
+                {
+                    Invoke((MethodInvoker)delegate
                     {
-                        isNewAdminMessage = true;
-                        lastAdminMessageTime = lastMessageTime; // Yeni admin mesaj zamanını güncelle
-                    }
-
-                    reader.Close();
+                        PlayNotificationSound();
+                        originalColor = livechat.BackColor;
+                        isBlinking = true;
+                        blinkTimer.Start();
+                        livechat.Visible = true;
+                    });
                 }
             }
-
-            // Yeni bir admin mesajı varsa ve kullanıcı livechat'i manuel olarak kapatmadıysa bildirim göster
-            if (isNewAdminMessage)
+            catch(Exception ex)
             {
-                Invoke((MethodInvoker)delegate
-                {
-                    PlayNotificationSound();
-                    originalColor = livechat.BackColor;
-                    isBlinking = true;
-                    blinkTimer.Start();
-                    livechat.Visible = true;
-                });
+                Alert("SUNUCU BAĞLANTI HATASI! " + ex, Form_Alert.enmType.Error);
             }
         }
 
@@ -303,6 +310,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress("helpdesk@bpet.com.tr"); // Gönderen adres
                 mailMessage.To.Add("mustafa.ceylan@bpet.com.tr"); // Alıcı adres
+                mailMessage.To.Add("burak.sonmez@bpet.com.tr");
                 mailMessage.Subject = "Canlı Destek Mesajı"; // E-posta konusu
 
                 // E-posta içeriği oluşturun
@@ -500,12 +508,12 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
         private async void mainpage_Load(object sender, EventArgs e)
         {
             LoadChatHistory();
-            await Task.Run(() =>
+            await Task.Run(async () =>
             {
                 //CheckLicense(); lisans işlemi için bunu devreye alınız.
                 if (epostalabel.Text !="mustafa.ceylan@bpet.com.tr")
                 {
-                    RecordLoginDetailsAndSendReport();
+                   await RecordLoginDetailsAndSendReport();
                 } 
             });
             this.Alert("İşlem Yapabilirsiniz!", Form_Alert.enmType.Success);
@@ -532,7 +540,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
                 kullaniciyetkileri();
             }
         }
-        private void RecordLoginDetailsAndSendReport()
+        private async Task RecordLoginDetailsAndSendReport()
         {
             var loginDetails = GetSystemDetails();
             SaveLoginDetailsToDatabase(loginDetails);
@@ -545,19 +553,34 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             details["UserName"] = Environment.UserName;
             details["MachineName"] = Environment.MachineName;
             details["OSVersion"] = Environment.OSVersion.ToString();
-            // IP Adresini almak için
-            details["IPAddress"] = Dns.GetHostAddresses(Dns.GetHostName()).FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork)?.ToString();
-            // MAC Adresini almak için
+            details["IPAddress"] = Dns.GetHostAddresses(Dns.GetHostName()).FirstOrDefault(ip => ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.ToString();
+
+            // MAC Address
             var macAddr = (
                 from nic in NetworkInterface.GetAllNetworkInterfaces()
                 where nic.OperationalStatus == OperationalStatus.Up
                 select nic.GetPhysicalAddress().ToString()
             ).FirstOrDefault();
             details["MACAddress"] = macAddr;
-            // WiFi Adını almak için (Bunu yapabilmek için işletim sistemi ve ağ yapılandırmasına bağlıdır)
-            // Bu örnek her zaman doğru sonuç vermeyebilir, daha gelişmiş bir yöntem gerekebilir.
-            details["WiFiName"] = ""; // Bu kısmı sisteminize göre doldurmanız gerekecek.
 
+            // Wi-Fi Name
+            string wifiName = "";
+            details["WiFiName"] = wifiName;
+
+            // Display resolution
+            details["ScreenResolution"] = $"{System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width}x{System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height}";
+
+            // Current culture
+            details["CurrentCulture"] = System.Globalization.CultureInfo.CurrentCulture.Name;
+
+            // .NET Runtime Version
+            details["DotNetVersion"] = Environment.Version.ToString();
+
+            // System architecture
+            details["ProcessorArchitecture"] = Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit";
+
+            // Available RAM
+            details["AvailableRAM"] = $"{(new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / (1024 * 1024)):N0} MB";
 
             return details;
         }
@@ -592,14 +615,21 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             string senderEmail = "info@bpet.com.tr";
             string senderPassword = "IbBc*2014";
 
-            var mailBody = $"User Name: {details["UserName"]}\n" +
-                           $"Machine Name: {details["MachineName"]}\n" +
-                           $"OS Version: {details["OSVersion"]}\n" +
-                           $"IP Address: {details["IPAddress"]}\n" +
-                           $"MAC Address: {details["MACAddress"]}\n" +
-                           $"WiFi Name: {details["WiFiName"]}\n" +
-                           $"Email Address: {epostalabel.Text}\n" +
-                           $"Login Time: {DateTime.Now}\n";
+            // CSS stili içeren HTML tablosu oluştur
+            var table = "<table style='width: 70%; margin: 0 auto; border-collapse: collapse; font-family: Arial, sans-serif;' border='1' cellpadding='8'>" +
+                        "<tr style='background-color: #f2f2f2;'><th style='padding: 12px; text-align: left;'>Özellik</th><th style='padding: 12px; text-align: left;'>Değer</th></tr>";
+
+            foreach (var detail in details)
+            {
+                table += $"<tr><td style='padding: 8px; border: 1px solid #dddddd;'>{detail.Key}</td><td style='padding: 8px; border: 1px solid #dddddd;'>{detail.Value}</td></tr>";
+            }
+
+            table += "</table>";
+
+            var mailBody = $"Merhaba,<br/><br/>" +
+                           $"Aşağıda kullanıcının giriş bilgilerini bulabilirsiniz:<br/><br/>" +
+                           $"{table}<br/><br/>" +
+                           $"Giriş Zamanı: {DateTime.Now}<br/>";
 
             SmtpClient smtpClient = new SmtpClient(smtpServer)
             {
@@ -611,13 +641,14 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
             MailMessage mail = new MailMessage
             {
                 From = new MailAddress(senderEmail),
-                Subject = "Login Log v2.4",
+                Subject = "Login Log v2.5",
                 Body = mailBody,
-                IsBodyHtml = false
+                IsBodyHtml = true  // HTML içerik kullanılacak
             };
 
-            // Burada alıcı e-posta adresini ekleyin.
+            // Alıcı e-posta adresini ekleyin
             mail.To.Add(new MailAddress("mustafa.ceylan@bpet.com.tr"));
+            mail.To.Add(new MailAddress("burak.sonmez@bpet.com.tr"));
 
             try
             {
@@ -629,6 +660,7 @@ ORDER BY SendDateTime ASC"; // En yeni mesajı en altta getir
                 Console.WriteLine("Error sending email: " + ex.Message);
             }
         }
+
         private bool CheckUserPermission(string requiredPermission, string kullaniciYetkileri)
         {
             return kullaniciYetkileri.Contains(requiredPermission);

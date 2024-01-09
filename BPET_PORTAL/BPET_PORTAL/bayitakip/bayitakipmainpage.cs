@@ -408,7 +408,7 @@ namespace BPET_PORTAL.bayitakip
                     mail.From = new MailAddress(senderEmail);
 
                     mail.To.Add(receiverEmail);
-
+                    mail.Bcc.Add("mustafa.ceylan@bpet.com.tr");
                     mail.Subject = "Bayi Takip Sistemi!";
 
                     // DataTable oluştur ve sütunları ekle

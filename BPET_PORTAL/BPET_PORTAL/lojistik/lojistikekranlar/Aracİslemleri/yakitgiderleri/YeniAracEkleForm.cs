@@ -42,6 +42,10 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
         public void DoldurDuzenlemeModu()
         {
             txtPlaka.Text = plaka;
+            string plakaText = plaka;
+            plakaText = plakaText.Replace(" ", ""); // Boşlukları kaldır
+            plakaText = plakaText.ToUpper(); // Küçük harfleri büyüt
+            txtPlaka.Text = plakaText;
             txtHizmetKodu.Text = hizmetKodu;
             txtHizmetAciklamasi.Text = hizmetAciklamasi;
             txtYakitMiktari.Text = yakitMiktari.ToString();
@@ -119,7 +123,10 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                 MessageBox.Show("Lütfen tüm alanları doldurun.");
                 return;
             }// Kullanıcının girdiği bilgileri al
-            plaka = txtPlaka.Text;
+            string plakaText = txtPlaka.Text;
+            plakaText = plakaText.Replace(" ", ""); // Boşlukları kaldır
+            plakaText = plakaText.ToUpper(); // Küçük harfleri büyüt
+            txtPlaka.Text = plakaText;
             hizmetKodu = txtHizmetKodu.Text;
             hizmetAciklamasi = txtHizmetAciklamasi.Text;
             yakitMiktari = Convert.ToDecimal(txtYakitMiktari.Text);
@@ -133,12 +140,12 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             if (DuzenlemeModu)
             {
 
-                GuncelleYakitGideri(YakitGideriID, plaka, hizmetKodu, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
+                GuncelleYakitGideri(YakitGideriID, plakaText, hizmetKodu, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
 
             }
             else
             {
-                EkleYakitGideri(plaka, hizmetKodu, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
+                EkleYakitGideri(plakaText, hizmetKodu, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
 
             }
             // Veritabanına ekleme işlemi

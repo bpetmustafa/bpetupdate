@@ -28,11 +28,11 @@
     <ProductName>BPET PORTAL</ProductName>
     <PublisherName>BPET_Bilgi_İslem</PublisherName>
     <SuiteName>PORTAL</SuiteName>
-    <MinimumRequiredVersion>2.3.4.20</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.3.4.22</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

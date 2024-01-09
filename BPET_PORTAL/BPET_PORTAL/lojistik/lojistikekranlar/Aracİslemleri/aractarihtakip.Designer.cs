@@ -50,6 +50,7 @@
             this.plakalabel = new System.Windows.Forms.Label();
             this.txtPlaka = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblverisayisi = new System.Windows.Forms.Label();
             this.chkTarihFiltrele = new System.Windows.Forms.CheckBox();
             this.chkBinek = new System.Windows.Forms.CheckBox();
             this.chkTicari = new System.Windows.Forms.CheckBox();
@@ -57,10 +58,26 @@
             this.txtAraPlaka = new MetroFramework.Controls.MetroTextBox();
             this.resetle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblverisayisi = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Panel2 = new System.Windows.Forms.Panel();
+            this.normallabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.yaklasanlabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gecenlabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.Panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,8 +101,8 @@
             this.panel1.Controls.Add(this.dateKaskoTarih);
             this.panel1.Controls.Add(this.plakalabel);
             this.panel1.Controls.Add(this.txtPlaka);
-            this.panel1.Location = new System.Drawing.Point(23, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 496);
             this.panel1.TabIndex = 0;
@@ -129,7 +146,7 @@
             this.btnguncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnguncelle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguncelle.Location = new System.Drawing.Point(147, 364);
-            this.btnguncelle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnguncelle.Margin = new System.Windows.Forms.Padding(2);
             this.btnguncelle.Name = "btnguncelle";
             this.btnguncelle.Size = new System.Drawing.Size(70, 63);
             this.btnguncelle.TabIndex = 17;
@@ -143,7 +160,7 @@
             this.radioTicari.AutoSize = true;
             this.radioTicari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.radioTicari.Location = new System.Drawing.Point(147, 46);
-            this.radioTicari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioTicari.Margin = new System.Windows.Forms.Padding(2);
             this.radioTicari.Name = "radioTicari";
             this.radioTicari.Size = new System.Drawing.Size(112, 24);
             this.radioTicari.TabIndex = 16;
@@ -157,7 +174,7 @@
             this.radioBinek.AutoSize = true;
             this.radioBinek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.radioBinek.Location = new System.Drawing.Point(15, 46);
-            this.radioBinek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBinek.Margin = new System.Windows.Forms.Padding(2);
             this.radioBinek.Name = "radioBinek";
             this.radioBinek.Size = new System.Drawing.Size(114, 24);
             this.radioBinek.TabIndex = 15;
@@ -173,7 +190,7 @@
             this.btnkaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnkaydet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnkaydet.Location = new System.Drawing.Point(54, 364);
-            this.btnkaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnkaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnkaydet.Name = "btnkaydet";
             this.btnkaydet.Size = new System.Drawing.Size(70, 63);
             this.btnkaydet.TabIndex = 14;
@@ -200,12 +217,12 @@
             this.dateAdrTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateAdrTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateAdrTarih.Location = new System.Drawing.Point(49, 293);
-            this.dateAdrTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateAdrTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateAdrTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateAdrTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateAdrTarih.Name = "dateAdrTarih";
             this.dateAdrTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateAdrTarih.Size = new System.Drawing.Size(170, 22);
+            this.dateAdrTarih.Size = new System.Drawing.Size(170, 21);
             this.dateAdrTarih.TabIndex = 10;
             // 
             // label4
@@ -228,12 +245,12 @@
             this.dateMuayeneTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateMuayeneTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateMuayeneTarih.Location = new System.Drawing.Point(49, 245);
-            this.dateMuayeneTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateMuayeneTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateMuayeneTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateMuayeneTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateMuayeneTarih.Name = "dateMuayeneTarih";
             this.dateMuayeneTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateMuayeneTarih.Size = new System.Drawing.Size(170, 22);
+            this.dateMuayeneTarih.Size = new System.Drawing.Size(170, 21);
             this.dateMuayeneTarih.TabIndex = 8;
             // 
             // label3
@@ -256,12 +273,12 @@
             this.dateMaddeTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateMaddeTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateMaddeTarih.Location = new System.Drawing.Point(49, 342);
-            this.dateMaddeTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateMaddeTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateMaddeTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateMaddeTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateMaddeTarih.Name = "dateMaddeTarih";
             this.dateMaddeTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateMaddeTarih.Size = new System.Drawing.Size(170, 22);
+            this.dateMaddeTarih.Size = new System.Drawing.Size(170, 21);
             this.dateMaddeTarih.TabIndex = 6;
             // 
             // label2
@@ -284,12 +301,12 @@
             this.dateSigortaTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateSigortaTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateSigortaTarih.Location = new System.Drawing.Point(49, 201);
-            this.dateSigortaTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateSigortaTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateSigortaTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateSigortaTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateSigortaTarih.Name = "dateSigortaTarih";
             this.dateSigortaTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateSigortaTarih.Size = new System.Drawing.Size(170, 22);
+            this.dateSigortaTarih.Size = new System.Drawing.Size(170, 21);
             this.dateSigortaTarih.TabIndex = 4;
             // 
             // label1
@@ -312,12 +329,12 @@
             this.dateKaskoTarih.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateKaskoTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateKaskoTarih.Location = new System.Drawing.Point(49, 155);
-            this.dateKaskoTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateKaskoTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateKaskoTarih.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateKaskoTarih.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateKaskoTarih.Name = "dateKaskoTarih";
             this.dateKaskoTarih.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateKaskoTarih.Size = new System.Drawing.Size(170, 22);
+            this.dateKaskoTarih.Size = new System.Drawing.Size(170, 21);
             this.dateKaskoTarih.TabIndex = 2;
             // 
             // plakalabel
@@ -338,7 +355,7 @@
             this.txtPlaka.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPlaka.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPlaka.Location = new System.Drawing.Point(41, 97);
-            this.txtPlaka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlaka.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlaka.Name = "txtPlaka";
             this.txtPlaka.Size = new System.Drawing.Size(187, 32);
             this.txtPlaka.TabIndex = 0;
@@ -354,20 +371,31 @@
             this.groupBox4.Controls.Add(this.txtAraPlaka);
             this.groupBox4.Controls.Add(this.resetle);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(323, 34);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Location = new System.Drawing.Point(307, 5);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(401, 82);
             this.groupBox4.TabIndex = 62;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama Yap";
             // 
+            // lblverisayisi
+            // 
+            this.lblverisayisi.AutoSize = true;
+            this.lblverisayisi.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblverisayisi.Location = new System.Drawing.Point(135, 55);
+            this.lblverisayisi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblverisayisi.Name = "lblverisayisi";
+            this.lblverisayisi.Size = new System.Drawing.Size(65, 13);
+            this.lblverisayisi.TabIndex = 68;
+            this.lblverisayisi.Text = "VERİ SAYISI:";
+            // 
             // chkTarihFiltrele
             // 
             this.chkTarihFiltrele.AutoSize = true;
             this.chkTarihFiltrele.Location = new System.Drawing.Point(4, 50);
-            this.chkTarihFiltrele.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkTarihFiltrele.Margin = new System.Windows.Forms.Padding(2);
             this.chkTarihFiltrele.Name = "chkTarihFiltrele";
             this.chkTarihFiltrele.Size = new System.Drawing.Size(127, 23);
             this.chkTarihFiltrele.TabIndex = 49;
@@ -378,7 +406,7 @@
             // 
             this.chkBinek.AutoSize = true;
             this.chkBinek.Location = new System.Drawing.Point(195, 22);
-            this.chkBinek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBinek.Margin = new System.Windows.Forms.Padding(2);
             this.chkBinek.Name = "chkBinek";
             this.chkBinek.Size = new System.Drawing.Size(68, 23);
             this.chkBinek.TabIndex = 48;
@@ -389,7 +417,7 @@
             // 
             this.chkTicari.AutoSize = true;
             this.chkTicari.Location = new System.Drawing.Point(122, 22);
-            this.chkTicari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkTicari.Margin = new System.Windows.Forms.Padding(2);
             this.chkTicari.Name = "chkTicari";
             this.chkTicari.Size = new System.Drawing.Size(72, 23);
             this.chkTicari.TabIndex = 47;
@@ -426,10 +454,10 @@
             // 
             // 
             this.txtAraPlaka.CustomButton.Image = null;
-            this.txtAraPlaka.CustomButton.Location = new System.Drawing.Point(72, 2);
-            this.txtAraPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAraPlaka.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.txtAraPlaka.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtAraPlaka.CustomButton.Name = "";
-            this.txtAraPlaka.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.txtAraPlaka.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtAraPlaka.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAraPlaka.CustomButton.TabIndex = 1;
             this.txtAraPlaka.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -438,7 +466,7 @@
             this.txtAraPlaka.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAraPlaka.Lines = new string[0];
             this.txtAraPlaka.Location = new System.Drawing.Point(4, 22);
-            this.txtAraPlaka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAraPlaka.Margin = new System.Windows.Forms.Padding(2);
             this.txtAraPlaka.MaximumSize = new System.Drawing.Size(119, 24);
             this.txtAraPlaka.MaxLength = 32767;
             this.txtAraPlaka.MinimumSize = new System.Drawing.Size(112, 24);
@@ -490,46 +518,175 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(323, 121);
+            this.dataGridView1.Location = new System.Drawing.Point(307, 92);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(705, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(1039, 559);
             this.dataGridView1.TabIndex = 61;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
-            // lblverisayisi
+            // tabControl1
             // 
-            this.lblverisayisi.AutoSize = true;
-            this.lblverisayisi.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblverisayisi.Location = new System.Drawing.Point(135, 55);
-            this.lblverisayisi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblverisayisi.Name = "lblverisayisi";
-            this.lblverisayisi.Size = new System.Drawing.Size(65, 13);
-            this.lblverisayisi.TabIndex = 68;
-            this.lblverisayisi.Text = "VERİ SAYISI:";
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tabControl1.HotTrack = true;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1360, 688);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 63;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel4);
+            this.tabPage1.Controls.Add(this.panel3);
+            this.tabPage1.Controls.Add(this.Panel2);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1352, 657);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Araç Takip";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(973, 495);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Çok Yakında!";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Panel2
+            // 
+            this.Panel2.BackColor = System.Drawing.Color.Green;
+            this.Panel2.Controls.Add(this.normallabel);
+            this.Panel2.Controls.Add(this.label6);
+            this.Panel2.Location = new System.Drawing.Point(713, 21);
+            this.Panel2.MaximumSize = new System.Drawing.Size(148, 78);
+            this.Panel2.Name = "Panel2";
+            this.Panel2.Size = new System.Drawing.Size(148, 54);
+            this.Panel2.TabIndex = 63;
+            // 
+            // normallabel
+            // 
+            this.normallabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.normallabel.ForeColor = System.Drawing.Color.White;
+            this.normallabel.Location = new System.Drawing.Point(3, 23);
+            this.normallabel.Name = "normallabel";
+            this.normallabel.Size = new System.Drawing.Size(142, 29);
+            this.normallabel.TabIndex = 5;
+            this.normallabel.Text = "3.555.555";
+            this.normallabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "NORMAL";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(2)))));
+            this.panel3.Controls.Add(this.yaklasanlabel);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(876, 21);
+            this.panel3.MaximumSize = new System.Drawing.Size(148, 78);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(148, 54);
+            this.panel3.TabIndex = 6;
+            // 
+            // yaklasanlabel
+            // 
+            this.yaklasanlabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.yaklasanlabel.ForeColor = System.Drawing.Color.White;
+            this.yaklasanlabel.Location = new System.Drawing.Point(3, 23);
+            this.yaklasanlabel.Name = "yaklasanlabel";
+            this.yaklasanlabel.Size = new System.Drawing.Size(142, 29);
+            this.yaklasanlabel.TabIndex = 5;
+            this.yaklasanlabel.Text = "3.555.555";
+            this.yaklasanlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(5, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "SÜRESİ YAKLAŞAN";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Red;
+            this.panel4.Controls.Add(this.gecenlabel);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Location = new System.Drawing.Point(1040, 21);
+            this.panel4.MaximumSize = new System.Drawing.Size(148, 78);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(148, 54);
+            this.panel4.TabIndex = 6;
+            // 
+            // gecenlabel
+            // 
+            this.gecenlabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gecenlabel.ForeColor = System.Drawing.Color.White;
+            this.gecenlabel.Location = new System.Drawing.Point(3, 23);
+            this.gecenlabel.Name = "gecenlabel";
+            this.gecenlabel.Size = new System.Drawing.Size(142, 29);
+            this.gecenlabel.TabIndex = 5;
+            this.gecenlabel.Text = "3.555.555";
+            this.gecenlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(3, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 18);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "SÜRESİ GEÇEN";
             // 
             // aractarihtakip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1038, 541);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1360, 688);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "aractarihtakip";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ARAÇ İŞLEMLERİ";
@@ -539,6 +696,14 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.Panel2.ResumeLayout(false);
+            this.Panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -573,5 +738,17 @@
         private System.Windows.Forms.CheckBox chkTarihFiltrele;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblverisayisi;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        internal System.Windows.Forms.Panel panel4;
+        internal System.Windows.Forms.Label gecenlabel;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Panel panel3;
+        internal System.Windows.Forms.Label yaklasanlabel;
+        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Panel Panel2;
+        internal System.Windows.Forms.Label normallabel;
+        internal System.Windows.Forms.Label label6;
     }
 }

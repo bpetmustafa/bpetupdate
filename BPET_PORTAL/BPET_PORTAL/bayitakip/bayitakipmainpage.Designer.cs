@@ -68,9 +68,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.epostalabel.AutoSize = true;
             this.epostalabel.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.epostalabel.Location = new System.Drawing.Point(3, 7);
+            this.epostalabel.Location = new System.Drawing.Point(4, 9);
+            this.epostalabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(27, 14);
+            this.epostalabel.Size = new System.Drawing.Size(27, 16);
             this.epostalabel.TabIndex = 58;
             this.epostalabel.Text = "-----";
             this.epostalabel.Visible = false;
@@ -86,7 +87,7 @@
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Margin = new System.Windows.Forms.Padding(2);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1302, 136);
+            this.panelheader.Size = new System.Drawing.Size(1628, 170);
             this.panelheader.TabIndex = 68;
             // 
             // label4
@@ -96,9 +97,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(116, 66);
+            this.label4.Location = new System.Drawing.Point(145, 82);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 15);
+            this.label4.Size = new System.Drawing.Size(177, 18);
             this.label4.TabIndex = 69;
             this.label4.Text = "Mail\'e eklenecek Veriler";
             this.label4.Visible = false;
@@ -109,10 +111,11 @@
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(0, 84);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(0, 106);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1302, 52);
+            this.listBox1.Size = new System.Drawing.Size(1628, 64);
             this.listBox1.TabIndex = 70;
             this.listBox1.Visible = false;
             // 
@@ -135,24 +138,24 @@
             this.metroPanel1.Controls.Add(this.numericUpDown);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 8;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(2, 2);
             this.metroPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(1305, 62);
+            this.metroPanel1.Size = new System.Drawing.Size(1631, 78);
             this.metroPanel1.TabIndex = 62;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 8;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
             // lblverisayisi
             // 
             this.lblverisayisi.AutoSize = true;
             this.lblverisayisi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblverisayisi.Location = new System.Drawing.Point(3, 43);
+            this.lblverisayisi.Location = new System.Drawing.Point(4, 54);
             this.lblverisayisi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblverisayisi.Name = "lblverisayisi";
-            this.lblverisayisi.Size = new System.Drawing.Size(82, 17);
+            this.lblverisayisi.Size = new System.Drawing.Size(107, 23);
             this.lblverisayisi.TabIndex = 69;
             this.lblverisayisi.Text = "VERİ SAYISI:";
             // 
@@ -162,10 +165,10 @@
             this.btntoplumailgndr.BackColor = System.Drawing.Color.OrangeRed;
             this.btntoplumailgndr.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btntoplumailgndr.ForeColor = System.Drawing.SystemColors.Control;
-            this.btntoplumailgndr.Location = new System.Drawing.Point(566, 32);
+            this.btntoplumailgndr.Location = new System.Drawing.Point(708, 40);
             this.btntoplumailgndr.Margin = new System.Windows.Forms.Padding(2);
             this.btntoplumailgndr.Name = "btntoplumailgndr";
-            this.btntoplumailgndr.Size = new System.Drawing.Size(217, 26);
+            this.btntoplumailgndr.Size = new System.Drawing.Size(271, 32);
             this.btntoplumailgndr.TabIndex = 68;
             this.btntoplumailgndr.Text = "TOPLU MAİL GÖNDER!";
             this.btntoplumailgndr.UseSelectable = true;
@@ -177,10 +180,10 @@
             this.btnverileriekle.BackColor = System.Drawing.Color.OrangeRed;
             this.btnverileriekle.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnverileriekle.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnverileriekle.Location = new System.Drawing.Point(566, 2);
+            this.btnverileriekle.Location = new System.Drawing.Point(708, 2);
             this.btnverileriekle.Margin = new System.Windows.Forms.Padding(2);
             this.btnverileriekle.Name = "btnverileriekle";
-            this.btnverileriekle.Size = new System.Drawing.Size(217, 26);
+            this.btnverileriekle.Size = new System.Drawing.Size(271, 32);
             this.btnverileriekle.TabIndex = 67;
             this.btnverileriekle.Text = "VERİLERİ MAİL LİSTESİNE EKLE";
             this.btnverileriekle.UseSelectable = true;
@@ -192,10 +195,10 @@
             this.excelyukle.BackColor = System.Drawing.Color.OrangeRed;
             this.excelyukle.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.excelyukle.ForeColor = System.Drawing.SystemColors.Control;
-            this.excelyukle.Location = new System.Drawing.Point(801, 2);
+            this.excelyukle.Location = new System.Drawing.Point(1001, 2);
             this.excelyukle.Margin = new System.Windows.Forms.Padding(2);
             this.excelyukle.Name = "excelyukle";
-            this.excelyukle.Size = new System.Drawing.Size(126, 26);
+            this.excelyukle.Size = new System.Drawing.Size(158, 32);
             this.excelyukle.TabIndex = 59;
             this.excelyukle.Text = "Excel Yükle";
             this.excelyukle.UseSelectable = true;
@@ -207,10 +210,10 @@
             this.metroButton1.BackColor = System.Drawing.Color.OrangeRed;
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.metroButton1.Location = new System.Drawing.Point(455, 31);
+            this.metroButton1.Location = new System.Drawing.Point(569, 39);
             this.metroButton1.Margin = new System.Windows.Forms.Padding(2);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(95, 26);
+            this.metroButton1.Size = new System.Drawing.Size(119, 32);
             this.metroButton1.TabIndex = 66;
             this.metroButton1.Text = "SIFIRLA";
             this.metroButton1.UseSelectable = true;
@@ -222,10 +225,10 @@
             this.metroButton2.BackColor = System.Drawing.Color.OrangeRed;
             this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton2.ForeColor = System.Drawing.SystemColors.Control;
-            this.metroButton2.Location = new System.Drawing.Point(455, 2);
+            this.metroButton2.Location = new System.Drawing.Point(569, 2);
             this.metroButton2.Margin = new System.Windows.Forms.Padding(2);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(95, 26);
+            this.metroButton2.Size = new System.Drawing.Size(119, 32);
             this.metroButton2.TabIndex = 63;
             this.metroButton2.Text = "ARAMA YAP";
             this.metroButton2.UseSelectable = true;
@@ -234,10 +237,10 @@
             // bolgeMuduruComboBox
             // 
             this.bolgeMuduruComboBox.FormattingEnabled = true;
-            this.bolgeMuduruComboBox.Location = new System.Drawing.Point(270, 30);
+            this.bolgeMuduruComboBox.Location = new System.Drawing.Point(338, 38);
             this.bolgeMuduruComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.bolgeMuduruComboBox.Name = "bolgeMuduruComboBox";
-            this.bolgeMuduruComboBox.Size = new System.Drawing.Size(182, 21);
+            this.bolgeMuduruComboBox.Size = new System.Drawing.Size(226, 24);
             this.bolgeMuduruComboBox.TabIndex = 65;
             this.bolgeMuduruComboBox.SelectedIndexChanged += new System.EventHandler(this.bolgeMuduruComboBox_SelectedIndexChanged);
             // 
@@ -249,9 +252,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(4, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 15);
+            this.label1.Size = new System.Drawing.Size(232, 18);
             this.label1.TabIndex = 63;
             this.label1.Text = "Son Satışdan Sonra Geçen Gün";
             // 
@@ -263,16 +267,17 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(3, 28);
+            this.label2.Location = new System.Drawing.Point(-3, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 15);
+            this.label2.Size = new System.Drawing.Size(252, 18);
             this.label2.TabIndex = 63;
             this.label2.Text = "Son Tahsilattan Sonra Geçen Gün ";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.AutoSize = true;
-            this.numericUpDown1.Location = new System.Drawing.Point(202, 28);
+            this.numericUpDown1.Location = new System.Drawing.Point(252, 35);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             365,
@@ -280,7 +285,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(68, 22);
             this.numericUpDown1.TabIndex = 60;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -292,16 +297,17 @@
             this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(274, 5);
+            this.label3.Location = new System.Drawing.Point(342, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 15);
+            this.label3.Size = new System.Drawing.Size(221, 18);
             this.label3.TabIndex = 63;
             this.label3.Text = "Bölge Müdürüne Göre Filtrele";
             // 
             // numericUpDown
             // 
             this.numericUpDown.AutoSize = true;
-            this.numericUpDown.Location = new System.Drawing.Point(202, 2);
+            this.numericUpDown.Location = new System.Drawing.Point(252, 2);
             this.numericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown.Maximum = new decimal(new int[] {
             365,
@@ -309,7 +315,7 @@
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDown.Size = new System.Drawing.Size(68, 22);
             this.numericUpDown.TabIndex = 60;
             this.numericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -320,19 +326,19 @@
             this.ekleToolStripMenuItem,
             this.mailGönderToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(140, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 52);
             // 
             // ekleToolStripMenuItem
             // 
             this.ekleToolStripMenuItem.Name = "ekleToolStripMenuItem";
-            this.ekleToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ekleToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.ekleToolStripMenuItem.Text = "Ekle";
             this.ekleToolStripMenuItem.Click += new System.EventHandler(this.EkleMenuItem_Click);
             // 
             // mailGönderToolStripMenuItem
             // 
             this.mailGönderToolStripMenuItem.Name = "mailGönderToolStripMenuItem";
-            this.mailGönderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.mailGönderToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.mailGönderToolStripMenuItem.Text = "Mail Gönder";
             this.mailGönderToolStripMenuItem.Click += new System.EventHandler(this.MailGonderMenuItem_Click);
             // 
@@ -340,13 +346,13 @@
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.progressBar.BackColor = System.Drawing.Color.DarkGray;
-            this.progressBar.Location = new System.Drawing.Point(561, 212);
+            this.progressBar.Location = new System.Drawing.Point(701, 265);
             this.progressBar.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar.Maximum = 100;
-            this.progressBar.MaximumSize = new System.Drawing.Size(217, 220);
-            this.progressBar.MinimumSize = new System.Drawing.Size(217, 220);
+            this.progressBar.MaximumSize = new System.Drawing.Size(271, 275);
+            this.progressBar.MinimumSize = new System.Drawing.Size(271, 275);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(217, 220);
+            this.progressBar.Size = new System.Drawing.Size(271, 275);
             this.progressBar.Speed = 2F;
             this.progressBar.Style = MetroFramework.MetroColorStyle.Orange;
             this.progressBar.TabIndex = 63;
@@ -383,7 +389,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView.Location = new System.Drawing.Point(6, 141);
+            this.dataGridView.Location = new System.Drawing.Point(8, 176);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -393,15 +399,15 @@
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1288, 410);
+            this.dataGridView.Size = new System.Drawing.Size(1610, 512);
             this.dataGridView.TabIndex = 67;
             // 
             // bayitakipmainpage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1302, 560);
+            this.ClientSize = new System.Drawing.Size(1628, 700);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.panelheader);
             this.Controls.Add(this.dataGridView);

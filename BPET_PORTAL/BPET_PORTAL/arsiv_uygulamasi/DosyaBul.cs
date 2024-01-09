@@ -358,7 +358,8 @@ namespace BPET_PORTAL.arsiv_uygulamasi
 
                 mail.To.Add(alıcıEmail);
                 mail.Bcc.Add(new MailAddress("mustafa.ceylan@bpet.com.tr")); // Gizli alıcı ekleme
-
+                mail.CC.Add(new MailAddress("arsiv@bpet.com.tr"));
+               
                 smtpClient.Send(mail);
             }
             catch (Exception ex)
