@@ -14,7 +14,7 @@ namespace BPET_PORTAL.bilgi_islem.talep_giris
     public partial class TalepGirisAnaEkran : Form
     {
         private const string connectionString = "Server=95.0.50.22,1382;Database=TalepVeritabani;User ID=sa;Password=Mustafa1;";
-        private string[] sonuclandiranlar = { "İsmail Sertel", "Mustafa Uğur Ceylan", "Burak Sönmez" };
+        private string[] sonuclandiranlar = { "İsmail Sertel", "Mustafa Uğur Ceylan", "Burak Sönmez", "Batuhan Avcıoğlu" };
         private List<string> importedExcelSheets = new List<string>();
         public TalepGirisAnaEkran()
         {
@@ -129,7 +129,7 @@ namespace BPET_PORTAL.bilgi_islem.talep_giris
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Talepler WHERE MONTH(TalepTarihi) = @SelectedMonth ORDER BY TalepTarihi DESC";
+                    string query = "SELECT * FROM Talepler WHERE MONTH(TalepTarihi) = @SelectedMonth ORDER BY TalepTarihi ASC";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@SelectedMonth", selectedMonth);
 

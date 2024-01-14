@@ -16,7 +16,7 @@ namespace BPET_PORTAL.bilgi_islem.talep_giris
         private int id;
         private int selectMonth;
         private const string connectionString = "Server=95.0.50.22,1382;Database=TalepVeritabani;User ID=sa;Password=Mustafa1;";
-        private string[] sonuclandiranlar = { "İsmail Sertel", "Mustafa Uğur Ceylan", "Burak Sönmez" };
+        private string[] sonuclandiranlar = { "İsmail Sertel", "Mustafa Uğur Ceylan", "Burak Sönmez", "Batuhan Avcıoğlu" };
         private TalepGirisAnaEkran anaEkranInstance;
         public TalepDuzenleEkran(int selectedId, TalepGirisAnaEkran anaEkran, int selectcmb)
         {

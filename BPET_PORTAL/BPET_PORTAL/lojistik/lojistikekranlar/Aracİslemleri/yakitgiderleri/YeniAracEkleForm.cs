@@ -76,7 +76,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             int suAnkiYil = DateTime.Now.Year;
 
             // 2023 ve 2024'ü ekleyerek ComboBox'ı doldur
-            for (int yil = suAnkiYil; yil <= suAnkiYil + 1; yil++)
+            for (int yil = suAnkiYil - 1; yil <= suAnkiYil + 3; yil++)
             {
                 txtYil.Items.Add(yil.ToString());
             }

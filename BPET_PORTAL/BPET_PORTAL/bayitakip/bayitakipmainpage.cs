@@ -299,13 +299,13 @@ namespace BPET_PORTAL.bayitakip
                         }
                     }
 
-                   // if (i % 10 == 0)
+                    // if (i % 10 == 0)
                     //{
-                     //   if (MessageBox.Show("İşlemi durdurmak istiyor musunuz?", "Dikkat", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                      //  {
-                        //    break; // Kullanıcı işlemi iptal etti
-                        //}
-                   // }
+                    //   if (MessageBox.Show("İşlemi durdurmak istiyor musunuz?", "Dikkat", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    //  {
+                    //    break; // Kullanıcı işlemi iptal etti
+                    //}
+                    // }
                 }
             }
 
@@ -443,7 +443,7 @@ namespace BPET_PORTAL.bayitakip
 
 
                         UpdateDatabase(id);
-                       
+
                         row["Bayi Adı"] = rowValues[2];
                         row["Şehir"] = rowValues[3];
                         row["BolgeAdi"] = rowValues[4];
@@ -495,7 +495,7 @@ namespace BPET_PORTAL.bayitakip
                     mail.IsBodyHtml = true;
                     client.Send(mail);
 
-                    
+
                     //MessageBox.Show($"E-posta başarıyla gönderildi. Alıcı: {receiverEmail}");
                     Alert("E-Posta Başarıyla Gönderildi. " + receiverEmail, Form_Alert.enmType.Info);
                     listBox1.Items.Clear();

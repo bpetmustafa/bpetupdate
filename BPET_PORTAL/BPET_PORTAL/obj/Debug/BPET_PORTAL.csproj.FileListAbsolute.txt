@@ -461,3 +461,4 @@ E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bilgi_islem.bilgiisl
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bilgi_islem.talep_giris.TalepGirisAnaEkran.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bilgi_islem.talep_giris.TalepDuzenleEkran.resources
 E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\bin\Debug\Xanadu.LocalizedAttributes.dll
+E:\bpetupdate\BPET_PORTAL\BPET_PORTAL\obj\Debug\BPET_PORTAL.bayitakip.bayitakipcevaplamaekrani.resources

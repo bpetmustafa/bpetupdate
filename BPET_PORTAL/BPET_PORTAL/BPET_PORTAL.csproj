@@ -32,7 +32,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -337,6 +337,12 @@
     <Compile Include="arsiv_uygulamasi\pdftaleplerim.Designer.cs">
       <DependentUpon>pdftaleplerim.cs</DependentUpon>
     </Compile>
+    <Compile Include="bayitakip\bayitakipcevaplamaekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bayitakip\bayitakipcevaplamaekrani.Designer.cs">
+      <DependentUpon>bayitakipcevaplamaekrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="bayitakip\bayitakipmainpage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -598,6 +604,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="arsiv_uygulamasi\pdftaleplerim.resx">
       <DependentUpon>pdftaleplerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bayitakip\bayitakipcevaplamaekrani.resx">
+      <DependentUpon>bayitakipcevaplamaekrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bayitakip\bayitakipmainpage.resx">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
