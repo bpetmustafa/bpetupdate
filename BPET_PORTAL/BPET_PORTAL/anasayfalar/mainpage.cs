@@ -311,6 +311,7 @@ namespace BPET_PORTAL
                 mailMessage.From = new MailAddress("helpdesk@bpet.com.tr"); // Gönderen adres
                 mailMessage.To.Add("mustafa.ceylan@bpet.com.tr"); // Alıcı adres
                 mailMessage.To.Add("burak.sonmez@bpet.com.tr");
+                mailMessage.To.Add("batuhan.avcioglu@bpet.com.tr");
                 mailMessage.Subject = "Canlı Destek Mesajı"; // E-posta konusu
 
                 // E-posta içeriği oluşturun
@@ -333,7 +334,7 @@ namespace BPET_PORTAL
         private void btnSend_Click(object sender, EventArgs e)
         {
             string messageText = txtMessage.Text.Trim();
-
+            
             if (!string.IsNullOrEmpty(messageText))
             {
                 // Mesajı veritabanına kaydet
@@ -641,7 +642,7 @@ namespace BPET_PORTAL
             MailMessage mail = new MailMessage
             {
                 From = new MailAddress(senderEmail),
-                Subject = "Login Log v2.5",
+                Subject = "Login Log v2.6",
                 Body = mailBody,
                 IsBodyHtml = true  // HTML içerik kullanılacak
             };
@@ -649,7 +650,7 @@ namespace BPET_PORTAL
             // Alıcı e-posta adresini ekleyin
             mail.To.Add(new MailAddress("mustafa.ceylan@bpet.com.tr"));
             mail.To.Add(new MailAddress("burak.sonmez@bpet.com.tr"));
-
+            mail.To.Add(new MailAddress("batuhan.avcioglu@bpet.com.tr"));
             try
             {
                 smtpClient.Send(mail);
@@ -865,7 +866,7 @@ namespace BPET_PORTAL
 
         private void btnbayitalep_Click(object sender, EventArgs e)
         {
-            loadform(new bayitakip.bayitakipmainpage(epostalabel.Text));
+            loadform(new bayitakip.bayitakipcevaplamaekrani(epostalabel.Text, this));
         }
 
         private void btnayarlar_Click(object sender, EventArgs e)

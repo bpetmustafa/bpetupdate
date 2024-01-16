@@ -150,8 +150,8 @@ namespace BPET_PORTAL.muhasebe.mutabakat
 
                 fields.SetField("adivergino", selectedRowData.Ad + " " + selectedRowData.VergiNo);
                 //fields.SetField("vergino", selectedRowData.VergiNo);
-                fields.SetField("borcbakiye", selectedRowData.BorcBakiye.ToString("N2") + " ₺");
-                fields.SetField("alacakbakiye", selectedRowData.AlacakBakiye.ToString("N2") + " ₺");
+                fields.SetField("borcbakiye", selectedRowData.BorcBakiye + " ₺");
+                fields.SetField("alacakbakiye", selectedRowData.AlacakBakiye + " ₺");
                 fields.SetField("sonislemtarihi", selectedRowData.SonIslemTarihi.ToString("dd.MM.yyyy"));
                 fields.SetField("mutabakattarihi", selectedRowData.MutabakatTarihi.ToString("dd.MM.yyyy"));
                 fields.SetField("dosyatarih", dateTimePicker1.Value.ToString("dd.MM.yyyy"));
@@ -222,11 +222,15 @@ namespace BPET_PORTAL.muhasebe.mutabakat
                     if (checkBoxPdfOlusturuldu.Checked)
                     {
                         // CheckBox işaretliyse, sadece pdfolustu değeri 1 olan kayıtları getir ve ID'ye göre azalan sırayla sırala
+                        labeldurum.Visible = true;
+                        labeldurum.Text = "ŞU ANDA GEÇMİŞ VERİLERİ GÖRÜYORSUNUZ!";
                         query = "SELECT id, adi, vergino, sonislemtarihi, borcbakiye, alacakbakiye, mutabakattarihi FROM mutabakat WHERE pdfolustu = 1 ORDER BY id DESC";
                     }
                     else
                     {
                         // CheckBox işaretli değilse, tüm kayıtları getir ve ID'ye göre azalan sırayla sırala
+                        labeldurum.Visible = true;
+                        labeldurum.Text = "ŞU ANDA GÜNCEL VERİLERİ GÖRÜYORSUNUZ!";
                         query = "SELECT id, adi, vergino, sonislemtarihi, borcbakiye, alacakbakiye, mutabakattarihi FROM mutabakat WHERE pdfolustu IS NULL ORDER BY id DESC";
                     }
 
@@ -396,34 +400,6 @@ namespace BPET_PORTAL.muhasebe.mutabakat
             mutabakatislemkayit mutabakatisemkayitform = new mutabakatislemkayit(this);
             mutabakatisemkayitform.ShowDialog();
         }
-
-        private void datagridViewMutabakat_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                var hti = datagridViewMutabakat.HitTest(e.X, e.Y);
-                datagridViewMutabakat.ClearSelection();
-                if (hti.RowIndex >= 0)
-                {
-                    datagridViewMutabakat.Rows[hti.RowIndex].Selected = true;
-                    var selectedRowData = GetSelectedRowData();
-                    if (selectedRowData != null)
-                    {
-                        ContextMenuStrip menu = new ContextMenuStrip();
-                        ToolStripMenuItem itemEdit = new ToolStripMenuItem("Düzenle");
-                        itemEdit.Click += (s, args) =>
-                        {
-                            mutabakateditform editForm = new mutabakateditform(selectedRowData.Id);
-                            editForm.ShowDialog();
-                            GetDataFromDatabase(); // Güncellemeden sonra verileri yeniden yükleyin
-                            this.Alert("Güncellendi!", Form_Alert.enmType.Info);
-                        };
-                        menu.Items.Add(itemEdit);
-                        datagridViewMutabakat.ContextMenuStrip = menu;
-                    }
-                }
-            }
-        }
         public void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
@@ -433,6 +409,14 @@ namespace BPET_PORTAL.muhasebe.mutabakat
         private void aramabtn_Click(object sender, EventArgs e)
         {
             SearchData(txtArama.Text);
+        }
+
+        private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectedRowData = GetSelectedRowData();
+            mutabakateditform editForm = new mutabakateditform(selectedRowData.Id);
+            editForm.ShowDialog();
+            GetDataFromDatabase(); // Güncellemeden sonra verileri yeniden yükleyin
         }
     }
 

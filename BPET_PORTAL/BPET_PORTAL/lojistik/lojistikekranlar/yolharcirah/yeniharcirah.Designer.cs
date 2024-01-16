@@ -81,7 +81,7 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtID.Location = new System.Drawing.Point(59, 34);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.MaximumSize = new System.Drawing.Size(96, 26);
             this.txtID.MinimumSize = new System.Drawing.Size(96, 26);
             this.txtID.Name = "txtID";
@@ -201,7 +201,7 @@
             this.txtHesapKodu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtHesapKodu.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtHesapKodu.Location = new System.Drawing.Point(221, 314);
-            this.txtHesapKodu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHesapKodu.Margin = new System.Windows.Forms.Padding(4);
             this.txtHesapKodu.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtHesapKodu.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtHesapKodu.Name = "txtHesapKodu";
@@ -221,7 +221,7 @@
             this.kaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kaydet.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kaydet.Location = new System.Drawing.Point(992, 228);
-            this.kaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kaydet.Margin = new System.Windows.Forms.Padding(4);
             this.kaydet.MaximumSize = new System.Drawing.Size(60, 60);
             this.kaydet.MinimumSize = new System.Drawing.Size(60, 60);
             this.kaydet.Name = "kaydet";
@@ -280,7 +280,7 @@
             this.dateTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTarih.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTarih.Location = new System.Drawing.Point(219, 131);
-            this.dateTarih.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTarih.Margin = new System.Windows.Forms.Padding(4);
             this.dateTarih.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.dateTarih.MaximumSize = new System.Drawing.Size(289, 29);
             this.dateTarih.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
@@ -319,7 +319,7 @@
             this.txtAciklama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtAciklama.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAciklama.Location = new System.Drawing.Point(628, 380);
-            this.txtAciklama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.txtAciklama.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtAciklama.MinimumSize = new System.Drawing.Size(286, 26);
             this.txtAciklama.Name = "txtAciklama";
@@ -365,7 +365,7 @@
             this.txtTutar.DecimalPlaces = 2;
             this.txtTutar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTutar.Location = new System.Drawing.Point(628, 319);
-            this.txtTutar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTutar.Margin = new System.Windows.Forms.Padding(4);
             this.txtTutar.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -381,7 +381,7 @@
             this.disyuklemeadet.Cursor = System.Windows.Forms.Cursors.Default;
             this.disyuklemeadet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.disyuklemeadet.Location = new System.Drawing.Point(628, 210);
-            this.disyuklemeadet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.disyuklemeadet.Margin = new System.Windows.Forms.Padding(4);
             this.disyuklemeadet.Name = "disyuklemeadet";
             this.disyuklemeadet.Size = new System.Drawing.Size(129, 26);
             this.disyuklemeadet.TabIndex = 8;
@@ -406,7 +406,7 @@
             this.disyuklemetutar.DecimalPlaces = 2;
             this.disyuklemetutar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.disyuklemetutar.Location = new System.Drawing.Point(764, 208);
-            this.disyuklemetutar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.disyuklemetutar.Margin = new System.Windows.Forms.Padding(4);
             this.disyuklemetutar.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -424,7 +424,7 @@
             this.disyuklemeucretsabit.DecimalPlaces = 2;
             this.disyuklemeucretsabit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.disyuklemeucretsabit.Location = new System.Drawing.Point(1045, 35);
-            this.disyuklemeucretsabit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.disyuklemeucretsabit.Margin = new System.Windows.Forms.Padding(4);
             this.disyuklemeucretsabit.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -433,8 +433,9 @@
             this.disyuklemeucretsabit.Name = "disyuklemeucretsabit";
             this.disyuklemeucretsabit.Size = new System.Drawing.Size(86, 26);
             this.disyuklemeucretsabit.TabIndex = 14;
+            this.disyuklemeucretsabit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.disyuklemeucretsabit.Value = new decimal(new int[] {
-            100,
+            150,
             0,
             0,
             0});
@@ -544,7 +545,7 @@
             "Yozgat",
             "Zonguldak"});
             this.txtSehirAdi.Location = new System.Drawing.Point(219, 194);
-            this.txtSehirAdi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSehirAdi.Margin = new System.Windows.Forms.Padding(4);
             this.txtSehirAdi.MaxDropDownItems = 10;
             this.txtSehirAdi.Name = "txtSehirAdi";
             this.txtSehirAdi.PromptText = "81 İL";
@@ -559,7 +560,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(628, 252);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.MaximumSize = new System.Drawing.Size(288, 42);
             this.button1.MinimumSize = new System.Drawing.Size(288, 42);
             this.button1.Name = "button1";
@@ -603,7 +604,7 @@
             this.Controls.Add(this.kaydet);
             this.Controls.Add(this.txtHesapKodu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "yeniharcirah";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Kayıt Oluştur";

@@ -29,7 +29,7 @@ namespace BPET_PORTAL.bayitakip
                 case "B3":
                     return "mustafa.ceylan@bpet.com.tr";
                 case "B2":
-                    return "b2@bpet.com.tr";
+                    return "mustafa.ceylan@bpet.com.tr";
                 default:
                     return "mustafa.ceylan@bpet.com.tr";
             }
@@ -223,6 +223,7 @@ namespace BPET_PORTAL.bayitakip
                     else
                     {
                         // Hatalı sayısal değer, bu durumu işleyebilir veya rapor edebilirsiniz.
+                        this.Alert("TARİH3 HATA: " + sonSatisGunSayisi, Form_Alert.enmType.Error);
                         continue; // Hata olduğunda bu veriyi atlayın
                     }
 
@@ -233,6 +234,7 @@ namespace BPET_PORTAL.bayitakip
                     else
                     {
                         // Hatalı sayısal değer, bu durumu işleyebilir veya rapor edebilirsiniz.
+                        this.Alert("TARİH4 HATA: " + sonTahsilatGunSayisi, Form_Alert.enmType.Error);
                         continue; // Hata olduğunda bu veriyi atlayın
                     }
 
@@ -274,8 +276,8 @@ namespace BPET_PORTAL.bayitakip
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO CariHesaplar (CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, BolgeAdi, BolgeMuduru, SahaKodu, SahaAdi, SahaMuduru, SonSatisTarihi, SonSatisMiktari, SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi) " +
-                                                "VALUES (@CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu, @BolgeAdi, @BolgeMuduru, @SahaKodu, @SahaAdi, @SahaMuduru, @SonSatisTarihi, @SonSatisMiktari, @SonTahsilatTarihi, @SonSatisGunSayisi, @SonTahsilatGunSayisi)";
+                            string insertQuery = "INSERT INTO CariHesaplar (CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, BolgeAdi, BolgeMuduru, SahaKodu, SahaAdi, SahaMuduru, SonSatisTarihi, SonSatisMiktari, SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi, MailGonderildi, Cevaplandi) " +
+                                                "VALUES (@CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu, @BolgeAdi, @BolgeMuduru, @SahaKodu, @SahaAdi, @SahaMuduru, @SonSatisTarihi, @SonSatisMiktari, @SonTahsilatTarihi, @SonSatisGunSayisi, @SonTahsilatGunSayisi, 0, 0)";
 
                             using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                             {
@@ -549,7 +551,7 @@ namespace BPET_PORTAL.bayitakip
                 listBox1.Items.Add(rowData);
             }
 
-            Alert("Tüm Hesaplar Eklendi", Form_Alert.enmType.Info);
+            Alert("Tüm Hesaplar Eklendi", Form_Alert.enmType.Success);
         }
 
         private void btntoplumailgndr_Click(object sender, EventArgs e)

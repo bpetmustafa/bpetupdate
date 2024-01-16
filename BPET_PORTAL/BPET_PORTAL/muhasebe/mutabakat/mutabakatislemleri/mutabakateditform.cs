@@ -85,8 +85,8 @@ namespace BPET_PORTAL.muhasebe.mutabakat.mutabakatislemleri
                 cmd.Parameters.AddWithValue("@Adi", txtAdiUnvan.Text);
                 cmd.Parameters.AddWithValue("@VergiNo", txtVergiNoTcKimlikNo.Text);
                 cmd.Parameters.AddWithValue("@SonIslemTarihi", dtpSonIslemTarihi.Text);
-                cmd.Parameters.AddWithValue("@BorcBakiye", string.IsNullOrWhiteSpace(txtBorcBakiye.Text) ? 0 : Convert.ToDecimal(txtBorcBakiye.Text));
-                cmd.Parameters.AddWithValue("@AlacakBakiye", string.IsNullOrWhiteSpace(txtAlacakBakiye.Text) ? 0 : Convert.ToDecimal(txtAlacakBakiye.Text));
+                cmd.Parameters.AddWithValue("@BorcBakiye", string.IsNullOrWhiteSpace(txtBorcBakiye.Text) ? "0" : txtBorcBakiye.Text);
+                cmd.Parameters.AddWithValue("@AlacakBakiye", string.IsNullOrWhiteSpace(txtAlacakBakiye.Text) ? "0" : txtAlacakBakiye.Text);
                 cmd.Parameters.AddWithValue("@MutabakatTarihi", dtpMutabakatTarihi.Text);
 
                 try

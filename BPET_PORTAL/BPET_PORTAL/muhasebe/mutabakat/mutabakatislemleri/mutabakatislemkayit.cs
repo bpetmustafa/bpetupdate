@@ -28,21 +28,36 @@ namespace BPET_PORTAL.muhasebe.mutabakat.mutabakatislemleri
         private void kayit_islemleri_Click(object sender, EventArgs e)
         {
             // Form alanlarından verileri al
-            string adi = txtAdiUnvan.Text;
-            string vergiNo = txtVergiNoTcKimlikNo.Text;
+                string adi = txtAdiUnvan.Text;
+                string vergiNo = txtVergiNoTcKimlikNo.Text;
             string sonIslemTarihi = dtpSonIslemTarihi.Text;
             string mutabakatTarihi = dtpMutabakatTarihi.Text;
-            if (!decimal.TryParse(txtBorcBakiye.Text, out decimal borcBakiye))
+            if (string.IsNullOrWhiteSpace(txtBorcBakiye.Text))
             {
-                MessageBox.Show("Borç bakiye değeri geçerli bir sayı değil.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Borç bakiye değeri boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!decimal.TryParse(txtAlacakBakiye.Text, out decimal alacakBakiye))
+            if (string.IsNullOrWhiteSpace(txtAlacakBakiye.Text))
             {
-                MessageBox.Show("Alacak bakiye değeri geçerli bir sayı değil.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Alacak bakiye değeri boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            // Adı alanı için kontrol
+            if (string.IsNullOrWhiteSpace(adi))
+            {
+                MessageBox.Show("Adı/Ünvan alanı boş bırakılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Vergi No alanı için kontrol
+            if (string.IsNullOrWhiteSpace(vergiNo))
+            {
+                MessageBox.Show("Vergi No/T.C. Kimlik No alanı boş bırakılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             try
             {
@@ -59,8 +74,8 @@ namespace BPET_PORTAL.muhasebe.mutabakat.mutabakatislemleri
                         controlCommand.Parameters.AddWithValue("@VergiNo", vergiNo);
                         controlCommand.Parameters.AddWithValue("@SonIslemTarihi", sonIslemTarihi);
                         controlCommand.Parameters.AddWithValue("@MutabakatTarihi", mutabakatTarihi);
-                        controlCommand.Parameters.AddWithValue("@BorcBakiye", borcBakiye);
-                        controlCommand.Parameters.AddWithValue("@AlacakBakiye", alacakBakiye);
+                        controlCommand.Parameters.AddWithValue("@BorcBakiye", txtBorcBakiye.Text);
+                        controlCommand.Parameters.AddWithValue("@AlacakBakiye", txtAlacakBakiye.Text);
                         // Veritabanı bağlantısını aç ve kontrol sorgusunu çalıştır
                         connection.Open();
                         int rowCount = (int)controlCommand.ExecuteScalar();
@@ -87,8 +102,8 @@ namespace BPET_PORTAL.muhasebe.mutabakat.mutabakatislemleri
                         command.Parameters.AddWithValue("@VergiNo", vergiNo);
                         command.Parameters.AddWithValue("@SonIslemTarihi", sonIslemTarihi);
                         command.Parameters.AddWithValue("@MutabakatTarihi", mutabakatTarihi);
-                        command.Parameters.AddWithValue("@BorcBakiye", borcBakiye);
-                        command.Parameters.AddWithValue("@AlacakBakiye", alacakBakiye);
+                        command.Parameters.AddWithValue("@BorcBakiye", txtBorcBakiye.Text);
+                        command.Parameters.AddWithValue("@AlacakBakiye", txtAlacakBakiye.Text);
 
                         // Sorguyu çalıştır
                         command.ExecuteNonQuery();

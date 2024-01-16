@@ -15,6 +15,7 @@
             private CheckBox[] victorYetkiCheckBoxes; // Yeni yetki dizisi
             private CheckBox[] arsivKategoriCheckBoxes; // Yeni yetki dizisi
             private CheckBox[] muhasebeYetkiCheckBoxes; // Yeni yetki dizisi
+            private CheckBox[] bolgeYetkiCheckBoxes;
 
         public EditUserPermissionsForm(string eposta)
             {
@@ -29,7 +30,7 @@
                 arsivKategoriCheckBoxes = new CheckBox[] { m_kategori_checkbox, f_kategori_checkbox, i_kategori_checkbox, s_kategori_checkbox }; // Yeni yetki dizisi
                 victorYetkiCheckBoxes = new CheckBox[] { a_victor_checkbox, b_victor_checkbox }; // Yeni yetki dizisi
                 muhasebeYetkiCheckBoxes = new CheckBox[] { a_muhasebe_checkbox}; // Yeni yetki dizisi
-
+                bolgeYetkiCheckBoxes = new CheckBox[] { B1_checkbox, B2_checkbox, B3_checkbox, B4_checkbox, B5_checkbox, B6_checkbox, B7_checkbox, B8_checkbox};
                 LoadUserPermissions();
                 LoadUserKategoriYetkileri(eposta); 
 
@@ -80,7 +81,7 @@
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        string query = "SELECT yetkiler, arsiv_yetki, victor_yetki, muhasebe_yetki FROM users WHERE E_Posta = @Eposta";
+                        string query = "SELECT yetkiler, arsiv_yetki, victor_yetki, muhasebe_yetki, bolge_yetki FROM users WHERE E_Posta = @Eposta";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@Eposta", kullaniciEposta);
 
@@ -91,14 +92,14 @@
                             string arsivYetki = reader["arsiv_yetki"].ToString();
                             string victorYetki = reader["victor_yetki"].ToString();
                             string muhasebeYetki = reader["muhasebe_yetki"].ToString();
-
+                            string bolgeYetki = reader["bolge_yetki"].ToString();
 
                         // Kullanıcının mevcut yetkilerini, arşiv yetkilerini ve victor yetkilerini alın
                             string[] kullaniciYetkileri = yetkiler.Split(',');
                             string[] kullaniciArsivYetkileri = arsivYetki.Split(',');
                             string[] kullaniciVictorYetkileri = victorYetki.Split(',');
                             string[] kullaniciMuhasebeYetkileri = muhasebeYetki.Split(',');
-
+                            string[] kullaniciBolgeYetkileri = bolgeYetki.Split(',');
                             // CheckBox'ları mevcut yetkilere göre işaretleyin
                             foreach (CheckBox checkBox in yetkiCheckBoxes)
                             {
@@ -119,10 +120,17 @@
                                 string victorYetkiAdi = checkBox.Name.Replace("_checkbox", "");
                                 checkBox.Checked = kullaniciVictorYetkileri.Contains(victorYetkiAdi);
                             }
+                            // CheckBox'ları mevcut muhasebe yetkilere göre işaretleyin
                             foreach (CheckBox checkBox in muhasebeYetkiCheckBoxes)
                             {
                                 string muhasebeYetkiAdi = checkBox.Name.Replace("_checkbox", "");
                                 checkBox.Checked = kullaniciMuhasebeYetkileri.Contains(muhasebeYetkiAdi);
+                            }
+                            // CheckBox'ları mevcut bolge  yetkilere göre işaretleyin
+                            foreach (CheckBox checkBox in bolgeYetkiCheckBoxes)
+                            {
+                                string bolgeYetkiAdi = checkBox.Name.Replace("_checkbox", "");
+                                checkBox.Checked = kullaniciBolgeYetkileri.Contains(bolgeYetkiAdi);
                             }
                     }
 
@@ -161,18 +169,19 @@
                 string yeniArsivYetki = GetSelectedPermissions(arsivYetkiCheckBoxes);
                 string yeniVictorYetki = GetSelectedPermissions(victorYetkiCheckBoxes);
                 string yeniMuhasebeYetki = GetSelectedPermissions(muhasebeYetkiCheckBoxes);
-
+                string yeniBolgeYetki = GetSelectedPermissions(bolgeYetkiCheckBoxes);
             try
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        string query = "UPDATE users SET yetkiler = @Yetkiler, arsiv_yetki = @ArsivYetki, victor_yetki = @VictorYetki, muhasebe_yetki = @MuhasebeYetki WHERE E_Posta = @Eposta";
+                        string query = "UPDATE users SET yetkiler = @Yetkiler, arsiv_yetki = @ArsivYetki, victor_yetki = @VictorYetki, muhasebe_yetki = @MuhasebeYetki, bolge_yetki = @BolgeYetki WHERE E_Posta = @Eposta";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@Yetkiler", yeniYetkiler);
                         command.Parameters.AddWithValue("@ArsivYetki", yeniArsivYetki);
                         command.Parameters.AddWithValue("@VictorYetki", yeniVictorYetki);
                         command.Parameters.AddWithValue("@MuhasebeYetki", yeniMuhasebeYetki);
+                        command.Parameters.AddWithValue("@BolgeYetki", yeniBolgeYetki);
                         command.Parameters.AddWithValue("@Eposta", kullaniciEposta);
 
                         int affectedRows = command.ExecuteNonQuery();

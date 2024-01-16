@@ -28,11 +28,11 @@
     <ProductName>BPET PORTAL</ProductName>
     <PublisherName>BPET_Bilgi_İslem</PublisherName>
     <SuiteName>PORTAL</SuiteName>
-    <MinimumRequiredVersion>2.3.4.22</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.3.4.23</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -349,6 +349,12 @@
     <Compile Include="bayitakip\bayitakipmainpage.Designer.cs">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="bayitakip\CevapYazmaFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bayitakip\CevapYazmaFormu.Designer.cs">
+      <DependentUpon>CevapYazmaFormu.cs</DependentUpon>
+    </Compile>
     <Compile Include="bilgi_islem\bilgiislemanasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -610,6 +616,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bayitakip\bayitakipmainpage.resx">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bayitakip\CevapYazmaFormu.resx">
+      <DependentUpon>CevapYazmaFormu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bilgi_islem\bilgiislemanasayfa.resx">
       <DependentUpon>bilgiislemanasayfa.cs</DependentUpon>

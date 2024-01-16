@@ -202,7 +202,7 @@
             this.linkLabel3.Size = new System.Drawing.Size(176, 25);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.3.4.21 -Cloud";
+            this.linkLabel3.Text = "V2.3.4.23 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox
@@ -226,10 +226,10 @@
             // 
             // 
             this.sifrelogin.CustomButton.Image = null;
-            this.sifrelogin.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.sifrelogin.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.sifrelogin.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.sifrelogin.CustomButton.Name = "";
-            this.sifrelogin.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.sifrelogin.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.sifrelogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.sifrelogin.CustomButton.TabIndex = 1;
             this.sifrelogin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -264,10 +264,10 @@
             // 
             // 
             this.epostalogin.CustomButton.Image = null;
-            this.epostalogin.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.epostalogin.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.epostalogin.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.epostalogin.CustomButton.Name = "";
-            this.epostalogin.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.epostalogin.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.epostalogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.epostalogin.CustomButton.TabIndex = 1;
             this.epostalogin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -391,10 +391,10 @@
             // 
             // 
             this.mailverifytxtbox.CustomButton.Image = null;
-            this.mailverifytxtbox.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.mailverifytxtbox.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.mailverifytxtbox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.mailverifytxtbox.CustomButton.Name = "";
-            this.mailverifytxtbox.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.mailverifytxtbox.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.mailverifytxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mailverifytxtbox.CustomButton.TabIndex = 1;
             this.mailverifytxtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -429,10 +429,10 @@
             // 
             // 
             this.txtsifrerg.CustomButton.Image = null;
-            this.txtsifrerg.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.txtsifrerg.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.txtsifrerg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtsifrerg.CustomButton.Name = "";
-            this.txtsifrerg.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txtsifrerg.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtsifrerg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtsifrerg.CustomButton.TabIndex = 1;
             this.txtsifrerg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -467,10 +467,10 @@
             // 
             // 
             this.txttelefonrg.CustomButton.Image = null;
-            this.txttelefonrg.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.txttelefonrg.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.txttelefonrg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefonrg.CustomButton.Name = "";
-            this.txttelefonrg.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txttelefonrg.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txttelefonrg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txttelefonrg.CustomButton.TabIndex = 1;
             this.txttelefonrg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -505,10 +505,10 @@
             // 
             // 
             this.txtepostarg.CustomButton.Image = null;
-            this.txtepostarg.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.txtepostarg.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.txtepostarg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtepostarg.CustomButton.Name = "";
-            this.txtepostarg.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txtepostarg.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtepostarg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtepostarg.CustomButton.TabIndex = 1;
             this.txtepostarg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -543,10 +543,10 @@
             // 
             // 
             this.txtadsoyadrg.CustomButton.Image = null;
-            this.txtadsoyadrg.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.txtadsoyadrg.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.txtadsoyadrg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtadsoyadrg.CustomButton.Name = "";
-            this.txtadsoyadrg.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txtadsoyadrg.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtadsoyadrg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtadsoyadrg.CustomButton.TabIndex = 1;
             this.txtadsoyadrg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -672,10 +672,10 @@
             // 
             // 
             this.resetdogrulamatxt.CustomButton.Image = null;
-            this.resetdogrulamatxt.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.resetdogrulamatxt.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.resetdogrulamatxt.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetdogrulamatxt.CustomButton.Name = "";
-            this.resetdogrulamatxt.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.resetdogrulamatxt.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.resetdogrulamatxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.resetdogrulamatxt.CustomButton.TabIndex = 1;
             this.resetdogrulamatxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -712,10 +712,10 @@
             // 
             // 
             this.resetsifretxt.CustomButton.Image = null;
-            this.resetsifretxt.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.resetsifretxt.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.resetsifretxt.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetsifretxt.CustomButton.Name = "";
-            this.resetsifretxt.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.resetsifretxt.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.resetsifretxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.resetsifretxt.CustomButton.TabIndex = 1;
             this.resetsifretxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -752,10 +752,10 @@
             // 
             // 
             this.sfrreseteposta.CustomButton.Image = null;
-            this.sfrreseteposta.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.sfrreseteposta.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.sfrreseteposta.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.sfrreseteposta.CustomButton.Name = "";
-            this.sfrreseteposta.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.sfrreseteposta.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.sfrreseteposta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.sfrreseteposta.CustomButton.TabIndex = 1;
             this.sfrreseteposta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;

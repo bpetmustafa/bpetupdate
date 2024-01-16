@@ -243,7 +243,7 @@ namespace BPET_PORTAL.admin
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Isim_Soyisim, E_Posta, yetkiler, arsiv_yetki, victor_yetki, muhasebe_yetki FROM users";
+                    string query = "SELECT Isim_Soyisim, E_Posta, yetkiler, arsiv_yetki, victor_yetki, muhasebe_yetki, bolge_yetki FROM users";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
