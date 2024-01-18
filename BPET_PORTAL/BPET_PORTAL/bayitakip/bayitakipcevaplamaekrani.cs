@@ -2,13 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using ZXing;
 
 namespace BPET_PORTAL.bayitakip
 {
     public partial class bayitakipcevaplamaekrani : Form
     {
         private string kullaniciEposta;
-        private string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
+        private string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;MultipleActiveResultSets=True;";
         private mainpage mainForm;
         public bayitakipcevaplamaekrani(string eposta, mainpage mainForm)
         {
@@ -53,9 +54,8 @@ namespace BPET_PORTAL.bayitakip
                 }
                 string query2 = @"
             SELECT id, CariHesapUnvani, Sehir, SonSatisMiktari, SonSatisTarihi, SonTahsilatTarihi, CevapAciklama
-            FROM CariHesaplar 
-            WHERE MailGonderildi = 1 AND Cevaplandi = 1 
-            AND BolgeKodu IN ('" + string.Join("','", bolgeKodlari) + "')";
+            FROM CariHesaplarGecmis
+            WHERE BolgeKodu IN ('" + string.Join("','", bolgeKodlari) + "')";
 
                 using (SqlCommand command2 = new SqlCommand(query2, connection))
                 {
@@ -80,52 +80,98 @@ namespace BPET_PORTAL.bayitakip
                 CevapYazmaFormu cevapFormu = new CevapYazmaFormu();
                 if (cevapFormu.ShowDialog() == DialogResult.OK)
                 {
-                    // Kullanıcının yazdığı cevabı al ve veritabanında güncelle
+                    // Kullanıcının yazdığı cevabı al
                     string kullaniciCevabi = cevapFormu.CevapMetni;
-                    CevabiGonder(id, kullaniciCevabi);
+
+                    // Cevabı CariHesaplarGecmis tablosuna taşı ve CariHesaplar tablosundan sil
+                    MoveToCariHesaplarGecmis(id, kullaniciCevabi);
+
+                    // Verileri güncellemek için LoadData yöntemini çağırın
                     LoadData();
-                    MessageBox.Show("Taleb başarıyla cevaplandı! TalepİD: " + id,"BAŞARILI",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                    MessageBox.Show("Talep başarıyla cevaplandı! Talep İD: " + id, "BAŞARILI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if(cevapFormu.ShowDialog() == DialogResult.Cancel)
-                 {
-                    MessageBox.Show("İPTAL EDİLDİ!","İŞLEM İPTAL", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                 }
+                else if (cevapFormu.ShowDialog() == DialogResult.Cancel)
+                {
+                    MessageBox.Show("İPTAL EDİLDİ!", "İŞLEM İPTAL", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
             else
             {
                 MessageBox.Show("Lütfen cevaplamak için bir satır seçin.");
             }
         }
-        private void CevabiGonder(int id, string aciklama)
+
+        private void MoveToCariHesaplarGecmis(int id, string cevapMetni)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = @"
-            UPDATE CariHesaplar 
-            SET CevapAciklama = @Aciklama, Cevaplandi = 1
-            WHERE id = @Id";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                // CariHesaplar tablosundan veriyi al
+                string selectQuery = "SELECT * FROM CariHesaplar WHERE id = @Id";
+                using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
                 {
-                    command.Parameters.AddWithValue("@Aciklama", aciklama);
-                    command.Parameters.AddWithValue("@Id", id);
-                    command.ExecuteNonQuery();
+                    selectCommand.Parameters.AddWithValue("@Id", id);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Veriyi CariHesaplarGecmis tablosuna ekle
+                            string insertQuery = @"
+INSERT INTO CariHesaplarGecmis (CariHesapID, CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, 
+    BolgeAdi, BolgeMuduru, SahaKodu, SahaAdi, SahaMuduru, SonSatisTarihi, SonSatisMiktari, 
+    SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi, MailGonderildi, Cevaplandi, CevapAciklama)
+VALUES (@CariHesapID, @CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu, 
+    @BolgeAdi, @BolgeMuduru, @SahaKodu, @SahaAdi, @SahaMuduru, @SonSatisTarihi, @SonSatisMiktari, 
+    @SonTahsilatTarihi, @SonSatisGunSayisi, @SonTahsilatGunSayisi, @MailGonderildi, @Cevaplandi, @CevapAciklama)";
+                            using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@CariHesapID", reader["id"]);
+                                insertCommand.Parameters.AddWithValue("@CariHesapKodu", reader["CariHesapKodu"]);
+                                insertCommand.Parameters.AddWithValue("@CariHesapUnvani", reader["CariHesapUnvani"]);
+                                insertCommand.Parameters.AddWithValue("@Sehir", reader["Sehir"]);
+                                insertCommand.Parameters.AddWithValue("@BolgeKodu", reader["BolgeKodu"]);
+                                insertCommand.Parameters.AddWithValue("@BolgeAdi", reader["BolgeAdi"]);
+                                insertCommand.Parameters.AddWithValue("@BolgeMuduru", reader["BolgeMuduru"]);
+                                insertCommand.Parameters.AddWithValue("@SahaKodu", reader["SahaKodu"]);
+                                insertCommand.Parameters.AddWithValue("@SahaAdi", reader["SahaAdi"]);
+                                insertCommand.Parameters.AddWithValue("@SahaMuduru", reader["SahaMuduru"]);
+                                insertCommand.Parameters.AddWithValue("@SonSatisTarihi", reader["SonSatisTarihi"]);
+                                insertCommand.Parameters.AddWithValue("@SonSatisMiktari", reader["SonSatisMiktari"]);
+                                insertCommand.Parameters.AddWithValue("@SonTahsilatTarihi", reader["SonTahsilatTarihi"]);
+                                insertCommand.Parameters.AddWithValue("@SonSatisGunSayisi", reader["SonSatisGunSayisi"]);
+                                insertCommand.Parameters.AddWithValue("@SonTahsilatGunSayisi", reader["SonTahsilatGunSayisi"]);
+                                insertCommand.Parameters.AddWithValue("@MailGonderildi", reader["MailGonderildi"]);
+                                insertCommand.Parameters.AddWithValue("@Cevaplandi", 1); // Cevaplandı değeri 1 olarak ayarlanır
+                                insertCommand.Parameters.AddWithValue("@CevapAciklama", cevapMetni);
+
+                                // ExecuteNonQuery çağrısı yapmadan önce reader'ı kapatmak önemlidir
+                                reader.Close();
+                                insertCommand.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            // Eğer okunacak veri yoksa, reader'ı kapat
+                            reader.Close();
+                        }
+                    } // using bloğu bittiğinde reader otomatik olarak kapatılacak
+                }
+
+                // CariHesaplar tablosundan sil
+                string deleteQuery = "DELETE FROM CariHesaplar WHERE id = @Id";
+                using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("@Id", id);
+                    deleteCommand.ExecuteNonQuery();
                 }
             }
         }
-        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.Value != null)
-            {
-                DataGridViewCell cell = dataGridView[e.ColumnIndex, e.RowIndex];
-                cell.ToolTipText = e.Value.ToString();
-            }
-        }
+
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            mainForm.loadform(new bayitakipmainpage(kullaniciEposta));
         }
     }
 }

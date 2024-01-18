@@ -283,24 +283,6 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah
             yeniharcirah YeniHarcirah = new yeniharcirah(this, 0);
             YeniHarcirah.ShowDialog();
         }
-
-        private void dÜZENLEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                // Seçili satırın ID'sini al
-                int selectedRowID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-
-                yeniharcirah YeniHarcirah = new yeniharcirah(this, selectedRowID);
-                YeniHarcirah.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Lütfen güncellenecek bir satır seçin.");
-            }
-            
-        }
-
         private void sİLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -368,6 +350,22 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah
         private void btnDelete_Click(object sender, EventArgs e)
         {
             sİLToolStripMenuItem_Click(sender,e);
+        }
+
+        private void dÜZENLEToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Seçili satırın ID'sini al
+                int selectedRowID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+
+                yeniharcirah YeniHarcirah = new yeniharcirah(this, selectedRowID);
+                YeniHarcirah.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen güncellenecek bir satır seçin.");
+            }
         }
     }
 }

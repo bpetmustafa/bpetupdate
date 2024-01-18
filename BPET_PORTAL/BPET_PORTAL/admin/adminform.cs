@@ -1,4 +1,5 @@
 ﻿using BPET_PORTAL.arsiv_uygulamasi;
+using BPET_PORTAL.bayitakip;
 using BPET_PORTAL.insankaynaklari;
 using destek_otomasyonu;
 using System;
@@ -411,6 +412,12 @@ namespace BPET_PORTAL.admin
         private void button4_Click(object sender, EventArgs e)
         {
             mainForm.loadform(new AdminPaneliForm());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            mainForm.loadform(new bayitakipmainpage(epostalabel.Text));
+
         }
     }
 }

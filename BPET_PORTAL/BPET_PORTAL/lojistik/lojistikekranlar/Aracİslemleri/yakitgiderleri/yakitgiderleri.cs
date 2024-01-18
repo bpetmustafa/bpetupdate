@@ -100,14 +100,14 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT DISTINCT HizmetKodu FROM YakitGiderleri";
+                string query = "SELECT DISTINCT HizmetAciklamasi FROM YakitGiderleri";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    string hizmetKodu = reader.GetString(0);
-                    cmbHizmetKodu.Items.Add(hizmetKodu);
+                    string hizmetaciklamasi = reader.GetString(0);
+                    cmbHizmetAciklamasi.Items.Add(hizmetaciklamasi);
                 }
             }
 
@@ -193,13 +193,13 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             string selectedYil = cmbYil.SelectedItem?.ToString();
             string selectedAy = cmbAy.SelectedItem?.ToString();
             string selectedBolum = cmbBolum.SelectedItem?.ToString();
-            string selectedHizmetKodu = cmbHizmetKodu.SelectedItem?.ToString();
+            string selectedHizmetAcikalamsi = cmbHizmetAciklamasi.SelectedItem?.ToString();
             string selectedPlaka = txtPlaka.Text;
 
             // Verileri filtrele ve DataGridView'i güncelle
-            FiltreleVeGuncelle(selectedYil, selectedAy, selectedBolum, selectedHizmetKodu, selectedPlaka);
+            FiltreleVeGuncelle(selectedYil, selectedAy, selectedBolum, selectedHizmetAcikalamsi, selectedPlaka);
         }
-        private void FiltreleVeGuncelle(string yil, string ay, string bolum, string hizmetKodu, string plaka)
+        private void FiltreleVeGuncelle(string yil, string ay, string bolum, string hizmetaciklamasi, string plaka)
         {
             // Filtreleme işlemini gerçekleştir ve DataGridView'i güncelle
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -220,8 +220,8 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                     if (!string.IsNullOrEmpty(bolum))
                         whereCondition += $" AND Bolum = '{bolum}'";
 
-                    if (!string.IsNullOrEmpty(hizmetKodu))
-                        whereCondition += $" AND HizmetKodu = '{hizmetKodu}'";
+                    if (!string.IsNullOrEmpty(hizmetaciklamasi))
+                        whereCondition += $" AND HizmetAciklamasi = '{hizmetaciklamasi}'";
 
                     if (!string.IsNullOrEmpty(plaka))
                         whereCondition += $" AND Plaka LIKE '%{plaka}%'";
@@ -268,7 +268,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             cmbYil.SelectedIndex = -1;
             cmbAy.SelectedIndex = -1;
             cmbBolum.SelectedIndex = -1;
-            cmbHizmetKodu.SelectedIndex = -1;
+            cmbHizmetAciklamasi.SelectedIndex = -1;
             txtPlaka.Text = "";
 
             // Verileri göster

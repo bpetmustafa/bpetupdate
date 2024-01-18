@@ -94,11 +94,23 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                     // KDV'siz tutarı hesapla
                     decimal tutarKDVsiz = birimFiyat * miktar;
                     txtYakitTutariKDVsizTL.Text = tutarKDVsiz.ToString("0.00");
+                    if (txtYil.Text == "2023")
+                    {
+                        decimal kdvOrani = 1.18m;
+                        MessageBox.Show("KDV %18 ALINDI!");
+                        decimal tutarKDVli = tutarKDVsiz * kdvOrani;
+                        txtYakitTutariTLKDV.Text = tutarKDVli.ToString("0.00");
+                    }
+                    else
+                    {
+                        decimal kdvOrani = 1.20m;
+                        MessageBox.Show("KDV %20 ALINDI!");
 
+                        decimal tutarKDVli = tutarKDVsiz * kdvOrani;
+                        txtYakitTutariTLKDV.Text = tutarKDVli.ToString("0.00");
+                    }
                     // KDV'li tutarı hesapla (KDV oranını varsayılan olarak 1.20 olarak alıyoruz)
-                    decimal kdvOrani = 1.20m;
-                    decimal tutarKDVli = tutarKDVsiz * kdvOrani;
-                    txtYakitTutariTLKDV.Text = tutarKDVli.ToString("0.00");
+                   
 
                 }
                 else

@@ -571,5 +571,9 @@ namespace BPET_PORTAL.bayitakip
             SendEmail(selectedRowsList, bolumMail);
         }
 
+        private void btnVeriTabaniSil_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

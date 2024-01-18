@@ -1,23 +1,12 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using SKM.V3;
-using SKM.V3.Models;
-using SKM.V3.Methods;
 using System.Net;
 using System.Net.Mail;
-using System.Diagnostics;
-using System.Web;
-using Microsoft.Win32;
-using System.Media;
 using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-using System.Security.Principal;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Drawing;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.util;
 using BPET_PORTAL.Properties;
 
 namespace destek_otomasyonu
@@ -29,7 +18,7 @@ namespace destek_otomasyonu
         private int pingvar = 0;
         private BackgroundWorker pingWorker;
 
-        private string alıcımail = "mustafa.ceylan@bpet.com.tr";
+        private string alıcımail = "bt@bpet.com.tr";
         public AnaEkran()
         {
             InitializeComponent();

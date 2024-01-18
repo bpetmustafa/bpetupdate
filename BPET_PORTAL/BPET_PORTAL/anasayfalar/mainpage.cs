@@ -517,7 +517,6 @@ namespace BPET_PORTAL
                    await RecordLoginDetailsAndSendReport();
                 } 
             });
-            this.Alert("İşlem Yapabilirsiniz!", Form_Alert.enmType.Success);
 
             // Lisans anahtarı geçersizse hata mesajı görüntüle ve uygulamayı kapat
            // if (string.IsNullOrEmpty(licenseKey))
@@ -539,6 +538,8 @@ namespace BPET_PORTAL
             {
                 // Kullanıcının yetkileri varsa, normal yüklenme işlemlerine devam edin
                 kullaniciyetkileri();
+                this.Alert("İşlem Yapabilirsiniz!", Form_Alert.enmType.Success);
+
             }
         }
         private async Task RecordLoginDetailsAndSendReport()
@@ -565,7 +566,7 @@ namespace BPET_PORTAL
             details["MACAddress"] = macAddr;
 
             // Wi-Fi Name
-            string wifiName = "";
+            string wifiName = "DEBUG!";
             details["WiFiName"] = wifiName;
 
             // Display resolution
@@ -582,7 +583,6 @@ namespace BPET_PORTAL
 
             // Available RAM
             details["AvailableRAM"] = $"{(new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / (1024 * 1024)):N0} MB";
-
             return details;
         }
         private void SaveLoginDetailsToDatabase(Dictionary<string, string> details)

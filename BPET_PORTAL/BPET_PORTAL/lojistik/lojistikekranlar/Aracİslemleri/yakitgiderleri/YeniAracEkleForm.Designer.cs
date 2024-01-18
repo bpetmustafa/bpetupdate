@@ -85,7 +85,7 @@
             this.txtYakitMiktari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtYakitMiktari.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtYakitMiktari.Location = new System.Drawing.Point(477, 149);
-            this.txtYakitMiktari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtYakitMiktari.Margin = new System.Windows.Forms.Padding(4);
             this.txtYakitMiktari.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtYakitMiktari.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtYakitMiktari.Name = "txtYakitMiktari";
@@ -97,7 +97,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(223, 188);
+            this.label12.Location = new System.Drawing.Point(232, 133);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(147, 18);
@@ -108,12 +108,12 @@
             // 
             this.txtHizmetAciklamasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtHizmetAciklamasi.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtHizmetAciklamasi.Location = new System.Drawing.Point(147, 213);
-            this.txtHizmetAciklamasi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHizmetAciklamasi.Location = new System.Drawing.Point(156, 158);
+            this.txtHizmetAciklamasi.Margin = new System.Windows.Forms.Padding(4);
             this.txtHizmetAciklamasi.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtHizmetAciklamasi.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtHizmetAciklamasi.Name = "txtHizmetAciklamasi";
-            this.txtHizmetAciklamasi.Size = new System.Drawing.Size(287, 30);
+            this.txtHizmetAciklamasi.Size = new System.Drawing.Size(287, 26);
             this.txtHizmetAciklamasi.TabIndex = 84;
             // 
             // txtBirimFiyatKDVsizTL
@@ -122,7 +122,7 @@
             this.txtBirimFiyatKDVsizTL.BackColor = System.Drawing.SystemColors.Control;
             this.txtBirimFiyatKDVsizTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtBirimFiyatKDVsizTL.Location = new System.Drawing.Point(477, 89);
-            this.txtBirimFiyatKDVsizTL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBirimFiyatKDVsizTL.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirimFiyatKDVsizTL.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtBirimFiyatKDVsizTL.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtBirimFiyatKDVsizTL.Name = "txtBirimFiyatKDVsizTL";
@@ -137,7 +137,7 @@
             this.txtAy.BackColor = System.Drawing.SystemColors.Control;
             this.txtAy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtAy.FormattingEnabled = true;
-            this.txtAy.Location = new System.Drawing.Point(147, 327);
+            this.txtAy.Location = new System.Drawing.Point(156, 272);
             this.txtAy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAy.MaximumSize = new System.Drawing.Size(316, 0);
             this.txtAy.MinimumSize = new System.Drawing.Size(287, 0);
@@ -153,7 +153,7 @@
             this.txtYil.BackColor = System.Drawing.SystemColors.Control;
             this.txtYil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtYil.FormattingEnabled = true;
-            this.txtYil.Location = new System.Drawing.Point(147, 268);
+            this.txtYil.Location = new System.Drawing.Point(156, 213);
             this.txtYil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtYil.MaximumSize = new System.Drawing.Size(316, 0);
             this.txtYil.MinimumSize = new System.Drawing.Size(287, 0);
@@ -166,7 +166,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(584, 370);
+            this.label6.Location = new System.Drawing.Point(584, 354);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 18);
@@ -178,19 +178,20 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(233, 127);
+            this.label5.Location = new System.Drawing.Point(244, 7);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 18);
             this.label5.TabIndex = 102;
             this.label5.Text = "Hizmet Kodu";
+            this.label5.Visible = false;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(267, 249);
+            this.label3.Location = new System.Drawing.Point(276, 194);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 18);
@@ -202,7 +203,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(267, 308);
+            this.label2.Location = new System.Drawing.Point(276, 253);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 18);
@@ -214,7 +215,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(253, 66);
+            this.label1.Location = new System.Drawing.Point(262, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 18);
@@ -232,7 +233,7 @@
             this.kaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kaydet.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kaydet.Location = new System.Drawing.Point(844, 174);
-            this.kaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kaydet.Margin = new System.Windows.Forms.Padding(4);
             this.kaydet.MaximumSize = new System.Drawing.Size(60, 60);
             this.kaydet.MinimumSize = new System.Drawing.Size(60, 60);
             this.kaydet.Name = "kaydet";
@@ -246,24 +247,25 @@
             this.txtHizmetKodu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtHizmetKodu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHizmetKodu.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtHizmetKodu.Location = new System.Drawing.Point(147, 149);
-            this.txtHizmetKodu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHizmetKodu.Location = new System.Drawing.Point(158, 29);
+            this.txtHizmetKodu.Margin = new System.Windows.Forms.Padding(4);
             this.txtHizmetKodu.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtHizmetKodu.MinimumSize = new System.Drawing.Size(285, 26);
             this.txtHizmetKodu.Name = "txtHizmetKodu";
-            this.txtHizmetKodu.Size = new System.Drawing.Size(285, 23);
+            this.txtHizmetKodu.Size = new System.Drawing.Size(285, 26);
             this.txtHizmetKodu.TabIndex = 83;
+            this.txtHizmetKodu.Visible = false;
             // 
             // txtPlaka
             // 
             this.txtPlaka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPlaka.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPlaka.Location = new System.Drawing.Point(147, 89);
-            this.txtPlaka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPlaka.Location = new System.Drawing.Point(156, 94);
+            this.txtPlaka.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlaka.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtPlaka.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtPlaka.Name = "txtPlaka";
-            this.txtPlaka.Size = new System.Drawing.Size(287, 30);
+            this.txtPlaka.Size = new System.Drawing.Size(287, 26);
             this.txtPlaka.TabIndex = 82;
             // 
             // label16
@@ -296,7 +298,7 @@
             this.txtYakitTutariKDVsizTL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtYakitTutariKDVsizTL.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtYakitTutariKDVsizTL.Location = new System.Drawing.Point(477, 260);
-            this.txtYakitTutariKDVsizTL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtYakitTutariKDVsizTL.Margin = new System.Windows.Forms.Padding(4);
             this.txtYakitTutariKDVsizTL.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtYakitTutariKDVsizTL.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtYakitTutariKDVsizTL.Name = "txtYakitTutariKDVsizTL";
@@ -321,7 +323,7 @@
             this.txtYakitTutariTLKDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtYakitTutariTLKDV.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtYakitTutariTLKDV.Location = new System.Drawing.Point(477, 319);
-            this.txtYakitTutariTLKDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtYakitTutariTLKDV.Margin = new System.Windows.Forms.Padding(4);
             this.txtYakitTutariTLKDV.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtYakitTutariTLKDV.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtYakitTutariTLKDV.Name = "txtYakitTutariTLKDV";
@@ -356,7 +358,7 @@
             "BALPET",
             "UGURPET",
             "VICTOR"});
-            this.txtBolum.Location = new System.Drawing.Point(477, 391);
+            this.txtBolum.Location = new System.Drawing.Point(477, 375);
             this.txtBolum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBolum.MaximumSize = new System.Drawing.Size(316, 0);
             this.txtBolum.MinimumSize = new System.Drawing.Size(287, 0);
@@ -369,13 +371,13 @@
             this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtID.Location = new System.Drawing.Point(147, 402);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Location = new System.Drawing.Point(156, 347);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.MaximumSize = new System.Drawing.Size(316, 26);
             this.txtID.MinimumSize = new System.Drawing.Size(287, 26);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(287, 30);
+            this.txtID.Size = new System.Drawing.Size(287, 26);
             this.txtID.TabIndex = 120;
             // 
             // label4
@@ -383,7 +385,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(179, 380);
+            this.label4.Location = new System.Drawing.Point(188, 325);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(222, 18);

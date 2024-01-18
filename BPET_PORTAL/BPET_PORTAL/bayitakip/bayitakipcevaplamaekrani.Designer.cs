@@ -43,26 +43,24 @@
             this.sagtikmenusu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cevaplaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridViewGecmis = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewGecmis = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.sagtikmenusu.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGecmis)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGecmis)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.HotTrack = true;
@@ -71,6 +69,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1537, 571);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -163,7 +162,6 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(1520, 399);
             this.dataGridView.TabIndex = 69;
-            this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             // 
             // sagtikmenusu
             // 
@@ -193,16 +191,27 @@
             this.tabPage2.Text = "Geçmiş Talepleriniz";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // panel1
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 37);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1529, 530);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            this.panel1.BackColor = System.Drawing.Color.Coral;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1525, 51);
+            this.panel1.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(6, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(535, 27);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Geçmişte cevapladığınız talepleri burada görebilirsiniz.";
             // 
             // dataGridViewGecmis
             // 
@@ -243,29 +252,6 @@
             this.dataGridViewGecmis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGecmis.Size = new System.Drawing.Size(1520, 399);
             this.dataGridViewGecmis.TabIndex = 70;
-            this.dataGridViewGecmis.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Coral;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1525, 51);
-            this.panel1.TabIndex = 71;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(6, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(535, 27);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Geçmişte cevapladığınız talepleri burada görebilirsiniz.";
             // 
             // bayitakipcevaplamaekrani
             // 
@@ -287,9 +273,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.sagtikmenusu.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGecmis)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGecmis)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,7 +291,6 @@
         private System.Windows.Forms.ToolStripMenuItem cevaplaToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridViewGecmis;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;

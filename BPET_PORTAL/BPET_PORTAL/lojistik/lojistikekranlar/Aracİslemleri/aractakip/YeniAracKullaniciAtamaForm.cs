@@ -78,9 +78,22 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.aractakip
                 }
             }
         }
+        private void GecmisAtamalardanSil(int aracID)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM GecmisAtamalar WHERE AracID = @AracID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@AracID", aracID);
+
+                command.ExecuteNonQuery();
+            }
+        }
 
         private void AraclarTablosundanSil(int aracID)
         {
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -320,6 +333,8 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.aractakip
                     if (affectedRows > 0)
                     {
                         MessageBox.Show("Araç kullanıcıya başarıyla atanmıştır.");
+                        cmbAraclar.SelectedItem = -1;
+                        cmbKullanicilar.SelectedItem = -1;
                     }
                     else
                     {
@@ -438,9 +453,11 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.aractakip
 
                     if (aracID != 0 && kullaniciID != 0)
                     {
+                        
                         // Kullanıcıya atanmış aracın kaydını kaldır
                         AtamaKaldir(aracID, kullaniciID);
 
+                        GecmisAtamalardanSil(aracID);
                         // Araç ID'ye sahip kaydı Araclar tablosundan sil
                         AraclarTablosundanSil(aracID);
 

@@ -482,6 +482,16 @@ namespace BPET_PORTAL.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_profile_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-profile-96", resourceCulture);

@@ -52,7 +52,7 @@
             this.cmbAy = new System.Windows.Forms.ComboBox();
             this.cmbBolum = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbHizmetKodu = new System.Windows.Forms.ComboBox();
+            this.cmbHizmetAciklamasi = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbYil = new System.Windows.Forms.ComboBox();
             this.btnFiltrele = new System.Windows.Forms.Button();
@@ -291,7 +291,7 @@
             this.groupBox4.Controls.Add(this.cmbAy);
             this.groupBox4.Controls.Add(this.cmbBolum);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.cmbHizmetKodu);
+            this.groupBox4.Controls.Add(this.cmbHizmetAciklamasi);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.cmbYil);
             this.groupBox4.Controls.Add(this.btnFiltrele);
@@ -365,26 +365,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(185, 60);
+            this.label7.Location = new System.Drawing.Point(175, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 19);
+            this.label7.Size = new System.Drawing.Size(119, 19);
             this.label7.TabIndex = 50;
-            this.label7.Text = "Hizmet Kodu";
+            this.label7.Text = "Hizmet Açıklaması";
             // 
-            // cmbHizmetKodu
+            // cmbHizmetAciklamasi
             // 
-            this.cmbHizmetKodu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbHizmetAciklamasi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbHizmetKodu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbHizmetKodu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbHizmetKodu.FormattingEnabled = true;
-            this.cmbHizmetKodu.Location = new System.Drawing.Point(160, 81);
-            this.cmbHizmetKodu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbHizmetKodu.MaximumSize = new System.Drawing.Size(153, 0);
-            this.cmbHizmetKodu.Name = "cmbHizmetKodu";
-            this.cmbHizmetKodu.Size = new System.Drawing.Size(153, 31);
-            this.cmbHizmetKodu.TabIndex = 49;
+            this.cmbHizmetAciklamasi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbHizmetAciklamasi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbHizmetAciklamasi.FormattingEnabled = true;
+            this.cmbHizmetAciklamasi.Location = new System.Drawing.Point(160, 81);
+            this.cmbHizmetAciklamasi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbHizmetAciklamasi.MaximumSize = new System.Drawing.Size(153, 0);
+            this.cmbHizmetAciklamasi.Name = "cmbHizmetAciklamasi";
+            this.cmbHizmetAciklamasi.Size = new System.Drawing.Size(153, 31);
+            this.cmbHizmetAciklamasi.TabIndex = 49;
             // 
             // label8
             // 
@@ -597,7 +597,7 @@
         private System.Windows.Forms.ComboBox cmbAy;
         private System.Windows.Forms.ComboBox cmbBolum;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbHizmetKodu;
+        private System.Windows.Forms.ComboBox cmbHizmetAciklamasi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbYil;
         private System.Windows.Forms.Button btnFiltrele;
