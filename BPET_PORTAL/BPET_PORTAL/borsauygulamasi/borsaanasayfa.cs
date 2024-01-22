@@ -443,6 +443,7 @@ namespace BPET_PORTAL.borsauygulamasi
             dataGridViewOrtalamaMaliyet.DataSource = userPortfolioTable;
             dataGridViewOrtalamaMaliyet.Columns["OrtalamaMaliyet"].DefaultCellStyle.Format = "N2";
 
+            
 
             // Her bir hisse için güncel hisse değerini hesapla ve göster
             foreach (DataGridViewRow row in dataGridViewOrtalamaMaliyet.Rows)
@@ -479,6 +480,7 @@ namespace BPET_PORTAL.borsauygulamasi
                 }
 
                 ToplamKarZararHesaplaAsync();
+               
             }
 
         }
@@ -560,7 +562,9 @@ namespace BPET_PORTAL.borsauygulamasi
                 // Asenkron olarak arayüz güncellemesi yapın
                 toplamKarZararLabel.Invoke((MethodInvoker)delegate
                 {
-                    toplamKarZararLabel.Text = toplamKarZarar.ToString("N2");
+                    toplamKarZararLabel.Text = toplamKarZarar.ToString("N2") + " ₺";
+                    decimal portfoydeger = ToplamPortfoyDegeriHesapla();
+                    toplamCariPortfoyLabel.Text = (toplamKarZarar + portfoydeger).ToString("N2") + " ₺";
                 });
 
                 return toplamKarZarar;
@@ -695,6 +699,9 @@ namespace BPET_PORTAL.borsauygulamasi
                 DataGridViewToExcel(dataGridViewOrtalamaMaliyet, sfd.FileName);
 
             }
+
         }
+        
+
     }
 }

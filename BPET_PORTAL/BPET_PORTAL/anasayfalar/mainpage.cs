@@ -23,6 +23,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 using Size = System.Drawing.Size;
 using FontStyle = System.Drawing.FontStyle;
 using Application = System.Windows.Forms.Application;
+using System.Drawing.Printing;
 
 
 namespace BPET_PORTAL
@@ -994,6 +995,42 @@ namespace BPET_PORTAL
         {
             loadform(new bilgi_islem.bilgiislemanasayfa(epostalabel.Text, this));
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintDocument pd = new PrintDocument();
+            // Sayfayı yatay moda ayarla
+            pd.DefaultPageSettings.Landscape = true;
+
+            pd.PrintPage += (sndr, args) =>
+            {
+                // Formun ekran görüntüsünü al
+                Bitmap bmp = new Bitmap(this.Width, this.Height);
+                this.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+
+                // Görüntüyü sayfa boyutlarına uydurmak için ölçeklendirme faktörlerini hesapla
+                float scale = Math.Min((float)args.PageBounds.Width / bmp.Width, (float)args.PageBounds.Height / bmp.Height);
+
+                // Ölçeklenmiş görüntü boyutlarını hesapla
+                int scaledWidth = (int)(bmp.Width * scale);
+                int scaledHeight = (int)(bmp.Height * scale);
+
+                // Görüntüyü sayfanın merkezine yerleştir
+                int centerX = (args.PageBounds.Width - scaledWidth) / 2;
+                int centerY = (args.PageBounds.Height - scaledHeight) / 2;
+
+                // Ölçeklendirilmiş ve merkezlenmiş görüntüyü çiz
+                args.Graphics.DrawImage(bmp, centerX, centerY, scaledWidth, scaledHeight);
+            };
+
+            // Yazdırma iletişim kutusunu göster
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print(); // Kullanıcı onay verirse yazdır
+            }
         }
     }
 

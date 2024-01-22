@@ -97,8 +97,7 @@ namespace BPET_PORTAL
                 //DoldurDataGridView(veriler);
                 DonutGrafik(veriler);
             };
-            UpdateComparisonLabels();
-            DisplayYearlySalesComparisonAndTotal();
+            
                }
 
 
@@ -691,44 +690,13 @@ namespace BPET_PORTAL
         private void gunluksatisraporekrani_Shown(object sender, EventArgs e)
         {
             metroDateTime1_ValueChanged(sender, e);
-
+            UpdateComparisonLabels();
+            DisplayYearlySalesComparisonAndTotal();
+            DisplaySalesFromYearStartAndCompare();
+            UpdateLabelColors();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            PrintDocument pd = new PrintDocument();
-            // Sayfayı yatay moda ayarla
-            pd.DefaultPageSettings.Landscape = true;
-
-            pd.PrintPage += (sndr, args) =>
-            {
-                // Formun ekran görüntüsünü al
-                Bitmap bmp = new Bitmap(this.Width, this.Height);
-                this.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-
-                // Görüntüyü sayfa boyutlarına uydurmak için ölçeklendirme faktörlerini hesapla
-                float scale = Math.Min((float)args.PageBounds.Width / bmp.Width, (float)args.PageBounds.Height / bmp.Height);
-
-                // Ölçeklenmiş görüntü boyutlarını hesapla
-                int scaledWidth = (int)(bmp.Width * scale);
-                int scaledHeight = (int)(bmp.Height * scale);
-
-                // Görüntüyü sayfanın merkezine yerleştir
-                int centerX = (args.PageBounds.Width - scaledWidth) / 2;
-                int centerY = (args.PageBounds.Height - scaledHeight) / 2;
-
-                // Ölçeklendirilmiş ve merkezlenmiş görüntüyü çiz
-                args.Graphics.DrawImage(bmp, centerX, centerY, scaledWidth, scaledHeight);
-            };
-
-            // Yazdırma iletişim kutusunu göster
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = pd;
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                pd.Print(); // Kullanıcı onay verirse yazdır
-            }
-        }
+        
         private List<decimal> GetComparativeData(DateTime startDate, DateTime endDate)
         {
             List<decimal> data = new List<decimal>();
@@ -921,6 +889,103 @@ namespace BPET_PORTAL
             labelBeyazUrunYesterday.Text = $"{totalBeyazUrunYesterday:N0}";
         }
 
+        private decimal GetSalesDataFromYearStart(DateTime endDate, string productColumn)
+        {
+            var yearStart = new DateTime(endDate.Year, 1, 1);
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                var query = $"SELECT SUM({productColumn}) FROM gunluk_veri WHERE Zaman >= @YearStart AND Zaman <= @EndDate";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@YearStart", yearStart);
+                    command.Parameters.AddWithValue("@EndDate", endDate);
+                    var result = command.ExecuteScalar();
+                    return (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
+                }
+            }
+        }
+
+        private void DisplaySalesFromYearStartAndCompare()
+        {
+            var yesterday = DateTime.Today.AddDays(-1);
+            var lastYear = yesterday.Year - 1;
+            var lastYearEnd = new DateTime(lastYear, yesterday.Month, yesterday.Day);
+
+            string[] products = new string[] { "Motorin", "MotorinDiger", "Benzin", "ToplamKara", "Lpg", "LpgDokme" };
+
+            decimal totalBeyazUrunThisYear = 0;
+            decimal totalBeyazUrunLastYear = 0;
+
+            foreach (var product in products)
+            {
+                var thisYearSales = GetSalesDataFromYearStart(yesterday, product);
+                var lastYearSales = GetSalesDataFromYearStart(lastYearEnd, product);
+
+                if (product == "Motorin" || product == "MotorinDiger" || product == "Benzin")
+                {
+                    totalBeyazUrunThisYear += thisYearSales;
+                    totalBeyazUrunLastYear += lastYearSales;
+                }
+
+                var changePercent = lastYearSales != 0 ? ((thisYearSales - lastYearSales) / lastYearSales) * 100 : 0;
+
+                var labelThisYearName = "label" + product + "ThisYear";
+                var labelThisYear = this.Controls.Find(labelThisYearName, true).FirstOrDefault() as Label;
+                if (labelThisYear != null)
+                {
+                    labelThisYear.Text = $"{thisYearSales:N0}";
+                }
+
+                var labelLastYearName = "label" + product + "LastYearComp";
+                var labelLastYear = this.Controls.Find(labelLastYearName, true).FirstOrDefault() as Label;
+                if (labelLastYear != null)
+                {
+                    labelLastYear.Text = $"{lastYearSales:N0}";
+                }
+
+                var labelChangeName = "label" + product + "ChangeComp";
+                var labelChange = this.Controls.Find(labelChangeName, true).FirstOrDefault() as Label;
+                if (labelChange != null)
+                {
+                    labelChange.Text = $"{changePercent:N2}%";
+                }
+            }
+
+            var beyazUrunChangePercent = totalBeyazUrunLastYear != 0 ? ((totalBeyazUrunThisYear - totalBeyazUrunLastYear) / totalBeyazUrunLastYear) * 100 : 0;
+            labelBeyazUrunThisYear.Text = $"{totalBeyazUrunThisYear:N0}";
+            labelBeyazUrunToplamLastYearComp.Text = $"{totalBeyazUrunLastYear:N0}";
+            labelBeyazUrunChangeComp.Text = $"{beyazUrunChangePercent:N2}%";
+        }
+        private void UpdateLabelColors()
+        {
+            // Yüzdelik değişim değerlerini içeren etiketlerin listesi
+            Label[] percentageChangeLabels = new Label[]
+            {
+        labelMotorinChange, labelMotorinDigerChange, labelBenzinChange, labelBeyazUrunChange,
+        labelToplamKaraChange, labelLpgChange, labelLpgDokmeChange,
+        labelMotorinChangeComp, labelMotorinDigerChangeComp, labelBenzinChangeComp,
+        labelBeyazUrunChangeComp, labelToplamKaraChangeComp, labelLpgChangeComp,
+        labelLpgDokmeChangeComp
+                // Buraya diğer etiketleri de ekleyin...
+            };
+
+            foreach (var label in percentageChangeLabels)
+            {
+                // Etiketin metnini kontrol ederek renk ataması yap
+                if (!string.IsNullOrWhiteSpace(label.Text))
+                {
+                    decimal value;
+                    // Metni ondalık sayıya dönüştürmeyi dene
+                    if (decimal.TryParse(label.Text.TrimEnd('%'), out value))
+                    {
+                        // Değer pozitifse yeşil, negatifse kırmızı yap
+                        label.ForeColor = value > 0 ? Color.LimeGreen : (value < 0 ? Color.Red : SystemColors.ControlText);
+                    }
+                }
+            }
+        }
     }
 
 }

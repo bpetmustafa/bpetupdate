@@ -67,20 +67,18 @@ namespace BPET_PORTAL.lojistik
             lojistikloadform(new yakitgiderleri(this));
         }
 
-        private void kİŞİVEARAÇLARToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            lojistikloadform(new YeniAracKullaniciAtamaForm());
-        }
-
         private void nAKLİYEGELİRLERİToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lojistikloadform(new nakliyegelirleri());
-
         }
 
         private void yOLHARCIRAHLİSTESİToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lojistikloadform(new harcirahlistesi());
+        }
+        private void yENİKULLANICIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lojistikloadform(new YeniAracKullaniciAtamaForm());
         }
     }
 }

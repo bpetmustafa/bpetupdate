@@ -37,11 +37,11 @@
             this.aRAÇTAKİPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRAÇLARIGÖRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kİŞİVEARAÇLARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nAKLİYEGELİRLERİToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yOLHARCIRAHLİSTESİToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.anasayfamenustrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.yENİKULLANICIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,9 +52,10 @@
             this.epostalabel.BackColor = System.Drawing.Color.Black;
             this.epostalabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.epostalabel.ForeColor = System.Drawing.Color.Lime;
-            this.epostalabel.Location = new System.Drawing.Point(1229, 11);
+            this.epostalabel.Location = new System.Drawing.Point(983, 9);
+            this.epostalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(144, 18);
+            this.epostalabel.Size = new System.Drawing.Size(119, 15);
             this.epostalabel.TabIndex = 7;
             this.epostalabel.Text = "E POSTA ADRESİNİZ!";
             this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +72,8 @@
             this.yOLHARCIRAHLİSTESİToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1407, 31);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(1126, 28);
             this.menuStrip.TabIndex = 8;
             this.menuStrip.Text = "MENÜ ÇUBUĞU";
             // 
@@ -81,7 +83,7 @@
             this.anasayfastrip.Name = "anasayfastrip";
             this.anasayfastrip.ShortcutKeyDisplayString = "";
             this.anasayfastrip.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.anasayfastrip.Size = new System.Drawing.Size(137, 27);
+            this.anasayfastrip.Size = new System.Drawing.Size(118, 24);
             this.anasayfastrip.Text = "ANA SAYFA";
             this.anasayfastrip.Click += new System.EventHandler(this.anasayfamenustrip_Click);
             // 
@@ -89,33 +91,33 @@
             // 
             this.aRAÇİŞLEMLERİToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator1,
-            this.aRAÇTAKİPToolStripMenuItem});
+            this.aRAÇTAKİPToolStripMenuItem,
+            this.yENİKULLANICIToolStripMenuItem});
             this.aRAÇİŞLEMLERİToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_car_16;
             this.aRAÇİŞLEMLERİToolStripMenuItem.Name = "aRAÇİŞLEMLERİToolStripMenuItem";
-            this.aRAÇİŞLEMLERİToolStripMenuItem.Size = new System.Drawing.Size(178, 27);
+            this.aRAÇİŞLEMLERİToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.aRAÇİŞLEMLERİToolStripMenuItem.Text = "ARAÇ İŞLEMLERİ";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
             // 
             // aRAÇTAKİPToolStripMenuItem
             // 
             this.aRAÇTAKİPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem,
-            this.aRAÇLARIGÖRToolStripMenuItem,
-            this.kİŞİVEARAÇLARToolStripMenuItem});
+            this.aRAÇLARIGÖRToolStripMenuItem});
             this.aRAÇTAKİPToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_history_100;
             this.aRAÇTAKİPToolStripMenuItem.Name = "aRAÇTAKİPToolStripMenuItem";
-            this.aRAÇTAKİPToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.aRAÇTAKİPToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.aRAÇTAKİPToolStripMenuItem.Text = "ARAÇ TAKİP";
             // 
             // aRAÇBİLGİGİRDÜZENLEToolStripMenuItem
             // 
             this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_add_folder_80;
             this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem.Name = "aRAÇBİLGİGİRDÜZENLEToolStripMenuItem";
-            this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem.Size = new System.Drawing.Size(233, 28);
+            this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem.Text = "TARİH TAKİP";
             this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem.Click += new System.EventHandler(this.aRAÇBİLGİGİRDÜZENLEToolStripMenuItem_Click);
             // 
@@ -123,23 +125,15 @@
             // 
             this.aRAÇLARIGÖRToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_search_96;
             this.aRAÇLARIGÖRToolStripMenuItem.Name = "aRAÇLARIGÖRToolStripMenuItem";
-            this.aRAÇLARIGÖRToolStripMenuItem.Size = new System.Drawing.Size(233, 28);
+            this.aRAÇLARIGÖRToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.aRAÇLARIGÖRToolStripMenuItem.Text = "YAKIT TAKİP";
             this.aRAÇLARIGÖRToolStripMenuItem.Click += new System.EventHandler(this.aRAÇLARIGÖRToolStripMenuItem_Click);
-            // 
-            // kİŞİVEARAÇLARToolStripMenuItem
-            // 
-            this.kİŞİVEARAÇLARToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.debut;
-            this.kİŞİVEARAÇLARToolStripMenuItem.Name = "kİŞİVEARAÇLARToolStripMenuItem";
-            this.kİŞİVEARAÇLARToolStripMenuItem.Size = new System.Drawing.Size(233, 28);
-            this.kİŞİVEARAÇLARToolStripMenuItem.Text = "KİŞİ VE ARAÇLAR";
-            this.kİŞİVEARAÇLARToolStripMenuItem.Click += new System.EventHandler(this.kİŞİVEARAÇLARToolStripMenuItem_Click);
             // 
             // nAKLİYEGELİRLERİToolStripMenuItem
             // 
             this.nAKLİYEGELİRLERİToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_delivery_48;
             this.nAKLİYEGELİRLERİToolStripMenuItem.Name = "nAKLİYEGELİRLERİToolStripMenuItem";
-            this.nAKLİYEGELİRLERİToolStripMenuItem.Size = new System.Drawing.Size(198, 27);
+            this.nAKLİYEGELİRLERİToolStripMenuItem.Size = new System.Drawing.Size(166, 24);
             this.nAKLİYEGELİRLERİToolStripMenuItem.Text = "NAKLİYE GELİRLERİ";
             this.nAKLİYEGELİRLERİToolStripMenuItem.Click += new System.EventHandler(this.nAKLİYEGELİRLERİToolStripMenuItem_Click);
             // 
@@ -147,7 +141,7 @@
             // 
             this.yOLHARCIRAHLİSTESİToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.icons8_road_48;
             this.yOLHARCIRAHLİSTESİToolStripMenuItem.Name = "yOLHARCIRAHLİSTESİToolStripMenuItem";
-            this.yOLHARCIRAHLİSTESİToolStripMenuItem.Size = new System.Drawing.Size(232, 27);
+            this.yOLHARCIRAHLİSTESİToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.yOLHARCIRAHLİSTESİToolStripMenuItem.Text = "YOL HARCIRAH LİSTESİ";
             this.yOLHARCIRAHLİSTESİToolStripMenuItem.Click += new System.EventHandler(this.yOLHARCIRAHLİSTESİToolStripMenuItem_Click);
             // 
@@ -156,10 +150,10 @@
             this.mainpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainpanel.Location = new System.Drawing.Point(12, 33);
-            this.mainpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainpanel.Location = new System.Drawing.Point(10, 26);
+            this.mainpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1383, 623);
+            this.mainpanel.Size = new System.Drawing.Size(1106, 498);
             this.mainpanel.TabIndex = 9;
             // 
             // anasayfamenustrip
@@ -171,12 +165,20 @@
             this.anasayfamenustrip.Text = "ANA SAYFA";
             this.anasayfamenustrip.Click += new System.EventHandler(this.anasayfamenustrip_Click);
             // 
+            // yENİKULLANICIToolStripMenuItem
+            // 
+            this.yENİKULLANICIToolStripMenuItem.Image = global::BPET_PORTAL.Properties.Resources.debut;
+            this.yENİKULLANICIToolStripMenuItem.Name = "yENİKULLANICIToolStripMenuItem";
+            this.yENİKULLANICIToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.yENİKULLANICIToolStripMenuItem.Text = "KİŞİ VE ARAÇLAR";
+            this.yENİKULLANICIToolStripMenuItem.Click += new System.EventHandler(this.yENİKULLANICIToolStripMenuItem_Click);
+            // 
             // lojistikanasayfa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1407, 667);
+            this.ClientSize = new System.Drawing.Size(1126, 534);
             this.ControlBox = false;
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.epostalabel);
@@ -184,7 +186,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "lojistikanasayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lojistik Ana Sayfa";
@@ -207,8 +209,8 @@
         private System.Windows.Forms.ToolStripMenuItem aRAÇBİLGİGİRDÜZENLEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aRAÇLARIGÖRToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem kİŞİVEARAÇLARToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nAKLİYEGELİRLERİToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yOLHARCIRAHLİSTESİToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yENİKULLANICIToolStripMenuItem;
     }
 }

@@ -49,7 +49,7 @@ namespace BPET_PORTAL.bayitakip
                         adapter.Fill(dataTable);
                         dataGridView.DataSource = dataTable;
                         dataGridView.Columns["id"].Visible = false;
-
+                        gelentaleplerlabel.Text = dataGridView.RowCount.ToString();
                     }
                 }
                 string query2 = @"
@@ -65,7 +65,7 @@ namespace BPET_PORTAL.bayitakip
                         adapter.Fill(dataTable2);
                         dataGridViewGecmis.DataSource = dataTable2;
                         dataGridViewGecmis.Columns["id"].Visible = false;
-
+                        cevaplanantaleplerlabel.Text =  dataGridViewGecmis.RowCount.ToString();
                     }
                 }
             }

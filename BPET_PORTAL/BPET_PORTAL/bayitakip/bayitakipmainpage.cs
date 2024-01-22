@@ -26,10 +26,6 @@ namespace BPET_PORTAL.bayitakip
         {
             switch (bolgeKodu)
             {
-                case "B3":
-                    return "mustafa.ceylan@bpet.com.tr";
-                case "B2":
-                    return "mustafa.ceylan@bpet.com.tr";
                 default:
                     return "mustafa.ceylan@bpet.com.tr";
             }
@@ -92,6 +88,16 @@ namespace BPET_PORTAL.bayitakip
                     query += " AND BolgeAdi = @SelectedBolgeMuduru";
                 }
 
+                if (mailgonderildi.Checked == true)
+                {
+                    query += " AND MailGonderildi = 1";
+                }
+
+                if (cevaplandi.Checked == true)
+                {
+                    query += " AND Cevaplandi = 1";
+                }
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@MinimumSonSatisGunSayisi", minimumSonSatisGunSayisi);
@@ -121,6 +127,8 @@ namespace BPET_PORTAL.bayitakip
             // NumericUpdown'ları sıfırla
             numericUpDown.Value = numericUpDown.Minimum;
             numericUpDown1.Value = numericUpDown1.Minimum;
+            cevaplandi.Checked = false;
+            mailgonderildi.Checked = false;
 
             // ComboBox'ı sıfırla
             bolgeMuduruComboBox.SelectedIndex = -1; // veya ComboBox'ın başlangıç seçeneğine göre ayarlayın
@@ -238,10 +246,11 @@ namespace BPET_PORTAL.bayitakip
                         continue; // Hata olduğunda bu veriyi atlayın
                     }
 
-                    string checkQuery = "SELECT COUNT(*) FROM CariHesaplar WHERE CariHesapUnvani = @CariHesapUnvani";
+                    string checkQuery = "SELECT COUNT(*) FROM CariHesaplar WHERE CariHesapUnvani = @CariHesapUnvani AND CariHesapKodu = @CariHesapKodu";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
                         checkCommand.Parameters.AddWithValue("@CariHesapUnvani", cariHesapUnvani);
+                        checkCommand.Parameters.AddWithValue("@CariHesapKodu", cariHesapKodu);
                         int existingRecords = (int)checkCommand.ExecuteScalar();
 
                         if (existingRecords > 0)
@@ -253,11 +262,12 @@ namespace BPET_PORTAL.bayitakip
                                                 "SonSatisMiktari = @SonSatisMiktari, SonTahsilatTarihi = @SonTahsilatTarihi, " +
                                                 "SonSatisGunSayisi = @SonSatisGunSayisi, MailGonderildi = '0', " +
                                                 "Cevaplandi = '0', SonTahsilatGunSayisi = @SonTahsilatGunSayisi " +
-                                                "WHERE CariHesapUnvani = @CariHesapUnvani";
+                                                "WHERE CariHesapUnvani = @CariHesapUnvani AND CariHesapKodu = @CariHesapKodu";
 
                             using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                             {
                                 updateCommand.Parameters.AddWithValue("@CariHesapUnvani", cariHesapUnvani);
+                                updateCommand.Parameters.AddWithValue("@CariHesapKodu", cariHesapKodu);
                                 updateCommand.Parameters.AddWithValue("@Sehir", sehir);
                                 updateCommand.Parameters.AddWithValue("@BolgeKodu", bolgeKodu);
                                 updateCommand.Parameters.AddWithValue("@BolgeAdi", bolgeAdi);
@@ -411,7 +421,17 @@ namespace BPET_PORTAL.bayitakip
 
                     mail.To.Add(receiverEmail);
                     mail.Bcc.Add("mustafa.ceylan@bpet.com.tr");
+                    //mail.CC.Add("huseyin.toru@bpet.com.tr");
                     mail.Subject = "Bayi Takip Sistemi!";
+
+                    // Sabit başlık metnini ekleyin
+                    StringBuilder htmlContent = new StringBuilder();
+                    htmlContent.Append("<html><body>");
+                    htmlContent.Append("<p style='font-family: Arial, sans-serif; color: #333333;'>Bu mesaj, <strong>BPET PORTAL</strong> sistemi tarafından otomatik olarak gönderilmiştir. Ekte yer alan tabloda, sizin yönetim bölgenizdeki bazı bayilere ait güncel bilgiler bulunmaktadır. Özellikle, son tahsilat ve son satış tarihleri geçmiş bayiler hakkında bilgilendirme yapılacaktır. Bu bilgiler, haftalık olarak sizlere iletilecektir.<br><br>BPET PORTAL masaüstü uygulamasını kullanarak, bu güncellemelere ve taleplere sistem üzerinden kolaylıkla cevap verebilirsiniz. İş süreçlerinizde verimliliği artırmak ve gerekli bilgilere hızla erişmek adına bu sistemi aktif olarak kullanmanız önem arz etmektedir.</p>");
+                    htmlContent.Append("<p>BPET PORTAL'a nasıl kayıt olunabileceğini öğrenmek için <a href='https://www.youtube.com/watch?v=FggWnbXGLZc' target='_blank'>bu videoyu</a> izleyebilirsiniz.</p>");
+                    htmlContent.Append("<p>BPET PORTAL Bayi Takip Sisteminin nasıl kullanacağını öğrenmek için <a href='https://www.youtube.com/watch?v=Zs1LxMaS9gk' target='_blank'>bu videoyu</a> izleyebilirsiniz.</p>");
+
+                    htmlContent.Append("<p>BPET PORTAL eğer bilgisayarınızda mevcut değilse, Bilgi Teknolojileri ekibinden Mustafa Uğur CEYLAN'a ulaşabilirsiniz. (0 544 681 80 43) </p>");
 
                     // DataTable oluştur ve sütunları ekle
                     DataTable dataTable = new DataTable();
@@ -426,50 +446,38 @@ namespace BPET_PORTAL.bayitakip
                     foreach (string rowData in selectedRows)
                     {
                         string[] rowValues = rowData.Split('*').Select(value => value.Trim()).ToArray();
-
-                        // Satır değerlerini kontrol et
-                        Console.WriteLine("Row Values: " + string.Join(", ", rowValues));
-                        // Veri tablosuna ekle
                         DataRow row = dataTable.NewRow();
+
                         int id;
                         if (int.TryParse(rowValues[0], out id))
                         {
-                            // Dönüşüm başarılı, id değişkeni şu anda bir integer değeri içerir.
                             UpdateDatabase(id);
                         }
-                        else
-                        {
-                            // Dönüşüm başarısız oldu, hata mesajı göster veya uygun bir işlem yap.
-                            MessageBox.Show("ID dönüşümü başarısız oldu. " + id);
-                        }
-
-
-                        UpdateDatabase(id);
 
                         row["Bayi Adı"] = rowValues[2];
                         row["Şehir"] = rowValues[3];
                         row["BolgeAdi"] = rowValues[4];
-                        DateTime sonSatisTarihi;
+                        DateTime sonSatisTarihi, sonTahsilatTarihi;
+
                         if (DateTime.TryParse(rowValues[5], out sonSatisTarihi))
                         {
                             row["Son Satış Tarihi"] = sonSatisTarihi.ToShortDateString();
                         }
+
                         row["Son Satıştan Gün Sayısı"] = rowValues[6];
-                        DateTime sonTahsilatTarihi;
+
                         if (DateTime.TryParse(rowValues[7], out sonTahsilatTarihi))
                         {
                             row["Son Tahsilat Tarihi"] = sonTahsilatTarihi.ToShortDateString();
                         }
+
                         row["Son Tahsilattan Gün Sayısı"] = rowValues[8];
-
                         dataTable.Rows.Add(row);
-                        UpdateDatabase(id);
-
                     }
 
                     // DataTable'ı kullanarak HTML tablosunu oluştur
                     StringBuilder htmlTable = new StringBuilder();
-                    htmlTable.Append("<html><body><table border='1'>");
+                    htmlTable.Append("<table border='1'>");
 
                     // Sütun başlıklarını ekle
                     htmlTable.Append("<tr>");
@@ -490,16 +498,17 @@ namespace BPET_PORTAL.bayitakip
                         htmlTable.Append("</tr>");
                     }
 
-                    htmlTable.Append("</table></body></html>");
+                    htmlTable.Append("</table>");
+                    htmlContent.Append(htmlTable.ToString());
+                    htmlContent.Append("</body></html>");
 
-                    // Şimdi mail.Body'yi bu HTML tablosuyla doldurabilirsiniz
-                    mail.Body = htmlTable.ToString();
+                    // Şimdi mail.Body'yi bu HTML içeriğiyle doldurabilirsiniz
+                    mail.Body = htmlContent.ToString();
                     mail.IsBodyHtml = true;
                     client.Send(mail);
 
-
-                    //MessageBox.Show($"E-posta başarıyla gönderildi. Alıcı: {receiverEmail}");
                     Alert("E-Posta Başarıyla Gönderildi. " + receiverEmail, Form_Alert.enmType.Info);
+                    LoadDataFromDatabase(0, 0, null);
                     listBox1.Items.Clear();
                     selectedRowsList.Clear();
                 }
@@ -507,6 +516,7 @@ namespace BPET_PORTAL.bayitakip
             catch (Exception ex)
             {
                 MessageBox.Show($"E-posta gönderme hatası: {ex.Message}");
+                LoadDataFromDatabase(0, 0, null);
             }
         }
         private void UpdateDatabase(int id)
@@ -573,7 +583,52 @@ namespace BPET_PORTAL.bayitakip
 
         private void btnVeriTabaniSil_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("GECMİS TABLOSU CariHesaplarGecmis tablosunu da temizlemek istiyor musunuz?", "Tablo Temizleme Onayı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                TemizleCariHesaplarGecmis();
+            }
+            if (MessageBox.Show("ANA TABLO CariHesaplar tablosunu da temizlemek istiyor musunuz?", "Tablo Temizleme Onayı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                TemizleCariHesaplar();
+            }
+            LoadDataFromDatabase(0, 0, null);
+        }
+        private void TemizleCariHesaplar()
+        {
+            string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM CariHesaplar";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("CariHesaplar tablosu başarıyla temizlendi.", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void TemizleCariHesaplarGecmis()
+        {
+            string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM CariHesaplarGecmis";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("CariHesaplarGecmis tablosu başarıyla temizlendi.", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
