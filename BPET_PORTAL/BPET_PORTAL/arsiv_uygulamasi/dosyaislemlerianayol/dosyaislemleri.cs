@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Data;
-using System.Data.SqlClient;
 using BPET_PORTAL.arsiv_uygulamasi.dosyaislemleri;
 using System.Drawing;
 using ZXing;
@@ -13,6 +12,15 @@ using ZXing.Common;
 using System.Drawing.Printing;
 using System.Collections.Generic;
 using BPET_PORTAL.arsiv_uygulamasi.dosyaislemlerianayol;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.Diagnostics;
+using System.IO;
+using Rectangle = System.Drawing.Rectangle;
+using BPET_PORTAL.admin;
+using BPET_PORTAL.yukleme_ekrani;
+using MetroFramework.Controls;
+using System.Threading.Tasks;
 
 namespace BPET_PORTAL.arsiv_uygulamasi
 {
@@ -30,6 +38,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
         private DataTable customFilterDataTable = new DataTable();
         private List<string> dosyaIDs = new List<string>();
         private Dictionary<string, CheckBox> checkBoxMap = new Dictionary<string, CheckBox>();
+        private bool showOnlyNullGeriTeslimTarihi = true;
 
         public dosyaislemleri2(string eposta, mainpage mainForm)
         {
@@ -37,9 +46,14 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             this.mainForm = mainForm;
             epostalabel.Text = eposta;
             connection = new SqlConnection(connectionString);
-
             GetDataFromDatabase();
             FillComboBoxes();
+
+            //TAB PAGE'E SAYFA EKLEME KODU////
+            KullaniciEklemeİslemi kullanicieklemeekrani = new KullaniciEklemeİslemi();
+            tabPage3.Controls.Add(kullanicieklemeekrani);
+            kullanicieklemeekrani.Dock = DockStyle.Fill;
+
         }
 
         private void closebtn_Click(object sender, EventArgs e)
@@ -94,106 +108,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             }
         }
 
-        private void excelyukle_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Dosyaları|*.xlsx;*.xls";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string dosyaYolu = openFileDialog.FileName;
-
-                // Excel dosyasını oku
-                Excel.Application excelApp = new Excel.Application();
-                Excel.Workbook workbook = excelApp.Workbooks.Open(dosyaYolu);
-                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1]; // İlk sayfa
-
-                // Başlık satırını atla (B1'den başlıyoruz)
-                int row = 2;
-
-                // İlerleme çubuğunu tanımla
-                progressBar.Maximum = worksheet.UsedRange.Rows.Count - 1;
-                progressBar.Value = 0;
-                progressBar.Visible = true;
-
-                while (!string.IsNullOrEmpty(Convert.ToString(worksheet.Cells[row, 2].Value2))) // B sütununda veri olana kadar devam et
-                {
-                    string dosyaAdi = Convert.ToString(worksheet.Cells[row, 2].Value2);
-                    string ay = Convert.ToString(worksheet.Cells[row, 3].Value2);
-                    string yil = Convert.ToString(worksheet.Cells[row, 4].Value2);
-                    string birimAdi = Convert.ToString(worksheet.Cells[row, 5].Value2);
-                    string sirketAdi = Convert.ToString(worksheet.Cells[row, 6].Value2);
-                    string dolap = Convert.ToString(worksheet.Cells[row, 7].Value2);
-                    string raf = Convert.ToString(worksheet.Cells[row, 8].Value2);
-                    string siraNo = Convert.ToString(worksheet.Cells[row, 9].Value2);
-                    string odaAdi = Convert.ToString(worksheet.Cells[row, 10].Value2);
-                    string dosyaID = !string.IsNullOrEmpty(Convert.ToString(worksheet.Cells[row, 11].Value2)) ? Convert.ToString(worksheet.Cells[row, 11].Value2) : Guid.NewGuid().ToString();
-
-                    // Eğer dosyaID veritabanında yoksa veriyi ekle
-                    if (!CheckIfDataExists(dosyaID))
-                    {
-                        // Veritabanına ekleme işlemi
-                        AddDataToDatabase(dosyaAdi, ay, yil, birimAdi, sirketAdi, dolap, raf, siraNo, odaAdi, dosyaID);
-
-                        // İlerleme çubuğunu güncelle
-                        progressBar.Value++;
-                        Application.DoEvents();
-                    }
-
-                    row++;
-                }
-
-                // İlerleme çubuğunu sıfırla ve gizle
-                progressBar.Value = 0;
-                progressBar.Visible = false;
-
-                // Excel nesnelerini temizle
-                workbook.Close();
-                excelApp.Quit();
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-
-                this.Alert("EXCEL'den veriler başarıyla aktarıldı!", Form_Alert.enmType.Success);
-                RefreshDataGridView();
-            }
-        }
-
-        private bool CheckIfDataExists(string dosyaID)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Dosyalar WHERE FizikselYer = @DosyaID", conn);
-                checkCmd.Parameters.AddWithValue("@DosyaID", dosyaID);
-                int existingCount = (int)checkCmd.ExecuteScalar();
-                return existingCount > 0;
-            }
-        }
-
-        private void AddDataToDatabase(string dosyaAdi, string ay, string yil, string birimAdi, string sirketAdi, string dolap, string raf, string siraNo, string odaAdi, string dosyaID)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Dosyalar (DosyaAdi, Kategori, FizikselYer, SirketIsmi, DosyaYili, DosyaAy, DosyaNumarasi, DosyaTipi, DosyaYukleyen, OlusturmaTarihi, DosyaID, Dolap, Raf, SıraNo, OdaAdi) VALUES (@DosyaAdi, @Kategori, @FizikselYer, @SirketIsmi, @DosyaYili, @DosyaAy, @DosyaNumarasi, @DosyaTipi, @DosyaYukleyen, @OlusturmaTarihi, @DosyaID, @Dolap, @Raf, @SıraNo, @OdaAdi)", conn);
-                cmd.Parameters.AddWithValue("@DosyaAdi", dosyaAdi);
-                cmd.Parameters.AddWithValue("@Kategori", birimAdi);
-                cmd.Parameters.AddWithValue("@FizikselYer", dosyaID);
-                cmd.Parameters.AddWithValue("@SirketIsmi", sirketAdi);
-                cmd.Parameters.AddWithValue("@DosyaYili", Convert.ToInt32(yil));
-                cmd.Parameters.AddWithValue("@DosyaAy", ay);
-                cmd.Parameters.AddWithValue("@DosyaNumarasi", "");
-                cmd.Parameters.AddWithValue("@DosyaTipi", "");
-                cmd.Parameters.AddWithValue("@DosyaYukleyen", epostalabel.Text); // Kullanıcı adını buraya ekleyin
-                cmd.Parameters.AddWithValue("@OlusturmaTarihi", DateTime.Now);
-                cmd.Parameters.AddWithValue("@DosyaID", dosyaID);
-                cmd.Parameters.AddWithValue("@Dolap", dolap);
-                cmd.Parameters.AddWithValue("@Raf", raf);
-                cmd.Parameters.AddWithValue("@SıraNo", siraNo);
-                cmd.Parameters.AddWithValue("@OdaAdi", odaAdi);
-                cmd.ExecuteNonQuery();
-            }
-        }
         public void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
@@ -352,33 +266,29 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                     ToolStripMenuItem deleteMenuItem = new ToolStripMenuItem("Sil");
                     deleteMenuItem.Click += (s, args) =>
                     {
-                        // Şifre girişi formunu oluştur
-                        using (PasswordForm passwordForm = new PasswordForm())
+                        bool isVerified = sms_mfa.mfakontrol.VerifyUser(epostalabel.Text);
+                        if (isVerified)
                         {
-                            DialogResult passwordResult = passwordForm.ShowDialog();
+                            string dosyaID = dataGridView.SelectedRows[0].Cells["FizikselYer"].Value.ToString();
 
-                            if (passwordResult == DialogResult.OK)
+                            DialogResult result = MessageBox.Show("Bu dosyayı silmek istediğinizden emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                            if (result == DialogResult.Yes)
                             {
-                                string dosyaID = dataGridView.SelectedRows[0].Cells["FizikselYer"].Value.ToString();
+                                SqlConnection conn = new SqlConnection(connectionString);
+                                conn.Open();
+                                SqlCommand cmd = new SqlCommand("DELETE FROM Dosyalar WHERE FizikselYer = @DosyaID", conn);
+                                cmd.Parameters.AddWithValue("@DosyaID", dosyaID);
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
 
-                                DialogResult result = MessageBox.Show("Bu dosyayı silmek istediğinizden emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                dataGridView.Rows.Remove(dataGridView.SelectedRows[0]);
 
-                                if (result == DialogResult.Yes)
-                                {
-                                    SqlConnection conn = new SqlConnection(connectionString);
-                                    conn.Open();
-                                    SqlCommand cmd = new SqlCommand("DELETE FROM Dosyalar WHERE FizikselYer = @DosyaID", conn);
-                                    cmd.Parameters.AddWithValue("@DosyaID", dosyaID);
-                                    cmd.ExecuteNonQuery();
-                                    conn.Close();
-
-                                    dataGridView.Rows.Remove(dataGridView.SelectedRows[0]);
-
-                                    this.Alert("Dosya başarıyla silindi!", Form_Alert.enmType.Success);
-                                    RefreshDataGridView();
-                                }
+                                this.Alert("Dosya başarıyla silindi!", Form_Alert.enmType.Success);
+                                RefreshDataGridView();
                             }
                         }
+                       
                     };
 
                     contextMenu.Items.Add(createBarcodeMenuItem); // Barkod Oluştur seçeneğini menüye ekleyin
@@ -468,70 +378,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             DosyaEkle dosyaekleform = new DosyaEkle(epostalabel.Text, mainForm);
             dosyaekleform.Show();
         }
-
-        private void exceleaktar_Click(object sender, EventArgs e)
-        {
-            // DataGridView verilerini bir DataTable'a dönüştürün
-            DataTable dataTable = new DataTable();
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                dataTable.Columns.Add(column.HeaderText, column.ValueType);
-            }
-
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                DataRow dataRow = dataTable.NewRow();
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    dataRow[cell.ColumnIndex] = cell.Value;
-                }
-                dataTable.Rows.Add(dataRow);
-            }
-
-            // Kullanıcıya dosya kaydetme konumu ve adı seçtirin
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Dosyaları|*.xlsx";
-            saveFileDialog.Title = "Excel Dosyasını Kaydet";
-            saveFileDialog.FileName = "Veriler.xlsx"; // Varsayılan dosya adı
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Excel uygulamasını başlatın
-                Excel.Application excelApp = new Excel.Application();
-                excelApp.Visible = false;
-
-                // Yeni bir Excel çalışma kitabı oluşturun
-                Excel.Workbook workbook = excelApp.Workbooks.Add();
-                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
-
-                // Başlıkları ekleyin ve biçimlerini ayarlayın
-                for (int i = 1; i <= dataTable.Columns.Count; i++)
-                {
-                    worksheet.Cells[1, i] = dataTable.Columns[i - 1].ColumnName;
-                    worksheet.Cells[1, i].Font.Bold = true;
-                    worksheet.Cells[1, i].EntireRow.AutoFit(); // Satır yüksekliğini otomatik ayarla
-                }
-
-                // DataTable verilerini Excel çalışma sayfasına aktarın
-                for (int i = 1; i <= dataTable.Rows.Count; i++)
-                {
-                    for (int j = 1; j <= dataTable.Columns.Count; j++)
-                    {
-                        worksheet.Cells[i + 1, j] = dataTable.Rows[i - 1][j - 1];
-                        worksheet.Cells[i + 1, j].EntireRow.AutoFit(); // Satır yüksekliğini otomatik ayarla
-                    }
-                }
-
-                // Excel dosyasını kaydedin (kullanıcının seçtiği ad ve konum)
-                workbook.SaveAs(saveFileDialog.FileName);
-
-                // Excel uygulamasını kapatın
-                workbook.Close(false);
-                excelApp.Quit();
-
-                MessageBox.Show("Veriler Excel'e aktarıldı: " + saveFileDialog.FileName, "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
         private void GetDataFromDatabasebarkod()
         {
             try
@@ -582,10 +428,10 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             }
         }
 
-        private void hepsinigoster_Click(object sender, EventArgs e)
+        private async void hepsinigoster_Click(object sender, EventArgs e)
         {
             GetDataFromDatabase();
-            FilterDataInDatabase();
+           await FilterDataInDatabase();
         }
         private void FillComboBoxes()
         {
@@ -662,10 +508,14 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                 connection.Close();
             }
         }
-        private void FilterDataInDatabase()
+
+        
+        private async Task  FilterDataInDatabase()
         {
             try
             {
+                LoadingScreen.ShowLoadingScreen();
+                await Task.Delay(500);
                 connection.Open();
 
                 string query = "SELECT * FROM Dosyalar WHERE 1=1"; // Başlangıç sorgusu
@@ -749,11 +599,15 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             }
             catch (Exception ex)
             {
+                LoadingScreen.HideLoadingScreen();
+
                 MessageBox.Show("Veriler alınırken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 connection.Close();
+                LoadingScreen.HideLoadingScreen();
+
             }
         }
 
@@ -800,10 +654,38 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             checkBoxBarkod.CheckState = CheckState.Unchecked;
             GetDataFromDatabase();
         }
+        private async void SomeLongRunningProcess()
+        {
+            try
+            {
+                LoadingScreen.ShowLoadingScreen();
 
+                // Uzun süren işlemler burada yapılır, örneğin:
+                await Task.Run(() =>
+                {
+                    //LoadCheckBoxSettings();
+                  
+
+                });
+
+                // İşlem bittiğinde yüklenme ekranını kapat
+                LoadingScreen.HideLoadingScreen();
+            }
+            catch (Exception ex)
+            {
+                // Hata yönetimi
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Her durumda yüklenme ekranını kapatmayı garantile
+                LoadingScreen.HideLoadingScreen();
+
+            }
+        }
         private void dosyaislemleri2_Load(object sender, EventArgs e)
         {
-            //LoadCheckBoxSettings();
+            SomeLongRunningProcess();
             MapCheckBoxes();
 
             // Timer ile ayarları yükle
@@ -817,6 +699,13 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             {
                 checkBox.CheckedChanged += checkBox_CheckedChangedfiltre;
             }
+
+            FillKisilerComboBox(); //2.tabpage
+
+            // Dosya atamalarını DataGridView'e getir
+            GetDosyaAtamalari(showOnlyNullGeriTeslimTarihi);//2.tabpage
+            dataGridViewAtamalar.Columns["DosyaID"].Visible = false;//2.tabpage
+            dataGridViewAtamalar.Columns["AtamaID"].Visible = false;//2.tabpage
         }
         private void MapCheckBoxes()
         {
@@ -870,9 +759,10 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             FilterDataInDatabase();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void aramatusu_Click_1(object sender, EventArgs e)
         {
             FilterDataInDatabase();
+
         }
         private void checkBox_CheckedChangedfiltre(object sender, EventArgs e)
         {
@@ -911,26 +801,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterDataInDatabase();
-        }
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-            FilterDataInDatabase();
-        }
-
-        private void comboBoxSirketIsmi_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            FilterDataInDatabase();
-        }
-
-        private void comboBoxAy_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            FilterDataInDatabase();
-        }
-
         private void dosyaislemleri2_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -948,6 +818,201 @@ namespace BPET_PORTAL.arsiv_uygulamasi
         private void checkBoxAciklama_CheckedChanged(object sender, EventArgs e)
         {
             FilterDataInDatabase();
+        }
+
+        private void teslimal_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView.SelectedRows[0].Index;
+                string dosyaID = dataGridView.Rows[rowIndex].Cells["DosyaID"].Value.ToString();
+
+                KisiAtaForm kisiAtaForm = new KisiAtaForm(dosyaID, mainForm, epostalabel.Text);
+                kisiAtaForm.ShowDialog();
+            }
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////2.TAB PAGE DOSYA TESLİM İŞLEMLERİ //////////////////////////////////////
+        ///
+
+        private void checkBoxShowAll_CheckedChanged(object sender, EventArgs e)
+        {
+            showOnlyNullGeriTeslimTarihi = !checkBoxShowAll.Checked;
+            GetDosyaAtamalari(showOnlyNullGeriTeslimTarihi);
+        }
+        private void FillKisilerComboBox()
+        {
+            try
+            {
+                connection.Open();
+                string query = "SELECT KisiAdi FROM Kisiler";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBoxKisiler.Items.Add(reader["KisiAdi"].ToString());
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kişiler yüklenirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+        private void GetDosyaAtamalari(bool showOnlyNullGeriTeslimTarihi)
+        {
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                // Dosya atamalarını veritabanından getirirken isteğe bağlı olarak filtreleme yap
+                string query = "SELECT Dosyalar.DosyaYili, Dosyalar.DosyaAy, Dosyalar.Kategori, Dosyalar.FizikselYer, Dosyalar.DosyaID, DosyaAtamalar.AtamaID, Dosyalar.DosyaAdi, DosyaAtamalar.KisiAdi, DosyaAtamalar.AtamaTarihi, DosyaAtamalar.GeriTeslimTarihi " +
+                               "FROM DosyaAtamalar " +
+                               "INNER JOIN Dosyalar ON DosyaAtamalar.DosyaID = Dosyalar.DosyaID";
+
+                if (showOnlyNullGeriTeslimTarihi)
+                {
+                    query += " WHERE DosyaAtamalar.GeriTeslimTarihi IS NULL";
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridViewAtamalar.DataSource = dataTable;
+                dataGridViewAtamalar.Columns["DosyaID"].Visible = false;
+                dataGridViewAtamalar.Columns["AtamaID"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dosya atamaları alınırken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        private void geritesimbutton_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAtamalar.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridViewAtamalar.SelectedRows[0].Index;
+                int atamaID = Convert.ToInt32(dataGridViewAtamalar.Rows[rowIndex].Cells["AtamaID"].Value);
+                string dosyaID = dataGridViewAtamalar.Rows[rowIndex].Cells["DosyaID"].Value.ToString(); // DosyaID'yi string olarak al
+
+                DialogResult result = MessageBox.Show($"Dosya '{dosyaID}' geri teslim edilsin mi?", "Geri Teslim", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (connection.State == ConnectionState.Closed)
+                            connection.Open();
+
+                        // Geri teslim tarihini ve teslim eden kişiyi güncelle
+                        string teslimQuery = "UPDATE DosyaAtamalar SET GeriTeslimTarihi = @GeriTeslimTarihi, KisiAdi = @KisiAdi WHERE AtamaID = @AtamaID";
+                        SqlCommand teslimCommand = new SqlCommand(teslimQuery, connection);
+                        teslimCommand.Parameters.AddWithValue("@GeriTeslimTarihi", DateTime.Now);
+                        teslimCommand.Parameters.AddWithValue("@KisiAdi", comboBoxKisiler.SelectedItem.ToString());
+                        teslimCommand.Parameters.AddWithValue("@AtamaID", atamaID);
+                        teslimCommand.ExecuteNonQuery();
+
+                        MessageBox.Show("Dosya başarıyla geri teslim edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Dosya atamalarını güncelle
+                        GetDosyaAtamalari(showOnlyNullGeriTeslimTarihi);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Dosya geri teslim edilirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        if (connection.State == ConnectionState.Open)
+                            connection.Close();
+                    }
+                }
+            }
+        }
+        private void CreatePDFAndOpen(string dosyaID)
+        {
+            try
+            {
+                string pdfFilePath = "DosyaDetay_" + dosyaID + ".pdf"; // PDF dosya adı, dosyaID'ye göre benzersizleştiriyoruz
+
+                // Dosya detaylarını veritabanından al
+                string query = "SELECT AtamaID, KisiAdi, AtamaTarihi, GeriTeslimTarihi FROM DosyaAtamalar WHERE DosyaID = @DosyaID";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DosyaID", dosyaID);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            // PDF oluştur
+                            Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+                            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(pdfFilePath, FileMode.Create));
+                            document.Open();
+
+                            // PDF içeriği oluştur
+                            Paragraph header = new Paragraph("Dosya Detayları - Dosya ID: " + dosyaID);
+                            document.Add(header);
+
+                            PdfPTable table = new PdfPTable(4); // 4 sütunlu bir tablo oluşturuyoruz
+                            table.WidthPercentage = 100;
+
+                            // Tablo başlık sütunları
+                            table.AddCell("Atama ID");
+                            table.AddCell("Kisi Adi");
+                            table.AddCell("Atama Tarihi");
+                            table.AddCell("Geri Teslim Tarihi");
+
+                            // Dosya detaylarını tabloya ekleyelim
+                            while (reader.Read())
+                            {
+                                table.AddCell(reader["AtamaID"].ToString());
+                                table.AddCell(reader["KisiAdi"].ToString());
+                                table.AddCell(reader["AtamaTarihi"].ToString());
+                                table.AddCell(reader["GeriTeslimTarihi"].ToString());
+                            }
+
+                            document.Add(table);
+                            document.Close();
+                        }
+                    }
+                }
+
+                // PDF'i varsayılan PDF görüntüleyiciyle aç
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = pdfFilePath;
+                psi.UseShellExecute = true;
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("PDF oluşturulurken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridViewAtamalar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Geçerli bir satır seçildiğinden emin olalım
+            {
+                string dosyaID = dataGridViewAtamalar.Rows[e.RowIndex].Cells["DosyaID"].Value.ToString(); // DosyaID'yi string olarak al
+                CreatePDFAndOpen(dosyaID);
+            }
         }
     }
 }

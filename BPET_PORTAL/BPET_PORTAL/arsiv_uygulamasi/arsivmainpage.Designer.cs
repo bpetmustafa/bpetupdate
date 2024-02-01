@@ -31,15 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(arsivmainpage));
             this.epostalabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dosyateslimetlabel = new System.Windows.Forms.Label();
             this.Dosyaislemlerilabel = new System.Windows.Forms.Label();
             this.dosyabullabel = new System.Windows.Forms.Label();
-            this.kullanıcıeklelabeladmin = new System.Windows.Forms.Label();
             this.geciciyetkiverlabel = new System.Windows.Forms.Label();
             this.geciciyetkibtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.adminbtn = new System.Windows.Forms.Button();
-            this.teslimet = new System.Windows.Forms.Button();
             this.dosya_ekle = new System.Windows.Forms.Button();
             this.dosya_bul = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,24 +70,12 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Hoşgeldiniz Sayın,";
             // 
-            // dosyateslimetlabel
-            // 
-            this.dosyateslimetlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dosyateslimetlabel.AutoSize = true;
-            this.dosyateslimetlabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dosyateslimetlabel.Location = new System.Drawing.Point(597, 505);
-            this.dosyateslimetlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dosyateslimetlabel.Name = "dosyateslimetlabel";
-            this.dosyateslimetlabel.Size = new System.Drawing.Size(221, 32);
-            this.dosyateslimetlabel.TabIndex = 26;
-            this.dosyateslimetlabel.Text = "Dosya Teslim Et";
-            // 
             // Dosyaislemlerilabel
             // 
             this.Dosyaislemlerilabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Dosyaislemlerilabel.AutoSize = true;
             this.Dosyaislemlerilabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Dosyaislemlerilabel.Location = new System.Drawing.Point(345, 505);
+            this.Dosyaislemlerilabel.Location = new System.Drawing.Point(574, 493);
             this.Dosyaislemlerilabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Dosyaislemlerilabel.Name = "Dosyaislemlerilabel";
             this.Dosyaislemlerilabel.Size = new System.Drawing.Size(212, 32);
@@ -103,31 +87,19 @@
             this.dosyabullabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dosyabullabel.AutoSize = true;
             this.dosyabullabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dosyabullabel.Location = new System.Drawing.Point(144, 505);
+            this.dosyabullabel.Location = new System.Drawing.Point(373, 493);
             this.dosyabullabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dosyabullabel.Name = "dosyabullabel";
             this.dosyabullabel.Size = new System.Drawing.Size(144, 32);
             this.dosyabullabel.TabIndex = 24;
             this.dosyabullabel.Text = "Dosya Bul";
             // 
-            // kullanıcıeklelabeladmin
-            // 
-            this.kullanıcıeklelabeladmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.kullanıcıeklelabeladmin.AutoSize = true;
-            this.kullanıcıeklelabeladmin.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.kullanıcıeklelabeladmin.Location = new System.Drawing.Point(877, 505);
-            this.kullanıcıeklelabeladmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.kullanıcıeklelabeladmin.Name = "kullanıcıeklelabeladmin";
-            this.kullanıcıeklelabeladmin.Size = new System.Drawing.Size(186, 32);
-            this.kullanıcıeklelabeladmin.TabIndex = 23;
-            this.kullanıcıeklelabeladmin.Text = "Kullanıcı Ekle";
-            // 
             // geciciyetkiverlabel
             // 
             this.geciciyetkiverlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.geciciyetkiverlabel.AutoSize = true;
             this.geciciyetkiverlabel.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.geciciyetkiverlabel.Location = new System.Drawing.Point(1095, 506);
+            this.geciciyetkiverlabel.Location = new System.Drawing.Point(831, 493);
             this.geciciyetkiverlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.geciciyetkiverlabel.Name = "geciciyetkiverlabel";
             this.geciciyetkiverlabel.Size = new System.Drawing.Size(215, 32);
@@ -143,7 +115,7 @@
             this.geciciyetkibtn.Enabled = false;
             this.geciciyetkibtn.FlatAppearance.BorderSize = 0;
             this.geciciyetkibtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.geciciyetkibtn.Location = new System.Drawing.Point(1147, 432);
+            this.geciciyetkibtn.Location = new System.Drawing.Point(883, 419);
             this.geciciyetkibtn.Margin = new System.Windows.Forms.Padding(4);
             this.geciciyetkibtn.MaximumSize = new System.Drawing.Size(80, 70);
             this.geciciyetkibtn.MinimumSize = new System.Drawing.Size(80, 70);
@@ -165,44 +137,6 @@
             this.pictureBox3.TabIndex = 22;
             this.pictureBox3.TabStop = false;
             // 
-            // adminbtn
-            // 
-            this.adminbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.adminbtn.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_admin_96;
-            this.adminbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.adminbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adminbtn.Enabled = false;
-            this.adminbtn.FlatAppearance.BorderSize = 0;
-            this.adminbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminbtn.Location = new System.Drawing.Point(929, 431);
-            this.adminbtn.Margin = new System.Windows.Forms.Padding(4);
-            this.adminbtn.MaximumSize = new System.Drawing.Size(80, 70);
-            this.adminbtn.MinimumSize = new System.Drawing.Size(80, 70);
-            this.adminbtn.Name = "adminbtn";
-            this.adminbtn.Size = new System.Drawing.Size(80, 70);
-            this.adminbtn.TabIndex = 21;
-            this.adminbtn.UseVisualStyleBackColor = true;
-            this.adminbtn.Click += new System.EventHandler(this.adminbtn_Click);
-            // 
-            // teslimet
-            // 
-            this.teslimet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.teslimet.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_profile_96;
-            this.teslimet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.teslimet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.teslimet.Enabled = false;
-            this.teslimet.FlatAppearance.BorderSize = 0;
-            this.teslimet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teslimet.Location = new System.Drawing.Point(655, 431);
-            this.teslimet.Margin = new System.Windows.Forms.Padding(4);
-            this.teslimet.MaximumSize = new System.Drawing.Size(80, 70);
-            this.teslimet.MinimumSize = new System.Drawing.Size(80, 70);
-            this.teslimet.Name = "teslimet";
-            this.teslimet.Size = new System.Drawing.Size(80, 70);
-            this.teslimet.TabIndex = 20;
-            this.teslimet.UseVisualStyleBackColor = true;
-            this.teslimet.Click += new System.EventHandler(this.button3_Click);
-            // 
             // dosya_ekle
             // 
             this.dosya_ekle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -212,7 +146,7 @@
             this.dosya_ekle.Enabled = false;
             this.dosya_ekle.FlatAppearance.BorderSize = 0;
             this.dosya_ekle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_ekle.Location = new System.Drawing.Point(401, 425);
+            this.dosya_ekle.Location = new System.Drawing.Point(630, 413);
             this.dosya_ekle.Margin = new System.Windows.Forms.Padding(4);
             this.dosya_ekle.MaximumSize = new System.Drawing.Size(80, 70);
             this.dosya_ekle.MinimumSize = new System.Drawing.Size(80, 70);
@@ -231,7 +165,7 @@
             this.dosya_bul.Enabled = false;
             this.dosya_bul.FlatAppearance.BorderSize = 0;
             this.dosya_bul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_bul.Location = new System.Drawing.Point(166, 432);
+            this.dosya_bul.Location = new System.Drawing.Point(395, 420);
             this.dosya_bul.Margin = new System.Windows.Forms.Padding(4);
             this.dosya_bul.MaximumSize = new System.Drawing.Size(80, 70);
             this.dosya_bul.MinimumSize = new System.Drawing.Size(80, 70);
@@ -298,13 +232,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.geciciyetkiverlabel);
             this.Controls.Add(this.geciciyetkibtn);
-            this.Controls.Add(this.dosyateslimetlabel);
             this.Controls.Add(this.Dosyaislemlerilabel);
             this.Controls.Add(this.dosyabullabel);
-            this.Controls.Add(this.kullanıcıeklelabeladmin);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.adminbtn);
-            this.Controls.Add(this.teslimet);
             this.Controls.Add(this.dosya_ekle);
             this.Controls.Add(this.dosya_bul);
             this.Controls.Add(this.epostalabel);
@@ -324,12 +254,8 @@
 
         private System.Windows.Forms.Label epostalabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label dosyateslimetlabel;
         private System.Windows.Forms.Label Dosyaislemlerilabel;
         private System.Windows.Forms.Label dosyabullabel;
-        private System.Windows.Forms.Label kullanıcıeklelabeladmin;
-        private System.Windows.Forms.Button adminbtn;
-        private System.Windows.Forms.Button teslimet;
         private System.Windows.Forms.Button dosya_ekle;
         private System.Windows.Forms.Button dosya_bul;
         private System.Windows.Forms.PictureBox pictureBox3;

@@ -33,6 +33,11 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxSecure = new System.Windows.Forms.MaskedTextBox();
+            this.resetle = new System.Windows.Forms.Button();
+            this.labelSecureCode = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,6 +67,7 @@
             this.sifirlamaepostakontrol = new System.Windows.Forms.Button();
             this.panelheader.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -75,21 +81,20 @@
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Margin = new System.Windows.Forms.Padding(2);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(979, 26);
+            this.panelheader.Size = new System.Drawing.Size(1045, 26);
             this.panelheader.TabIndex = 5;
             // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button5.BackgroundImage = global::BPET_PORTAL.Properties.Resources.küçültme;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(908, 1);
+            this.button5.Location = new System.Drawing.Point(974, 1);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(32, 24);
@@ -102,14 +107,13 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.BackgroundImage = global::BPET_PORTAL.Properties.Resources.çıkış2;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(945, 2);
+            this.button1.Location = new System.Drawing.Point(1011, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 24);
@@ -122,6 +126,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -131,11 +136,79 @@
             this.panel1.Controls.Add(this.epostalogin);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btngirisyap);
-            this.panel1.Location = new System.Drawing.Point(-6, 38);
+            this.panel1.Location = new System.Drawing.Point(27, 38);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 600);
+            this.panel1.Size = new System.Drawing.Size(274, 632);
             this.panel1.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightGray;
+            this.panel4.Controls.Add(this.textBoxSecure);
+            this.panel4.Controls.Add(this.resetle);
+            this.panel4.Controls.Add(this.labelSecureCode);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(3, 199);
+            this.panel4.MaximumSize = new System.Drawing.Size(268, 30);
+            this.panel4.MinimumSize = new System.Drawing.Size(268, 30);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(268, 30);
+            this.panel4.TabIndex = 19;
+            // 
+            // textBoxSecure
+            // 
+            this.textBoxSecure.BeepOnError = true;
+            this.textBoxSecure.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxSecure.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxSecure.Location = new System.Drawing.Point(177, 0);
+            this.textBoxSecure.Mask = "00000";
+            this.textBoxSecure.Name = "textBoxSecure";
+            this.textBoxSecure.Size = new System.Drawing.Size(91, 31);
+            this.textBoxSecure.TabIndex = 35;
+            this.textBoxSecure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSecure.ValidatingType = typeof(int);
+            this.textBoxSecure.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxSecure_MouseDown);
+            // 
+            // resetle
+            // 
+            this.resetle.AutoSize = true;
+            this.resetle.BackColor = System.Drawing.Color.Transparent;
+            this.resetle.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_reset_96;
+            this.resetle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.resetle.FlatAppearance.BorderSize = 0;
+            this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetle.Location = new System.Drawing.Point(146, 0);
+            this.resetle.MaximumSize = new System.Drawing.Size(31, 37);
+            this.resetle.Name = "resetle";
+            this.resetle.Size = new System.Drawing.Size(31, 30);
+            this.resetle.TabIndex = 34;
+            this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.resetle.UseVisualStyleBackColor = false;
+            this.resetle.Click += new System.EventHandler(this.resetle_Click);
+            // 
+            // labelSecureCode
+            // 
+            this.labelSecureCode.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelSecureCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelSecureCode.Location = new System.Drawing.Point(80, 0);
+            this.labelSecureCode.Name = "labelSecureCode";
+            this.labelSecureCode.Size = new System.Drawing.Size(66, 30);
+            this.labelSecureCode.TabIndex = 1;
+            this.labelSecureCode.Text = "12345";
+            this.labelSecureCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 30);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Güvenlik Kodu: ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button4
             // 
@@ -178,7 +251,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.RosyBrown;
-            this.button2.Location = new System.Drawing.Point(29, 508);
+            this.button2.Location = new System.Drawing.Point(29, 540);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 44);
@@ -196,13 +269,13 @@
             this.linkLabel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.linkLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkLabel3.LinkColor = System.Drawing.Color.Lime;
-            this.linkLabel3.Location = new System.Drawing.Point(129, 580);
+            this.linkLabel3.Location = new System.Drawing.Point(129, 612);
             this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(143, 20);
             this.linkLabel3.TabIndex = 16;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "V2.3.4.25 -Cloud";
+            this.linkLabel3.Text = "V2.3.4.26 -Cloud";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // beniHatirlaCheckBox
@@ -211,7 +284,7 @@
             this.beniHatirlaCheckBox.AutoSize = true;
             this.beniHatirlaCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.beniHatirlaCheckBox.ForeColor = System.Drawing.Color.Transparent;
-            this.beniHatirlaCheckBox.Location = new System.Drawing.Point(30, 223);
+            this.beniHatirlaCheckBox.Location = new System.Drawing.Point(33, 240);
             this.beniHatirlaCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.beniHatirlaCheckBox.Name = "beniHatirlaCheckBox";
             this.beniHatirlaCheckBox.Size = new System.Drawing.Size(84, 15);
@@ -226,10 +299,10 @@
             // 
             // 
             this.sifrelogin.CustomButton.Image = null;
-            this.sifrelogin.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.sifrelogin.CustomButton.Location = new System.Drawing.Point(193, 2);
             this.sifrelogin.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.sifrelogin.CustomButton.Name = "";
-            this.sifrelogin.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.sifrelogin.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.sifrelogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.sifrelogin.CustomButton.TabIndex = 1;
             this.sifrelogin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -237,9 +310,9 @@
             this.sifrelogin.CustomButton.Visible = false;
             this.sifrelogin.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.sifrelogin.Lines = new string[0];
-            this.sifrelogin.Location = new System.Drawing.Point(30, 188);
+            this.sifrelogin.Location = new System.Drawing.Point(30, 162);
             this.sifrelogin.Margin = new System.Windows.Forms.Padding(2);
-            this.sifrelogin.MaximumSize = new System.Drawing.Size(178, 28);
+            this.sifrelogin.MaximumSize = new System.Drawing.Size(219, 28);
             this.sifrelogin.MaxLength = 32767;
             this.sifrelogin.Name = "sifrelogin";
             this.sifrelogin.PasswordChar = '*';
@@ -250,7 +323,7 @@
             this.sifrelogin.SelectionStart = 0;
             this.sifrelogin.ShortcutsEnabled = true;
             this.sifrelogin.ShowClearButton = true;
-            this.sifrelogin.Size = new System.Drawing.Size(178, 28);
+            this.sifrelogin.Size = new System.Drawing.Size(219, 28);
             this.sifrelogin.TabIndex = 2;
             this.sifrelogin.UseSelectable = true;
             this.sifrelogin.WaterMark = "Şifre";
@@ -264,10 +337,10 @@
             // 
             // 
             this.epostalogin.CustomButton.Image = null;
-            this.epostalogin.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.epostalogin.CustomButton.Location = new System.Drawing.Point(193, 2);
             this.epostalogin.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.epostalogin.CustomButton.Name = "";
-            this.epostalogin.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.epostalogin.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.epostalogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.epostalogin.CustomButton.TabIndex = 1;
             this.epostalogin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -275,9 +348,9 @@
             this.epostalogin.CustomButton.Visible = false;
             this.epostalogin.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.epostalogin.Lines = new string[0];
-            this.epostalogin.Location = new System.Drawing.Point(30, 146);
+            this.epostalogin.Location = new System.Drawing.Point(30, 120);
             this.epostalogin.Margin = new System.Windows.Forms.Padding(2);
-            this.epostalogin.MaximumSize = new System.Drawing.Size(178, 28);
+            this.epostalogin.MaximumSize = new System.Drawing.Size(219, 28);
             this.epostalogin.MaxLength = 32767;
             this.epostalogin.Name = "epostalogin";
             this.epostalogin.PasswordChar = '\0';
@@ -288,7 +361,7 @@
             this.epostalogin.SelectionStart = 0;
             this.epostalogin.ShortcutsEnabled = true;
             this.epostalogin.ShowClearButton = true;
-            this.epostalogin.Size = new System.Drawing.Size(178, 28);
+            this.epostalogin.Size = new System.Drawing.Size(219, 28);
             this.epostalogin.TabIndex = 1;
             this.epostalogin.UseSelectable = true;
             this.epostalogin.WaterMark = "E Posta";
@@ -303,7 +376,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Unispace", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(42, 50);
+            this.label7.Location = new System.Drawing.Point(23, 45);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(207, 42);
@@ -318,7 +391,7 @@
             this.btngirisyap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btngirisyap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btngirisyap.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btngirisyap.Location = new System.Drawing.Point(66, 252);
+            this.btngirisyap.Location = new System.Drawing.Point(67, 263);
             this.btngirisyap.Margin = new System.Windows.Forms.Padding(2);
             this.btngirisyap.MaximumSize = new System.Drawing.Size(123, 49);
             this.btngirisyap.Name = "btngirisyap";
@@ -342,10 +415,10 @@
             this.panel2.Controls.Add(this.txtadsoyadrg);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btnregister);
-            this.panel2.Location = new System.Drawing.Point(722, 38);
+            this.panel2.Location = new System.Drawing.Point(723, 38);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 600);
+            this.panel2.Size = new System.Drawing.Size(278, 632);
             this.panel2.TabIndex = 7;
             this.panel2.Visible = false;
             // 
@@ -357,7 +430,7 @@
             this.btndogrularg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btndogrularg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btndogrularg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btndogrularg.Location = new System.Drawing.Point(82, 378);
+            this.btndogrularg.Location = new System.Drawing.Point(86, 378);
             this.btndogrularg.Margin = new System.Windows.Forms.Padding(2);
             this.btndogrularg.MaximumSize = new System.Drawing.Size(96, 40);
             this.btndogrularg.Name = "btndogrularg";
@@ -375,10 +448,10 @@
             this.kayitlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kayitlabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.kayitlabel.LinkColor = System.Drawing.Color.Transparent;
-            this.kayitlabel.Location = new System.Drawing.Point(26, 419);
+            this.kayitlabel.Location = new System.Drawing.Point(30, 419);
             this.kayitlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kayitlabel.Name = "kayitlabel";
-            this.kayitlabel.Size = new System.Drawing.Size(220, 146);
+            this.kayitlabel.Size = new System.Drawing.Size(220, 178);
             this.kayitlabel.TabIndex = 20;
             this.kayitlabel.TabStop = true;
             this.kayitlabel.Text = "Zaten hesabınız varmı? Giriş Yapın!";
@@ -391,17 +464,17 @@
             // 
             // 
             this.mailverifytxtbox.CustomButton.Image = null;
-            this.mailverifytxtbox.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.mailverifytxtbox.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.mailverifytxtbox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.mailverifytxtbox.CustomButton.Name = "";
-            this.mailverifytxtbox.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.mailverifytxtbox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mailverifytxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mailverifytxtbox.CustomButton.TabIndex = 1;
             this.mailverifytxtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mailverifytxtbox.CustomButton.UseSelectable = true;
             this.mailverifytxtbox.CustomButton.Visible = false;
             this.mailverifytxtbox.Lines = new string[0];
-            this.mailverifytxtbox.Location = new System.Drawing.Point(40, 342);
+            this.mailverifytxtbox.Location = new System.Drawing.Point(44, 342);
             this.mailverifytxtbox.Margin = new System.Windows.Forms.Padding(2);
             this.mailverifytxtbox.MaximumSize = new System.Drawing.Size(178, 28);
             this.mailverifytxtbox.MaxLength = 32767;
@@ -429,10 +502,10 @@
             // 
             // 
             this.txtsifrerg.CustomButton.Image = null;
-            this.txtsifrerg.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.txtsifrerg.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.txtsifrerg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtsifrerg.CustomButton.Name = "";
-            this.txtsifrerg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txtsifrerg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtsifrerg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtsifrerg.CustomButton.TabIndex = 1;
             this.txtsifrerg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -440,7 +513,7 @@
             this.txtsifrerg.CustomButton.Visible = false;
             this.txtsifrerg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtsifrerg.Lines = new string[0];
-            this.txtsifrerg.Location = new System.Drawing.Point(40, 262);
+            this.txtsifrerg.Location = new System.Drawing.Point(44, 262);
             this.txtsifrerg.Margin = new System.Windows.Forms.Padding(2);
             this.txtsifrerg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txtsifrerg.MaxLength = 32767;
@@ -467,10 +540,10 @@
             // 
             // 
             this.txttelefonrg.CustomButton.Image = null;
-            this.txttelefonrg.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.txttelefonrg.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.txttelefonrg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefonrg.CustomButton.Name = "";
-            this.txttelefonrg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txttelefonrg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txttelefonrg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txttelefonrg.CustomButton.TabIndex = 1;
             this.txttelefonrg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -478,7 +551,7 @@
             this.txttelefonrg.CustomButton.Visible = false;
             this.txttelefonrg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txttelefonrg.Lines = new string[0];
-            this.txttelefonrg.Location = new System.Drawing.Point(40, 208);
+            this.txttelefonrg.Location = new System.Drawing.Point(44, 208);
             this.txttelefonrg.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefonrg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txttelefonrg.MaxLength = 32767;
@@ -505,10 +578,10 @@
             // 
             // 
             this.txtepostarg.CustomButton.Image = null;
-            this.txtepostarg.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.txtepostarg.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.txtepostarg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtepostarg.CustomButton.Name = "";
-            this.txtepostarg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txtepostarg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtepostarg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtepostarg.CustomButton.TabIndex = 1;
             this.txtepostarg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -516,7 +589,7 @@
             this.txtepostarg.CustomButton.Visible = false;
             this.txtepostarg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtepostarg.Lines = new string[0];
-            this.txtepostarg.Location = new System.Drawing.Point(40, 162);
+            this.txtepostarg.Location = new System.Drawing.Point(44, 162);
             this.txtepostarg.Margin = new System.Windows.Forms.Padding(2);
             this.txtepostarg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txtepostarg.MaxLength = 32767;
@@ -543,10 +616,10 @@
             // 
             // 
             this.txtadsoyadrg.CustomButton.Image = null;
-            this.txtadsoyadrg.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.txtadsoyadrg.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.txtadsoyadrg.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtadsoyadrg.CustomButton.Name = "";
-            this.txtadsoyadrg.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.txtadsoyadrg.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtadsoyadrg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtadsoyadrg.CustomButton.TabIndex = 1;
             this.txtadsoyadrg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -554,7 +627,7 @@
             this.txtadsoyadrg.CustomButton.Visible = false;
             this.txtadsoyadrg.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtadsoyadrg.Lines = new string[0];
-            this.txtadsoyadrg.Location = new System.Drawing.Point(40, 110);
+            this.txtadsoyadrg.Location = new System.Drawing.Point(44, 110);
             this.txtadsoyadrg.Margin = new System.Windows.Forms.Padding(2);
             this.txtadsoyadrg.MaximumSize = new System.Drawing.Size(178, 28);
             this.txtadsoyadrg.MaxLength = 32767;
@@ -595,7 +668,7 @@
             this.btnregister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnregister.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnregister.Location = new System.Drawing.Point(82, 299);
+            this.btnregister.Location = new System.Drawing.Point(86, 299);
             this.btnregister.Margin = new System.Windows.Forms.Padding(2);
             this.btnregister.MaximumSize = new System.Drawing.Size(96, 40);
             this.btnregister.MinimumSize = new System.Drawing.Size(96, 40);
@@ -616,10 +689,10 @@
             this.panel3.Controls.Add(this.sfrreseteposta);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.sifirlamaepostakontrol);
-            this.panel3.Location = new System.Drawing.Point(359, 38);
+            this.panel3.Location = new System.Drawing.Point(392, 38);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(274, 600);
+            this.panel3.Size = new System.Drawing.Size(274, 632);
             this.panel3.TabIndex = 15;
             this.panel3.Visible = false;
             // 
@@ -627,7 +700,6 @@
             // 
             this.btnsifremiunuttumkapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsifremiunuttumkapat.BackColor = System.Drawing.Color.Red;
-            this.btnsifremiunuttumkapat.BackgroundImage = global::BPET_PORTAL.Properties.Resources.çıkış2;
             this.btnsifremiunuttumkapat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnsifremiunuttumkapat.FlatAppearance.BorderSize = 0;
             this.btnsifremiunuttumkapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -649,15 +721,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resetsifrebtn.BackColor = System.Drawing.Color.Transparent;
-            this.resetsifrebtn.BackgroundImage = global::BPET_PORTAL.Properties.Resources.ŞİFREMİSIFIRLA;
+            this.resetsifrebtn.BackgroundImage = global::BPET_PORTAL.Properties.Resources.DOĞRULA;
             this.resetsifrebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.resetsifrebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.resetsifrebtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.resetsifrebtn.Location = new System.Drawing.Point(60, 285);
+            this.resetsifrebtn.Location = new System.Drawing.Point(80, 284);
             this.resetsifrebtn.Margin = new System.Windows.Forms.Padding(2);
-            this.resetsifrebtn.MaximumSize = new System.Drawing.Size(133, 28);
+            this.resetsifrebtn.MaximumSize = new System.Drawing.Size(96, 40);
             this.resetsifrebtn.Name = "resetsifrebtn";
-            this.resetsifrebtn.Size = new System.Drawing.Size(133, 28);
+            this.resetsifrebtn.Size = new System.Drawing.Size(96, 40);
             this.resetsifrebtn.TabIndex = 12;
             this.resetsifrebtn.UseVisualStyleBackColor = false;
             this.resetsifrebtn.Visible = false;
@@ -672,10 +744,10 @@
             // 
             // 
             this.resetdogrulamatxt.CustomButton.Image = null;
-            this.resetdogrulamatxt.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.resetdogrulamatxt.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.resetdogrulamatxt.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetdogrulamatxt.CustomButton.Name = "";
-            this.resetdogrulamatxt.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.resetdogrulamatxt.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.resetdogrulamatxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.resetdogrulamatxt.CustomButton.TabIndex = 1;
             this.resetdogrulamatxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -712,10 +784,10 @@
             // 
             // 
             this.resetsifretxt.CustomButton.Image = null;
-            this.resetsifretxt.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.resetsifretxt.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.resetsifretxt.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.resetsifretxt.CustomButton.Name = "";
-            this.resetsifretxt.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.resetsifretxt.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.resetsifretxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.resetsifretxt.CustomButton.TabIndex = 1;
             this.resetsifretxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -752,10 +824,10 @@
             // 
             // 
             this.sfrreseteposta.CustomButton.Image = null;
-            this.sfrreseteposta.CustomButton.Location = new System.Drawing.Point(122, 2);
+            this.sfrreseteposta.CustomButton.Location = new System.Drawing.Point(152, 2);
             this.sfrreseteposta.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.sfrreseteposta.CustomButton.Name = "";
-            this.sfrreseteposta.CustomButton.Size = new System.Drawing.Size(18, 18);
+            this.sfrreseteposta.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.sfrreseteposta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.sfrreseteposta.CustomButton.TabIndex = 1;
             this.sfrreseteposta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -803,7 +875,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sifirlamaepostakontrol.BackColor = System.Drawing.Color.Transparent;
-            this.sifirlamaepostakontrol.BackgroundImage = global::BPET_PORTAL.Properties.Resources.DOĞRULA;
+            this.sifirlamaepostakontrol.BackgroundImage = global::BPET_PORTAL.Properties.Resources.ŞİFREMİSIFIRLA;
             this.sifirlamaepostakontrol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sifirlamaepostakontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sifirlamaepostakontrol.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -823,7 +895,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::BPET_PORTAL.Properties.Resources.banner2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(979, 668);
+            this.ClientSize = new System.Drawing.Size(1045, 700);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -840,6 +912,8 @@
             this.panelheader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -880,5 +954,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelSecureCode;
+        private System.Windows.Forms.Button resetle;
+        private System.Windows.Forms.MaskedTextBox textBoxSecure;
     }
 }

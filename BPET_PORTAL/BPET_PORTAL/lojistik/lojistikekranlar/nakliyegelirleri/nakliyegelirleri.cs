@@ -245,6 +245,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.nakliyegelirleri
                                 updateCommand.Parameters.AddWithValue("@StokAciklamasi", stokAciklamasi);
                                 updateCommand.Parameters.AddWithValue("@FaturaToplam", faturaToplam);
                                 updateCommand.Parameters.AddWithValue("@SoforAdi", soforAdi);
+                                updateCommand.Parameters.AddWithValue("@BelgeNo", belgeNo);
 
                                 updateCommand.ExecuteNonQuery();
                             }

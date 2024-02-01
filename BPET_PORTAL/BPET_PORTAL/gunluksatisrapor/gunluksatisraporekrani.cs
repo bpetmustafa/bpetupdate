@@ -16,6 +16,8 @@ using Color = System.Drawing.Color;
 using System.Runtime.Serialization;
 using System.Drawing.Printing;
 using OfficeOpenXml.Export.ToDataTable;
+using SmsApiNode.Types;
+using BPET_PORTAL.yukleme_ekrani;
 
 namespace BPET_PORTAL
 {
@@ -23,83 +25,17 @@ namespace BPET_PORTAL
     {
         private const string connectionString = "Server=95.0.50.22,1382;Database=rapor;User ID=sa;Password=Mustafa1;";
         private bool dosyaDegisti = false; // Dosyanın değişip değişmediğini izlemek için bir bayrak
+
         public gunluksatisraporekrani()
         {
             InitializeComponent();
-            dateTimePicker1.Value = DateTime.Today.AddDays(-1);
-            dateTimePicker1.MaxDate = DateTime.Today;
-            dateTimePicker2.MaxDate = DateTime.Today;
-
-            metroDateTime1.Value = DateTime.Today.AddDays(-1);
-            metroDateTime1.MaxDate = DateTime.Today;
-            metroDateTime2.Value = DateTime.Today.AddDays(-1);
-            metroDateTime2.MaxDate = DateTime.Today;
+           
         }
         public void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
         }
-        private void raporekrani_Load(object sender, EventArgs e)
-        {
-            // İlk DateTimePicker'ı dün tarihine ayarla
-            dateTimePicker1.Value = DateTime.Today.AddDays(-1);
-
-            // İkinci DateTimePicker'ı bugünün tarihine ayarla
-            dateTimePicker2.Value = DateTime.Today.AddDays(-1);
-
-            // İlk DateTimePicker'ın değeri değiştiğinde verileri doldur
-            dateTimePicker1.ValueChanged += (s, ev) =>
-            {
-                DateTime startDate = dateTimePicker1.Value;
-                DateTime endDate = dateTimePicker2.Value;
-
-                if (startDate > endDate)
-                {
-                    this.Alert("Başlangıç tarihi, bitiş tarihinden büyük olamaz.", Form_Alert.enmType.Warning);
-
-
-                    return;
-                }
-
-                if (karsilastir.Checked == true)
-                {
-                    DateTime selectedDate = dateTimePicker1.Value;
-                    DateTime selectedDate2 = dateTimePicker2.Value;
-                    List<string> veriler = GetVeriler(startDate, endDate);
-                    DoldurTablo(veriler);
-                    //DoldurDataGridView(veriler);
-                    DonutGrafik(veriler);
-                }
-                if (karsilastir.Checked == false)
-                {
-                    DateTime selectedDate = dateTimePicker1.Value;
-                    List<string> veriler = GetVeriler(startDate, startDate);
-                    DoldurTablo(veriler);
-                    //DoldurDataGridView(veriler);
-                    DonutGrafik(veriler);
-                }
-            };
-
-            // İkinci DateTimePicker'ın değeri değiştiğinde verileri doldur
-            dateTimePicker2.ValueChanged += (s, ev) =>
-            {
-                DateTime startDate = dateTimePicker1.Value;
-                DateTime endDate = dateTimePicker2.Value;
-
-                if (startDate > endDate)
-                {
-                    return;
-                }
-
-                List<string> veriler = GetVeriler(startDate, endDate);
-                DoldurTablo(veriler);
-                //DoldurDataGridView(veriler);
-                DonutGrafik(veriler);
-            };
-            
-               }
-
 
         private List<string> GetVeriler(DateTime startDate, DateTime endDate)
         {
@@ -227,55 +163,64 @@ namespace BPET_PORTAL
         }
         private void DonutGrafik(List<string> veriler)
         {
-            // Tasarım ekranında yapılan ayarları kaybetmemek için yeni bir Series oluşturun
-            Series series = new Series("İl Değerleri");
-            chart2.Series.Clear(); // Var olan Series'leri temizleyin
-            chart2.Series.Add(series); // Yeni Series'i ekleyin
-
-            // Seri ayarlarını tasarım ekranında yaptıklarınıza göre ayarlayın
-            series.ChartType = SeriesChartType.Bar;
-            series.Color = Color.FromArgb(0, 102, 204);
-            series.LabelForeColor = Color.Black;
-            series.LabelBackColor = Color.White;
-            series.LabelBorderColor = Color.Black;
-            series.LabelBorderWidth = 4;
-            series.Font = new Font("Microsoft Sans Serif", 10.75f, FontStyle.Bold);
-
-            // İl isimleri
-            string[] iller = { "Mersin", "İzmir", "İzmit", "Kırıkkale", "Batman", "Tekirdağ", "Giresun", "Antalya", "Trabzon", "Diyarbakır", "Hatay", "Samsun" };
-
-            // Verilerin eklenmesi
-            for (int i = 0; i < 12; i++)
+            try
             {
-                double ilDeger = double.Parse(veriler[i + 5]);
+                // Tasarım ekranında yapılan ayarları kaybetmemek için yeni bir Series oluşturun
+                Series series = new Series("İl Değerleri");
+                chart2.Series.Clear(); // Var olan Series'leri temizleyin
+                chart2.Series.Add(series); // Yeni Series'i ekleyin
 
-                // Değeri 0 olan verileri gösterme
-                if (ilDeger != 0)
+                // Seri ayarlarını tasarım ekranında yaptıklarınıza göre ayarlayın
+                series.ChartType = SeriesChartType.Bar;
+                series.Color = Color.FromArgb(0, 102, 204);
+                series.LabelForeColor = Color.Black;
+                series.LabelBackColor = Color.White;
+                series.LabelBorderColor = Color.Black;
+                series.LabelBorderWidth = 4;
+                series.Font = new Font("Microsoft Sans Serif", 10.75f, FontStyle.Bold);
+
+                // İl isimleri
+                string[] iller = { "Mersin", "İzmir", "İzmit", "Kırıkkale", "Batman", "Tekirdağ", "Giresun", "Antalya", "Trabzon", "Diyarbakır", "Hatay", "Samsun" };
+
+                // Verilerin eklenmesi
+                for (int i = 0; i < 12; i++)
                 {
-                    DataPoint dataPoint = new DataPoint();
-                    dataPoint.YValues = new double[] { ilDeger };
-                    dataPoint.AxisLabel = iller[i]; // İl isimlerini etiket olarak ayarla
-                    dataPoint.Label = $"{iller[i]}: {ilDeger:N0}"; // Etiket ve değeri göster
+                    double ilDeger = double.Parse(veriler[i + 5]);
 
-                    series.Points.Add(dataPoint);
+                    // Değeri 0 olan verileri gösterme
+                    if (ilDeger != 0)
+                    {
+                        DataPoint dataPoint = new DataPoint();
+                        dataPoint.YValues = new double[] { ilDeger };
+                        dataPoint.AxisLabel = iller[i]; // İl isimlerini etiket olarak ayarla
+                        dataPoint.Label = $"{iller[i]}: {ilDeger:N0}"; // Etiket ve değeri göster
 
+                        series.Points.Add(dataPoint);
+
+                    }
                 }
+
+                // Eksen adlarını ayarla
+                chart2.ChartAreas[0].AxisX.Title = "Değerler";
+                chart2.ChartAreas[0].AxisY.Title = "İller";
+
+                // Yazı boyutunu ve kalınlığını artır
+                chart2.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
+                chart2.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
+
+                // Eksen etiket renklerini ayarla
+                chart2.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.White;
+                chart2.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.White;
+
+                // Grafiği güncelle
+                chart2.Invalidate();
             }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("GÜNLÜK VERİLER SAAT 8:30 İtibariyle Güncellenmektedir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Eksen adlarını ayarla
-            chart2.ChartAreas[0].AxisX.Title = "Değerler";
-            chart2.ChartAreas[0].AxisY.Title = "İller";
-
-            // Yazı boyutunu ve kalınlığını artır
-            chart2.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
-            chart2.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
-
-            // Eksen etiket renklerini ayarla
-            chart2.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.White;
-            chart2.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.White;
-
-            // Grafiği güncelle
-            chart2.Invalidate();
+            }
+            
         }
         private void karsilastir_CheckedChanged(object sender, EventArgs e)
         {
@@ -689,11 +634,7 @@ namespace BPET_PORTAL
 
         private void gunluksatisraporekrani_Shown(object sender, EventArgs e)
         {
-            metroDateTime1_ValueChanged(sender, e);
-            UpdateComparisonLabels();
-            DisplayYearlySalesComparisonAndTotal();
-            DisplaySalesFromYearStartAndCompare();
-            UpdateLabelColors();
+            SomeLongRunningProcess(sender, null);
         }
 
         
@@ -986,6 +927,112 @@ namespace BPET_PORTAL
                 }
             }
         }
+        private void GüvenliTarihAyarla(DateTimePicker picker, DateTime value)
+        {
+            if (picker.InvokeRequired)
+            {
+                picker.Invoke(new Action(() => picker.Value = value));
+            }
+            else
+            {
+                picker.Value = value;
+            }
+        }
+        private async void SomeLongRunningProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            try
+            {
+                LoadingScreen.ShowLoadingScreen();
+
+                // Uzun süren işlemler burada yapılır, örneğin:
+                await Task.Run(() =>
+                {
+                   
+
+                    // İlk DateTimePicker'ı dün tarihine ayarla
+                    GüvenliTarihAyarla(dateTimePicker1, DateTime.Today.AddDays(-1));
+                    // İkinci DateTimePicker'ı bugünün tarihine ayarla
+                    GüvenliTarihAyarla(dateTimePicker2, DateTime.Today.AddDays(-1));
+                    GüvenliTarihAyarla(metroDateTime1, DateTime.Today.AddDays(-1));
+                    GüvenliTarihAyarla(metroDateTime2, DateTime.Today.AddDays(-1));
+
+                    // İlk DateTimePicker'ın değeri değiştiğinde verileri doldur
+                    dateTimePicker1.ValueChanged += (s, ev) =>
+                    {
+                        DateTime startDate = dateTimePicker1.Value;
+                        DateTime endDate = dateTimePicker2.Value;
+
+                        if (startDate > endDate)
+                        {
+                            this.Alert("Başlangıç tarihi, bitiş tarihinden büyük olamaz.", Form_Alert.enmType.Warning);
+
+
+                            return;
+                        }
+
+                        if (karsilastir.Checked == true)
+                        {
+                            DateTime selectedDate = dateTimePicker1.Value;
+                            DateTime selectedDate2 = dateTimePicker2.Value;
+                            List<string> veriler = GetVeriler(startDate, endDate);
+                            DoldurTablo(veriler);
+                            //DoldurDataGridView(veriler);
+                            DonutGrafik(veriler);
+                        }
+                        if (karsilastir.Checked == false)
+                        {
+                            DateTime selectedDate = dateTimePicker1.Value;
+                            List<string> veriler = GetVeriler(startDate, startDate);
+                            DoldurTablo(veriler);
+                            //DoldurDataGridView(veriler);
+                            DonutGrafik(veriler);
+                        }
+                    };
+
+                    // İkinci DateTimePicker'ın değeri değiştiğinde verileri doldur
+                    dateTimePicker2.ValueChanged += (s, ev) =>
+                    {
+                        DateTime startDate = dateTimePicker1.Value;
+                        DateTime endDate = dateTimePicker2.Value;
+
+                        if (startDate > endDate)
+                        {
+                            return;
+                        }
+
+                        List<string> veriler = GetVeriler(startDate, endDate);
+                        DoldurTablo(veriler);
+                        //DoldurDataGridView(veriler);
+                        DonutGrafik(veriler);
+                    };
+
+                    // UI kontrollerini burada güncelleyin
+                    metroDateTime1_ValueChanged(sender, e);
+                    UpdateComparisonLabels();
+                    DisplayYearlySalesComparisonAndTotal();
+                    DisplaySalesFromYearStartAndCompare();
+                    UpdateLabelColors();
+                });
+
+                // İşlem bittiğinde yüklenme ekranını kapat
+                LoadingScreen.HideLoadingScreen();
+            }
+            catch (Exception ex)
+            {
+                // Hata yönetimi
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Her durumda yüklenme ekranını kapatmayı garantile
+                LoadingScreen.HideLoadingScreen();
+                dateTimePicker1.MaxDate = DateTime.Today.AddDays(-1);
+                dateTimePicker2.MaxDate = DateTime.Today;
+                metroDateTime1.MaxDate = DateTime.Today.AddDays(-1);
+                metroDateTime2.MaxDate = DateTime.Today;
+            }
+        }
+
     }
 
 }

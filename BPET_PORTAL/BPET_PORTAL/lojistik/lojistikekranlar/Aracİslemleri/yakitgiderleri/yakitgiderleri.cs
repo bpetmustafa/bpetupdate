@@ -1,10 +1,13 @@
 ﻿using BPET_PORTAL.lojistik.lojistikekranlar.Aracİslemleri.yakitgiderleri;
+using BPET_PORTAL.yukleme_ekrani;
+using MetroFramework.Controls;
 using Org.BouncyCastle.Crypto.Macs;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
@@ -20,8 +23,8 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             InitializeComponent();
             this.mainform = mainform;
             eposta = mainform.epostalabel.Text;
-            VerileriGoster();
-            ComboboxlariDoldur(); // Combobox'ları doldur
+            
+   
 
         }
 
@@ -32,10 +35,13 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             {
                 try
                 {
+
+
                     connection.Open();
 
                     // SELECT sorgusunu oluştur
-                    string selectQuery = "SELECT * FROM YakitGiderleri";
+                    string selectQuery = "SELECT ID, Plaka, HizmetAciklamasi, YakitMiktariLT, BirimFiyatKDVsizTL, YakitTutariKDVsizTL, " +
+                        "YakitTutariTLKDV, Bolum, Yil, Ay  FROM YakitGiderleri";
 
                     using (SqlCommand command = new SqlCommand(selectQuery, connection))
                     {
@@ -62,7 +68,14 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                         labelToplamYakitMiktari.Text = $"{toplamYakitMiktari:N2} LT";
                         labelToplamYakitTutariKDVsizTL.Text = $"{toplamYakitTutariKDVsizTL:C2} TL";
                         labelToplamYakitTutariTLKDV.Text = $"{toplamYakitTutariTLKDV:C2} TL";
+                        
                     }
+                    foreach (DataGridViewColumn column in dataGridView1.Columns)
+                    {
+                        dataGridView1.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
+                    }
+
+
                 }
                 catch (Exception ex)
                 {
@@ -165,7 +178,6 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
 
             // YeniAracEkleForm'un kontrollerine seçilen satırdaki verileri aktar
             duzenlemeForm.plaka = seciliSatir.Cells["Plaka"].Value.ToString();
-            duzenlemeForm.hizmetKodu = seciliSatir.Cells["HizmetKodu"].Value.ToString();
             duzenlemeForm.hizmetAciklamasi = seciliSatir.Cells["HizmetAciklamasi"].Value.ToString();
             duzenlemeForm.yakitMiktari = Convert.ToDecimal(seciliSatir.Cells["YakitMiktariLT"].Value);
             duzenlemeForm.birimFiyatKDVsizTL = Convert.ToDecimal(seciliSatir.Cells["BirimFiyatKDVsizTL"].Value);
@@ -183,7 +195,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             // Eğer güncelleme işlemi yapıldıysa, verileri güncelle
             if (duzenlemeForm.EklemeBasarili)
             {
-                VerileriGoster();
+                btnFiltrele_Click(sender, e);   
             }
         }
 
@@ -227,7 +239,8 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                         whereCondition += $" AND Plaka LIKE '%{plaka}%'";
 
                     // SELECT sorgusunu oluştur
-                    string selectQuery = $"SELECT * FROM YakitGiderleri WHERE {whereCondition}";
+                    string selectQuery = $"SELECT ID, Plaka, HizmetAciklamasi, YakitMiktariLT, BirimFiyatKDVsizTL, YakitTutariKDVsizTL," +
+                        $"YakitTutariTLKDV, Bolum, Yil, Ay FROM YakitGiderleri WHERE {whereCondition}";
 
                     using (SqlCommand command = new SqlCommand(selectQuery, connection))
                     {
@@ -253,6 +266,10 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                         labelToplamYakitMiktari.Text = $"{toplamYakitMiktari:N2} LT";
                         labelToplamYakitTutariKDVsizTL.Text = $"{toplamYakitTutariKDVsizTL:C2} TL";
                         labelToplamYakitTutariTLKDV.Text = $"{toplamYakitTutariTLKDV:C2} TL";
+                    }
+                    foreach (DataGridViewColumn column in dataGridView1.Columns)
+                    {
+                        dataGridView1.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
                     }
                 }
                 catch (Exception ex)
@@ -321,5 +338,23 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
         {
             btnUpdate_Click(sender, e);
         }
+
+        private async void yakitgiderleri_Shown(object sender, EventArgs e)
+        {
+            LoadingScreen.ShowLoadingScreen();
+            await  VerileriGosterAsync();
+        }
+
+        private async Task VerileriGosterAsync()
+        {
+            await Task.Delay(1000); 
+
+            VerileriGoster();
+            ComboboxlariDoldur(); // Combobox'ları doldur
+
+            // Veriler yüklendikten sonra ekranı güncelleme işlemleri burada gerçekleştirilir.
+            LoadingScreen.HideLoadingScreen();
+        }
+
     }
 }

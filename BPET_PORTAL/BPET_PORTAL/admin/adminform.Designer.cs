@@ -57,7 +57,6 @@
             this.epostalabel.Size = new System.Drawing.Size(27, 14);
             this.epostalabel.TabIndex = 18;
             this.epostalabel.Text = "-----";
-            this.epostalabel.Visible = false;
             // 
             // dataGridView1
             // 
@@ -67,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 77);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -78,6 +77,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1221, 477);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
             // livechat
             // 
@@ -92,10 +92,10 @@
             this.livechat.Controls.Add(this.button2);
             this.livechat.Controls.Add(this.txtAdminResponse);
             this.livechat.Controls.Add(this.txtAdminChat);
-            this.livechat.Location = new System.Drawing.Point(477, 107);
+            this.livechat.Location = new System.Drawing.Point(508, 107);
             this.livechat.Margin = new System.Windows.Forms.Padding(2);
             this.livechat.Name = "livechat";
-            this.livechat.Size = new System.Drawing.Size(746, 418);
+            this.livechat.Size = new System.Drawing.Size(715, 418);
             this.livechat.TabIndex = 20;
             this.livechat.Visible = false;
             // 
@@ -106,7 +106,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.ForeColor = System.Drawing.Color.Navy;
-            this.button3.Location = new System.Drawing.Point(486, 41);
+            this.button3.Location = new System.Drawing.Point(485, 35);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.MaximumSize = new System.Drawing.Size(96, 24);
             this.button3.MinimumSize = new System.Drawing.Size(96, 24);
@@ -136,7 +136,7 @@
             this.txtAdminMessage.CustomButton.Visible = false;
             this.txtAdminMessage.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtAdminMessage.Lines = new string[0];
-            this.txtAdminMessage.Location = new System.Drawing.Point(396, 65);
+            this.txtAdminMessage.Location = new System.Drawing.Point(395, 59);
             this.txtAdminMessage.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdminMessage.MaximumSize = new System.Drawing.Size(269, 42);
             this.txtAdminMessage.MaxLength = 32767;
@@ -165,7 +165,7 @@
             this.senduser.Cursor = System.Windows.Forms.Cursors.Default;
             this.senduser.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.senduser.ForeColor = System.Drawing.Color.Navy;
-            this.senduser.Location = new System.Drawing.Point(469, 126);
+            this.senduser.Location = new System.Drawing.Point(468, 120);
             this.senduser.Margin = new System.Windows.Forms.Padding(2);
             this.senduser.MaximumSize = new System.Drawing.Size(113, 24);
             this.senduser.MinimumSize = new System.Drawing.Size(113, 24);
@@ -183,7 +183,7 @@
             this.cmbAllUsers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbAllUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbAllUsers.FormattingEnabled = true;
-            this.cmbAllUsers.Location = new System.Drawing.Point(370, 14);
+            this.cmbAllUsers.Location = new System.Drawing.Point(369, 8);
             this.cmbAllUsers.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAllUsers.MaximumSize = new System.Drawing.Size(343, 0);
             this.cmbAllUsers.MinimumSize = new System.Drawing.Size(343, 0);
@@ -198,7 +198,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(123, 42);
+            this.button1.Location = new System.Drawing.Point(133, 36);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.MaximumSize = new System.Drawing.Size(96, 24);
             this.button1.MinimumSize = new System.Drawing.Size(96, 24);
@@ -214,7 +214,7 @@
             this.cmbUserList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cmbUserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbUserList.FormattingEnabled = true;
-            this.cmbUserList.Location = new System.Drawing.Point(12, 14);
+            this.cmbUserList.Location = new System.Drawing.Point(22, 8);
             this.cmbUserList.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUserList.MaximumSize = new System.Drawing.Size(343, 0);
             this.cmbUserList.MinimumSize = new System.Drawing.Size(343, 0);
@@ -229,7 +229,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Navy;
-            this.button2.Location = new System.Drawing.Point(273, 383);
+            this.button2.Location = new System.Drawing.Point(283, 377);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.MaximumSize = new System.Drawing.Size(82, 24);
             this.button2.MinimumSize = new System.Drawing.Size(82, 24);
@@ -259,7 +259,7 @@
             this.txtAdminResponse.CustomButton.Visible = false;
             this.txtAdminResponse.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtAdminResponse.Lines = new string[0];
-            this.txtAdminResponse.Location = new System.Drawing.Point(4, 371);
+            this.txtAdminResponse.Location = new System.Drawing.Point(14, 365);
             this.txtAdminResponse.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdminResponse.MaximumSize = new System.Drawing.Size(269, 42);
             this.txtAdminResponse.MaxLength = 32767;
@@ -286,7 +286,7 @@
             this.txtAdminChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtAdminChat.BackColor = System.Drawing.Color.White;
             this.txtAdminChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdminChat.Location = new System.Drawing.Point(4, 65);
+            this.txtAdminChat.Location = new System.Drawing.Point(14, 59);
             this.txtAdminChat.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdminChat.MaximumSize = new System.Drawing.Size(352, 302);
             this.txtAdminChat.MinimumSize = new System.Drawing.Size(352, 302);
@@ -357,6 +357,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "admin";
             this.Load += new System.EventHandler(this.adminform_Load);
+            this.Shown += new System.EventHandler(this.adminform_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.livechat.ResumeLayout(false);
             this.ResumeLayout(false);

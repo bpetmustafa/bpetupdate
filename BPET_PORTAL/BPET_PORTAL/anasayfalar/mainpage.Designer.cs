@@ -37,6 +37,10 @@
             this.txtMessage = new MetroFramework.Controls.MetroTextBox();
             this.txtChatLog = new System.Windows.Forms.RichTextBox();
             this.panelside = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.userpp = new System.Windows.Forms.PictureBox();
+            this.btnprofilim = new System.Windows.Forms.Button();
+            this.epostalabel = new System.Windows.Forms.Label();
             this.btnbilgiislem = new System.Windows.Forms.Button();
             this.btnlojistik = new System.Windows.Forms.Button();
             this.btninsankaynaklari = new System.Windows.Forms.Button();
@@ -51,19 +55,18 @@
             this.btnarsiv = new System.Windows.Forms.Button();
             this.btnrapor = new System.Windows.Forms.Button();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
-            this.bpetlogo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.boyutlandırma = new System.Windows.Forms.Button();
             this.Togglemenubutton = new System.Windows.Forms.Button();
-            this.epostalabel = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.livechatbtn = new System.Windows.Forms.Button();
             this.livechat.SuspendLayout();
             this.panelside.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpetlogo)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userpp)).BeginInit();
             this.panelheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +79,7 @@
             this.mainpanel.Location = new System.Drawing.Point(165, 30);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1334, 593);
+            this.mainpanel.Size = new System.Drawing.Size(1106, 681);
             this.mainpanel.TabIndex = 5;
             // 
             // livechat
@@ -88,7 +91,7 @@
             this.livechat.Controls.Add(this.gondertusu);
             this.livechat.Controls.Add(this.txtMessage);
             this.livechat.Controls.Add(this.txtChatLog);
-            this.livechat.Location = new System.Drawing.Point(1143, 256);
+            this.livechat.Location = new System.Drawing.Point(915, 344);
             this.livechat.Margin = new System.Windows.Forms.Padding(2);
             this.livechat.Name = "livechat";
             this.livechat.Size = new System.Drawing.Size(363, 337);
@@ -205,6 +208,7 @@
             // panelside
             // 
             this.panelside.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panelside.Controls.Add(this.panel1);
             this.panelside.Controls.Add(this.btnbilgiislem);
             this.panelside.Controls.Add(this.btnlojistik);
             this.panelside.Controls.Add(this.btninsankaynaklari);
@@ -219,13 +223,84 @@
             this.panelside.Controls.Add(this.btnarsiv);
             this.panelside.Controls.Add(this.btnrapor);
             this.panelside.Controls.Add(this.linkLabel);
-            this.panelside.Controls.Add(this.bpetlogo);
             this.panelside.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelside.Location = new System.Drawing.Point(0, 26);
             this.panelside.Margin = new System.Windows.Forms.Padding(2);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(160, 606);
+            this.panelside.Size = new System.Drawing.Size(160, 694);
             this.panelside.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.userpp);
+            this.panel1.Controls.Add(this.btnprofilim);
+            this.panel1.Controls.Add(this.epostalabel);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(151, 125);
+            this.panel1.TabIndex = 34;
+            // 
+            // userpp
+            // 
+            this.userpp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userpp.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_user_48;
+            this.userpp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userpp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userpp.Location = new System.Drawing.Point(42, 3);
+            this.userpp.MaximumSize = new System.Drawing.Size(64, 64);
+            this.userpp.MinimumSize = new System.Drawing.Size(64, 64);
+            this.userpp.Name = "userpp";
+            this.userpp.Size = new System.Drawing.Size(64, 64);
+            this.userpp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userpp.TabIndex = 0;
+            this.userpp.TabStop = false;
+            this.userpp.Click += new System.EventHandler(this.bpetlogo_Click);
+            // 
+            // btnprofilim
+            // 
+            this.btnprofilim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnprofilim.BackColor = System.Drawing.Color.White;
+            this.btnprofilim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnprofilim.FlatAppearance.BorderSize = 0;
+            this.btnprofilim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(55)))), ((int)(((byte)(113)))));
+            this.btnprofilim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprofilim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnprofilim.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnprofilim.Image = global::BPET_PORTAL.Properties.Resources.icons8_user_16;
+            this.btnprofilim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnprofilim.Location = new System.Drawing.Point(2, 90);
+            this.btnprofilim.Margin = new System.Windows.Forms.Padding(2);
+            this.btnprofilim.MaximumSize = new System.Drawing.Size(151, 26);
+            this.btnprofilim.Name = "btnprofilim";
+            this.btnprofilim.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnprofilim.Size = new System.Drawing.Size(147, 26);
+            this.btnprofilim.TabIndex = 33;
+            this.btnprofilim.Text = " Profilim";
+            this.btnprofilim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnprofilim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnprofilim.UseVisualStyleBackColor = false;
+            this.btnprofilim.Visible = false;
+            this.btnprofilim.Click += new System.EventHandler(this.btnprofilim_Click);
+            // 
+            // epostalabel
+            // 
+            this.epostalabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.epostalabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.epostalabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.epostalabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.epostalabel.Location = new System.Drawing.Point(2, 70);
+            this.epostalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.epostalabel.MaximumSize = new System.Drawing.Size(147, 15);
+            this.epostalabel.MinimumSize = new System.Drawing.Size(147, 15);
+            this.epostalabel.Name = "epostalabel";
+            this.epostalabel.Size = new System.Drawing.Size(147, 15);
+            this.epostalabel.TabIndex = 6;
+            this.epostalabel.Text = "E POSTA ADRESİNİZ!";
+            this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnbilgiislem
             // 
@@ -237,7 +312,7 @@
             this.btnbilgiislem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnbilgiislem.Image = ((System.Drawing.Image)(resources.GetObject("btnbilgiislem.Image")));
             this.btnbilgiislem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbilgiislem.Location = new System.Drawing.Point(3, 336);
+            this.btnbilgiislem.Location = new System.Drawing.Point(3, 402);
             this.btnbilgiislem.Margin = new System.Windows.Forms.Padding(2);
             this.btnbilgiislem.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnbilgiislem.Name = "btnbilgiislem";
@@ -261,7 +336,7 @@
             this.btnlojistik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnlojistik.Image = ((System.Drawing.Image)(resources.GetObject("btnlojistik.Image")));
             this.btnlojistik.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlojistik.Location = new System.Drawing.Point(3, 315);
+            this.btnlojistik.Location = new System.Drawing.Point(3, 377);
             this.btnlojistik.Margin = new System.Windows.Forms.Padding(2);
             this.btnlojistik.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnlojistik.Name = "btnlojistik";
@@ -285,7 +360,7 @@
             this.btninsankaynaklari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btninsankaynaklari.Image = ((System.Drawing.Image)(resources.GetObject("btninsankaynaklari.Image")));
             this.btninsankaynaklari.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btninsankaynaklari.Location = new System.Drawing.Point(3, 294);
+            this.btninsankaynaklari.Location = new System.Drawing.Point(3, 356);
             this.btninsankaynaklari.Margin = new System.Windows.Forms.Padding(2);
             this.btninsankaynaklari.MaximumSize = new System.Drawing.Size(151, 26);
             this.btninsankaynaklari.Name = "btninsankaynaklari";
@@ -309,7 +384,7 @@
             this.btnmuhasebe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnmuhasebe.Image = ((System.Drawing.Image)(resources.GetObject("btnmuhasebe.Image")));
             this.btnmuhasebe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmuhasebe.Location = new System.Drawing.Point(3, 271);
+            this.btnmuhasebe.Location = new System.Drawing.Point(3, 333);
             this.btnmuhasebe.Margin = new System.Windows.Forms.Padding(2);
             this.btnmuhasebe.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnmuhasebe.Name = "btnmuhasebe";
@@ -333,7 +408,7 @@
             this.btnexit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnexit.Image = ((System.Drawing.Image)(resources.GetObject("btnexit.Image")));
             this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexit.Location = new System.Drawing.Point(-1, 584);
+            this.btnexit.Location = new System.Drawing.Point(-1, 672);
             this.btnexit.Margin = new System.Windows.Forms.Padding(2);
             this.btnexit.Name = "btnexit";
             this.btnexit.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -355,7 +430,7 @@
             this.btnayarlar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnayarlar.Image = ((System.Drawing.Image)(resources.GetObject("btnayarlar.Image")));
             this.btnayarlar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnayarlar.Location = new System.Drawing.Point(3, 247);
+            this.btnayarlar.Location = new System.Drawing.Point(3, 309);
             this.btnayarlar.Margin = new System.Windows.Forms.Padding(2);
             this.btnayarlar.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnayarlar.Name = "btnayarlar";
@@ -379,7 +454,7 @@
             this.btnadmin.ForeColor = System.Drawing.Color.SeaShell;
             this.btnadmin.Image = ((System.Drawing.Image)(resources.GetObject("btnadmin.Image")));
             this.btnadmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnadmin.Location = new System.Drawing.Point(3, 222);
+            this.btnadmin.Location = new System.Drawing.Point(3, 284);
             this.btnadmin.Margin = new System.Windows.Forms.Padding(2);
             this.btnadmin.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnadmin.Name = "btnadmin";
@@ -403,7 +478,7 @@
             this.btnbayitalep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnbayitalep.Image = ((System.Drawing.Image)(resources.GetObject("btnbayitalep.Image")));
             this.btnbayitalep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbayitalep.Location = new System.Drawing.Point(3, 196);
+            this.btnbayitalep.Location = new System.Drawing.Point(3, 258);
             this.btnbayitalep.Margin = new System.Windows.Forms.Padding(2);
             this.btnbayitalep.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnbayitalep.Name = "btnbayitalep";
@@ -427,7 +502,7 @@
             this.btnborsa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnborsa.Image = ((System.Drawing.Image)(resources.GetObject("btnborsa.Image")));
             this.btnborsa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnborsa.Location = new System.Drawing.Point(3, 174);
+            this.btnborsa.Location = new System.Drawing.Point(3, 236);
             this.btnborsa.Margin = new System.Windows.Forms.Padding(2);
             this.btnborsa.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnborsa.Name = "btnborsa";
@@ -451,7 +526,7 @@
             this.btnfinans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnfinans.Image = ((System.Drawing.Image)(resources.GetObject("btnfinans.Image")));
             this.btnfinans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnfinans.Location = new System.Drawing.Point(3, 148);
+            this.btnfinans.Location = new System.Drawing.Point(3, 210);
             this.btnfinans.Margin = new System.Windows.Forms.Padding(2);
             this.btnfinans.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnfinans.Name = "btnfinans";
@@ -475,7 +550,7 @@
             this.btnozelrapor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnozelrapor.Image = ((System.Drawing.Image)(resources.GetObject("btnozelrapor.Image")));
             this.btnozelrapor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnozelrapor.Location = new System.Drawing.Point(3, 122);
+            this.btnozelrapor.Location = new System.Drawing.Point(3, 184);
             this.btnozelrapor.Margin = new System.Windows.Forms.Padding(2);
             this.btnozelrapor.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnozelrapor.Name = "btnozelrapor";
@@ -499,7 +574,7 @@
             this.btnarsiv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnarsiv.Image = ((System.Drawing.Image)(resources.GetObject("btnarsiv.Image")));
             this.btnarsiv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnarsiv.Location = new System.Drawing.Point(3, 97);
+            this.btnarsiv.Location = new System.Drawing.Point(3, 159);
             this.btnarsiv.Margin = new System.Windows.Forms.Padding(2);
             this.btnarsiv.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnarsiv.Name = "btnarsiv";
@@ -524,7 +599,7 @@
             this.btnrapor.ForeColor = System.Drawing.Color.LightGray;
             this.btnrapor.Image = ((System.Drawing.Image)(resources.GetObject("btnrapor.Image")));
             this.btnrapor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrapor.Location = new System.Drawing.Point(3, 71);
+            this.btnrapor.Location = new System.Drawing.Point(3, 133);
             this.btnrapor.Margin = new System.Windows.Forms.Padding(2);
             this.btnrapor.MaximumSize = new System.Drawing.Size(151, 26);
             this.btnrapor.Name = "btnrapor";
@@ -543,28 +618,13 @@
             this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel.AutoSize = true;
             this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabel.Location = new System.Drawing.Point(12, 585);
+            this.linkLabel.Location = new System.Drawing.Point(12, 673);
             this.linkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel.Name = "linkLabel";
             this.linkLabel.Size = new System.Drawing.Size(125, 13);
             this.linkLabel.TabIndex = 13;
             this.linkLabel.TabStop = true;
             this.linkLabel.Text = "Made By @BpetIT v1.8.1";
-            // 
-            // bpetlogo
-            // 
-            this.bpetlogo.BackgroundImage = global::BPET_PORTAL.Properties.Resources.My_project__1_;
-            this.bpetlogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bpetlogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bpetlogo.Location = new System.Drawing.Point(2, 0);
-            this.bpetlogo.MaximumSize = new System.Drawing.Size(160, 61);
-            this.bpetlogo.MinimumSize = new System.Drawing.Size(160, 61);
-            this.bpetlogo.Name = "bpetlogo";
-            this.bpetlogo.Size = new System.Drawing.Size(160, 61);
-            this.bpetlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bpetlogo.TabIndex = 0;
-            this.bpetlogo.TabStop = false;
-            this.bpetlogo.Click += new System.EventHandler(this.bpetlogo_Click);
             // 
             // label2
             // 
@@ -574,7 +634,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(1195, 4);
+            this.label2.Location = new System.Drawing.Point(967, 4);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 18);
@@ -589,14 +649,13 @@
             this.panelheader.Controls.Add(this.label2);
             this.panelheader.Controls.Add(this.boyutlandırma);
             this.panelheader.Controls.Add(this.Togglemenubutton);
-            this.panelheader.Controls.Add(this.epostalabel);
             this.panelheader.Controls.Add(this.button5);
             this.panelheader.Controls.Add(this.button1);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Margin = new System.Windows.Forms.Padding(2);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1508, 26);
+            this.panelheader.Size = new System.Drawing.Size(1280, 26);
             this.panelheader.TabIndex = 4;
             this.panelheader.DoubleClick += new System.EventHandler(this.panelheader_DoubleClick);
             // 
@@ -607,7 +666,7 @@
             this.btnPrint.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_print_48;
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Location = new System.Drawing.Point(1159, 2);
+            this.btnPrint.Location = new System.Drawing.Point(931, 2);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.MaximumSize = new System.Drawing.Size(32, 24);
             this.btnPrint.MinimumSize = new System.Drawing.Size(32, 24);
@@ -629,7 +688,7 @@
             this.boyutlandırma.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.boyutlandırma.ForeColor = System.Drawing.Color.White;
             this.boyutlandırma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boyutlandırma.Location = new System.Drawing.Point(1437, 2);
+            this.boyutlandırma.Location = new System.Drawing.Point(1209, 2);
             this.boyutlandırma.Margin = new System.Windows.Forms.Padding(2);
             this.boyutlandırma.Name = "boyutlandırma";
             this.boyutlandırma.Size = new System.Drawing.Size(32, 24);
@@ -651,21 +710,6 @@
             this.Togglemenubutton.UseVisualStyleBackColor = false;
             this.Togglemenubutton.Click += new System.EventHandler(this.Togglemenubutton_Click);
             // 
-            // epostalabel
-            // 
-            this.epostalabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.epostalabel.AutoSize = true;
-            this.epostalabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.epostalabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.epostalabel.Location = new System.Drawing.Point(452, 6);
-            this.epostalabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(119, 15);
-            this.epostalabel.TabIndex = 6;
-            this.epostalabel.Text = "E POSTA ADRESİNİZ!";
-            this.epostalabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -677,7 +721,7 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1400, 2);
+            this.button5.Location = new System.Drawing.Point(1172, 2);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(32, 24);
@@ -697,7 +741,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1474, 2);
+            this.button1.Location = new System.Drawing.Point(1246, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 24);
@@ -713,7 +757,7 @@
             this.livechatbtn.Cursor = System.Windows.Forms.Cursors.Default;
             this.livechatbtn.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.livechatbtn.ForeColor = System.Drawing.Color.Navy;
-            this.livechatbtn.Location = new System.Drawing.Point(1354, 597);
+            this.livechatbtn.Location = new System.Drawing.Point(1126, 685);
             this.livechatbtn.Margin = new System.Windows.Forms.Padding(2);
             this.livechatbtn.Name = "livechatbtn";
             this.livechatbtn.Size = new System.Drawing.Size(154, 34);
@@ -727,7 +771,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1508, 632);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
             this.Controls.Add(this.livechat);
             this.Controls.Add(this.livechatbtn);
@@ -747,7 +791,8 @@
             this.livechat.PerformLayout();
             this.panelside.ResumeLayout(false);
             this.panelside.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpetlogo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.userpp)).EndInit();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
@@ -760,7 +805,7 @@
         private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.Panel panelside;
         private System.Windows.Forms.LinkLabel linkLabel;
-        private System.Windows.Forms.PictureBox bpetlogo;
+        private System.Windows.Forms.PictureBox userpp;
         private System.Windows.Forms.Panel panelheader;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
@@ -789,6 +834,8 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnbilgiislem;
         private System.Windows.Forms.PictureBox btnPrint;
+        public System.Windows.Forms.Button btnprofilim;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

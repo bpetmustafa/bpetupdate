@@ -36,6 +36,7 @@
             this.epostalabel = new System.Windows.Forms.Label();
             this.uyarı = new System.Windows.Forms.Label();
             this.geciciyetki = new System.Windows.Forms.Button();
+            this.dosyaidlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label12
@@ -43,10 +44,9 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.Font = new System.Drawing.Font("Arial", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label12.Location = new System.Drawing.Point(327, 42);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(254, 43);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(325, 31);
+            this.label12.Size = new System.Drawing.Size(260, 34);
             this.label12.TabIndex = 22;
             this.label12.Text = "Kişi Atama Ekranı";
             // 
@@ -60,11 +60,11 @@
             this.comboBoxKisiler.BackColor = System.Drawing.SystemColors.Control;
             this.comboBoxKisiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.comboBoxKisiler.FormattingEnabled = true;
-            this.comboBoxKisiler.Location = new System.Drawing.Point(325, 139);
-            this.comboBoxKisiler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxKisiler.MaximumSize = new System.Drawing.Size(404, 0);
+            this.comboBoxKisiler.Location = new System.Drawing.Point(215, 119);
+            this.comboBoxKisiler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxKisiler.MaximumSize = new System.Drawing.Size(324, 0);
             this.comboBoxKisiler.Name = "comboBoxKisiler";
-            this.comboBoxKisiler.Size = new System.Drawing.Size(404, 37);
+            this.comboBoxKisiler.Size = new System.Drawing.Size(324, 32);
             this.comboBoxKisiler.TabIndex = 34;
             // 
             // label5
@@ -74,10 +74,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.Location = new System.Drawing.Point(198, 143);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(113, 122);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 28);
+            this.label5.Size = new System.Drawing.Size(72, 23);
             this.label5.TabIndex = 31;
             this.label5.Text = "Kişiler";
             // 
@@ -87,10 +86,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnkaydet.BackColor = System.Drawing.Color.DarkGray;
-            this.btnkaydet.Location = new System.Drawing.Point(432, 244);
-            this.btnkaydet.MaximumSize = new System.Drawing.Size(115, 42);
+            this.btnkaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnkaydet.Location = new System.Drawing.Point(309, 197);
+            this.btnkaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnkaydet.MaximumSize = new System.Drawing.Size(92, 34);
             this.btnkaydet.Name = "btnkaydet";
-            this.btnkaydet.Size = new System.Drawing.Size(115, 42);
+            this.btnkaydet.Size = new System.Drawing.Size(92, 34);
             this.btnkaydet.TabIndex = 35;
             this.btnkaydet.Text = "Kaydet";
             this.btnkaydet.UseVisualStyleBackColor = false;
@@ -104,11 +105,10 @@
             this.geri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.geri.FlatAppearance.BorderSize = 0;
             this.geri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.geri.Location = new System.Drawing.Point(874, 3);
-            this.geri.Margin = new System.Windows.Forms.Padding(4);
-            this.geri.MaximumSize = new System.Drawing.Size(50, 50);
+            this.geri.Location = new System.Drawing.Point(699, 2);
+            this.geri.MaximumSize = new System.Drawing.Size(40, 40);
             this.geri.Name = "geri";
-            this.geri.Size = new System.Drawing.Size(50, 50);
+            this.geri.Size = new System.Drawing.Size(40, 40);
             this.geri.TabIndex = 36;
             this.geri.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.geri.UseVisualStyleBackColor = true;
@@ -120,10 +120,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.epostalabel.AutoSize = true;
             this.epostalabel.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.epostalabel.Location = new System.Drawing.Point(13, 9);
-            this.epostalabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.epostalabel.Location = new System.Drawing.Point(10, 7);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(27, 16);
+            this.epostalabel.Size = new System.Drawing.Size(27, 14);
             this.epostalabel.TabIndex = 37;
             this.epostalabel.Text = "-----";
             // 
@@ -134,10 +133,9 @@
             this.uyarı.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.uyarı.Font = new System.Drawing.Font("Arial", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.uyarı.ForeColor = System.Drawing.Color.Red;
-            this.uyarı.Location = new System.Drawing.Point(0, 404);
-            this.uyarı.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uyarı.Location = new System.Drawing.Point(0, 323);
             this.uyarı.Name = "uyarı";
-            this.uyarı.Size = new System.Drawing.Size(927, 95);
+            this.uyarı.Size = new System.Drawing.Size(742, 76);
             this.uyarı.TabIndex = 38;
             this.uyarı.Text = "BU DOSYA BAŞKASI TARAFINDAN ALINDIĞI İÇİN İŞLEM YAPILAMIYOR!";
             this.uyarı.Visible = false;
@@ -148,20 +146,36 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.geciciyetki.BackColor = System.Drawing.Color.DarkGray;
-            this.geciciyetki.Location = new System.Drawing.Point(758, 134);
-            this.geciciyetki.MaximumSize = new System.Drawing.Size(115, 42);
+            this.geciciyetki.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.geciciyetki.Location = new System.Drawing.Point(561, 112);
+            this.geciciyetki.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.geciciyetki.MaximumSize = new System.Drawing.Size(125, 46);
             this.geciciyetki.Name = "geciciyetki";
-            this.geciciyetki.Size = new System.Drawing.Size(115, 42);
+            this.geciciyetki.Size = new System.Drawing.Size(125, 46);
             this.geciciyetki.TabIndex = 39;
             this.geciciyetki.Text = "Geçici Yetki Göster";
             this.geciciyetki.UseVisualStyleBackColor = false;
             this.geciciyetki.Click += new System.EventHandler(this.GeciciYetkiGosterButton_Click);
             // 
+            // dosyaidlabel
+            // 
+            this.dosyaidlabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dosyaidlabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dosyaidlabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.dosyaidlabel.Font = new System.Drawing.Font("Arial", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.dosyaidlabel.ForeColor = System.Drawing.Color.Red;
+            this.dosyaidlabel.Location = new System.Drawing.Point(0, 0);
+            this.dosyaidlabel.Name = "dosyaidlabel";
+            this.dosyaidlabel.Size = new System.Drawing.Size(742, 34);
+            this.dosyaidlabel.TabIndex = 40;
+            this.dosyaidlabel.Text = "DOSYA İD KISMI!";
+            this.dosyaidlabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // KisiAtaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(927, 499);
+            this.ClientSize = new System.Drawing.Size(742, 399);
             this.Controls.Add(this.geciciyetki);
             this.Controls.Add(this.uyarı);
             this.Controls.Add(this.epostalabel);
@@ -170,7 +184,9 @@
             this.Controls.Add(this.comboBoxKisiler);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.dosyaidlabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "KisiAtaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KisiAtaForm";
@@ -190,5 +206,6 @@
         private System.Windows.Forms.Label epostalabel;
         private System.Windows.Forms.Label uyarı;
         private System.Windows.Forms.Button geciciyetki;
+        private System.Windows.Forms.Label dosyaidlabel;
     }
 }

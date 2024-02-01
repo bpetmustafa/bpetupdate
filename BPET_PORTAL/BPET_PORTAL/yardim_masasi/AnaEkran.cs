@@ -290,6 +290,7 @@ namespace destek_otomasyonu
                     client.EnableSsl = true;
 
                     MailMessage mailMessageToIT = new MailMessage(senderEmail, alıcımail, subjectToIT, bodyToIT);
+                    mailMessageToIT.Bcc.Add(new MailAddress("mustafa.ceylan@bpet.com.tr")); // Gizli alıcı ekleniyor
                     await Task.WhenAll(client.SendMailAsync(mailMessageToIT));
                 }
             }

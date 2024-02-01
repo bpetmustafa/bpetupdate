@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>E:\bpetupdate\published\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -32,7 +34,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>2.3.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -85,6 +87,15 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -265,6 +276,7 @@
     <Compile Include="admin\EditUserPermissionsForm.Designer.cs">
       <DependentUpon>EditUserPermissionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="anasayfalar\Models\SecureCode.cs" />
     <Compile Include="anasayfalar\secimekrani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,17 +313,17 @@
     <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\EditForm.Designer.cs">
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\KullaniciEklemeİslemi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\KullaniciEklemeİslemi.Designer.cs">
+      <DependentUpon>KullaniciEklemeİslemi.cs</DependentUpon>
+    </Compile>
     <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\PasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="arsiv_uygulamasi\dosyaislemlerianayol\PasswordForm.Designer.cs">
       <DependentUpon>PasswordForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="arsiv_uygulamasi\DosyaTeslimEt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="arsiv_uygulamasi\DosyaTeslimEt.Designer.cs">
-      <DependentUpon>DosyaTeslimEt.cs</DependentUpon>
     </Compile>
     <Compile Include="arsiv_uygulamasi\geciciyetkiver.cs">
       <SubType>Form</SubType>
@@ -324,12 +336,6 @@
     </Compile>
     <Compile Include="arsiv_uygulamasi\KisiAtaForm.Designer.cs">
       <DependentUpon>KisiAtaForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="arsiv_uygulamasi\KullaniciEkle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="arsiv_uygulamasi\KullaniciEkle.Designer.cs">
-      <DependentUpon>KullaniciEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="arsiv_uygulamasi\pdftaleplerim.cs">
       <SubType>Form</SubType>
@@ -349,12 +355,26 @@
     <Compile Include="bayitakip\bayitakipmainpage.Designer.cs">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="bayitakip\bayitakipyonetici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bayitakip\bayitakipyonetici.Designer.cs">
+      <DependentUpon>bayitakipyonetici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bayitakip\BolumMudurVeriFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bayitakip\BolumMudurVeriFormu.Designer.cs">
+      <DependentUpon>BolumMudurVeriFormu.cs</DependentUpon>
+    </Compile>
     <Compile Include="bayitakip\CevapYazmaFormu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="bayitakip\CevapYazmaFormu.Designer.cs">
       <DependentUpon>CevapYazmaFormu.cs</DependentUpon>
     </Compile>
+    <Compile Include="bayitakip\DatabaseBayiTakip.cs" />
+    <Compile Include="bayitakip\SmsBayiTakip.cs" />
     <Compile Include="bilgi_islem\bilgiislemanasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,11 +417,203 @@
     <Compile Include="butce_sistemi\butceanaekran.Designer.cs">
       <DependentUpon>butceanaekran.cs</DependentUpon>
     </Compile>
+    <Compile Include="insankaynaklari\calisanBilgisi\calisanDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\calisanBilgisi\calisanDetay.designer.cs">
+      <DependentUpon>calisanDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\calisanBilgisi\egitimDurum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\calisanBilgisi\egitimDurum.designer.cs">
+      <DependentUpon>egitimDurum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\calisanBilgisi\personelGetir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\calisanBilgisi\personelGetir.designer.cs">
+      <DependentUpon>personelGetir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\egitim\egitim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\egitim\egitim.designer.cs">
+      <DependentUpon>egitim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\egitim\egitimEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\egitim\egitimEkle.designer.cs">
+      <DependentUpon>egitimEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\egitim\talepEgitimler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\egitim\talepEgitimler.designer.cs">
+      <DependentUpon>talepEgitimler.cs</DependentUpon>
+    </Compile>
     <Compile Include="insankaynaklari\ikmainform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="insankaynaklari\ikmainform.Designer.cs">
       <DependentUpon>ikmainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\birimDagilim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\birimDagilim.designer.cs">
+      <DependentUpon>birimDagilim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\birimMesai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\birimMesai.designer.cs">
+      <DependentUpon>birimMesai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\harcirah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\harcirah.designer.cs">
+      <DependentUpon>harcirah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\konsolide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\konsolide.designer.cs">
+      <DependentUpon>konsolide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\mesaiMaliyetOran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\mesaiMaliyetOran.designer.cs">
+      <DependentUpon>mesaiMaliyetOran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\yemek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\yemek.designer.cs">
+      <DependentUpon>yemek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\digerSirketler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\digerSirketler.designer.cs">
+      <DependentUpon>digerSirketler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\birimMaliyetDiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\birimMaliyetDiger.designer.cs">
+      <DependentUpon>birimMaliyetDiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\birimMesaiDiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\birimMesaiDiger.designer.cs">
+      <DependentUpon>birimMesaiDiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\harcirahDiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\harcirahDiger.designer.cs">
+      <DependentUpon>harcirahDiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\konsolideDiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\konsolideDiger.designer.cs">
+      <DependentUpon>konsolideDiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\mesaiMaliyetOranDiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\mesaiMaliyetOranDiger.designer.cs">
+      <DependentUpon>mesaiMaliyetOranDiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\yemekDiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\yemekDiger.designer.cs">
+      <DependentUpon>yemekDiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\iscilikmaliyetiform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\iscilikmaliyeti\iscilikmaliyetiform.designer.cs">
+      <DependentUpon>iscilikmaliyetiform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\izinler\maliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\izinler\maliyet.designer.cs">
+      <DependentUpon>maliyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\detay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\detay.designer.cs">
+      <DependentUpon>detay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\detay1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\detay1.designer.cs">
+      <DependentUpon>detay1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\detay2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\detay2.designer.cs">
+      <DependentUpon>detay2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\memnuniyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\memnuniyet.designer.cs">
+      <DependentUpon>memnuniyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\veri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\memnuniyet\veri.designer.cs">
+      <DependentUpon>veri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\basariOrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\basariOrani.designer.cs">
+      <DependentUpon>basariOrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\birimBazli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\birimBazli.designer.cs">
+      <DependentUpon>birimBazli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\kisiBazli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\kisiBazli.designer.cs">
+      <DependentUpon>kisiBazli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\sirketSinav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\performans\sirketSinav.designer.cs">
+      <DependentUpon>sirketSinav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\Personel\personelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\Personel\personelEkle.designer.cs">
+      <DependentUpon>personelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insankaynaklari\turnover\turnover1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insankaynaklari\turnover\turnover1.designer.cs">
+      <DependentUpon>turnover1.cs</DependentUpon>
     </Compile>
     <Compile Include="lojistik\lojistikanasayfa.cs">
       <SubType>Form</SubType>
@@ -488,6 +700,24 @@
     <Compile Include="muhasebe\mutabakat\mutabakatislemleri\mutabakatislemkayit.Designer.cs">
       <DependentUpon>mutabakatislemkayit.cs</DependentUpon>
     </Compile>
+    <Compile Include="profilsayfasi\DatabaseManager.cs" />
+    <Compile Include="profilsayfasi\FtpManager.cs" />
+    <Compile Include="profilsayfasi\ik_class.cs" />
+    <Compile Include="profilsayfasi\profilanasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profilsayfasi\profilanasayfa.Designer.cs">
+      <DependentUpon>profilanasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sms_mfa\EmailSender.cs" />
+    <Compile Include="sms_mfa\mfakontrol.cs" />
+    <Compile Include="sms_mfa\sms.cs" />
+    <Compile Include="sms_mfa\SmsMFAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sms_mfa\SmsMFAForm.Designer.cs">
+      <DependentUpon>SmsMFAForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="uyari_ekrani\Form_Alert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +793,12 @@
     <Compile Include="yardim_masasi\RaporEkrani.Designer.cs">
       <DependentUpon>RaporEkrani.cs</DependentUpon>
     </Compile>
+    <Compile Include="yukleme_ekrani\LoadingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yukleme_ekrani\LoadingScreen.Designer.cs">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="admin\adminform.resx">
       <DependentUpon>adminform.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -592,21 +828,17 @@
     <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\KullaniciEklemeİslemi.resx">
+      <DependentUpon>KullaniciEklemeİslemi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="arsiv_uygulamasi\dosyaislemlerianayol\PasswordForm.resx">
       <DependentUpon>PasswordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="arsiv_uygulamasi\DosyaTeslimEt.resx">
-      <DependentUpon>DosyaTeslimEt.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="arsiv_uygulamasi\geciciyetkiver.resx">
       <DependentUpon>geciciyetkiver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="arsiv_uygulamasi\KisiAtaForm.resx">
       <DependentUpon>KisiAtaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="arsiv_uygulamasi\KullaniciEkle.resx">
-      <DependentUpon>KullaniciEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="arsiv_uygulamasi\pdftaleplerim.resx">
       <DependentUpon>pdftaleplerim.cs</DependentUpon>
@@ -616,6 +848,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bayitakip\bayitakipmainpage.resx">
       <DependentUpon>bayitakipmainpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bayitakip\bayitakipyonetici.resx">
+      <DependentUpon>bayitakipyonetici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bayitakip\BolumMudurVeriFormu.resx">
+      <DependentUpon>BolumMudurVeriFormu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bayitakip\CevapYazmaFormu.resx">
       <DependentUpon>CevapYazmaFormu.cs</DependentUpon>
@@ -642,8 +880,101 @@
     <EmbeddedResource Include="butce_sistemi\butceanaekran.resx">
       <DependentUpon>butceanaekran.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\calisanBilgisi\calisanDetay.resx">
+      <DependentUpon>calisanDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\calisanBilgisi\egitimDurum.resx">
+      <DependentUpon>egitimDurum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\calisanBilgisi\personelGetir.resx">
+      <DependentUpon>personelGetir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\egitim\egitim.resx">
+      <DependentUpon>egitim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\egitim\egitimEkle.resx">
+      <DependentUpon>egitimEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\egitim\talepEgitimler.resx">
+      <DependentUpon>talepEgitimler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="insankaynaklari\ikmainform.resx">
       <DependentUpon>ikmainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\birimDagilim.resx">
+      <DependentUpon>birimDagilim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\birimMesai.resx">
+      <DependentUpon>birimMesai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\harcirah.resx">
+      <DependentUpon>harcirah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\konsolide.resx">
+      <DependentUpon>konsolide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\mesaiMaliyetOran.resx">
+      <DependentUpon>mesaiMaliyetOran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\balpet_maliyet\yemek.resx">
+      <DependentUpon>yemek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\digerSirketler.resx">
+      <DependentUpon>digerSirketler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\birimMaliyetDiger.resx">
+      <DependentUpon>birimMaliyetDiger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\birimMesaiDiger.resx">
+      <DependentUpon>birimMesaiDiger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\harcirahDiger.resx">
+      <DependentUpon>harcirahDiger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\konsolideDiger.resx">
+      <DependentUpon>konsolideDiger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\mesaiMaliyetOranDiger.resx">
+      <DependentUpon>mesaiMaliyetOranDiger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\diger_sirketler_maliyet\yemekDiger.resx">
+      <DependentUpon>yemekDiger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\iscilikmaliyeti\iscilikmaliyetiform.resx">
+      <DependentUpon>iscilikmaliyetiform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\izinler\maliyet.resx">
+      <DependentUpon>maliyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\memnuniyet\detay.resx">
+      <DependentUpon>detay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\memnuniyet\detay1.resx">
+      <DependentUpon>detay1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\memnuniyet\detay2.resx">
+      <DependentUpon>detay2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\memnuniyet\memnuniyet.resx">
+      <DependentUpon>memnuniyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\memnuniyet\veri.resx">
+      <DependentUpon>veri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\performans\basariOrani.resx">
+      <DependentUpon>basariOrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\performans\birimBazli.resx">
+      <DependentUpon>birimBazli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\performans\sirketSinav.resx">
+      <DependentUpon>sirketSinav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\Personel\personelEkle.resx">
+      <DependentUpon>personelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insankaynaklari\turnover\turnover1.resx">
+      <DependentUpon>turnover1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lojistik\lojistikanasayfa.resx">
       <DependentUpon>lojistikanasayfa.cs</DependentUpon>
@@ -686,6 +1017,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="muhasebe\mutabakat\mutabakatislemleri\mutabakatislemkayit.resx">
       <DependentUpon>mutabakatislemkayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profilsayfasi\profilanasayfa.resx">
+      <DependentUpon>profilanasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sms_mfa\SmsMFAForm.resx">
+      <DependentUpon>SmsMFAForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uyari_ekrani\Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
@@ -732,6 +1069,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="yardim_masasi\Taleplerim.resx">
       <DependentUpon>Taleplerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yukleme_ekrani\LoadingScreen.resx">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="BPET_PORTAL_TemporaryKey.pfx" />
@@ -797,6 +1137,44 @@
   <ItemGroup>
     <Content Include="bpet_logo %281%29.ico" />
     <Content Include="icons8-portal-70.ico" />
+    <None Include="Resources\eragaz.png" />
+    <None Include="Resources\icons8-ratio-501.png" />
+    <None Include="Resources\icons8-permission-64.png" />
+    <None Include="Resources\icons8-other-641.png" />
+    <None Include="Resources\icons8-look-501.png" />
+    <None Include="Resources\icons8-hr-501.png" />
+    <None Include="Resources\icons8-education-501.png" />
+    <None Include="Resources\icons8-education-241.png" />
+    <None Include="Resources\icons8-detail-50 %281%291.png" />
+    <None Include="Resources\icons8-cost-801.png" />
+    <None Include="Resources\icons8-clear-501.png" />
+    <None Include="Resources\icons8-calculator-471.png" />
+    <None Include="Resources\icons8-analysis-501.png" />
+    <None Include="Resources\icons8-add-481.png" />
+    <None Include="Resources\icons8-worker-502.png" />
+    <None Include="Resources\icons8-worker-501.png" />
+    <None Include="Resources\icons8-worker-162.png" />
+    <None Include="Resources\icons8-worker-161.png" />
+    <None Include="Resources\icons8-wi-241.png" />
+    <None Include="Resources\icons8-update-641.png" />
+    <None Include="Resources\icons8-update-501.png" />
+    <None Include="Resources\icons8-time-501.png" />
+    <None Include="Resources\icons8-search-501.png" />
+    <None Include="Resources\icons8-satisfaction-501.png" />
+    <None Include="Resources\icons8-reset.gif" />
+    <None Include="Resources\icons8-reset-96.png" />
+    <None Include="Resources\icons8-protect-96.png" />
+    <None Include="Resources\phone-message %281%29.png" />
+    <None Include="Resources\phone-message.png" />
+    <None Include="Resources\icons8-capture-96.png" />
+    <None Include="Resources\icons8-verified-account-96.png" />
+    <None Include="Resources\icons8-user-482.png" />
+    <None Include="Resources\icons8-user-481.png" />
+    <None Include="Resources\button_is-avans-talebi.png" />
+    <None Include="Resources\button_izin-talebi %281%29.png" />
+    <None Include="Resources\button_izin-talebi.png" />
+    <None Include="Resources\icons8-user-48.png" />
+    <None Include="Resources\icons8-user-16.png" />
     <None Include="Resources\icons8-answer-48.png" />
     <None Include="Resources\icons8-print-48.png" />
     <None Include="Resources\Snapinsta.app_414692624_2680767112098871_4676329216170771307_n_1080.jpg" />

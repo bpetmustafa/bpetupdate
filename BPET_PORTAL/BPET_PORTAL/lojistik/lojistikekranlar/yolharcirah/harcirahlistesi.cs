@@ -19,7 +19,6 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah
         {
             InitializeComponent();
             InitializeDateTimePickers();
-            LoadData();
         }
 
         private void InitializeDateTimePickers()
@@ -74,7 +73,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah
                                {
                                    SoforAdi = g.Key.SoforAdi,
                                    ToplamTutar = g.Sum(r => Convert.ToDecimal(r.Field<decimal>("Tutar"))),
-                                   OdenenTutar = 3000, // Örnek olarak 300 TL
+                                   OdenenTutar = 0, // Örnek olarak 0 TL
                                };
 
             // DataTable oluştur
@@ -366,6 +365,12 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yolharcirah
             {
                 MessageBox.Show("Lütfen güncellenecek bir satır seçin.");
             }
+        }
+
+        private void harcirahlistesi_Shown(object sender, EventArgs e)
+        {
+            LoadData();
+
         }
     }
 }

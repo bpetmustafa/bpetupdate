@@ -1,11 +1,15 @@
 ﻿using BPET_PORTAL.arsiv_uygulamasi;
 using BPET_PORTAL.bayitakip;
 using BPET_PORTAL.insankaynaklari;
+using BPET_PORTAL.profilsayfasi;
 using destek_otomasyonu;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BPET_PORTAL.admin
@@ -15,12 +19,13 @@ namespace BPET_PORTAL.admin
         private const string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
         private Timer adminChatUpdateTimer;
         private mainpage mainForm;
+        private FtpManager ftpManager = new FtpManager();
 
         public adminform(string eposta, mainpage mainForm)
         {
             InitializeComponent();
             epostalabel.Text = eposta;
-            LoadUserData(); // Kullanıcı verilerini yükleme
+
 
             this.mainForm = mainForm; // mainForm örneğini burada başlatın
 
@@ -37,6 +42,21 @@ namespace BPET_PORTAL.admin
             //LoadAllUserMessages();
             //LoadUserListForAdmin();
         }
+        private void InitializeDataGridView()
+        {
+            // Resim sütunu oluşturun
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
+            {
+                Name = "ProfilePicture",
+                HeaderText = "Profil Resmi",
+                Width = 64,
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+            dataGridView1.Columns.Add(imageColumn);
+            dataGridView1.RowTemplate.Height = 64; // Satır yüksekliğini ayarlayın
+
+            LoadUserData();
+        }
         private void btnShowUserMessageHistory_Click(object sender, EventArgs e)
         {
             string selectedUserEmail = ExtractUserEmailFromSelectedItem(cmbUserList.SelectedItem as string);
@@ -48,7 +68,6 @@ namespace BPET_PORTAL.admin
             }
         }
 
-        // Seçilen öğeden kullanıcı e-postasını çıkaran yardımcı işlev
         private string ExtractUserEmailFromSelectedItem(string selectedItem)
         {
             if (selectedItem != null)
@@ -148,11 +167,12 @@ namespace BPET_PORTAL.admin
 
         private void adminform_Load(object sender, EventArgs e)
         {
-           // LoadAllUserMessages();
-
+            // LoadAllUserMessages();
+            InitializeDataGridView();
             // Adminin cevap vereceği kullanıcıları yükle
             LoadUserListForAdmin();
             LoadAllUsersForAdmin();
+
         }
 
         // Admin tarafında kullanıcıları yükleme işlevi (combobox için)
@@ -237,10 +257,11 @@ namespace BPET_PORTAL.admin
 
 
 
-        private void LoadUserData()
+        private async void LoadUserData()
         {
             try
             {
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -266,7 +287,11 @@ namespace BPET_PORTAL.admin
                     dataGridView1.EnableHeadersVisualStyles = false;
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Tüm sütunları otomatik genişlet
                     dataGridView1.DefaultCellStyle.Font = new Font("Arial", 12); // Yazı tipini ve boyutunu ayarla
-
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        string email = row.Cells["E_Posta"].Value.ToString();
+                        row.Cells["ProfilePicture"].Value = await LoadUserImage(email);
+                    }
                     //dataGridView1.AutoResizeColumns();
                     connection.Close();
                 }
@@ -275,6 +300,39 @@ namespace BPET_PORTAL.admin
             {
                 this.Alert("Veriler Yüklenemedi: " + ex.Message, Form_Alert.enmType.Error);
 
+            }
+        }
+        private void dataGridView1_Sorted(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DataBoundItem is DataRowView dataRowView)
+                {
+                    DataRow dataRow = dataRowView.Row;
+                    if (dataRow.Table.Columns.Contains("ProfilePicture")) // ProfilePicture sütununun varlığını kontrol edin
+                    {
+                        row.Cells["ProfilePicture"].Value = dataRow["ProfilePicture"];
+                    }
+                }
+            }
+        }
+
+
+        private async Task<Image> LoadUserImage(string email)
+        {
+            try
+            {
+                string temizemail = email.Trim();
+                string remoteFileUri = ftpManager.GetFileUri(temizemail + ".jpg");
+                WebClient wc = new WebClient();
+                byte[] bytes = await wc.DownloadDataTaskAsync(remoteFileUri);
+                return Image.FromStream(new MemoryStream(bytes));
+            }
+            catch(Exception ex)
+            {
+                // Varsayılan resmi yükleyin
+               // Console.WriteLine(ex);
+                return Properties.Resources.debut; // Varsayılan resmi projenizin kaynaklarına ekleyin
             }
         }
         public void Alert(string msg, Form_Alert.enmType type)
@@ -316,9 +374,8 @@ namespace BPET_PORTAL.admin
             // Kullanıcı yetkilerini düzenlemek için yeni bir form açın
             EditUserPermissionsForm editForm = new EditUserPermissionsForm(kullaniciEposta);
             editForm.ShowDialog();
-
-            // Kullanıcı yetkileri düzenlendikten sonra DataGridView'i güncelleyin
             LoadUserData();
+            // Kullanıcı yetkileri düzenlendikten sonra DataGridView'i güncelleyin
         }
 
         private void livechatbtn_Click(object sender, EventArgs e)
@@ -417,6 +474,12 @@ namespace BPET_PORTAL.admin
         private void button5_Click(object sender, EventArgs e)
         {
             mainForm.loadform(new bayitakipmainpage(epostalabel.Text));
+
+        }
+
+        private void adminform_Shown(object sender, EventArgs e)
+        {
+            LoadUserData(); // Kullanıcı verilerini yükleme
 
         }
     }

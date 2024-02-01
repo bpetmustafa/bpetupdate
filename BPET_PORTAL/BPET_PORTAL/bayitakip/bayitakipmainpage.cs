@@ -15,6 +15,7 @@ namespace BPET_PORTAL.bayitakip
     public partial class bayitakipmainpage : Form
     {
         private List<string> selectedRowsList = new List<string>();
+        bayitakip.SmsBayiTakip SMS = new SmsBayiTakip();
 
         public bayitakipmainpage(string eposta)
         {
@@ -26,11 +27,26 @@ namespace BPET_PORTAL.bayitakip
         {
             switch (bolgeKodu)
             {
+                case "B1":
+                    return "yavuz.alci@bpet.com.tr";
+                case "B2":
+                    return "gunes.senalp@bpet.com.tr";
+                case "B3":
+                    return "eray.ocakli@bpet.com.tr";
+                case "B4":
+                    return "a.cankaya@bpet.com.tr";
+                case "B5":
+                    return "nejat.toptutan@bpet.com.tr";
+                case "B6":
+                    return "ugur.demir@bpet.com.tr";
+                case "B7":
+                    return "alp.adson@bpet.com.tr";
+                case "B8":
+                    return "recep.gokduman@bpet.com.tr";
                 default:
                     return "mustafa.ceylan@bpet.com.tr";
             }
         }
-
         private void FillBolgeMuduruComboBox()
         {
             string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
@@ -87,19 +103,28 @@ namespace BPET_PORTAL.bayitakip
                 {
                     query += " AND BolgeAdi = @SelectedBolgeMuduru";
                 }
+                
 
                 if (mailgonderildi.Checked == true)
                 {
                     query += " AND MailGonderildi = 1";
+                }
+                else if(mailgonderildi.Checked == false)
+                {
+                    query += " AND MailGonderildi = 0";
                 }
 
                 if (cevaplandi.Checked == true)
                 {
                     query += " AND Cevaplandi = 1";
                 }
-
+                else if(cevaplandi.Checked == false)
+                {
+                    query += " AND Cevaplandi = 0";
+                }
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    Console.WriteLine(query);
                     command.Parameters.AddWithValue("@MinimumSonSatisGunSayisi", minimumSonSatisGunSayisi);
                     command.Parameters.AddWithValue("@MinimumSonTahsilatGunSayisi", minimumSonTahsilatGunSayisi);
 
@@ -351,6 +376,7 @@ namespace BPET_PORTAL.bayitakip
                 progressBar.Value = 0;
                 progressBar.Visible = true;
                 ImportDataFromExcel(excelFilePath);
+                FillBolgeMuduruComboBox();
             }
         }
 
@@ -421,7 +447,7 @@ namespace BPET_PORTAL.bayitakip
 
                     mail.To.Add(receiverEmail);
                     mail.Bcc.Add("mustafa.ceylan@bpet.com.tr");
-                    //mail.CC.Add("huseyin.toru@bpet.com.tr");
+                    mail.CC.Add("huseyin.toru@bpet.com.tr");
                     mail.Subject = "Bayi Takip Sistemi!";
 
                     // Sabit başlık metnini ekleyin
@@ -431,7 +457,7 @@ namespace BPET_PORTAL.bayitakip
                     htmlContent.Append("<p>BPET PORTAL'a nasıl kayıt olunabileceğini öğrenmek için <a href='https://www.youtube.com/watch?v=FggWnbXGLZc' target='_blank'>bu videoyu</a> izleyebilirsiniz.</p>");
                     htmlContent.Append("<p>BPET PORTAL Bayi Takip Sisteminin nasıl kullanacağını öğrenmek için <a href='https://www.youtube.com/watch?v=Zs1LxMaS9gk' target='_blank'>bu videoyu</a> izleyebilirsiniz.</p>");
 
-                    htmlContent.Append("<p>BPET PORTAL eğer bilgisayarınızda mevcut değilse, Bilgi Teknolojileri ekibinden Mustafa Uğur CEYLAN'a ulaşabilirsiniz. (0 544 681 80 43) </p>");
+                    htmlContent.Append("<p>BPET PORTAL eğer bilgisayarınızda mevcut değilse, Bilgi Teknolojileri ekibinden Mustafa Uğur CEYLAN veya Batuhan Avcıoğluna ulaşabilirsiniz. (0544 681 80 43 & 0538 401 05 40) </p>");
 
                     // DataTable oluştur ve sütunları ekle
                     DataTable dataTable = new DataTable();
@@ -526,16 +552,17 @@ namespace BPET_PORTAL.bayitakip
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-
-                string updateQuery = "UPDATE CariHesaplar SET MailGonderildi = 1 WHERE id = @Id";
-
+                DateTime mailTime = DateTime.Now;
+                string updateQuery = "UPDATE CariHesaplar SET MailGonderildi = 1, MailTarih = @MailTime WHERE id = @Id";
                 using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@MailTime", mailTime);
                     command.ExecuteNonQuery();
                 }
             }
         }
+
 
         private void btnverileriekle_Click(object sender, EventArgs e)
         {
@@ -579,6 +606,7 @@ namespace BPET_PORTAL.bayitakip
 
             // Burada e-posta gönderme işlemini gerçekleştir.
             SendEmail(selectedRowsList, bolumMail);
+            araButton_Click(sender, e);
         }
 
         private void btnVeriTabaniSil_Click(object sender, EventArgs e)
@@ -629,6 +657,11 @@ namespace BPET_PORTAL.bayitakip
             }
 
             MessageBox.Show("CariHesaplarGecmis tablosu başarıyla temizlendi.", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void haftaliksms_Click(object sender, EventArgs e)
+        {
+            SMS.Sms_sender();
         }
     }
 }

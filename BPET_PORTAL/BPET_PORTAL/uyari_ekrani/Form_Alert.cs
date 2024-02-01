@@ -76,7 +76,7 @@ namespace BPET_PORTAL
                     break;
             }
         }
-        public void Alert(string msg, Form_Alert.enmType type)
+        public static void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
@@ -89,7 +89,7 @@ namespace BPET_PORTAL
 
         private void Form_Alert_Load_1(object sender, EventArgs e)
         {
-           // this.TopMost = true;
+           this.TopMost = true;
            //açınca ekranda önde çıkıyor ama bug oluyor
         }
 

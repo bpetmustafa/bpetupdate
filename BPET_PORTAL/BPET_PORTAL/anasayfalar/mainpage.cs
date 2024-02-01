@@ -24,6 +24,14 @@ using Size = System.Drawing.Size;
 using FontStyle = System.Drawing.FontStyle;
 using Application = System.Windows.Forms.Application;
 using System.Drawing.Printing;
+using BPET_PORTAL.profilsayfasi;
+using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BPET_PORTAL.insankaynaklari;
+using BPET_PORTAL.sms_mfa;
+using System.Web.ModelBinding;
+using BPET_PORTAL.anasayfalar.Models;
+using BPET_PORTAL.yukleme_ekrani;
 
 
 namespace BPET_PORTAL
@@ -37,7 +45,6 @@ namespace BPET_PORTAL
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
-
         private Timer autoCloseTimer = new Timer();
 
         private const string connectionString = "Server=95.0.50.22,1382;Database=BPET_PORTAL;User ID=sa;Password=Mustafa1;";
@@ -60,11 +67,12 @@ namespace BPET_PORTAL
         private Color originalColor;
         private Color blinkColor = Color.Red; // Yanıp sönen rengi belirle
 
-       
+        private FtpManager ftpManager = new FtpManager();
+
+
         public mainpage(string eposta)
         {
 
-            this.Alert("Lütfen Bekleyiniz", Form_Alert.enmType.Info);
             InitializeComponent();
             kullaniciEposta = eposta; 
             epostalabel.Text = kullaniciEposta;
@@ -212,6 +220,7 @@ namespace BPET_PORTAL
             // Timer tetiklendiğinde chat ekranını güncelle
             LoadChatHistory();
             testping();
+            kullaniciyetkileri();
         }
 
         private void LoadChatHistory()
@@ -400,54 +409,6 @@ namespace BPET_PORTAL
             f.Show();
 
         }
-
-        private string ReadLicenseKeyFromDatabase()
-        {
-            string licenseKey = null;
-            string query = "SELECT LicenseKey FROM Licenses WHERE IsActive = 1";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        licenseKey = reader["LicenseKey"].ToString();
-                    }
-
-                    reader.Close();
-                }
-            }
-
-            return licenseKey;
-        }
-        private void CheckLicense()
-        {
-            licenseKey = ReadLicenseKeyFromDatabase();
-            var auth = "WyI1MTI5MDU3MyIsIlFuZlZYOHg0QUxQZFRRN00ybExQYWUwNnpQSkVkS1U3TmJNUmVrenQiXQ==";
-            var result = SKM.V3.Methods.Key.Activate(token: auth, parameters: new ActivateModel()
-            {
-                Key = licenseKey,
-                ProductId = 20509,  // Lisans anahtarınızla ilişkilendirilen Ürün Kimliğini buraya girin
-                Sign = true,
-                MachineCode = Helpers.GetMachineCodePI(v: 2)
-            });
-
-            if (result == null || result.Result == ResultType.Error ||
-                !result.LicenseKey.HasValidSignature(RSAPubKey).IsValid())
-            {
-                // Lisans anahtarı geçersizse, bir döngü kullanarak geçerli bir lisans anahtarı girilene kadar kullanıcıdan tekrar giriş yapmasını iste
-               
-                    // Lisans anahtarı giriş ekranını göster
-                    this.Alert("GEÇERSİZ OTORUM", Form_Alert.enmType.Error);
-                    Environment.Exit(0);
-                
-                
-            }
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -510,21 +471,17 @@ namespace BPET_PORTAL
         private async void mainpage_Load(object sender, EventArgs e)
         {
             LoadChatHistory();
+            LoadingScreen.ShowLoadingScreen(); // Yükleme ekranını göster
+
             await Task.Run(async () =>
             {
                 //CheckLicense(); lisans işlemi için bunu devreye alınız.
                 if (epostalabel.Text !="mustafa.ceylan@bpet.com.tr")
                 {
                    await RecordLoginDetailsAndSendReport();
-                } 
+                }
+                LoadUserProfileImage(epostalabel.Text);
             });
-
-            // Lisans anahtarı geçersizse hata mesajı görüntüle ve uygulamayı kapat
-           // if (string.IsNullOrEmpty(licenseKey))
-            //{
-            //    this.Alert("İŞLEM BAŞARISIZ! LC!", Form_Alert.enmType.Error);
-            //    Environment.Exit(0);
-            //}
 
             string kullaniciYetkileri = GetKullaniciYetkileri(kullaniciEposta);
 
@@ -539,8 +496,7 @@ namespace BPET_PORTAL
             {
                 // Kullanıcının yetkileri varsa, normal yüklenme işlemlerine devam edin
                 kullaniciyetkileri();
-                this.Alert("İşlem Yapabilirsiniz!", Form_Alert.enmType.Success);
-
+                LoadingScreen.HideLoadingScreen();
             }
         }
         private async Task RecordLoginDetailsAndSendReport()
@@ -675,7 +631,7 @@ namespace BPET_PORTAL
         private void kullaniciyetkileri()
         {
             string kullaniciYetkileri = GetKullaniciYetkileri(kullaniciEposta);
-            int y = 89; // Y eksenindeki başlangıç konumu
+            int y = 133; // Y eksenindeki başlangıç konumu
             int x = 4;
             int buttonSpacing = 1; // Düğmeler arasındaki boşluk
 
@@ -775,6 +731,8 @@ namespace BPET_PORTAL
                 y += btnbilgiislem.Height + buttonSpacing;
             }
 
+            btnprofilim.Visible = CheckUserPermission("p", kullaniciYetkileri);
+
             // Düğmeleri etkinleştirme
             btnrapor.Enabled = btnrapor.Visible;
             btnarsiv.Enabled = btnarsiv.Visible;
@@ -788,6 +746,7 @@ namespace BPET_PORTAL
             btninsankaynaklari.Enabled = btninsankaynaklari.Visible;
             btnlojistik.Enabled = btnlojistik.Visible;
             btnbilgiislem.Enabled = btnbilgiislem.Visible;
+            btnprofilim.Enabled = btnprofilim.Visible;
         }
 
         private void yetkikontrol_Tick(object sender, EventArgs e)
@@ -809,9 +768,15 @@ namespace BPET_PORTAL
 
         private void btnadmin_Click(object sender, EventArgs e)
         {
-            livechatbtn.Visible = false;
-            livechat.Visible = false;
-            loadform(new adminform(epostalabel.Text, this));
+            bool isVerified = sms_mfa.mfakontrol.VerifyUser(epostalabel.Text);
+
+            if (isVerified)
+            {
+                livechatbtn.Visible = false;
+                livechat.Visible = false;
+                loadform(new adminform(epostalabel.Text, this)); 
+            }
+            
         }
 
         private void btnbayitakip_Click(object sender, EventArgs e)
@@ -828,7 +793,12 @@ namespace BPET_PORTAL
 
         private void btnborsa_Click(object sender, EventArgs e)
         {
-            loadform(new borsauygulamasi.borsaanasayfa(epostalabel.Text));
+            bool isVerified = sms_mfa.mfakontrol.VerifyUser(epostalabel.Text);
+
+            if (isVerified)
+            {
+                loadform(new borsauygulamasi.borsaanasayfa(epostalabel.Text));
+            }
 
         }
 
@@ -864,10 +834,24 @@ namespace BPET_PORTAL
             }
 
         }
-
+        private void btnprofilim_Click(object sender, EventArgs e)
+        {
+            loadform(new profilsayfasi.profilanasayfa(epostalabel.Text, this));
+        }
         private void btnbayitalep_Click(object sender, EventArgs e)
         {
-            loadform(new bayitakip.bayitakipcevaplamaekrani(epostalabel.Text, this));
+            string kullaniciYetkileri = GetKullaniciYetkileri(kullaniciEposta);
+            bool yetkibayitakipyonetici = CheckUserPermission("fa", kullaniciYetkileri);
+            if (yetkibayitakipyonetici == true)
+            {
+                loadform(new bayitakip.bayitakipyonetici(epostalabel.Text, this));
+
+            }
+            else
+            {
+                loadform(new bayitakip.bayitakipcevaplamaekrani(epostalabel.Text, this));
+
+            }
         }
 
         private void btnayarlar_Click(object sender, EventArgs e)
@@ -900,7 +884,7 @@ namespace BPET_PORTAL
                 {
                     menuTimer.Stop();
                     isCollapsed = false;
-                    bpetlogo.Visible = true;
+                    userpp.Visible = true;
                     // Menü tamamen açıldıktan sonra ana paneli yeniden boyutlandır
                     ResizeMainPanel();
                 }
@@ -913,7 +897,7 @@ namespace BPET_PORTAL
                 {
                     menuTimer.Stop();
                     isCollapsed = true;
-                    bpetlogo.Visible = false;
+                    userpp.Visible = false;
                     // Menü tamamen kapandıktan sonra ana paneli yeniden boyutlandır
                     ResizeMainPanel();
                 }
@@ -996,7 +980,37 @@ namespace BPET_PORTAL
             loadform(new bilgi_islem.bilgiislemanasayfa(epostalabel.Text, this));
 
         }
+        public void LoadUserProfileImage(string email)
+        {
 
+            try
+            {
+                string remoteFileUri = ftpManager.GetFileUri(email + ".jpg"); // E-posta adresine göre resmi bulur
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(remoteFileUri);
+                MemoryStream ms = new MemoryStream(bytes);
+                Image img = Image.FromStream(ms);
+
+                userpp.BackgroundImage = img; // PictureBox'ta resmi BackgroundImage olarak ayarlar
+                userpp.BackgroundImageLayout = ImageLayout.Zoom; // Resmi ölçeklendirir
+            }
+            catch (Exception)
+            {
+                // Varsayılan resmi yükleyin
+                string defaultImageUri = ftpManager.GetFileUri("varsayilan.jpg");
+                LoadImageToPictureBox(defaultImageUri);
+            }
+        }
+        private void LoadImageToPictureBox(string imageUrl)
+        {
+            WebClient wc = new WebClient();
+            byte[] bytes = wc.DownloadData(imageUrl);
+            MemoryStream ms = new MemoryStream(bytes);
+            Image img = Image.FromStream(ms);
+
+            userpp.BackgroundImage = img; // PictureBox'ta resmi BackgroundImage olarak ayarlar
+            userpp.BackgroundImageLayout = ImageLayout.Zoom; // Resmi ölçeklendirir
+        }
         private void btnPrint_Click(object sender, EventArgs e)
         {
             PrintDocument pd = new PrintDocument();
@@ -1032,6 +1046,8 @@ namespace BPET_PORTAL
                 pd.Print(); // Kullanıcı onay verirse yazdır
             }
         }
+
+        
     }
 
 }

@@ -27,6 +27,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             this.dosyaID = dosyaID;
             this.mainForm = mainForm; // mainForm örneğini burada başlatın
             epostalabel.Text = eposta;
+            dosyaidlabel.Text = dosyaID;
         }
 
         private void KisiAtaForm_Load(object sender, EventArgs e)

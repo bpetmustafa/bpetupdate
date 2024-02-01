@@ -40,10 +40,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
         private void kullaniciyetkileri()
         {
             string kullaniciYetkileri = GetKullaniciYetkileri(epostalabel.Text);
-
-            teslimal.Visible = CheckUserPermission("aa_arsiv", kullaniciYetkileri);
-            teslimal.Enabled = CheckUserPermission("aa_arsiv", kullaniciYetkileri);
-            teslimallabel.Visible = CheckUserPermission("aa_arsiv", kullaniciYetkileri);
         }
         private bool CheckUserPermission(string requiredPermission, string kullaniciYetkileri)
         {
@@ -205,7 +201,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                 connection.Close();
             }
         }
-
         private void FilterDataInDatabase()
         {
             try
@@ -291,18 +286,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             isSearching = false;
             //GetDataFromDatabase();
         }
-        private void KişiAta_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.SelectedRows.Count > 0)
-            {
-                int rowIndex = dataGridView.SelectedRows[0].Index;
-                string dosyaID = dataGridView.Rows[rowIndex].Cells["DosyaID"].Value.ToString();
-
-                KisiAtaForm kisiAtaForm = new KisiAtaForm(dosyaID,mainForm,epostalabel.Text);
-                kisiAtaForm.ShowDialog();
-            }
-        }
-
         private void textBoxArama_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Delete)
@@ -355,12 +338,22 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                     Subject = "PDF Talebi Alındı",
                     Body = "Merhaba,\n\nTalebiniz başarıyla alınmıştır. Talep detaylarınız en kısa sürede işlenecektir.\n\nSaygılarımızla,\nBPET Arşiv Uygulaması"
                 };
-
+                MailMessage mailarsiv = new MailMessage
+                {
+                    From = new MailAddress("info@bpet.com.tr"),
+                    Subject = "Yeni PDF Talebi Geldi!",
+                    Body = "Merhaba, \n\n Yeni bir talep geldi. Lütfen talebe en kısa zamanda BPET PORTAL üzerinden Yanıt Veriniz! \n\n Bu Mesaj Bpet Portal Tarafından Otomatik Olarak Gönderilmiştir!"
+                };
                 mail.To.Add(alıcıEmail);
                 mail.Bcc.Add(new MailAddress("mustafa.ceylan@bpet.com.tr")); // Gizli alıcı ekleme
                 mail.CC.Add(new MailAddress("arsiv@bpet.com.tr"));
                
                 smtpClient.Send(mail);
+
+                mailarsiv.To.Add(new MailAddress("arsiv@bpet.com.tr"));
+                mailarsiv.Bcc.Add(new MailAddress("mustafa.ceylan@bpet.com.tr")); // Gizli alıcı ekleme
+
+                smtpClient.Send(mailarsiv);
             }
             catch (Exception ex)
             {

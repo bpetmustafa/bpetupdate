@@ -45,35 +45,38 @@
             this.panel1.Controls.Add(this.yardimmasasidevam);
             this.panel1.Controls.Add(this.portaldevam);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(137, 161);
+            this.panel1.Location = new System.Drawing.Point(110, 129);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(695, 227);
+            this.panel1.Size = new System.Drawing.Size(556, 182);
             this.panel1.TabIndex = 7;
             // 
             // yardimmasasidevam
             // 
             this.yardimmasasidevam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.yardimmasasidevam.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.yardimmasasidevam.Location = new System.Drawing.Point(400, 138);
-            this.yardimmasasidevam.MaximumSize = new System.Drawing.Size(252, 47);
-            this.yardimmasasidevam.MinimumSize = new System.Drawing.Size(252, 47);
+            this.yardimmasasidevam.Location = new System.Drawing.Point(320, 110);
+            this.yardimmasasidevam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.yardimmasasidevam.MaximumSize = new System.Drawing.Size(202, 38);
+            this.yardimmasasidevam.MinimumSize = new System.Drawing.Size(202, 38);
             this.yardimmasasidevam.Name = "yardimmasasidevam";
-            this.yardimmasasidevam.Size = new System.Drawing.Size(252, 47);
+            this.yardimmasasidevam.Size = new System.Drawing.Size(202, 38);
             this.yardimmasasidevam.TabIndex = 10;
-            this.yardimmasasidevam.Text = "BT YARDIM MASASI";
+            this.yardimmasasidevam.Text = "KULLANICI EKRANI";
             this.yardimmasasidevam.UseVisualStyleBackColor = true;
             this.yardimmasasidevam.Click += new System.EventHandler(this.yardimmasasidevam_Click);
             // 
             // portaldevam
             // 
             this.portaldevam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.portaldevam.Location = new System.Drawing.Point(30, 138);
-            this.portaldevam.MaximumSize = new System.Drawing.Size(252, 47);
-            this.portaldevam.MinimumSize = new System.Drawing.Size(252, 47);
+            this.portaldevam.Location = new System.Drawing.Point(24, 110);
+            this.portaldevam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.portaldevam.MaximumSize = new System.Drawing.Size(202, 38);
+            this.portaldevam.MinimumSize = new System.Drawing.Size(202, 38);
             this.portaldevam.Name = "portaldevam";
-            this.portaldevam.Size = new System.Drawing.Size(252, 47);
+            this.portaldevam.Size = new System.Drawing.Size(202, 38);
             this.portaldevam.TabIndex = 9;
-            this.portaldevam.Text = "PORTAL\'A DEVAM ET";
+            this.portaldevam.Text = "YÖNETİCİ EKRANI";
             this.portaldevam.UseVisualStyleBackColor = true;
             this.portaldevam.Click += new System.EventHandler(this.portaldevam_Click);
             // 
@@ -86,9 +89,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(167, 64);
+            this.label1.Location = new System.Drawing.Point(134, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(457, 34);
+            this.label1.Size = new System.Drawing.Size(350, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "Lütfen Seçiminizi Yapınız!";
             // 
@@ -99,9 +103,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Unispace", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(356, 61);
+            this.label7.Location = new System.Drawing.Point(285, 49);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(314, 60);
+            this.label7.Size = new System.Drawing.Size(251, 48);
             this.label7.TabIndex = 7;
             this.label7.Text = "HOŞGELDİNİZ! ";
             // 
@@ -115,10 +120,10 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(942, 11);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(754, 9);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 30);
+            this.button2.Size = new System.Drawing.Size(32, 24);
             this.button2.TabIndex = 11;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -126,18 +131,19 @@
             // 
             // secimekrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::BPET_PORTAL.Properties.Resources.banner2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(994, 502);
+            this.ClientSize = new System.Drawing.Size(795, 402);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "secimekrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "secimekrani";

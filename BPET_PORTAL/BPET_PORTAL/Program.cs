@@ -13,12 +13,22 @@ namespace BPET_PORTAL
         /// Uygulamanın ana girdi noktası.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginpage());
-            //Application.Run(new borsaanasayfa("")); //test 
+
+            bool autoStart = args.Contains("auto");
+
+            if (autoStart)
+            {
+                Application.Run(new mainpage("test"));
+            }
+            else
+            {
+                Application.Run(new loginpage());
+
+            }
         }
     }
 }

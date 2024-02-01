@@ -12,6 +12,9 @@ using System.Security.Cryptography;
 using System.Net.Mail;
 using System.Net;
 using destek_otomasyonu;
+using System.Diagnostics;
+using System.Deployment.Application;
+using BPET_PORTAL.anasayfalar.Models;
 
 namespace BPET_PORTAL
 {
@@ -21,7 +24,7 @@ namespace BPET_PORTAL
 
         SqlConnection connection = new SqlConnection(connectionString);
         BackgroundWorker mailWorker = new BackgroundWorker();
-
+        string secureCode = "";
         public loginpage()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace BPET_PORTAL
             mailWorker.DoWork += new DoWorkEventHandler(mailWorker_DoWork);
             mailWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(mailWorker_RunWorkerCompleted);
         }
+
         public void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
@@ -241,12 +245,18 @@ namespace BPET_PORTAL
         }
         private void btngirisyap_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 string eposta = epostalogin.Text;
                 string sifre = sifrelogin.Text;
                 bool rememberMe = beniHatirlaCheckBox.Checked;
 
+                if (textBoxSecure.Text != secureCode)
+                {
+                    this.Alert("Güvenlik Kodu Yanlış!", Form_Alert.enmType.Error);
+                    return;
+                }
                 // Eğer "Beni Hatırla" seçeneği işaretlendi ise, e-posta ve şifreyi kaydet
                 if (rememberMe)
                 {
@@ -350,7 +360,7 @@ namespace BPET_PORTAL
                 string isimSoyisim = txtadsoyadrg.Text;
                 string eposta = txtepostarg.Text;
                 string telefon = txttelefonrg.Text;
-                string yetkiler = "";
+                string yetkiler = "p";
                 string sifre = txtsifrerg.Text; // Şifreyi alın
                 byte[] salt = new byte[16];
                 new RNGCryptoServiceProvider().GetBytes(salt);
@@ -398,7 +408,7 @@ namespace BPET_PORTAL
 
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@IsimSoyisim", isimSoyisim);
+                    cmd.Parameters.AddWithValue("@IsimSoyisim", isimSoyisim.ToUpper());
                     cmd.Parameters.AddWithValue("@Eposta", eposta);
                     cmd.Parameters.AddWithValue("@Telefon", telefon);
                     cmd.Parameters.AddWithValue("@Yetkiler", yetkiler);
@@ -556,8 +566,11 @@ namespace BPET_PORTAL
 
         private void loginpage_Load(object sender, EventArgs e)
         {
-
+            
+            secureCode = SecureCode.GetSecureCode();
+            labelSecureCode.Text = secureCode;
         }
+
 
         private void btnsifremiunuttumkapat_Click(object sender, EventArgs e)
         {
@@ -606,7 +619,35 @@ namespace BPET_PORTAL
             panel1.Visible = false;
         }
 
-        
+       
+        private void StopExplorer()
+        {
+            ProcessStartInfo processStartInfo = new ProcessStartInfo("taskkill", "/F /IM explorer.exe")
+            {
+                CreateNoWindow = true,
+                UseShellExecute = false
+            };
+            Process process = Process.Start(processStartInfo);
+            process.WaitForExit();
+        }
+
+        private void resetle_Click(object sender, EventArgs e)
+        {
+            secureCode = SecureCode.GetSecureCode();
+            labelSecureCode.Text = secureCode;
+            textBoxSecure.Text = "";
+        }
+
+        private void textBoxSecure_MouseDown(object sender, MouseEventArgs e)
+        {
+            int karektersayisi = textBoxSecure.Text.Length;
+            if(karektersayisi >= 0)
+            {
+                textBoxSecure.Focus();
+                textBoxSecure.Select(karektersayisi, 0);
+            }
+           
+        }
     }
 
 }

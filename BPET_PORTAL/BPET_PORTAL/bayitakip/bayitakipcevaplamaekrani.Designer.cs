@@ -38,6 +38,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cevaplanantaleplerlabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.gelentaleplerlabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,19 +52,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewGecmis = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cevaplanantaleplerlabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelheader.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.sagtikmenusu.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGecmis)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -120,6 +121,40 @@
             this.panelheader.Size = new System.Drawing.Size(1231, 110);
             this.panelheader.TabIndex = 69;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel3.Controls.Add(this.cevaplanantaleplerlabel);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(208, 3);
+            this.panel3.MaximumSize = new System.Drawing.Size(196, 78);
+            this.panel3.MinimumSize = new System.Drawing.Size(196, 78);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(196, 78);
+            this.panel3.TabIndex = 81;
+            // 
+            // cevaplanantaleplerlabel
+            // 
+            this.cevaplanantaleplerlabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cevaplanantaleplerlabel.ForeColor = System.Drawing.Color.White;
+            this.cevaplanantaleplerlabel.Location = new System.Drawing.Point(3, 29);
+            this.cevaplanantaleplerlabel.Name = "cevaplanantaleplerlabel";
+            this.cevaplanantaleplerlabel.Size = new System.Drawing.Size(190, 42);
+            this.cevaplanantaleplerlabel.TabIndex = 5;
+            this.cevaplanantaleplerlabel.Text = "-----";
+            this.cevaplanantaleplerlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(4, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(184, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cevapladığım Talepler";
+            // 
             // Panel2
             // 
             this.Panel2.BackColor = System.Drawing.Color.DodgerBlue;
@@ -159,7 +194,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(243, 84);
+            this.label1.Location = new System.Drawing.Point(312, 84);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(721, 22);
@@ -176,6 +211,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkOrange;
@@ -189,11 +225,11 @@
             this.dataGridView.ContextMenuStrip = this.sagtikmenusu;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.Location = new System.Drawing.Point(6, 169);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
@@ -229,6 +265,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.dataGridViewGecmis);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -272,6 +309,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewGecmis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewGecmis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewGecmis.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkOrange;
@@ -284,11 +322,11 @@
             this.dataGridViewGecmis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewGecmis.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewGecmis.Location = new System.Drawing.Point(3, 99);
             this.dataGridViewGecmis.Margin = new System.Windows.Forms.Padding(2);
@@ -303,39 +341,17 @@
             this.dataGridViewGecmis.Size = new System.Drawing.Size(1229, 413);
             this.dataGridViewGecmis.TabIndex = 70;
             // 
-            // panel3
+            // label4
             // 
-            this.panel3.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel3.Controls.Add(this.cevaplanantaleplerlabel);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(208, 3);
-            this.panel3.MaximumSize = new System.Drawing.Size(196, 78);
-            this.panel3.MinimumSize = new System.Drawing.Size(196, 78);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(196, 78);
-            this.panel3.TabIndex = 81;
-            // 
-            // cevaplanantaleplerlabel
-            // 
-            this.cevaplanantaleplerlabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cevaplanantaleplerlabel.ForeColor = System.Drawing.Color.White;
-            this.cevaplanantaleplerlabel.Location = new System.Drawing.Point(3, 29);
-            this.cevaplanantaleplerlabel.Name = "cevaplanantaleplerlabel";
-            this.cevaplanantaleplerlabel.Size = new System.Drawing.Size(190, 42);
-            this.cevaplanantaleplerlabel.TabIndex = 5;
-            this.cevaplanantaleplerlabel.Text = "-----";
-            this.cevaplanantaleplerlabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(4, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cevapladığım Talepler";
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(469, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(454, 22);
+            this.label4.TabIndex = 72;
+            this.label4.Text = "Geçmişte cevapladığınız talepleri buradan görebilirsiniz.";
             // 
             // bayitakipcevaplamaekrani
             // 
@@ -349,21 +365,23 @@
             this.Name = "bayitakipcevaplamaekrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BAYİ TAKİP SİSTEMİ";
+            this.Shown += new System.EventHandler(this.bayitakipcevaplamaekrani_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.sagtikmenusu.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGecmis)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -388,5 +406,6 @@
         internal System.Windows.Forms.Panel panel3;
         internal System.Windows.Forms.Label cevaplanantaleplerlabel;
         internal System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

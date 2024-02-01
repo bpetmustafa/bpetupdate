@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DosyaBul));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.epostalabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,9 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxKategori = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.teslimal = new System.Windows.Forms.Button();
             this.comboBoxAy = new System.Windows.Forms.ComboBox();
-            this.teslimallabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxArama = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,10 +61,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.epostalabel.AutoSize = true;
             this.epostalabel.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.epostalabel.Location = new System.Drawing.Point(13, 9);
-            this.epostalabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.epostalabel.Location = new System.Drawing.Point(10, 7);
             this.epostalabel.Name = "epostalabel";
-            this.epostalabel.Size = new System.Drawing.Size(27, 16);
+            this.epostalabel.Size = new System.Drawing.Size(27, 14);
             this.epostalabel.TabIndex = 20;
             this.epostalabel.Text = "-----";
             this.epostalabel.Visible = false;
@@ -82,9 +79,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboBoxKategori);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.teslimal);
             this.groupBox1.Controls.Add(this.comboBoxAy);
-            this.groupBox1.Controls.Add(this.teslimallabel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxArama);
             this.groupBox1.Controls.Add(this.label3);
@@ -94,11 +89,11 @@
             this.groupBox1.Controls.Add(this.resetle);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 9);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(10, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1249, 149);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(999, 119);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Arama Yap";
@@ -112,11 +107,10 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1159, 30);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.MaximumSize = new System.Drawing.Size(93, 76);
+            this.button2.Location = new System.Drawing.Point(927, 24);
+            this.button2.MaximumSize = new System.Drawing.Size(74, 61);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 53);
+            this.button2.Size = new System.Drawing.Size(50, 42);
             this.button2.TabIndex = 48;
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
@@ -126,10 +120,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label9.Location = new System.Drawing.Point(1159, 81);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(927, 65);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 32);
+            this.label9.Size = new System.Drawing.Size(55, 24);
             this.label9.TabIndex = 49;
             this.label9.Text = "ARA";
             // 
@@ -142,11 +135,10 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(939, 76);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.MaximumSize = new System.Drawing.Size(93, 76);
+            this.button3.Location = new System.Drawing.Point(751, 61);
+            this.button3.MaximumSize = new System.Drawing.Size(74, 61);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 43);
+            this.button3.Size = new System.Drawing.Size(74, 34);
             this.button3.TabIndex = 46;
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
@@ -156,10 +148,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(920, 126);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(736, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 22);
+            this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 47;
             this.label7.Text = "PDF TALEPLERİM";
             // 
@@ -172,11 +163,10 @@
             this.pdf_istebutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pdf_istebutton.FlatAppearance.BorderSize = 0;
             this.pdf_istebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pdf_istebutton.Location = new System.Drawing.Point(811, 76);
-            this.pdf_istebutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pdf_istebutton.MaximumSize = new System.Drawing.Size(93, 76);
+            this.pdf_istebutton.Location = new System.Drawing.Point(649, 61);
+            this.pdf_istebutton.MaximumSize = new System.Drawing.Size(74, 61);
             this.pdf_istebutton.Name = "pdf_istebutton";
-            this.pdf_istebutton.Size = new System.Drawing.Size(93, 43);
+            this.pdf_istebutton.Size = new System.Drawing.Size(74, 34);
             this.pdf_istebutton.TabIndex = 44;
             this.pdf_istebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.pdf_istebutton.UseVisualStyleBackColor = false;
@@ -186,10 +176,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(821, 123);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(657, 98);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 22);
+            this.label6.Size = new System.Drawing.Size(58, 17);
             this.label6.TabIndex = 45;
             this.label6.Text = "PDF İSTE";
             // 
@@ -200,11 +189,11 @@
             this.comboBoxKategori.BackColor = System.Drawing.SystemColors.Control;
             this.comboBoxKategori.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(741, 39);
-            this.comboBoxKategori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxKategori.MaximumSize = new System.Drawing.Size(404, 0);
+            this.comboBoxKategori.Location = new System.Drawing.Point(593, 31);
+            this.comboBoxKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxKategori.MaximumSize = new System.Drawing.Size(324, 0);
             this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(320, 31);
+            this.comboBoxKategori.Size = new System.Drawing.Size(257, 27);
             this.comboBoxKategori.TabIndex = 39;
             this.comboBoxKategori.SelectedIndexChanged += new System.EventHandler(this.comboBoxKategori_SelectedIndexChanged);
             // 
@@ -212,30 +201,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.Location = new System.Drawing.Point(853, 14);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(682, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 24);
+            this.label5.Size = new System.Drawing.Size(72, 18);
             this.label5.TabIndex = 40;
             this.label5.Text = "Kategori";
-            // 
-            // teslimal
-            // 
-            this.teslimal.AutoSize = true;
-            this.teslimal.BackgroundImage = global::BPET_PORTAL.Properties.Resources.icons8_search_client_80;
-            this.teslimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.teslimal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.teslimal.FlatAppearance.BorderSize = 0;
-            this.teslimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teslimal.Location = new System.Drawing.Point(701, 71);
-            this.teslimal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.teslimal.MaximumSize = new System.Drawing.Size(93, 76);
-            this.teslimal.Name = "teslimal";
-            this.teslimal.Size = new System.Drawing.Size(93, 43);
-            this.teslimal.TabIndex = 41;
-            this.teslimal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.teslimal.UseVisualStyleBackColor = true;
-            this.teslimal.Click += new System.EventHandler(this.KişiAta_Click);
             // 
             // comboBoxAy
             // 
@@ -244,42 +214,29 @@
             this.comboBoxAy.BackColor = System.Drawing.SystemColors.Control;
             this.comboBoxAy.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBoxAy.FormattingEnabled = true;
-            this.comboBoxAy.Location = new System.Drawing.Point(365, 39);
-            this.comboBoxAy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxAy.MaximumSize = new System.Drawing.Size(404, 0);
+            this.comboBoxAy.Location = new System.Drawing.Point(292, 31);
+            this.comboBoxAy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxAy.MaximumSize = new System.Drawing.Size(324, 0);
             this.comboBoxAy.Name = "comboBoxAy";
-            this.comboBoxAy.Size = new System.Drawing.Size(320, 31);
+            this.comboBoxAy.Size = new System.Drawing.Size(257, 27);
             this.comboBoxAy.TabIndex = 32;
-            // 
-            // teslimallabel
-            // 
-            this.teslimallabel.AutoSize = true;
-            this.teslimallabel.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.teslimallabel.Location = new System.Drawing.Point(704, 119);
-            this.teslimallabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.teslimallabel.Name = "teslimallabel";
-            this.teslimallabel.Size = new System.Drawing.Size(86, 22);
-            this.teslimallabel.TabIndex = 42;
-            this.teslimallabel.Text = "TESLİM AL";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label4.Location = new System.Drawing.Point(107, 71);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(86, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 24);
+            this.label4.Size = new System.Drawing.Size(26, 18);
             this.label4.TabIndex = 38;
             this.label4.Text = "Yıl";
             // 
             // textBoxArama
             // 
             this.textBoxArama.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxArama.Location = new System.Drawing.Point(4, 39);
-            this.textBoxArama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxArama.Location = new System.Drawing.Point(3, 31);
             this.textBoxArama.Name = "textBoxArama";
-            this.textBoxArama.Size = new System.Drawing.Size(316, 30);
+            this.textBoxArama.Size = new System.Drawing.Size(254, 26);
             this.textBoxArama.TabIndex = 6;
             this.textBoxArama.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxArama_KeyPress);
             // 
@@ -287,10 +244,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label3.Location = new System.Drawing.Point(455, 71);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(364, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 24);
+            this.label3.Size = new System.Drawing.Size(88, 18);
             this.label3.TabIndex = 37;
             this.label3.Text = "Şirket İsmi";
             // 
@@ -301,21 +257,20 @@
             this.comboBoxYil.BackColor = System.Drawing.SystemColors.Control;
             this.comboBoxYil.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBoxYil.FormattingEnabled = true;
-            this.comboBoxYil.Location = new System.Drawing.Point(0, 98);
-            this.comboBoxYil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxYil.MaximumSize = new System.Drawing.Size(404, 0);
+            this.comboBoxYil.Location = new System.Drawing.Point(0, 78);
+            this.comboBoxYil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxYil.MaximumSize = new System.Drawing.Size(324, 0);
             this.comboBoxYil.Name = "comboBoxYil";
-            this.comboBoxYil.Size = new System.Drawing.Size(320, 31);
+            this.comboBoxYil.Size = new System.Drawing.Size(257, 27);
             this.comboBoxYil.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.Location = new System.Drawing.Point(477, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(382, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 24);
+            this.label1.Size = new System.Drawing.Size(48, 18);
             this.label1.TabIndex = 36;
             this.label1.Text = "Aylar";
             // 
@@ -326,11 +281,11 @@
             this.comboBoxSirketIsmi.BackColor = System.Drawing.SystemColors.Control;
             this.comboBoxSirketIsmi.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBoxSirketIsmi.FormattingEnabled = true;
-            this.comboBoxSirketIsmi.Location = new System.Drawing.Point(365, 98);
-            this.comboBoxSirketIsmi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxSirketIsmi.MaximumSize = new System.Drawing.Size(404, 0);
+            this.comboBoxSirketIsmi.Location = new System.Drawing.Point(292, 78);
+            this.comboBoxSirketIsmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxSirketIsmi.MaximumSize = new System.Drawing.Size(324, 0);
             this.comboBoxSirketIsmi.Name = "comboBoxSirketIsmi";
-            this.comboBoxSirketIsmi.Size = new System.Drawing.Size(320, 31);
+            this.comboBoxSirketIsmi.Size = new System.Drawing.Size(257, 27);
             this.comboBoxSirketIsmi.TabIndex = 32;
             // 
             // resetle
@@ -341,11 +296,10 @@
             this.resetle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetle.FlatAppearance.BorderSize = 0;
             this.resetle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetle.Location = new System.Drawing.Point(1069, 30);
-            this.resetle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.resetle.MaximumSize = new System.Drawing.Size(93, 76);
+            this.resetle.Location = new System.Drawing.Point(855, 24);
+            this.resetle.MaximumSize = new System.Drawing.Size(74, 61);
             this.resetle.Name = "resetle";
-            this.resetle.Size = new System.Drawing.Size(63, 53);
+            this.resetle.Size = new System.Drawing.Size(50, 42);
             this.resetle.TabIndex = 33;
             this.resetle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.resetle.UseVisualStyleBackColor = true;
@@ -355,10 +309,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label8.Location = new System.Drawing.Point(1063, 81);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(850, 65);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 32);
+            this.label8.Size = new System.Drawing.Size(69, 24);
             this.label8.TabIndex = 34;
             this.label8.Text = "Sıfırla";
             // 
@@ -371,23 +324,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.Location = new System.Drawing.Point(12, 164);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.Location = new System.Drawing.Point(10, 131);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1283, 404);
+            this.dataGridView.Size = new System.Drawing.Size(1026, 323);
             this.dataGridView.TabIndex = 60;
             // 
             // dosya_bul
@@ -398,11 +350,10 @@
             this.dosya_bul.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dosya_bul.FlatAppearance.BorderSize = 0;
             this.dosya_bul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dosya_bul.Location = new System.Drawing.Point(1257, 9);
-            this.dosya_bul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dosya_bul.MaximumSize = new System.Drawing.Size(51, 50);
+            this.dosya_bul.Location = new System.Drawing.Point(1006, 7);
+            this.dosya_bul.MaximumSize = new System.Drawing.Size(41, 40);
             this.dosya_bul.Name = "dosya_bul";
-            this.dosya_bul.Size = new System.Drawing.Size(51, 50);
+            this.dosya_bul.Size = new System.Drawing.Size(41, 40);
             this.dosya_bul.TabIndex = 19;
             this.dosya_bul.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.dosya_bul.UseVisualStyleBackColor = true;
@@ -410,15 +361,15 @@
             // 
             // DosyaBul
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1308, 581);
+            this.ClientSize = new System.Drawing.Size(1046, 465);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.epostalabel);
             this.Controls.Add(this.dosya_bul);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DosyaBul";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DosyaBul";
@@ -444,8 +395,6 @@
         private System.Windows.Forms.ComboBox comboBoxSirketIsmi;
         private System.Windows.Forms.Button resetle;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button teslimal;
-        private System.Windows.Forms.Label teslimallabel;
         private System.Windows.Forms.ComboBox comboBoxKategori;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button pdf_istebutton;

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BPET_PORTAL.yukleme_ekrani;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
 
@@ -15,11 +17,11 @@ namespace BPET_PORTAL.bayitakip
         {
             kullaniciEposta = eposta;
             InitializeComponent();
-            LoadData();
             this.mainForm = mainForm; // mainForm örneğini burada başlatın
+
         }
 
-        private void LoadData()
+        private async Task LoadData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -53,7 +55,7 @@ namespace BPET_PORTAL.bayitakip
                     }
                 }
                 string query2 = @"
-            SELECT id, CariHesapUnvani, Sehir, SonSatisMiktari, SonSatisTarihi, SonTahsilatTarihi, CevapAciklama
+            SELECT id, CariHesapUnvani, CevapAciklama, CevaplandiTarih
             FROM CariHesaplarGecmis
             WHERE BolgeKodu IN ('" + string.Join("','", bolgeKodlari) + "')";
 
@@ -68,6 +70,16 @@ namespace BPET_PORTAL.bayitakip
                         cevaplanantaleplerlabel.Text =  dataGridViewGecmis.RowCount.ToString();
                     }
                 }
+                foreach (DataGridViewColumn column in dataGridView.Columns)
+                {
+                    dataGridView.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
+                }
+                foreach (DataGridViewColumn column in dataGridViewGecmis.Columns)
+                {
+                    dataGridViewGecmis.AutoResizeColumn(column.Index, DataGridViewAutoSizeColumnMode.AllCells);
+                }
+                LoadingScreen.HideLoadingScreen();
+
             }
         }
         private void cevaplaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,12 +132,13 @@ namespace BPET_PORTAL.bayitakip
                         {
                             // Veriyi CariHesaplarGecmis tablosuna ekle
                             string insertQuery = @"
-INSERT INTO CariHesaplarGecmis (CariHesapID, CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, 
-    BolgeAdi, BolgeMuduru, SahaKodu, SahaAdi, SahaMuduru, SonSatisTarihi, SonSatisMiktari, 
-    SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi, MailGonderildi, Cevaplandi, CevapAciklama)
-VALUES (@CariHesapID, @CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu, 
-    @BolgeAdi, @BolgeMuduru, @SahaKodu, @SahaAdi, @SahaMuduru, @SonSatisTarihi, @SonSatisMiktari, 
-    @SonTahsilatTarihi, @SonSatisGunSayisi, @SonTahsilatGunSayisi, @MailGonderildi, @Cevaplandi, @CevapAciklama)";
+    INSERT INTO CariHesaplarGecmis (CariHesapID, CariHesapKodu, CariHesapUnvani, Sehir, BolgeKodu, 
+        BolgeAdi, BolgeMuduru, SahaKodu, SahaAdi, SahaMuduru, SonSatisTarihi, SonSatisMiktari, 
+        SonTahsilatTarihi, SonSatisGunSayisi, SonTahsilatGunSayisi, MailGonderildi, Cevaplandi, CevapAciklama, MailTarih, CevaplandiTarih)
+    VALUES (@CariHesapID, @CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu, 
+        @BolgeAdi, @BolgeMuduru, @SahaKodu, @SahaAdi, @SahaMuduru, @SonSatisTarihi, @SonSatisMiktari, 
+        @SonTahsilatTarihi, @SonSatisGunSayisi, @SonTahsilatGunSayisi, @MailGonderildi, @Cevaplandi, @CevapAciklama, @MailTarih, GETDATE())";
+
                             using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                             {
                                 insertCommand.Parameters.AddWithValue("@CariHesapID", reader["id"]);
@@ -144,6 +157,7 @@ VALUES (@CariHesapID, @CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu,
                                 insertCommand.Parameters.AddWithValue("@SonSatisGunSayisi", reader["SonSatisGunSayisi"]);
                                 insertCommand.Parameters.AddWithValue("@SonTahsilatGunSayisi", reader["SonTahsilatGunSayisi"]);
                                 insertCommand.Parameters.AddWithValue("@MailGonderildi", reader["MailGonderildi"]);
+                                insertCommand.Parameters.AddWithValue("@MailTarih", reader["MailTarih"]);
                                 insertCommand.Parameters.AddWithValue("@Cevaplandi", 1); // Cevaplandı değeri 1 olarak ayarlanır
                                 insertCommand.Parameters.AddWithValue("@CevapAciklama", cevapMetni);
 
@@ -173,5 +187,19 @@ VALUES (@CariHesapID, @CariHesapKodu, @CariHesapUnvani, @Sehir, @BolgeKodu,
         private void tabPage3_Click(object sender, EventArgs e)
         {
         }
+
+        private async void bayitakipcevaplamaekrani_Shown(object sender, EventArgs e)
+        {
+            await VerileriGosterAsync();
+
+        }
+
+        private async Task VerileriGosterAsync()
+        {
+            LoadingScreen.ShowLoadingScreen();
+            await Task.Delay(2000);
+            await LoadData();
+        }
+
     }
 }

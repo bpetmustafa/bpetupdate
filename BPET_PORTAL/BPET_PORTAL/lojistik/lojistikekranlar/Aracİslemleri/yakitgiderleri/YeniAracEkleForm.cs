@@ -38,6 +38,8 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             InitializeComponent();
             YilComboBoxDoldur();
             AyComboBoxDoldur();
+            cmbKDVOrani.SelectedIndex = 1; // Varsayılan olarak KDV %20'i seçili yapabilirsiniz.
+
         }
         public void DoldurDuzenlemeModu()
         {
@@ -46,7 +48,6 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             plakaText = plakaText.Replace(" ", ""); // Boşlukları kaldır
             plakaText = plakaText.ToUpper(); // Küçük harfleri büyüt
             txtPlaka.Text = plakaText;
-            txtHizmetKodu.Text = hizmetKodu;
             txtHizmetAciklamasi.Text = hizmetAciklamasi;
             txtYakitMiktari.Text = yakitMiktari.ToString();
             txtBirimFiyatKDVsizTL.Text = birimFiyatKDVsizTL.ToString();
@@ -94,24 +95,24 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                     // KDV'siz tutarı hesapla
                     decimal tutarKDVsiz = birimFiyat * miktar;
                     txtYakitTutariKDVsizTL.Text = tutarKDVsiz.ToString("0.00");
-                    if (txtYil.Text == "2023")
-                    {
-                        decimal kdvOrani = 1.18m;
-                        MessageBox.Show("KDV %18 ALINDI!");
-                        decimal tutarKDVli = tutarKDVsiz * kdvOrani;
-                        txtYakitTutariTLKDV.Text = tutarKDVli.ToString("0.00");
-                    }
-                    else
-                    {
-                        decimal kdvOrani = 1.20m;
-                        MessageBox.Show("KDV %20 ALINDI!");
 
-                        decimal tutarKDVli = tutarKDVsiz * kdvOrani;
-                        txtYakitTutariTLKDV.Text = tutarKDVli.ToString("0.00");
-                    }
-                    // KDV'li tutarı hesapla (KDV oranını varsayılan olarak 1.20 olarak alıyoruz)
-                   
+                    decimal kdvOrani = 0m; // KDV oranını saklamak için değişken
 
+                    // ComboBox'tan seçilen KDV oranını al
+                    if (cmbKDVOrani.SelectedIndex == 0)
+                    {
+                        kdvOrani = 0.18m; // KDV %18
+                    }
+                    else if (cmbKDVOrani.SelectedIndex == 1)
+                    {
+                        kdvOrani = 0.20m; // KDV %20
+                    }
+
+                    decimal tutarKDVli = tutarKDVsiz * (1 + kdvOrani);
+                    txtYakitTutariTLKDV.Text = tutarKDVli.ToString("0.00");
+
+                    //MessageBox.Show($"KDV %{kdvOrani * 100} ALINDI!");
+                    this.Alert($"KDV %{kdvOrani * 100} ALINDI!", Form_Alert.enmType.Warning);
                 }
                 else
                 {
@@ -119,6 +120,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                 }
             }
         }
+
         public void btnKaydet_Click(object sender, EventArgs e)
         {
             if (
@@ -139,7 +141,6 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             plakaText = plakaText.Replace(" ", ""); // Boşlukları kaldır
             plakaText = plakaText.ToUpper(); // Küçük harfleri büyüt
             txtPlaka.Text = plakaText;
-            hizmetKodu = txtHizmetKodu.Text;
             hizmetAciklamasi = txtHizmetAciklamasi.Text;
             yakitMiktari = Convert.ToDecimal(txtYakitMiktari.Text);
             birimFiyatKDVsizTL = Convert.ToDecimal(txtBirimFiyatKDVsizTL.Text);
@@ -152,17 +153,17 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             if (DuzenlemeModu)
             {
 
-                GuncelleYakitGideri(YakitGideriID, plakaText, hizmetKodu, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
+                GuncelleYakitGideri(YakitGideriID, plakaText, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
 
             }
             else
             {
-                EkleYakitGideri(plakaText, hizmetKodu, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
+                EkleYakitGideri(plakaText, hizmetAciklamasi, yakitMiktari, birimFiyatKDVsizTL, yakitTutariKDVsizTL, yakitTutariTLKDV, bolum, yil, ay);
 
             }
             // Veritabanına ekleme işlemi
         }
-        private void GuncelleYakitGideri(int id, string plaka, string hizmetKodu, string hizmetAciklamasi, decimal yakitMiktari, decimal birimFiyatKDVsizTL, decimal yakitTutariKDVsizTL, decimal yakitTutariTLKDV, string bolum, int yil, string ay)
+        private void GuncelleYakitGideri(int id, string plaka, string hizmetAciklamasi, decimal yakitMiktari, decimal birimFiyatKDVsizTL, decimal yakitTutariKDVsizTL, decimal yakitTutariTLKDV, string bolum, int yil, string ay)
         {
             // Veritabanı bağlantısı oluştur
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -172,13 +173,12 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                     connection.Open();
 
                     // Veritabanında güncelleme sorgusu
-                    string updateQuery = "UPDATE YakitGiderleri SET Plaka = @plaka, HizmetKodu = @hizmetKodu, HizmetAciklamasi = @hizmetAciklamasi, YakitMiktariLT = @yakitMiktari, BirimFiyatKDVsizTL = @birimFiyatKDVsizTL, YakitTutariKDVsizTL = @yakitTutariKDVsizTL, YakitTutariTLKDV = @yakitTutariTLKDV, Bolum = @bolum, Yil = @yil, Ay = @ay WHERE ID = @id";
+                    string updateQuery = "UPDATE YakitGiderleri SET Plaka = @plaka, HizmetAciklamasi = @hizmetAciklamasi, YakitMiktariLT = @yakitMiktari, BirimFiyatKDVsizTL = @birimFiyatKDVsizTL, YakitTutariKDVsizTL = @yakitTutariKDVsizTL, YakitTutariTLKDV = @yakitTutariTLKDV, Bolum = @bolum, Yil = @yil, Ay = @ay WHERE ID = @id";
 
                     using (SqlCommand command = new SqlCommand(updateQuery, connection))
                     {
                         // Parametreleri ekle
                         command.Parameters.AddWithValue("@plaka", plaka);
-                        command.Parameters.AddWithValue("@hizmetKodu", hizmetKodu);
                         command.Parameters.AddWithValue("@hizmetAciklamasi", hizmetAciklamasi);
                         command.Parameters.AddWithValue("@yakitMiktari", yakitMiktari);
                         command.Parameters.AddWithValue("@birimFiyatKDVsizTL", birimFiyatKDVsizTL);
@@ -195,7 +195,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
 
                         if (affectedRows > 0)
                         {
-                            MessageBox.Show("Yakıt gideri başarıyla güncellendi.");
+                            Alert("Güncellendi! " + id, Form_Alert.enmType.Success);
                             eklemeBasarili = true;
                             this.Close(); // Formu kapat
                         }
@@ -211,7 +211,12 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                 }
             }
         }
-        private void EkleYakitGideri(string plaka, string hizmetKodu, string hizmetAciklamasi, decimal yakitMiktari, decimal birimFiyatKDVsizTL, decimal yakitTutariKDVsizTL, decimal yakitTutariTLKDV, string bolum, int yil, string ay)
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+        private void EkleYakitGideri(string plaka, string hizmetAciklamasi, decimal yakitMiktari, decimal birimFiyatKDVsizTL, decimal yakitTutariKDVsizTL, decimal yakitTutariTLKDV, string bolum, int yil, string ay)
         {
             // Veritabanı bağlantısı oluştur
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -221,14 +226,13 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
                     connection.Open();
 
                     // Veritabanına ekleme sorgusu
-                    string insertQuery = "INSERT INTO YakitGiderleri (Plaka, HizmetKodu, HizmetAciklamasi, YakitMiktariLT, BirimFiyatKDVsizTL, YakitTutariKDVsizTL, YakitTutariTLKDV, Bolum, Yil, Ay) " +
-                                         "VALUES (@plaka, @hizmetKodu, @hizmetAciklamasi, @yakitMiktari, @birimFiyatKDVsizTL, @yakitTutariKDVsizTL, @yakitTutariTLKDV, @bolum, @yil, @ay)";
+                    string insertQuery = "INSERT INTO YakitGiderleri (Plaka, HizmetAciklamasi, YakitMiktariLT, BirimFiyatKDVsizTL, YakitTutariKDVsizTL, YakitTutariTLKDV, Bolum, Yil, Ay) " +
+                                         "VALUES (@plaka, @hizmetAciklamasi, @yakitMiktari, @birimFiyatKDVsizTL, @yakitTutariKDVsizTL, @yakitTutariTLKDV, @bolum, @yil, @ay)";
 
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         // Parametreleri ekle
                         command.Parameters.AddWithValue("@plaka", plaka);
-                        command.Parameters.AddWithValue("@hizmetKodu", hizmetKodu);
                         command.Parameters.AddWithValue("@hizmetAciklamasi", hizmetAciklamasi);
                         command.Parameters.AddWithValue("@yakitMiktari", yakitMiktari);
                         command.Parameters.AddWithValue("@birimFiyatKDVsizTL", birimFiyatKDVsizTL);
@@ -243,7 +247,7 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
 
                         if (affectedRows > 0)
                         {
-                            MessageBox.Show("Yakıt gideri başarıyla eklendi.");
+                            Alert("Eklendi! " + plaka, Form_Alert.enmType.Success);
                             eklemeBasarili = true;
                         }
                         else
@@ -270,11 +274,9 @@ namespace BPET_PORTAL.lojistik.lojistikekranlar.yakitgiderleri
             {
                 DoldurDuzenlemeModu();
                 LoadAutocompleteData(txtPlaka, "Plaka", "YakitGiderleri");
-                LoadAutocompleteData(txtHizmetKodu, "HizmetKodu", "YakitGiderleri");
                 LoadAutocompleteData(txtHizmetAciklamasi, "HizmetAciklamasi", "YakitGiderleri");
             }
             LoadAutocompleteData(txtPlaka, "Plaka", "YakitGiderleri");
-            LoadAutocompleteData(txtHizmetKodu, "HizmetKodu", "YakitGiderleri");
             LoadAutocompleteData(txtHizmetAciklamasi, "HizmetAciklamasi", "YakitGiderleri");
         }
         private void LoadAutocompleteData(TextBox textBox, string columnName, string tableName)

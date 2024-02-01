@@ -24,7 +24,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             InitializeComponent();
             epostalabel.Text = eposta;
             this.mainForm = mainForm; // mainForm örneğini burada başlatın
-
+            
         }
         protected void kullaniciyetkileri()
         {
@@ -38,13 +38,6 @@ namespace BPET_PORTAL.arsiv_uygulamasi
             dosya_ekle.Enabled = CheckUserPermission("b_arsiv", kullaniciYetkileri);
             Dosyaislemlerilabel.Visible = CheckUserPermission("b_arsiv", kullaniciYetkileri);
 
-            teslimet.Visible = CheckUserPermission("c_arsiv", kullaniciYetkileri);
-            dosyateslimetlabel.Visible = CheckUserPermission("c_arsiv", kullaniciYetkileri);
-            teslimet.Enabled = CheckUserPermission("c_arsiv", kullaniciYetkileri);
-
-            adminbtn.Visible = CheckUserPermission("d_arsiv", kullaniciYetkileri);
-            kullanıcıeklelabeladmin.Visible = CheckUserPermission("d_arsiv", kullaniciYetkileri);
-            adminbtn.Enabled = CheckUserPermission("d_arsiv", kullaniciYetkileri);
 
             geciciyetkibtn.Visible = CheckUserPermission("e_arsiv", kullaniciYetkileri);
             geciciyetkiverlabel.Visible = CheckUserPermission("e_arsiv", kullaniciYetkileri);
@@ -111,15 +104,7 @@ namespace BPET_PORTAL.arsiv_uygulamasi
 
         private void dosya_ekle_Click(object sender, EventArgs e)
         {
-            // Onay kutusunu göster
-            DialogResult result = MessageBox.Show("Bu ekranın açılması uzun sürebilir. Lütfen ekran açılana kadar bir şeye basmayınız, uygulama donmuş gibi durabilir. Devam etmek istiyor musunuz?",
-                                                  "Onay",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Warning);
-
-            // Kullanıcı 'Evet' seçeneğini tıklarsa, işlemi yap
-            if (result == DialogResult.Yes)
-            {
+            
                 this.Enabled = false; // Ana formu etkisizleştir
 
                 // Yeni form yüklenirken bu olay tetiklenecek
@@ -133,26 +118,8 @@ namespace BPET_PORTAL.arsiv_uygulamasi
                 Form dosyaFormu = new dosyaislemleri2(epostalabel.Text, mainForm);
                 dosyaFormu.Load += formLoaded;
                 mainForm.loadform(dosyaFormu);
-            }
-            // Kullanıcı 'Hayır' seçeneğini tıklarsa, işlemi yapma
-            else
-            {
-                
-            }
-        }
 
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainForm.loadform(new DosyaTeslimEt(epostalabel.Text, mainForm));
-
-        }
-
-        private void adminbtn_Click(object sender, EventArgs e)
-        {
-            mainForm.loadform(new KullaniciEkle(epostalabel.Text, mainForm));
-
+            
         }
 
         private void arsivmainpage_Load(object sender, EventArgs e)
